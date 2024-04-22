@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="AR" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies the media</title>
+  <link href="https://cdn.icon-icons.com/icons2/125/PNG/96/movies_drive_20265.png" rel="icon" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+<body>
+
+    <!----------  اكواد استايل القائمة  ------------>
+    <style>
+         body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+   z-index: 999; /* لضمان ظهوره فوق المحتوى */
+        }
+
+        .topnav {
+          position: fixed;
+overflow: hidden;
+border-radius:4px;
+   background-image: linear-gradient(132deg, #3c4a71 0%, #339a8a 100%);
+z-index: 999; /* لضمان ظهوره فوق المحتوى */
+top: 0;
+height: 52px;
+width: 100%;
+box-shadow: 5px 5px 7px #fff;
+z-index: 1;
+}  
+
+        .topnav a {
+            float: left;
+            color: #ffffff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+       .topnav a:focus,.topnav a:hover {
+            background-color: #ccc; /* يمكنك تغيير اللون إلى أي لون تفضله */
+            color: #000; /* تغيير لون النص إلى اللون المناسب للخلفية */
+            outline: none; /* إزالة تأثير الـ focus الافتراضي */
+            border-radius: 8px; border: 2px solid #ff0066;
+        }
+        .topnav-centered a {
+
+            float: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .topnav-right {
+            float: right;
+        }
+
+        /* Responsive navigation menu (for mobile devices) */
+        @media screen and (max-width: 100%) {
+            .topnav a,
+            .topnav-right {
+                float: none;
+                display: block;
+            }
+
+            .topnav-centered a {
+                position: relative;
+                top: 0;
+                left: 0;
+                transform: none;
+                color: #ffff;
+            }
+        }
+    </style>
+    <head>
+
+        <body>
+
+    
+
+            <!-- lçaima l3lwia and-->
+            
+            <html>
+<head>
+    
+    <style>
+   body {
+                height: 100%;
+                margin: auto;
+                position: relative;
+           background:#339a8a;
+             background-position: center;
+                align-items: center;
+                justify-content: center;
+           
+            }
+h1 {
+    position: relative;
+    align:center;
+    width: 90%;
+    height: 36px;
+    background: #3c4a71;
+    border-color: #fff;
+    border-radius: 8px; /* تدوير الزوايا لتصميم أفضل */
+    padding:5px; /* تعيين الهامش الداخلي للزر */
+	text-align: center;
+	margin-top:2px;
+	font-size: 20px;
+	color:#fff;
+	font-family: "Airarabia", Sans-serif;
+	font-weight: bold;
+	}
+           .button {
+            position: relative;
+            align:center;
+            display: inline-block; /* لجعل الزر عنصراً مستطيل الشكل */
+            padding:2px; /* تعيين الهامش الداخلي للزر */
+            border-radius: 8px; /* تدوير الزوايا لتصميم أفضل */
+            width: 155px;
+            height: 200px;
+            margin: 6px;margin-top:6px;
+            border-color: #000;
+            background: #3c4a71;
+            text-align: center;
+            font-size: 20px;
+            color:#fff;
+            font-family: "Airarabia", Sans-serif;
+            font-weight: bold;
+            }
+
+          button img {
+         width: 90%; /* تحكم في عرض الصورة */
+    height: 140px; /* احتفاظ بالتناسب أثناء تغيير الحجم */
+    margin: -1px auto; /* تحكم في التباعد بين الصورة والعناصر الأخرى */
+    display: block; /* جعل الصورة تظهر بشكل مستقل */
+    border-radius: 4px; /* تحديد إطار بسمك 2 بكسل ولون أزرق */
+
+}
+
+            /* .ازالة شريط التمرير اسفل المدونة*/
+            html {
+                
+            }
+
+            /* ازالة تغيير شكل السكرول بار Scroll.Bar */
+            ::-webkit-scrollbar {
+                width: 8px;
+                height: 105px;
+               overflow-x: hidden; 
+                /**  تغير  لون القائمة **/
+            }
+
+            ::-webkit-scrollbar-thumb {
+                -webkit-shadow: inset 0 0 0 #000000;
+                -webkit-border-radius: 0;
+                background-image: -webkit-linear-gradient(top, #111 100%, #000 100%);border-radius: 12px;
+            }
+
+            ::-webkit-scrollbar-track {
+                -webkit-shadow: inset 0 0 0 #000000;
+                -webkit-border-radius: 100px;
+            }
+
+
+
+       a{
+color: black;
+text-decoration:none;
+}
+#al{
+color: yellow;
+text-decoration:none;
+
+}
+                #page {
+            margin-top: 60px;
+            width: 100%;
+        }
+        
+                
+/* تظهر الأيقونة أعلى الزجاجية */
+.watched-icon {
+    position: absolute;
+    top: 0;
+    left: 0; /* يمكنك ضبط القيمة الأفضل حسب تصميمك */
+    width: 25px;
+    height: 25px;
+     /* لجعلها تظهر فوق الزجاجية */
+    background:#fff; /* لخلفية زجاجية بلون أبيض شفاف */
+    border-radius: 5px; /* للزوايا المستديرة */
+    border:2px solid #000;
+    padding: 5px; /* تعديل حجم الأيقونة داخل الزجاجية */
+}
+
+ .button:focus,.button:hover {
+         background: #ccc; /* لون	 خلفية الزر */
+         color: #000 ;
+          border-radius: 8px;
+          outline: none; /* إزالة تأثير الـ focus الافتراضي */
+             border: 2px solid #ff0066;
+            transform: scale(1.1);
+        }
+  
+                </style>
+                
+                
+          <!-- Top navigation -->
+            <div class="topnav">
+                <!-- ISIM TATBI9 -->
+                <div class="topnav-centered">
+                 <a><h5>الكبير أوي الموسم 1</h5> </a>
+                </div>
+                <!-- ISIM TATBI9 -->
+
+                <!-- ZIR ROJO3 -->
+                <a href="go:afmv ">
+                    <i  class="fa fa-reply fa-beat"style="font-size: 20px;"></i>
+                </a>
+                <!-- ZIR ROJO3 -->
+
+<img src="https://cdn.icon-icons.com/icons2/12/PNG/256/movies_movie_oscar_themedia_1735.png"style="width: 45px;
+    height: 38px; margin-top: 7px;border-radius: 8px;" alt="beIN MAX">
+                <!-- ZIR LBAHT-search -->
+                
+                
+                <div class="topnav-right">
+                    <a href="http://action_search/"><i class="fa fa-search fa-beat" style="font-size: 20px;"></i></a>
+                    <!-- ZIR LBAHT-search -->
+
+                </div>
+
+            </div>              
+     <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const sections = document.querySelectorAll('.section');
+
+  sections.forEach(function(section) {
+    const buttons = section.querySelectorAll('.button');
+    buttons.forEach(function(button, index) {
+      const watchedIcon = button.querySelector('.watched-icon');
+      const episodeNumber = index + 1;
+      const storageKey = `section${section.dataset.section}-watchedIcon${episodeNumber}`;
+      const isWatched = localStorage.getItem(storageKey);
+
+      if (isWatched === "true") {
+        watchedIcon.style.display = "inline";
+      }
+
+     button.addEventListener('click', function () {
+                const isWatched = localStorage.getItem(storageKey);
+
+                if (isWatched === "true") {
+                    watchedIcon.style.display = "inline";
+                } else {
+                    watchedIcon.style.display = "inline";
+                    localStorage.setItem(storageKey, "true");
+                }
+            });
+        });
+    });
+});
+
+</script>              
+</head>
+<body>
+<div align="center" >
+<div class="container">
+<div id="page">
+<div class="section" data-section="kabi awi-S5">
+
+<a href="intent://aHR0cHM6Ly9jZHhhd3MtYWsuYWthbWFpemVkLm5ldC9vdXQvdjEvNTQ4YzBjODQ2ZTI5NDQ3NmE5
+ZDUzZjhjMjU0Nzk4YTkvZDQzYWJmNjNiNjkxNDc0ZDgzNDI0Nzc3ZWU4ZDcxNTEvZDA0ZmQwMDMy
+NzdkNDY2YWFmOGNjMTRmNWQxODlhMzQvNDYwN2RkMTAxYmZkNGY0ZjhmMTYwNzViNTc3YTUwMTgv
+NGY3ZjUyMDFjNjJlNDNjOGEyZmM0ZTQ5ZTk4ZGI4ZDIvbWFuaWZlc3RfMi5tM3U4#Intent;scheme=xmtv;package=co.wuffy.player;end" rel=nofollow><button class="button" ><img src="https://i.imgur.com/Y77yHwb.jpg" alt="img"><kat2>episode1</kat2><img class="watched-icon" src="https://icons.veryicon.com/png/o/system/customer-service-system/preview-117.png" alt="Watched Icon" style="display: none;"></button></a>
+ 
+    
+ <a href="intent://aHR0cHM6Ly9jZHhhd3MtYWsuYWthbWFpemVkLm5ldC9vdXQvdjEvN2RkOWViZTI1ZTIyNGVlZGEx
+ZGQ4ZDBiMGE0NmIwYjgvZTdlMGM5NGU5ZWE4NDVjYzg5ZTczZDY0NWU1MjBmMDAvMGQ0NjYxZThh
+MGVjNDhkNThhMTM4Mzk2ZTkyNjZjY2QvNDU5M2JlNDE1Y2E3NDAyNTlmM2Q0MTdmZjRjYmNiNzMv
+Y2VkMDJjNmIzMTdmNGIxZTk5OWJiMzIyMmUwZDUyM2YvbWFuaWZlc3RfMi5tM3U4#Intent;scheme=xmtv;package=co.wuffy.player;end" rel=nofollow><button class="button" ><img src="https://i.imgur.com/Y77yHwb.jpg" alt="img"><kat2>episode2</kat2><img class="watched-icon" src="https://icons.veryicon.com/png/o/system/customer-service-system/preview-117.png" alt="Watched Icon" style="display: none;"></button></a>
+    
+ <a href="intent://aHR0cHM6Ly9jZHhhd3MtYWsuYWthbWFpemVkLm5ldC9vdXQvdjEvZDIwZmQwNjZhNWYzNDYxZTlm
+YTRiNGVjMTBmZmUxYmMvZjBlM2NkNDI4MzdmNDY0NDhhYzlmYzA4NGMwZDY5NzUvYjEwZmVjZmI4
+NGYxNGQ0MGI3ZGZjZjRjMzg5NTU0NmYvNjE5MWI4MTk4Y2I4NGFlY2I1YjU1YTFlOWYxMzU4ZGEv
+OGRlYzcwNjBhOWJiNDFlZDk0ZmZkMzYwZjZlOTA3OGEvbWFuaWZlc3RfMi5tM3U4#Intent;scheme=xmtv;package=co.wuffy.player;end" rel=nofollow><button class="button" ><img src="https://i.imgur.com/Y77yHwb.jpg" alt="img"><kat2>episode3</kat2><img class="watched-icon" src="https://icons.veryicon.com/png/o/system/customer-service-system/preview-117.png" alt="Watched Icon" style="display: none;"></button></a>
+    
+ <a href="intent://aHR0cHM6Ly9jZHhhd3MtYWsuYWthbWFpemVkLm5ldC9vdXQvdjEvYTIyNWVlYjM3ZmIwNGIxNWI1
+NmJmMTRmZDNkMmYwNzAvNjUxYTQ0OWJhYzVlNDVmOWE0ZTdlMGY5NGE1ZGQ0MzkvMzFkYmM1ZGQx
+Nzc1NGQwNWEwYzM1ZDZhNTc3NWIzOWMvNmFkMDZmMjc4M2MwNGM3ZGExYTk2OWFkYjFhZDFhYTYv
+YWRkZjM3YTdhNzhlNDkyZDhjOTRjODBkOTI5MzY2MmYvbWFuaWZlc3RfMi5tM3U4#Intent;scheme=xmtv;package=co.wuffy.player;end" rel=nofollow><button class="button" ><img src="https://i.imgur.com/Y77yHwb.jpg" alt="img"><kat2>episode4</kat2><img class="watched-icon" src="https://icons.veryicon.com/png/o/system/customer-service-system/preview-117.png" alt="Watched Icon" style="display: none;"></button></a>
+
+
+ <a href="intent://aHR0cHM6Ly9jZHhhd3MtYWsuYWthbWFpemVkLm5ldC9vdXQvdjEvMjNlN2JiY2ZiOTcyNDA1Y2Ew
+NWY1YzkyMWVkOThmM2QvZjBlM2NkNDI4MzdmNDY0NDhhYzlmYzA4NGMwZDY5NzUvYjEwZmVjZmI4
+NGYxNGQ0MGI3ZGZjZjRjMzg5NTU0NmYvMGQ2ZTQ3ZjYyM2UyNDZiYjk4MGI3YzBkMjAwNTlhODUv
+OGRlYzcwNjBhOWJiNDFlZDk0ZmZkMzYwZjZlOTA3OGEvbWFuaWZlc3RfMi5tM3U4#Intent;scheme=xmtv;package=co.wuffy.player;end" rel=nofollow><button class="button" ><img src="https://i.imgur.com/Y77yHwb.jpg" alt="img"><kat2>episode5</kat2><img class="watched-icon" src="https://icons.veryicon.com/png/o/system/customer-service-system/preview-117.png" alt="Watched Icon" style="display: none;"></button></a>
+
+
+ <a href="intent://aHR0cHM6Ly9jZHhhd3MtYWsuYWthbWFpemVkLm5ldC9vdXQvdjEvODVkNDVkMzM1ZjE0NDY5N2Jj
+YzBjYjUwZDZhOTk5NTUvOWI2NTA1NWNmZGY5NGZhYjkxOTYwZmFlY2U1ODRlOWEvZDZhNDkzYzZi
+Nzk2NDBmOTg4Mjg5MTA0ZDMzZTMyNmMvOGY4ZWUxMzBmNWRlNDdjNWE5NDIxOWEwYzE4ZGJjNGYv
+NmI2OWY4N2EwMGUwNGYxNzgwNTAyNjYxNGUzYjU4MzUvbWFuaWZlc3RfMi5tM3U4#Intent;scheme=xmtv;package=co.wuffy.player;end" rel=nofollow><button class="button" ><img src="https://i.imgur.com/Y77yHwb.jpg" alt="img"><kat2>episode6</kat2><img class="watched-icon" src="https://icons.veryicon.com/png/o/system/customer-service-system/preview-117.png" alt="Watched Icon" style="display: none;"></button></a>
+
+
+
+ <a href="intent://aHR0cHM6Ly9jZHhhd3MtYWsuYWthbWFpemVkLm5ldC9vdXQvdjEvNjAwNjhhY2MxZTc4NDkwMzli
+ZTJlNTI5YmY5YmYyZDcvOGVkYmNkMDJmMGVmNDI2OGJlMjE2MWI3YTdiYjQzNWYvMTRlNDAyODlh
+MDU5NDdjOTk1YjAyMzM1ODc0MDc2MmMvOTQ0NGQ4NzA5NDg1NDAzOWIyM2VlNTU1NTU0M2UyYWUv
+ODgyMmI4ZWNjNmVhNDgxNDliMjM2NGIzOTkwZWRhYmQvbWFuaWZlc3RfMi5tM3U4#Intent;scheme=xmtv;package=co.wuffy.player;end" rel=nofollow><button class="button" ><img src="https://i.imgur.com/Y77yHwb.jpg" alt="img"><kat2>episode7</kat2><img class="watched-icon" src="https://icons.veryicon.com/png/o/system/customer-service-system/preview-117.png" alt="Watched Icon" style="display: none;"></button></a>
+
+
+ <a href="intent://aHR0cHM6Ly9jZHhhd3MtYWsuYWthbWFpemVkLm5ldC9vdXQvdjEvZDAxNzhjMzgzMzVkNDNkMmIx
+ZTM2M2Y4NWQwMjBkYzgvMDI2MGZkMzYyNWRjNDFlYjliNWY3MDQ4NjU5MzBkYTAvMjc2OGUxMWY1
+OGE2NDM5YzgwYjI3NDA5NGZmMDg4OWEvYzJkMjRhMGUwMTgyNDM2OTk2MmNmOTQyNDMxY2YzNTAv
+N2NkNDYyYTQ4MDczNGE0ZjgwODZiNzIzMDEyNWM3Y2IvbWFuaWZlc3RfMi5tM3U4#Intent;scheme=xmtv;package=co.wuffy.player;end" rel=nofollow><button class="button" ><img src="https://i.imgur.com/Y77yHwb.jpg" alt="img"><kat2>episode8</kat2><img class="watched-icon" src="https://icons.veryicon.com/png/o/system/customer-service-system/preview-117.png" alt="Watched Icon" style="display: none;"></button></a>
+
+ <a href="intent://aHR0cHM6Ly9jZHhhd3MtYWsuYWthbWFpemVkLm5ldC9vdXQvdjEvMmEyOWFmZDU4Y2YwNDk3Mzgw
+MzIyYWRjYmY2YmIzYzAvZmRkOTNmMWFkNWExNDUzZWEwZDc0NjY3NTlhYmYzMTQvNGNlOGYyNGIx
+NWFjNDY1Y2I1ODBjMzczYWQ4YzE0OGEvNTQ3YzUzYzJhNzFlNDYyNDkyOTI0MTczM2M2ZTdiMDUv
+ZmIxYmFiNzQ0MGU5NGI2ZTk0OTAxYzI5NmEyMjkxZjcvbWFuaWZlc3RfMi5tM3U4#Intent;scheme=xmtv;package=co.wuffy.player;end" rel=nofollow><button class="button" ><img src="https://i.imgur.com/Y77yHwb.jpg" alt="img"><kat2>episode9</kat2><img class="watched-icon" src="https://icons.veryicon.com/png/o/system/customer-service-system/preview-117.png" alt="Watched Icon" style="display: none;"></button></a>
+
+ <a href="intent://aHR0cHM6Ly9jZHhhd3MtYWsuYWthbWFpemVkLm5ldC9vdXQvdjEvZGZjYTJhYjY4YjVkNDg3YTk0
+ODQzNmQyYWFlYmFiNjYvMjQ4MWViOWRmZGUxNDI4NGIyYjg4NTIzMDJkZjQ3NTkvMjI0M2JiZGY2
+YjAyNGIxY2E5YTE5MjgxNzAyMWM3NjEvZGQ5ZmI5NDk2OWI3NDIwNWFhMGUyMGNlN2YyMjE0Njcv
+ODg2ODgwODhmNTQ4NDlmZWE4N2JmNzlmMWM0NTNmNGIvbWFuaWZlc3RfMi5tM3U4#Intent;scheme=xmtv;package=co.wuffy.player;end" rel=nofollow><button class="button" ><img src="https://i.imgur.com/Y77yHwb.jpg" alt="img"><kat2>episode10</kat2><img class="watched-icon" src="https://icons.veryicon.com/png/o/system/customer-service-system/preview-117.png" alt="Watched Icon" style="display: none;"></button></a>
+
+ <a href="intent://aHR0cHM6Ly9jZHhhd3MtYWsuYWthbWFpemVkLm5ldC9vdXQvdjEvYmVlYzE0ZWY1N2VmNDhhODk3
+MDZmYThlMzQwN2Q1NDQvZmRkOTNmMWFkNWExNDUzZWEwZDc0NjY3NTlhYmYzMTQvNGNlOGYyNGIx
+NWFjNDY1Y2I1ODBjMzczYWQ4YzE0OGEvZGMzYzg3YWQ4NDgwNDNkNzgxMDA0MzUxZmI4OTBmYzYv
+ZmIxYmFiNzQ0MGU5NGI2ZTk0OTAxYzI5NmEyMjkxZjcvbWFuaWZlc3RfMi5tM3U4#Intent;scheme=xmtv;package=co.wuffy.player;end" rel=nofollow><button class="button" ><img src="https://i.imgur.com/Y77yHwb.jpg" alt="img"><kat2>episode11</kat2><img class="watched-icon" src="https://icons.veryicon.com/png/o/system/customer-service-system/preview-117.png" alt="Watched Icon" style="display: none;"></button></a>
+
+ <a href="intent://aHR0cHM6Ly9jZHhhd3MtYWsuYWthbWFpemVkLm5ldC9vdXQvdjEvNDIxODQ5MDk1ODYzNDg0Mjhi
+OGNlZmIzNDY3OTFlMGYvZTdlMGM5NGU5ZWE4NDVjYzg5ZTczZDY0NWU1MjBmMDAvMGQ0NjYxZThh
+MGVjNDhkNThhMTM4Mzk2ZTkyNjZjY2QvNWY5NzNmMTUxOGVhNGNjODhjZTQ5MmNlYWYzODcyNGQv
+Y2VkMDJjNmIzMTdmNGIxZTk5OWJiMzIyMmUwZDUyM2YvbWFuaWZlc3RfMi5tM3U4#Intent;scheme=xmtv;package=co.wuffy.player;end" rel=nofollow><button class="button" ><img src="https://i.imgur.com/Y77yHwb.jpg" alt="img"><kat2>episode12</kat2><img class="watched-icon" src="https://icons.veryicon.com/png/o/system/customer-service-system/preview-117.png" alt="Watched Icon" style="display: none;"></button></a>
+
+ <a href="intent://aHR0cHM6Ly9jZHhhd3MtYWsuYWthbWFpemVkLm5ldC9vdXQvdjEvMzVlNjY4OGIzMzFhNDFjY2I3
+MjBjODc5MjAxZTg0ZDEvMjViNWQxMGQ1NzhlNGEyY2JkMmRjYzFkZDc2ZDIxZTAvOWYzYTg0NjAz
+ZGFlNDY3YzljZGIzZDRjMWM3ZTE0NGYvYjNiYTIwM2FiOTBhNDJiOGJlNmViODkyZjEzNjU3MGMv
+NzA3NTg4MWU1MGVjNGJmNmJmOTk2MzA5NjU2NmM4YjIvbWFuaWZlc3RfMi5tM3U4#Intent;scheme=xmtv;package=co.wuffy.player;end" rel=nofollow><button class="button" ><img src="https://i.imgur.com/Y77yHwb.jpg" alt="img"><kat2>episode13</kat2><img class="watched-icon" src="https://icons.veryicon.com/png/o/system/customer-service-system/preview-117.png" alt="Watched Icon" style="display: none;"></button></a>
+
+ <a href="intent://aHR0cHM6Ly9jZHhhd3MtYWsuYWthbWFpemVkLm5ldC9vdXQvdjEvNWE5YzBiYjViODcyNDIzM2Ex
+ZjE5NmQ4ZWNiNzcyZTEvNTQ1NWE2ZDk4ZjJmNGY4NzhiMWM3NDA5ZWY1MDJiMTkvMDIyOTkzMjdj
+YTk4NGFjOThjMDZjY2ZjNDU4OTBkMDYvOTMyZWVhY2E5ZWM5NDM4Yzk2NDllNDVmNTgyZTEzZWIv
+MDQxYWFhOTJjNDA4NGQxYWJhNjM5MmMwZDY4Yzc5MjMvbWFuaWZlc3RfMi5tM3U4#Intent;scheme=xmtv;package=co.wuffy.player;end" rel=nofollow><button class="button" ><img src="https://i.imgur.com/Y77yHwb.jpg" alt="img"><kat2>episode14</kat2><img class="watched-icon" src="https://icons.veryicon.com/png/o/system/customer-service-system/preview-117.png" alt="Watched Icon" style="display: none;"></button></a>
+
+ <a href="intent://aHR0cHM6Ly9jZHhhd3MtYWsuYWthbWFpemVkLm5ldC9vdXQvdjEvYmJiZGZlOTMxMDc0NDNlZTgx
+OGI2MzdiYjBhNGZmNjAvOWI2NTA1NWNmZGY5NGZhYjkxOTYwZmFlY2U1ODRlOWEvZDZhNDkzYzZi
+Nzk2NDBmOTg4Mjg5MTA0ZDMzZTMyNmMvZTdkZDM2MWYxMjhmNGYzYmFhY2ExNDkwYWM5YjI4MGQv
+NmI2OWY4N2EwMGUwNGYxNzgwNTAyNjYxNGUzYjU4MzUvbWFuaWZlc3RfMi5tM3U4#Intent;scheme=xmtv;package=co.wuffy.player;end" rel=nofollow><button class="button" ><img src="https://i.imgur.com/Y77yHwb.jpg" alt="img"><kat2>episode15</kat2><img class="watched-icon" src="https://icons.veryicon.com/png/o/system/customer-service-system/preview-117.png" alt="Watched Icon" style="display: none;"></button></a>
+
+
+ <a href="intent://aHR0cHM6Ly9jZHhhd3MtYWsuYWthbWFpemVkLm5ldC9vdXQvdjEvMGM2NWNkMGE4MGU3NDUwOWEw
+ZDU0NjdkMWU1ZDEyYzEvY2UyOWY4YjZhNTYxNGJhYWI5M2Y0NDhlMzM3M2VmM2QvOTgyNWJlNjRh
+NGIxNDJjNGFjYmEyN2Y3ZmYyMjk2ZGUvZTNkMGIzNWI3ZDViNDQyMjk5ZTdhOGY1YjNhMmEwYTcv
+ZDYxNWM5ZTFjYWFkNDZiYzlkN2UzMGZjNTU3MzcxYWEvbWFuaWZlc3RfMi5tM3U4#Intent;scheme=xmtv;package=co.wuffy.player;end" rel=nofollow><button class="button" ><img src="https://i.imgur.com/Y77yHwb.jpg" alt="img"><kat2>episode16</kat2><img class="watched-icon" src="https://icons.veryicon.com/png/o/system/customer-service-system/preview-117.png" alt="Watched Icon" style="display: none;"></button></a>
+
+ <a href="intent://aHR0cHM6Ly9jZHhhd3MtYWsuYWthbWFpemVkLm5ldC9vdXQvdjEvNGY5MTljN2VhZDExNDY1ZTk1
+MjI1YzQ2YmI5YzEzZmYvYmQ2YmRiYzg2ZTVhNGMwZjk1N2ViYTI0ZjQ5ODQ2NzYvZDUwMWEyNjc4
+Y2RiNDAzNjg0YmJmNDJiZGEwM2I5ZTgvNjdjNjdjM2JlY2RkNGJlOGIxMzYxMjMxMDdhZmQwMWUv
+MmUxYzcyNDM1Mzg5NGYzNWFkNjIwYmNiZTAzYzQ1NjAvbWFuaWZlc3RfMi5tM3U4#Intent;scheme=xmtv;package=co.wuffy.player;end" rel=nofollow><button class="button" ><img src="https://i.imgur.com/Y77yHwb.jpg" alt="img"><kat2>episode17</kat2><img class="watched-icon" src="https://icons.veryicon.com/png/o/system/customer-service-system/preview-117.png" alt="Watched Icon" style="display: none;"></button></a>
+
+
+ <a href="intent://aHR0cHM6Ly9jZHhhd3MtYWsuYWthbWFpemVkLm5ldC9vdXQvdjEvZmU1NTg2MDhmYmE0NGVkMzk2
+MmI1NGEwN2Q5NDBhZGIvMDI2MGZkMzYyNWRjNDFlYjliNWY3MDQ4NjU5MzBkYTAvMjc2OGUxMWY1
+OGE2NDM5YzgwYjI3NDA5NGZmMDg4OWEvZjY0ODQ3NDU5YjI5NDAyZDg5NjkxOTZmZGU2NTRlOTIv
+N2NkNDYyYTQ4MDczNGE0ZjgwODZiNzIzMDEyNWM3Y2IvbWFuaWZlc3RfMi5tM3U4#Intent;scheme=xmtv;package=co.wuffy.player;end" rel=nofollow><button class="button" ><img src="https://i.imgur.com/Y77yHwb.jpg" alt="img"><kat2>episode18</kat2><img class="watched-icon" src="https://icons.veryicon.com/png/o/system/customer-service-system/preview-117.png" alt="Watched Icon" style="display: none;"></button></a>
+
+
+ <a href="intent://aHR0cHM6Ly9jZHhhd3MtYWsuYWthbWFpemVkLm5ldC9vdXQvdjEvMzU2YzVhOWUzMThhNDk5Nzk0
+MzljZGMyZTY5NTgzYmIvZDQzYWJmNjNiNjkxNDc0ZDgzNDI0Nzc3ZWU4ZDcxNTEvZDA0ZmQwMDMy
+NzdkNDY2YWFmOGNjMTRmNWQxODlhMzQvNmU1MzczMjQzYmMzNDA2NWFkM2FhOGRmZmNmOTRkODkv
+NGY3ZjUyMDFjNjJlNDNjOGEyZmM0ZTQ5ZTk4ZGI4ZDIvbWFuaWZlc3RfMi5tM3U4#Intent;scheme=xmtv;package=co.wuffy.player;end" rel=nofollow><button class="button" ><img src="https://i.imgur.com/Y77yHwb.jpg" alt="img"><kat2>episode19</kat2><img class="watched-icon" src="https://icons.veryicon.com/png/o/system/customer-service-system/preview-117.png" alt="Watched Icon" style="display: none;"></button></a>
+
+
+ <a href="intent://aHR0cHM6Ly9jZHhhd3MtYWsuYWthbWFpemVkLm5ldC9vdXQvdjEvNDQ2ZDZkZmQxMDRkNDIyM2Ey
+ZGI2MTBlNDY5YmJmZDgvZDQzYWJmNjNiNjkxNDc0ZDgzNDI0Nzc3ZWU4ZDcxNTEvZDA0ZmQwMDMy
+NzdkNDY2YWFmOGNjMTRmNWQxODlhMzQvMTBhZjc3OGFkMTJlNDI2NzlmZWE4MDU2MjY1YjY0N2Uv
+NGY3ZjUyMDFjNjJlNDNjOGEyZmM0ZTQ5ZTk4ZGI4ZDIvbWFuaWZlc3RfMi5tM3U4#Intent;scheme=xmtv;package=co.wuffy.player;end" rel=nofollow><button class="button" ><img src="https://i.imgur.com/Y77yHwb.jpg" alt="img"><kat2>episode20</kat2><img class="watched-icon" src="https://icons.veryicon.com/png/o/system/customer-service-system/preview-117.png" alt="Watched Icon" style="display: none;"></button></a>
+
+
+ <a href="intent://aHR0cHM6Ly9jZHhhd3MtYWsuYWthbWFpemVkLm5ldC9vdXQvdjEvOGNjMTRkZGFkYzcxNGVhMzg2
+NGZmMTdiMWYwMWVhZjMvZTdlMGM5NGU5ZWE4NDVjYzg5ZTczZDY0NWU1MjBmMDAvMGQ0NjYxZThh
+MGVjNDhkNThhMTM4Mzk2ZTkyNjZjY2QvNThlMGZjY2U0Mzk0NDRkNTk4NzZlM2JiMmRkZGU2ZTEv
+Y2VkMDJjNmIzMTdmNGIxZTk5OWJiMzIyMmUwZDUyM2YvbWFuaWZlc3RfMi5tM3U4#Intent;scheme=xmtv;package=co.wuffy.player;end" rel=nofollow><button class="button" ><img src="https://i.imgur.com/Y77yHwb.jpg" alt="img"><kat2>episode21</kat2><img class="watched-icon" src="https://icons.veryicon.com/png/o/system/customer-service-system/preview-117.png" alt="Watched Icon" style="display: none;"></button></a>
+
+ <a href="intent://aHR0cHM6Ly9jZHhhd3MtYWsuYWthbWFpemVkLm5ldC9vdXQvdjEvMTVkYjQyYWM2Mzk3NDAxOWEx
+NGE0ZDIwNmM0MDFhNjQvYmQ2YmRiYzg2ZTVhNGMwZjk1N2ViYTI0ZjQ5ODQ2NzYvZDUwMWEyNjc4
+Y2RiNDAzNjg0YmJmNDJiZGEwM2I5ZTgvMjc4ODU4YTUwOTE1NGUwZWE3ZjBjMzM4ZDc4MGJjYTcv
+MmUxYzcyNDM1Mzg5NGYzNWFkNjIwYmNiZTAzYzQ1NjAvbWFuaWZlc3RfMi5tM3U4#Intent;scheme=xmtv;package=co.wuffy.player;end" rel=nofollow><button class="button" ><img src="https://i.imgur.com/Y77yHwb.jpg" alt="img"><kat2>episode22</kat2><img class="watched-icon" src="https://icons.veryicon.com/png/o/system/customer-service-system/preview-117.png" alt="Watched Icon" style="display: none;"></button></a>
+
+ <a href="intent://aHR0cHM6Ly9jZHhhd3MtYWsuYWthbWFpemVkLm5ldC9vdXQvdjEvMTcwNTczYjljNjQ1NDA2NTkx
+MzgwZDZjYWI5ZjAxYmMvMDI2MGZkMzYyNWRjNDFlYjliNWY3MDQ4NjU5MzBkYTAvMjc2OGUxMWY1
+OGE2NDM5YzgwYjI3NDA5NGZmMDg4OWEvNmM2NDc2MmJiMTM0NDMzMTg0NTBiNTRiM2U3NzNkNjAv
+N2NkNDYyYTQ4MDczNGE0ZjgwODZiNzIzMDEyNWM3Y2IvbWFuaWZlc3RfMi5tM3U4#Intent;scheme=xmtv;package=co.wuffy.player;end" rel=nofollow><button class="button" ><img src="https://i.imgur.com/Y77yHwb.jpg" alt="img"><kat2>episode23</kat2><img class="watched-icon" src="https://icons.veryicon.com/png/o/system/customer-service-system/preview-117.png" alt="Watched Icon" style="display: none;"></button></a>
+
+
+ <a href="intent://aHR0cHM6Ly9jZHhhd3MtYWsuYWthbWFpemVkLm5ldC9vdXQvdjEvZDAzMmNkMGFlMjc2NDk3NmFi
+OWUwMjEyMmM2ODQyNmYvZDQzYWJmNjNiNjkxNDc0ZDgzNDI0Nzc3ZWU4ZDcxNTEvZDA0ZmQwMDMy
+NzdkNDY2YWFmOGNjMTRmNWQxODlhMzQvOGMxMDRiMDhiODI4NGM5MTg1YjZkZjA1NWFiYTg3MTQv
+NGY3ZjUyMDFjNjJlNDNjOGEyZmM0ZTQ5ZTk4ZGI4ZDIvbWFuaWZlc3RfMi5tM3U4#Intent;scheme=xmtv;package=co.wuffy.player;end" rel=nofollow><button class="button" ><img src="https://i.imgur.com/Y77yHwb.jpg" alt="img"><kat2>episode24</kat2><img class="watched-icon" src="https://icons.veryicon.com/png/o/system/customer-service-system/preview-117.png" alt="Watched Icon" style="display: none;"></button></a>
+
+
+ <a href="intent://aHR0cHM6Ly9jZHhhd3MtYWsuYWthbWFpemVkLm5ldC9vdXQvdjEvMTA1ZTI2YzA3MjQ0NDAyYWEw
+NzZkYzg2Y2JiNDZhOWYvOGVkYmNkMDJmMGVmNDI2OGJlMjE2MWI3YTdiYjQzNWYvMTRlNDAyODlh
+MDU5NDdjOTk1YjAyMzM1ODc0MDc2MmMvYzM4MDYzNDExZDA1NDUyZGI2NTMwZjdjMTc3NzNlN2Mv
+ODgyMmI4ZWNjNmVhNDgxNDliMjM2NGIzOTkwZWRhYmQvbWFuaWZlc3RfMi5tM3U4#Intent;scheme=xmtv;package=co.wuffy.player;end" rel=nofollow><button class="button" ><img src="https://i.imgur.com/Y77yHwb.jpg" alt="img"><kat2>episode25</kat2><img class="watched-icon" src="https://icons.veryicon.com/png/o/system/customer-service-system/preview-117.png" alt="Watched Icon" style="display: none;"></button></a>
+
+ <a href="intent://aHR0cHM6Ly9jZHhhd3MtYWsuYWthbWFpemVkLm5ldC9vdXQvdjEvMTdiYzlkZTY2M2RmNDAzMzkw
+ZTVlZDI3NzI5MWYzMDUvMjQ4MWViOWRmZGUxNDI4NGIyYjg4NTIzMDJkZjQ3NTkvMjI0M2JiZGY2
+YjAyNGIxY2E5YTE5MjgxNzAyMWM3NjEvZDAxZjIzYWU1ZTBmNDIzNDlkMWQ5NzY3NDIzYzZkMTcv
+ODg2ODgwODhmNTQ4NDlmZWE4N2JmNzlmMWM0NTNmNGIvbWFuaWZlc3RfMi5tM3U4#Intent;scheme=xmtv;package=co.wuffy.player;end" rel=nofollow><button class="button" ><img src="https://i.imgur.com/Y77yHwb.jpg" alt="img"><kat2>episode26</kat2><img class="watched-icon" src="https://icons.veryicon.com/png/o/system/customer-service-system/preview-117.png" alt="Watched Icon" style="display: none;"></button></a>
+
+ <a href="intent://aHR0cHM6Ly9jZHhhd3MtYWsuYWthbWFpemVkLm5ldC9vdXQvdjEvNzc3NWI1ZDgxN2QyNGUzMGFm
+Mjc5NmMzM2RmYzM4NzgvZmRkOTNmMWFkNWExNDUzZWEwZDc0NjY3NTlhYmYzMTQvNGNlOGYyNGIx
+NWFjNDY1Y2I1ODBjMzczYWQ4YzE0OGEvNmY5M2MzOWZlZmU0NGI0YzgxMmViODlkNTY2ZTllN2Ev
+ZmIxYmFiNzQ0MGU5NGI2ZTk0OTAxYzI5NmEyMjkxZjcvbWFuaWZlc3RfMi5tM3U4#Intent;scheme=xmtv;package=co.wuffy.player;end" rel=nofollow><button class="button" ><img src="https://i.imgur.com/Y77yHwb.jpg" alt="img"><kat2>episode27</kat2><img class="watched-icon" src="https://icons.veryicon.com/png/o/system/customer-service-system/preview-117.png" alt="Watched Icon" style="display: none;"></button></a>
+
+<a href="intent://aHR0cHM6Ly9jZHhhd3MtYWsuYWthbWFpemVkLm5ldC9vdXQvdjEvZjgzZmZhNGUxMWIyNDE5NmEy
+ZDcwMTFjN2Q4ZjRkNTkvMjViNWQxMGQ1NzhlNGEyY2JkMmRjYzFkZDc2ZDIxZTAvOWYzYTg0NjAz
+ZGFlNDY3YzljZGIzZDRjMWM3ZTE0NGYvYTkzYjIyNmEyNzMzNDQ0MmI3M2Y4MDM4OGQ2NGU2OTEv
+NzA3NTg4MWU1MGVjNGJmNmJmOTk2MzA5NjU2NmM4YjIvbWFuaWZlc3RfMi5tM3U4#Intent;scheme=xmtv;package=co.wuffy.player;end" rel=nofollow><button class="button" ><img src="https://i.imgur.com/Y77yHwb.jpg" alt="img"><kat2>episode28</kat2><img class="watched-icon" src="https://icons.veryicon.com/png/o/system/customer-service-system/preview-117.png" alt="Watched Icon" style="display: none;"></button></a>
+
+<a href="intent://aHR0cHM6Ly9jZHhhd3MtYWsuYWthbWFpemVkLm5ldC9vdXQvdjEvYWNkYzM2NDU2MWI1NGMwMDhj
+ZDYwYTBhZGY5YWMzOGUvOWI2NTA1NWNmZGY5NGZhYjkxOTYwZmFlY2U1ODRlOWEvZDZhNDkzYzZi
+Nzk2NDBmOTg4Mjg5MTA0ZDMzZTMyNmMvNDYzZmI2MGNjOGY0NDhmY2JhMzJiOTdhODFhNzAxZjUv
+NmI2OWY4N2EwMGUwNGYxNzgwNTAyNjYxNGUzYjU4MzUvbWFuaWZlc3RfMi5tM3U4#Intent;scheme=xmtv;package=co.wuffy.player;end" rel=nofollow><button class="button" ><img src="https://i.imgur.com/Y77yHwb.jpg" alt="img"><kat2>episode29</kat2><img class="watched-icon" src="https://icons.veryicon.com/png/o/system/customer-service-system/preview-117.png" alt="Watched Icon" style="display: none;"></button></a>
+
+<a href="intent://aHR0cHM6Ly9jZHhhd3MtYWsuYWthbWFpemVkLm5ldC9vdXQvdjEvY2Y1ZWMwNjJmNmJmNDI5NTk5
+ZDY3MWM4MTdmMjhjMTcvZmRkOTNmMWFkNWExNDUzZWEwZDc0NjY3NTlhYmYzMTQvNGNlOGYyNGIx
+NWFjNDY1Y2I1ODBjMzczYWQ4YzE0OGEvMjNlZTU5MjUwYjIyNDYzZmEzNDgzNTE0MTJkYzIwOTUv
+ZmIxYmFiNzQ0MGU5NGI2ZTk0OTAxYzI5NmEyMjkxZjcvbWFuaWZlc3RfMi5tM3U4#Intent;scheme=xmtv;package=co.wuffy.player;end" rel=nofollow><button class="button" ><img src="https://i.imgur.com/Y77yHwb.jpg" alt="img"><kat2>episode30</kat2><img class="watched-icon" src="https://icons.veryicon.com/png/o/system/customer-service-system/preview-117.png" alt="Watched Icon" style="display: none;"></button></a>
+  </div>
+   </div>
+        </div>
+         </div>
+     
+</body>
+</html>
+
+
