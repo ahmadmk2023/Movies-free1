@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="AR" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies the media</title>
+  <link href="https://cdn.icon-icons.com/icons2/125/PNG/96/movies_drive_20265.png" rel="icon" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<body>
+ </head>   
+<!-- lçaima l3lwia -->
+<style>
+ body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+   z-index: 999; /* لضمان ظهوره فوق المحتوى */
+        }
+
+        .topnav {
+          position: fixed;
+          direction: ltr;
+overflow: hidden;
+border-radius:4px;
+   background-image: linear-gradient(132deg, #3c4a71 0%, #339a8a 100%);
+z-index: 999; /* لضمان ظهوره فوق المحتوى */
+top: 0;
+height: 52px;
+width: 100%;
+box-shadow: 5px 5px 7px #fff;
+z-index: 1;
+}  
+
+        .topnav a {
+            float: left;
+            color: #ffffff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+       .topnav a:focus,.topnav a:hover {
+            background-color: #ccc; /* يمكنك تغيير اللون إلى أي لون تفضله */
+            color: #000; /* تغيير لون النص إلى اللون المناسب للخلفية */
+            outline: none; /* إزالة تأثير الـ focus الافتراضي */
+            border-radius: 8px; border: 2px solid #ff0066;
+        }
+        .topnav-centered a {
+
+            float: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .topnav-right {
+            float: right;
+        }
+
+        /* Responsive navigation menu (for mobile devices) */
+        @media screen and (max-width: 100%) {
+            .topnav a,
+            .topnav-right {
+                float: none;
+                display: block;
+            }
+
+            .topnav-centered a {
+                position: relative;
+                top: 0;
+                left: 0;
+                transform: none;
+                color: #ffff;
+            }
+        }
+        
+        /* *********************************** */
+        body {
+                        height: 100%;
+                margin: auto;
+                position: relative;
+           background:#339a8a;
+             background-position: center;
+                align-items: center;direction: rtl;
+                justify-content: center;
+           
+        }
+
+
+       .button {
+           height: 200px;
+           width: 150px;
+            position: relative;direction: rtl;
+                align:center;
+                display: inline-block; /* لجعل الزر عنصراً مستطيل الشكل */
+            padding:2px; /* تعيين الهامش الداخلي للزر */
+            border-radius: 8px; /* تدوير الزوايا لتصميم أفضل */
+             margin: 6px;
+              border-color: #000;
+                 background: #3c4a71; 
+            
+            }
+
+        .button img {
+              border-radius: 8px;
+            height: 150px;
+            width: 140px;
+            margin-bottom: 0px;
+        }
+
+        /* إضافة تأثير تغيير لون الخلفية عند تحديد الزر */
+.button:focus,
+.button:hover,
+.button.active {
+     background: #ccc; /* لون	 خلفية الزر */
+            border-radius: 8px; /* لون الخلفية عند التركيز أو التحويل أو النقر - يمكن تغييره */
+ color: #000; /* لون النص عند التركيز أو التحويل أو النقر - يمكن تغييره */
+    outline: none; /* إزالة تأثير الـ focus الافتراضي */
+    border: 2px solid #ff0066;
+            transform: scale(1.1);
+}
+
+/* تحديد اللون عند التركيز أو التحويل فوق الزر بواسطة الجافا سكريبت */
+.button.active {
+    background: #fff; /* لون الخلفية عند التركيز أو التحويل - يمكن تغييره */
+    color: #fff; /* لون النص عند التركيز أو التحويل - يمكن تغييره */
+}
+
+
+
+         a{
+color: black;
+text-decoration:none;
+}
+#al{
+color: yellow;
+text-decoration:none;
+
+}
+ /* .ازالة شريط التمرير اسفل المدونة*/
+   
+            /* ازالة تغيير شكل السكرول بار Scroll.Bar */
+            ::-webkit-scrollbar {
+                width:12px;
+               overflow-x: hidden; 
+                /**  تغير  لون القائمة **/
+            }
+
+            ::-webkit-scrollbar-thumb {
+                -webkit-shadow: inset 0 0 0 #000000;
+                -webkit-border-radius: 0;
+                background-image: -webkit-linear-gradient(top, #111 100%, #000 100%);
+                border-radius: 12px;
+                
+            }
+
+            ::-webkit-scrollbar-track {
+                -webkit-shadow: inset 0 0 0 #000000;
+                -webkit-border-radius: 100px;height: 50px;
+            }
+                #page {
+            margin-top: 58px;
+            width: 100%;
+        }
+        
+    .lkhat1 {
+        position: relative;
+    align:center;
+    padding:2px; /* تعيين الهامش الداخلي للزر */
+	text-align: center;
+	margin-top:20-px;
+	font-size: 17px;
+	color:#fff;
+	font-family: "Airarabia", Sans-serif;
+	font-weight: bold;
+      
+        } 
+        
+    </style>
+    
+
+<!-- Top navigation -->
+<div class="topnav">
+  <!-- ISIM TATBI9 -->
+  <div class="topnav-centered">
+    <a > <h5>سلاسل الافلام مترجمة</h5></a>
+  </div>
+   <!-- ISIM TATBI9 -->
+  
+  <img src="https://icons.iconarchive.com/icons/sirubico/movie-genre/256/Action-3-icon.png"style="width: 45px;
+    height: 38px; margin-top: 7px;border-radius: 8px;" alt="beIN MAX">
+ <!-- ZIR ROJO3 -->
+<a href="go:1 "><i  class="fa fa-reply fa-beat"style="font-size: 20px;"></i></a>
+                <!-- ZIR ROJO3 -->
+
+  <!-- ZIR LBAHT-search -->
+                <div class="topnav-right">
+                    <a href="http://action_search/"><i class="fa fa-search fa-beat" style="font-size: 20px;"></i></a>
+                    <!-- ZIR LBAHT-search -->
+   
+  </div>
+  
+</div>
+<div align="center" >
+<div class="container">
+<div id="page">
+    
+
+        <button class="button"onclick="window.open('https://raw.githack.com/ahmadmk2023/Movies-free1/main/aflam-mot-02.html')"><img src="https://media.fushaar.com/media/2014/07/batman-begins-4fec2c0a8a178-229x337.jpg" alt="thumb"><div class="lkhat1">الافلام batman </div></button>
+        
+      
+           
+
+</div>  
+ </div>
+</div>  
+
+</body>
+</html>
+
