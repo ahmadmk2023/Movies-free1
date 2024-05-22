@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movies Batman </title>
   <link href="https://cdn.icon-icons.com/icons2/125/PNG/96/movies_drive_20265.png" rel="icon" type="image/x-icon">
+  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://raw.githack.com/ahmadmk2023/code-java/main/watched-icon.js"></script>      
+        
 </head>
 <!-- lçaima l3lwia -->
 <body>
@@ -269,38 +272,7 @@ text-decoration:none;
 
                 </div>
 
-            </div>              
-     <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const sections = document.querySelectorAll('.section');
-
-  sections.forEach(function(section) {
-    const buttons = section.querySelectorAll('.button');
-    buttons.forEach(function(button, index) {
-      const watchedIcon = button.querySelector('.watched-icon');
-      const episodeNumber = index + 1;
-      const storageKey = `section${section.dataset.section}-watchedIcon${episodeNumber}`;
-      const isWatched = localStorage.getItem(storageKey);
-
-      if (isWatched === "true") {
-        watchedIcon.style.display = "inline";
-      }
-
-     button.addEventListener('click', function () {
-                const isWatched = localStorage.getItem(storageKey);
-
-                if (isWatched === "true") {
-                    watchedIcon.style.display = "inline";
-                } else {
-                    watchedIcon.style.display = "inline";
-                    localStorage.setItem(storageKey, "true");
-                }
-            });
-        });
-    });
-});
-
-</script>              
+            </div>                            
 </head>
 <body>
 <div align="center" >
