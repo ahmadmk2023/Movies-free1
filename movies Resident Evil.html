@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="AR" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies Batman </title>
+  <link href="https://cdn.icon-icons.com/icons2/125/PNG/96/movies_drive_20265.png" rel="icon" type="image/x-icon">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://raw.githack.com/ahmadmk2023/code-java/main/watched-icon.js"></script>      
+        
+</head>
+<!-- lçaima l3lwia -->
+<body>
+
+    <!----------  اكواد استايل القائمة  ------------>
+    <style>
+         body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+   z-index: 999; /* لضمان ظهوره فوق المحتوى */
+        }
+
+        .topnav {
+          position: fixed;
+overflow: hidden;
+border-radius:4px;
+   background-image: linear-gradient(132deg, #3c4a71 0%, #339a8a 100%);
+z-index: 999; /* لضمان ظهوره فوق المحتوى */
+top: 0;
+height: 54px;
+width: 100%;
+box-shadow: 5px 5px 7px #fff;
+z-index: 1;
+}  
+
+        .topnav a {
+            float: left;
+            color: #ffffff;
+            text-align: center;
+            padding: 15px 10px;
+            text-decoration: none;
+            font-size: 19px;
+        }
+
+       
+       .topnav a:focus,.topnav a:hover {
+            background-color: #ccc; /* يمكنك تغيير اللون إلى أي لون تفضله */
+            color: #000; /* تغيير لون النص إلى اللون المناسب للخلفية */
+            outline: none; /* إزالة تأثير الـ focus الافتراضي */
+            border-radius: 8px; border: 2px solid #ff0066;
+        }
+
+        .topnav-centered a {
+
+            float: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .topnav-right {
+            float: right;
+        }
+
+        /* Responsive navigation menu (for mobile devices) */
+        @media screen and (max-width: 100%) {
+            .topnav a,
+            .topnav-right {
+                float: none;
+                display: block;
+            }
+
+            .topnav-centered a {
+                position: relative;
+                top: 0;
+                left: 0;
+                transform: none;
+                color: #ffff;
+            }
+        }
+    </style>
+    <head>
+
+        <body>
+
+    
+
+            <!-- lçaima l3lwia and-->
+            
+            <html>
+<head>
+    
+    <style>
+   body {
+                height: 100%;
+                margin: auto;
+                position: relative;
+           background:#339a8a;
+             background-position: center;
+                align-items: center;
+                justify-content: center;
+           
+            }
+
+           .button {
+                 position: relative;
+                align:center;
+                display: inline-block; /* لجعل الزر عنصراً مستطيل الشكل */
+            padding:2px; /* تعيين الهامش الداخلي للزر */
+            border-radius: 8px; /* تدوير الزوايا لتصميم أفضل */
+            width: 155px;
+            height: 215px;
+                margin: 6px;
+              border-color: #000;
+                 background: #3c4a71; 
+            }
+
+ 
+
+          button img {
+         width: 100%; /* تحكم في عرض الصورة */
+    height: 105px; /* احتفاظ بالتناسب أثناء تغيير الحجم */
+    margin: -1px auto; /* تحكم في التباعد بين الصورة والعناصر الأخرى */
+    display: block; /* جعل الصورة تظهر بشكل مستقل */
+    border-radius: 4px; /* تحديد إطار بسمك 2 بكسل ولون أزرق */
+
+}
+ #remot:focus,#remot:hover {
+         background: #ccc; /* لون	 خلفية الزر */
+         color: #000 ;
+          border-radius: 50%;
+          outline: none; /* إزالة تأثير الـ focus الافتراضي */
+             border: 2px solid #ff0066;
+            transform: scale(1.5);
+        }
+  
+            /* .ازالة شريط التمرير اسفل المدونة*/
+            html {
+                
+            }
+
+            /* ازالة تغيير شكل السكرول بار Scroll.Bar */
+            ::-webkit-scrollbar {
+                width: 8px;
+                height: 105px;
+               overflow-x: hidden; 
+                /**  تغير  لون القائمة **/
+            }
+
+            ::-webkit-scrollbar-thumb {
+                -webkit-shadow: inset 0 0 0 #000000;
+                -webkit-border-radius: 0;
+                background-image: -webkit-linear-gradient(top, #111 100%, #000 100%);border-radius: 12px;
+            }
+
+            ::-webkit-scrollbar-track {
+                -webkit-shadow: inset 0 0 0 #000000;
+                -webkit-border-radius: 100px;
+            }
+
+.container {
+    display: flex;
+    gap: 5px; /* المسافة بين السيرفر واسم الفيلم */
+}
+
+.Movies-name, .serveur {
+    padding: 2px;
+    text-align: center;
+    font-size: 15px;
+    color: #fff;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 2px solid gold;
+    margin-top: 4px;
+    width: 140px; /* عرض الحاوية */
+}
+
+.marquee {
+    display: inline-block;
+    padding-left: 100%; /* يضمن بدء النص من خارج الحاوية */
+    animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+}
+.marquee {
+    display: inline-block;
+    padding-left: 100%; /* يضمن بدء النص من خارج الحاوية */
+    animation: marquee 12s linear infinite; /* مدة الحركة 10 ثوانٍ */
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+}     
+      .number-container {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin-top: 5px;
+          
+        }
+
+
+
+        .number {
+            width: 30px;
+            height: 30px;
+             background:#339a8a;
+            border-radius: 50%;
+             border:3px solid #333;
+            color: #FFF;
+         font-size: 12px;
+         font-weight: bold  ;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+       a{
+color: black;
+text-decoration:none;
+}
+#al{
+color: yellow;
+text-decoration:none;
+
+}
+                #page {
+            margin-top: 60px;
+            width: 100%;
+        }
+        
+                
+/* تظهر الأيقونة أعلى الزجاجية */
+.watched-icon {
+    position: absolute;
+    top: 0;
+    left: 0; /* يمكنك ضبط القيمة الأفضل حسب تصميمك */
+    width: 20px;
+    height: 20px;
+     /* لجعلها تظهر فوق الزجاجية */
+    background:#fff; /* لخلفية زجاجية بلون أبيض شفاف */
+    border-radius: 5px; /* للزوايا المستديرة */
+    border:2px solid #000;
+    padding: 5px; /* تعديل حجم الأيقونة داخل الزجاجية */
+}
+                </style>
+                
+                
+          <!-- Top navigation -->
+            <div class="topnav">
+                <!-- ISIM TATBI9 -->
+                <div class="topnav-centered">
+                 <a><h6> الافلام Resident Evil مترجم</h6> </a>
+                </div>
+                <!-- ISIM TATBI9 -->
+
+                <!-- ZIR ROJO3 -->
+<a href="go:afmv "><i  class="fa fa-reply "style="font-size: 20px;"></i>
+                </a>
+                <!-- ZIR ROJO3 -->
+
+ <a ><i class="fa fa-film"></i></a>
+                <!-- ZIR LBAHT-search -->
+                
+                
+                <div class="topnav-right">
+                    <a href="http://action_search/"><i class="fa fa-search " style="font-size: 20px;"></i></a>
+                    <!-- ZIR LBAHT-search -->
+
+                </div>
+
+            </div>                            
+</head>
+<body>
+<div align="center" >
+<div class="container">
+<div id="page">
+<div class="section" data-section="Resident">
+<!--+++++++++++++++++-->      
+<button class="button">
+  <img src="https://media.fushaar.com/media/2017/02/kL5819G7Wrug2AY5UyBNNd54s9V-229x337.jpg" alt="app tv"onerror="handleImageError(this)">
+  <div class="Movies-name">
+    <span class="marquee">Resident Evil 6: Retribution 2016 مترجم</span>
+  </div>
+  <div class="serveur">سيرفرات المشاهدة</div>
+  <div class="number-container">
+    <div>
+      <img class="watched-icon" src="https://cdn-icons-png.freepik.com/512/686/686333.png?ga=GA1.1.1704221200.1716147359" alt="Watched Icon" style="display: none;">
+    </div>
+    <a href="intent://stream.fushaar.link/movie/15002/15002.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ">
+      <div id="remot" tabindex="1" class="number">FHD</div>
+    </a>
+    <a href="intent://stream.fushaar.link/movie/15002/15002-480p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ">
+      <div id="remot" tabindex="1" class="number">HD</div>
+    </a>
+    <a href="intent://stream.fushaar.link/movie/15002/15002-240p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ">
+      <div id="remot" tabindex="1" class="number">SD</div>
+    </a>
+  </div>
+</button>
+<!--+++++++++++++++++-->      
+<button class="button">
+  <img src="https://media.fushaar.com/media/2014/10/11168062_ori-229x337.jpg" alt="app tv"onerror="handleImageError(this)">
+  <div class="Movies-name">
+    <span class="marquee">Resident Evil 5: Retribution 2012 مترجم</span>
+  </div>
+  <div class="serveur">سيرفرات المشاهدة</div>
+  <div class="number-container">
+    <div>
+      <img class="watched-icon" src="https://cdn-icons-png.freepik.com/512/686/686333.png?ga=GA1.1.1704221200.1716147359" alt="Watched Icon" style="display: none;">
+    </div>
+    <a href="intent://stream.fushaar.link/movie/3764/3764.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ">
+      <div id="remot" tabindex="1" class="number">FHD</div>
+    </a>
+    <a href="intent://stream.fushaar.link/movie/3764/3764-480p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ">
+      <div id="remot" tabindex="1" class="number">HD</div>
+    </a>
+    <a href="intent://stream.fushaar.link/movie/3764/3764-240p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ">
+      <div id="remot" tabindex="1" class="number">SD</div>
+    </a>
+  </div>
+</button>
+
+<!--+++++++++++++++++-->      
+<button class="button">
+  <img src="https://media.fushaar.com/media/2014/10/11169878_ori-229x337.jpg" alt="app tv"onerror="handleImageError(this)">
+  <div class="Movies-name">
+    <span class="marquee">Resident Evil 4: Extinction 2010 مترجم</span>
+  </div>
+  <div class="serveur">سيرفرات المشاهدة</div>
+  <div class="number-container">
+    <div>
+      <img class="watched-icon" src="https://cdn-icons-png.freepik.com/512/686/686333.png?ga=GA1.1.1704221200.1716147359" alt="Watched Icon" style="display: none;">
+    </div>
+    <a href="intent://stream.fushaar.link/movie/3742/3742.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ">
+      <div id="remot" tabindex="1" class="number">FHD</div>
+    </a>
+    <a href="intent://stream.fushaar.link/movie/3742/3742-480p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ">
+      <div id="remot" tabindex="1" class="number">HD</div>
+    </a>
+    <a href="intent://stream.fushaar.link/movie/3742/3742-240p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ">
+      <div id="remot" tabindex="1" class="number">SD</div>
+    </a>
+  </div>
+</button>
+
+<!--+++++++++++++++++-->      
+<button class="button">
+  <img src="https://media.fushaar.com/media/2014/10/11169881_ori-229x337.jpg" alt="app tv"onerror="handleImageError(this)">
+  <div class="Movies-name">
+    <span class="marquee">Resident Evil 3: Extinction 2004 مترجم</span>
+  </div>
+  <div class="serveur">سيرفرات المشاهدة</div>
+  <div class="number-container">
+    <div>
+      <img class="watched-icon" src="https://cdn-icons-png.freepik.com/512/686/686333.png?ga=GA1.1.1704221200.1716147359" alt="Watched Icon" style="display: none;">
+    </div>
+    <a href="intent://stream.fushaar.link/movie/3721/3721.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ">
+      <div id="remot" tabindex="1" class="number">FHD</div>
+    </a>
+    <a href="intent://stream.fushaar.link/movie/3721/3721-480p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ">
+      <div id="remot" tabindex="1" class="number">HD</div>
+    </a>
+    <a href="intent://stream.fushaar.link/movie/3721/3721-240p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ">
+      <div id="remot" tabindex="1" class="number">SD</div>
+    </a>
+  </div>
+</button>
+
+
+<!--+++++++++++++++++-->      
+<button class="button">
+  <img src="https://media.fushaar.com/media/2014/10/11169879_ori-229x337.jpg" alt="app tv"onerror="handleImageError(this)">
+  <div class="Movies-name">
+    <span class="marquee">مشاهدة فيلم Resident Evil 2: Apocalypse
+ 2004 مترجم</span>
+  </div>
+  <div class="serveur">سيرفرات المشاهدة</div>
+  <div class="number-container">
+    <div>
+      <img class="watched-icon" src="https://cdn-icons-png.freepik.com/512/686/686333.png?ga=GA1.1.1704221200.1716147359" alt="Watched Icon" style="display: none;">
+    </div>
+    <a href="intent://stream.fushaar.link/movie/3643/3643.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ">
+      <div id="remot" tabindex="1" class="number">FHD</div>
+    </a>
+    <a href="intent://stream.fushaar.link/movie/3643/3643-480p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ">
+      <div id="remot" tabindex="1" class="number">HD</div>
+    </a>
+    <a href="intent://stream.fushaar.link/movie/3643/3643-240p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ">
+      <div id="remot" tabindex="1" class="number">SD</div>
+    </a>
+  </div>
+</button>
+               <!--+++++++++++++++++-->                         
+  <button class="button">
+  <img src="https://media.fushaar.com/media/2014/10/11169877_ori-229x337.jpg" alt="app tv" onerror="handleImageError(this)">
+  <div class="Movies-name">
+    <span class="marquee">مشاهدة فيلم Resident Evil 1 2002 مترجم</span>
+  </div>
+  <div class="serveur">سيرفرات المشاهدة</div>
+  <div class="number-container">
+    <div>
+      <img class="watched-icon" src="https://cdn-icons-png.freepik.com/512/686/686333.png?ga=GA1.1.1704221200.1716147359" alt="Watched Icon" style="display: none;">
+    </div>
+    <a href="intent://stream.fushaar.link/movie/3634/3634.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ">
+      <div id="remot" tabindex="1" class="number">FHD</div>
+    </a>
+    <a href="intent://stream.fushaar.link/movie/3634/3634-480p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ">
+      <div id="remot" tabindex="1" class="number">HD</div>
+    </a>
+    <a href="intent://stream.fushaar.link/movie/3634/3634-240p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ">
+      <div id="remot" tabindex="1" class="number">SD</div>
+    </a>
+  </div>
+</button>             
+ 
+               <!--+++++++++++++++++-->                          
+   <script>
+function handleImageError(img) {
+  img.src = 'https://i.imgur.com/MXnSqzd.png';
+}
+</script>
+
+  </div> 
+         </div>
+        </div>
+    </div>
+</body>
+</html>
