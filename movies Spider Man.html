@@ -162,40 +162,28 @@ z-index: 1;
                 -webkit-border-radius: 100px;
             }
 
-.Movies-name  {
-        position: relative; 
-        align:center;
-        padding:2px; /* تعيين الهامش الداخلي للزر */
-        text-align: center;
-        font-size: 13px;
-       color: #fff;
-         font-weight: bold  ;
-     margin-top: 4px ;
-      align-items: center;
-      justify-content: center;
-    width: 140px;
-    height: 18px;
+.container {
+    display: flex;
+    gap: 5px; /* المسافة بين السيرفر واسم الفيلم */
+}
+
+.Movies-name, .serveur {
+    padding: 2px;
+    text-align: center;
+    font-size: 15px;
+    color: #fff;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    overflow: hidden;
     border-radius: 8px;
-    border:2px solid gold;
-      
-        }
-        
-.serveur {
-    position: center; 
-    background:#8761ED;
-    padding:2px; /* تعيين الهامش الداخلي للزر */
-        text-align: center;
-        font-size: 15px;
-       color: #fff;
-         font-weight: bold  ;
-      margin-top: 5px;
-        align-items: center;
-      justify-content: center;
-    width: 140px;
-    height: 18px;
-    border-radius: 4px;
-   border:1px solid gold;
-        }      
+    border: 2px solid gold;
+    margin-top: 4px;
+    width: 140px; /* عرض الحاوية */
+}
+
       .number-container {
             display: flex;
             justify-content: space-around;
