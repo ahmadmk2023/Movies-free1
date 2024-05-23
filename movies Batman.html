@@ -162,39 +162,23 @@ z-index: 1;
                 -webkit-border-radius: 100px;
             }
 
-.Movies-name  {
-        position: relative; 
-        align:center;
-        padding:2px; /* تعيين الهامش الداخلي للزر */
-        text-align: center;
-        font-size: 15px;
-       color: #fff;
-         font-weight: bold  ;
-     margin-top: 4px ;
-      align-items: center;
-      justify-content: center;
-    width: 140px;
-    height: 18px;
+.Movies-name, .serveur {
+    padding: 2px;
+    text-align: center;
+    font-size: 15px;
+    color: #fff;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    overflow: hidden;
     border-radius: 8px;
-    border:2px solid gold;
-      
-        }
-        
-.serveur {
-    position: center;
-    padding:2px; /* تعيين الهامش الداخلي للزر */
-        text-align: center;
-        font-size: 15px;
-       color: #fff;
-         font-weight: bold  ;
-      margin-top: 5px;
-        align-items: center;
-      justify-content: center;
-    width: 140px;
+    border: 2px solid gold;
+    margin-top: 4px;
+    width: 140px; /* عرض الحاوية */
     height: 18px;
-    border-radius: 4px;
-   border:1px solid gold;
-        }      
+}     
       .number-container {
             display: flex;
             justify-content: space-around;
@@ -281,7 +265,7 @@ text-decoration:none;
 <div class="section" data-section="batman01">
         <!--+++++++++++++++++-->  
   <button class="button">
-<img src="https://media.fushaar.com/media/2022/03/image-229x337.jpeg" alt="app tv">
+<img src="https://media.fushaar.com/media/2022/03/image-229x337.jpeg" alt="app tv"onerror="handleImageError(this)">
         <div class="Movies-name ">باتمان2022</div>
    <div class="serveur">  سيرفرات المشاهدة</div> 
                         <!-- إضافة شكل الأرقام الدائرية -->
@@ -293,7 +277,7 @@ text-decoration:none;
                                          <a href="intent://stream.fushaar.link/movie/11452/11452-240p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end "><div id="remot" tabindex="1" class="number" >SD</div></a> </div ></button> 
                <!--+++++++++++++++++-->              
 <button class="button">
-<img src="https://media.fushaar.com/media/2016/03/6bCplVkhowCjTHXWv49UjRPn0eK-229x337.jpg" alt="app tv">
+<img src="https://media.fushaar.com/media/2016/03/6bCplVkhowCjTHXWv49UjRPn0eK-229x337.jpg" alt="app tv"onerror="handleImageError(this)">
         <div class="Movies-name"style="font-size: 14px;">باتمان ضد سوبرمان2016</div>
    <div class="serveur">  سيرفرات المشاهدة</div> 
                         <!-- إضافة شكل الأرقام الدائرية -->
@@ -306,7 +290,7 @@ text-decoration:none;
                                          
                  <!--+++++++++++++++++-->      
 <button class="button">
-<img src="https://i.imgur.com/MAq7E2k.jpg" alt="app tv">
+<img src="https://i.imgur.com/MAq7E2k.jpg" alt="app tv"onerror="handleImageError(this)">
         <div class="Movies-name ">نهوض فارس2012</div>
    <div class="serveur">  سيرفرات المشاهدة</div> 
                         <!-- إضافة شكل الأرقام الدائرية -->
@@ -316,11 +300,22 @@ text-decoration:none;
 
 <a href="intent://stream.fushaar.link/movie/1558/1558-480p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end "><div id="remot" tabindex="1" class="number">HD</div></a>
                                          <a href="intent://stream.fushaar.link/movie/1558/1558-240p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end "><div id="remot" tabindex="1" class="number" >SD</div></a> </div ></button>                                        
-                                         
+                      <!--+++++++++++++++++-->      
+<button class="button">
+<img src="https://media.fushaar.com/media/2014/07/11165160_ori-229x337.jpg" alt="app tv"onerror="handleImageError(this)">
+<div class="Movies-name ">The Dark Knight2008</div>
+   <div class="serveur">  سيرفرات المشاهدة</div> 
+                        <!-- إضافة شكل الأرقام الدائرية -->
+                        <div class="number-container">  <div> 
+<img class="watched-icon" src="https://cdn-icons-png.freepik.com/512/686/686333.png?ga=GA1.1.1704221200.1716147359" alt="Watched Icon" style="display: none;"></div>
+   <a href="intent://stream.fushaar.link/movie/1452/1452.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end "><div id="remot" tabindex="1" class="number">FHD</div></a>
+                                        <a href="intent://stream.fushaar.link/movie/1452/1452-480p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end "><div id="remot" tabindex="1" class="number">HD</div></a>
+                                         <a href="intent://stream.fushaar.link/movie/1452/1452-240p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end "><div id="remot" tabindex="1" class="number" >SD</div></a> </div ></button> 
+               <!--+++++++++++++++++-->                                   
                                          
                <!--+++++++++++++++++-->      
 <button class="button">
-<img src="https://media.fushaar.com/media/2014/07/batman-begins-4fec2c0a8a178-229x337.jpg" alt="app tv">
+<img src="https://media.fushaar.com/media/2014/07/batman-begins-4fec2c0a8a178-229x337.jpg" alt="app tv"onerror="handleImageError(this)">
         <div class="Movies-name ">بداية باتمان2005</div>
    <div class="serveur">  سيرفرات المشاهدة</div> 
                         <!-- إضافة شكل الأرقام الدائرية -->
@@ -331,6 +326,11 @@ text-decoration:none;
                                          <a href="intent://stream.fushaar.link/movie/1364/1364-240p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end "><div id="remot" tabindex="1" class="number" >SD</div></a> </div ></button> 
                <!--+++++++++++++++++-->                          
    
+   <script>
+function handleImageError(img) {
+  img.src = 'https://i.imgur.com/MXnSqzd.png';
+}
+</script>
 
   </div> 
          </div>
