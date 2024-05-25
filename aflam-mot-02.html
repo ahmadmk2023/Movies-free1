@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+   <script src="https://raw.githack.com/ahmadmk2023/code-java/main/watched-icon.js"></script>         
 <body>
 
     <!----------  اكواد استايل القائمة  ------------>
@@ -153,42 +155,23 @@ z-index: 1;
                 -webkit-shadow: inset 0 0 0 #000000;
                 -webkit-border-radius: 100px;
             }
-
-.lkhat1 {
-position: relative; 
-        align:center;
-        padding:2px; /* تعيين الهامش الداخلي للزر */
-        text-align: center;
-        font-size: 15px;
-       color: #fff;
-         font-weight: bold  ;
-     margin-top: 5px ;
-      align-items: center;
-      justify-content: center;
-    width: 140px;
-    height: 18px;
+.lkhat1, .khlfia {
+    padding: 2px;
+    text-align: center;
+    font-size: 15px;
+    color: #fff;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    overflow: hidden;
     border-radius: 8px;
-   border:2px solid gold;
-      
-      
-        }
-        
-.khlfia {
-    background: #000; /* لون	 خلفية الزر */
-    position: relative;
-    padding:2px; /* تعيين الهامش الداخلي للزر */
-        text-align: center;
-        font-size: 15px;
-       color: #fff;
-         font-weight: bold  ;
-      margin-top: 5px;
-      align-items: center;
-      justify-content: center;
-    width: 140px;
+    border: 2px solid gold;
+    margin-top: 2px;
+    width: 140px; /* عرض الحاوية */
     height: 18px;
-    border-radius: 4px;
-   border:2px solid gold;
-        }      
+}
 
       .number-container {
             display: flex;
@@ -297,47 +280,65 @@ h1 {
                 </div>
 
             </div>              
-     <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const sections = document.querySelectorAll('.section');
-
-  sections.forEach(function(section) {
-    const buttons = section.querySelectorAll('.button');
-    buttons.forEach(function(button, index) {
-      const watchedIcon = button.querySelector('.watched-icon');
-      const episodeNumber = index + 1;
-      const storageKey = `section${section.dataset.section}-watchedIcon${episodeNumber}`;
-      const isWatched = localStorage.getItem(storageKey);
-
-      if (isWatched === "true") {
-        watchedIcon.style.display = "inline";
-      }
-
-     button.addEventListener('click', function () {
-                const isWatched = localStorage.getItem(storageKey);
-
-                if (isWatched === "true") {
-                    watchedIcon.style.display = "inline";
-                } else {
-                    watchedIcon.style.display = "inline";
-                    localStorage.setItem(storageKey, "true");
-                }
-            });
-        });
-    });
-});
-
-</script>              
+              
 </head>
 <body>
 <div align="center" >
 <div class="container">
 <div id="page">
 <div class="section" data-section="aflam-modblja-02">
+ <!--+++++++++++++++++-->                   
+ <button class="button"><img src="https://media.fushaar.com/media/2024/05/hkxxMIGaiCTmrEArK7J56JTKUlB-229x337.jpg" alt="app tv"onerror="handleImageError(this)">
+        <div class="lkhat1">جودزيلا ناقص واحد</div>
+   <div class="khlfia">  سيرفرات المشاهدة</div> 
+                        <!-- إضافة شكل الأرقام الدائرية -->
+                        <div class="number-container">  <div> 
+<img class="watched-icon" src="https://cdn-icons-png.freepik.com/512/2009/2009778.png?ga=GA1.1.696197500.1713527064" alt="Watched Icon" style="display: none;"></div>
 
+   <a href="intent://stream.fushaar.link/movie/47726/47726.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end "><div id="remot" tabindex="1" class="number">FHD</div></a>
 
+ <a href="intent://stream.fushaar.link/movie/47726/47726-480p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end "><div id="remot" tabindex="1" class="number">HD</div></a>
+                                         <a href="intent:delivery-node-b746hrjvo4eyqx4v.voe-network.net/engine/hls2-c/01/11402/c4uvj1sld7f0_,n,.urlset/master.m3u8?t=_RQ3D-XxPS6eFRsWIYUzUdGEgp-FEDbaL-jB9jdFFWA&s=1716681062&e=14400&f=57014653&node=delivery-node-6li7ojwnpwqec5ts.voe-network.net&i=196.117&sp=2500&asn=36925#Intent;scheme=https;package=co.wuffy.player;end "><div id="remot" tabindex="1" class="number" >SD</div></a> </div ></button> 
+               <!--+++++++++++++++++--> 
+                <!--+++++++++++++++++-->                   
+ <button class="button"><img src="https://media.fushaar.com/media/2024/04/uoBHsxSgfc3PQsSn98RfnbePHOy-229x337.jpg" alt="app tv"onerror="handleImageError(this)">
+        <div class="lkhat1">صانع الدموع</div>
+   <div class="khlfia">  سيرفرات المشاهدة</div> 
+                        <!-- إضافة شكل الأرقام الدائرية -->
+                        <div class="number-container">  <div> 
+<img class="watched-icon" src="https://cdn-icons-png.freepik.com/512/2009/2009778.png?ga=GA1.1.696197500.1713527064" alt="Watched Icon" style="display: none;"></div>
 
-<button class="button"><img src="https://media.fushaar.com/media/2024/02/sIarhkJFX9QURFc0ZD35N2wmqtn-229x337.jpg" >
+   <a href="intent://stream.fushaar.link/movie/47713/47713.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end "><div id="remot" tabindex="1" class="number">FHD</div></a>
+
+ <a href="intent://stream.fushaar.link/movie/47713/47713-480p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end "><div id="remot" tabindex="1" class="number">HD</div></a>
+                                         <a href="intent://delivery-node-kkcaaydxqcwtrsep.voe-network.net/engine/hls2/01/11400/o7ubhae38y6s_,n,.urlset/master.m3u8?t=TTpvA2NMgvxEoQe0BQcMNifB3GgEhxqdE9Axwm30ESE&s=1716680866&e=14400&f=57001612&node=delivery-node-kkcaaydxqcwtrsep.voe-network.net&i=196.117&sp=2500&asn=36925#Intent;scheme=https;package=co.wuffy.player;end "><div id="remot" tabindex="1" class="number" >SD</div></a> </div ></button> 
+               <!--+++++++++++++++++--> 
+ <button class="button"><img src="https://media.fushaar.com/media/2024/04/9E8QM7zsuKWEvKT4WMf13zYCxFV-229x337.jpg"onerror="handleImageError(this)" >
+        <div class="lkhat1">American Outlaws</div>
+   <div class="khlfia">  سيرفرات المشاهدة</div> 
+                        <!-- إضافة شكل الأرقام الدائرية -->
+                        <div class="number-container">  <div> 
+<img class="watched-icon" src="https://cdn-icons-png.freepik.com/512/2009/2009778.png?ga=GA1.1.696197500.1713527064" alt="Watched Icon" style="display: none;"></div>
+
+   <a href="intent://stream.fushaar.link/movie/47692/47692.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end "><div id="remot" tabindex="1" class="number">FHD</div></a>
+
+ <a href="intent://stream.fushaar.link/movie/47692/47692-480p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end"><div id="remot" tabindex="1" class="number">HD</div></a>
+                                         <a href="intent://delivery-node-dn6647kwlzsbafuk.voe-network.net/engine/hls2/01/11180/m4pyr51piu2q_,n,.urlset/master.m3u8?t=_w6Y3YuiA500k1IlwuLdJoIMKfXxtLpfsLEMMPK0_6E&s=1716680409&e=14400&f=55904853&node=delivery-node-dn6647kwlzsbafuk.voe-network.net&i=196.117&sp=2500&asn=36925#Intent;scheme=https;package=co.wuffy.player;end"><div id="remot" tabindex="1" class="number" >SD</div></a> </div ></button>
+ <!-- +++++++++++++++++++++++++++++ -->
+ 
+<button class="button"><img src="https://media.fushaar.com/media/2024/04/5DwQhh1HvTo7edaOeMX49NUyZqy-229x337.jpg" onerror="handleImageError(this)">
+        <div class="lkhat1">الكلاب النائمة</div>
+   <div class="khlfia">  سيرفرات المشاهدة</div> 
+                        <!-- إضافة شكل الأرقام الدائرية -->
+                        <div class="number-container">  <div> 
+<img class="watched-icon" src="https://cdn-icons-png.freepik.com/512/2009/2009778.png?ga=GA1.1.696197500.1713527064" alt="Watched Icon" style="display: none;"></div>
+
+   <a href="intent://stream.fushaar.link/movie/47708/47708.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end "><div id="remot" tabindex="1" class="number">FHD</div></a>
+
+ <a href="intent://stream.fushaar.link/movie/47708/47708-480p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end"><div id="remot" tabindex="1" class="number">HD</div></a>
+                                         <a href="intent://stream.fushaar.link/movie/47708/47708-240p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end"><div id="remot" tabindex="1" class="number" >SD</div></a> </div ></button>
+ <!-- +++++++++++++++++++++++++++++ -->
+<button class="button"><img src="https://media.fushaar.com/media/2024/02/sIarhkJFX9QURFc0ZD35N2wmqtn-229x337.jpg" onerror="handleImageError(this)">
         <div class="lkhat1">الجنوب القذر</div>
    <div class="khlfia">  سيرفرات المشاهدة</div> 
                         <!-- إضافة شكل الأرقام الدائرية -->
@@ -351,7 +352,7 @@ document.addEventListener('DOMContentLoaded', function() {
  <!-- +++++++++++++++++++++++++++++ -->
  
  
- <button class="button"><img src="https://media.fushaar.com/media/2024/02/91YJFHdTTF24Vab33XbToAh3TOo-229x337.jpg" >
+ <button class="button"><img src="https://media.fushaar.com/media/2024/02/91YJFHdTTF24Vab33XbToAh3TOo-229x337.jpg"onerror="handleImageError(this)" >
         <div class="lkhat1">المربع: استعارة</div>
    <div class="khlfia">  سيرفرات المشاهدة</div> 
                         <!-- إضافة شكل الأرقام الدائرية -->
@@ -728,15 +729,19 @@ YXlsaXN0Lm0zdTg/d21zQXV0aFNpZ24=
    <a href="intent://stream.fushaar.link/movie/47600/47600.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end "><div id="remot" tabindex="1" class="number">FHD</div></a>
 
  <a href="intent://stream.fushaar.link/movie/47600/47600-480p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end "><div id="remot" tabindex="1" class="number">HD</div></a>
-                                         <a href="intent://stream.fushaar.link/movie/47600/47600-240p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end "><div id="remot" tabindex="1" class="number" >SD</div></a> </div ></button> 
+                                         <a href="intent://stream.fushaar.link/movie/47600/47600-240p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end "><div id="remot" tabindex="1" class="number" >SD</div></a> </div ></button> </div>
                <!--+++++++++++++++++-->   
                <b>
                
   <a class="h1" href="https://raw.githack.com/ahmadmk2023/Movies-free1/main/aflam-mot-01.html"><div><h1 class="h1"tabindex="1" > page-01-المزيد من الأفلام</h1></div> </a>            
                           </b>
     
-       
-  </div> 
+     <script>
+function handleImageError(img) {
+  img.src = 'https://i.imgur.com/MXnSqzd.png';
+}
+</script>     
+   
          </div>
         </div>
     </div>
