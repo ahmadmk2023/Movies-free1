@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <script src="https://raw.githack.com/ahmadmk2023/code-java/main/watched-icon.js"></script>      
+     
 <body>
 
     <!----------  اكواد استايل القائمة  ------------>
@@ -173,23 +175,23 @@ position: relative;
       
         }
         
-.khlfia {
-    background: #000; /* لون	 خلفية الزر */
-    position: relative;
-    padding:2px; /* تعيين الهامش الداخلي للزر */
-        text-align: center;
-        font-size: 15px;
-       color: #fff;
-         font-weight: bold  ;
-      margin-top: 5px;
-      align-items: center;
-      justify-content: center;
-    width: 140px;
+.lkhat1,.khlfia {
+    padding: 2px;
+    text-align: center;
+    font-size: 15px;
+    color: #fff;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 2px solid gold;
+    margin-top: 2px;
+    width: 140px; /* عرض الحاوية */
     height: 18px;
-    border-radius: 4px;
-   border:2px solid gold;
-        }      
-
+}
       .number-container {
             display: flex;
             justify-content: space-around;
@@ -278,37 +280,7 @@ text-decoration:none;
                 </div>
 
             </div>              
-     <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const sections = document.querySelectorAll('.section');
-
-  sections.forEach(function(section) {
-    const buttons = section.querySelectorAll('.button');
-    buttons.forEach(function(button, index) {
-      const watchedIcon = button.querySelector('.watched-icon');
-      const episodeNumber = index + 1;
-      const storageKey = `section${section.dataset.section}-watchedIcon${episodeNumber}`;
-      const isWatched = localStorage.getItem(storageKey);
-
-      if (isWatched === "true") {
-        watchedIcon.style.display = "inline";
-      }
-
-     button.addEventListener('click', function () {
-                const isWatched = localStorage.getItem(storageKey);
-
-                if (isWatched === "true") {
-                    watchedIcon.style.display = "inline";
-                } else {
-                    watchedIcon.style.display = "inline";
-                    localStorage.setItem(storageKey, "true");
-                }
-            });
-        });
-    });
-});
-
-</script>              
+      
 </head>
 <body>
 <div align="center" >
@@ -321,17 +293,19 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="lkhat1">أبو نسب 2024</div>
    <div class="khlfia">  سيرفرات المشاهدة</div> 
                         <!-- إضافة شكل الأرقام الدائرية -->
-                        <div class="number-container"id="VideoPlayer">  <div> 
+                        <div class="number-container">  <div> 
 <img class="watched-icon" src="https://i.imgur.com/EPfa2hM.png" alt="Watched Icon" style="display: none;"></div>
-   <a id="VideoPlayer" href="https://raw.githack.com/ahmadmk2023/aflm-ajnabi-AR/main/abo%20nasb.html"><div id="remot" tabindex="1" class="number">FHD</div></a>
+   <a  href="intent://aHR0cHM6Ly9kbC5kcm9wYm94LmNvbS9zY2wvZmkvaGs4cmF5N3ZtcWJqb2s1bGx0NWVkL0Fib19O
+YXNhYi4yMDIzLm1wND9ybGtleT1uYXludjE1cHoweHhyYXdoeG02MzJmeWZuJnN0PXh6MHlqeW96
+JmRsPTA=#Intent;scheme=xmtv;package=co.wuffy.player;end"><div id="remot" tabindex="1" class="number">FHD</div></a>
 
-                                        <a href="intent://aHR0cHM6Ly90Z2I0LnRvcDE1dG9wLnNob3Avd2xzcnp5bGlqOWpoL0Fib19OYXNhYi4yMDIzLjEw
-ODBwLllhbmdvUGxheS5XZWItRGwud2VjaWltYS5hdXRvcy5tcDQuaHRtbD9LZXk9eDlTcHpNZVFo
-ei05LVd1S3BfSTl0QSZFeHBpcmVzPTE3MTYxNDgwNjA=#Intent;scheme=xmtv;package=co.wuffy.player;end "><div id="remot" tabindex="1" class="number">HD</div></a>
+                                        <a href="intent://aHR0cHM6Ly9kbC5kcm9wYm94LmNvbS9zY2wvZmkvaGs4cmF5N3ZtcWJqb2s1bGx0NWVkL0Fib19O
+YXNhYi4yMDIzLm1wND9ybGtleT1uYXludjE1cHoweHhyYXdoeG02MzJmeWZuJnN0PXh6MHlqeW96
+JmRsPTA=#Intent;scheme=xmtv;package=co.wuffy.player;end "><div id="remot" tabindex="1" class="number">HD</div></a>
                                          <a href="https://qwe4.viidhdr.shop/embed-ku9jqji70o0n.html"><div id="remot" tabindex="1" class="number" >SD</div></a> </div ></button> 
-                                      
-  
-  </div> 
+                                         
+                                         
+                                         </div> 
          </div>
         </div>
     </div>
