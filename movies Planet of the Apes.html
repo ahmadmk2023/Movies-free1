@@ -162,52 +162,42 @@ z-index: 1;
                 -webkit-border-radius: 100px;
             }
 
-.container {
-    display: flex;
-    gap: 5px; /* المسافة بين السيرفر واسم الفيلم */
-}
+ .container {
+            display: flex;
+            gap: 5px; /* المسافة بين السيرفر واسم الفيلم */
+        }
 
-.Movies-name, .serveur {
-    padding: 2px;
-    text-align: center;
-    font-size: 15px;
-    color: #fff;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    white-space: nowrap;
-    overflow: hidden;
-    border-radius: 8px;
-    border: 2px solid gold;
-    margin-top: 2px;
-    width: 140px; /* عرض الحاوية */
+        .serveur, .Movies-name {
+            padding: 2px; /* تعيين الهامش الداخلي للزر */
+            text-align: center;
+            font-size: 15px; /* حجم الخط النسبي */
+            color: #fff;
+            font-weight: bold;
+            display: flex; /* لتفعيل align-items و justify-content */
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap; /* لمنع النصوص الطويلة من الانتقال للسطر التالي */
+            overflow: hidden; /* إخفاء النص الزائد */
+            border-radius: 1vw; /* نصف قطر الحدود النسبي */
+            border: 0.3vw solid gold; /* حدود النسبي */
+            position: relative;
+             width: 140px; /* عرض الحاوية */
     height: 18px;
-}
+        }
 
-.marquee {
-    display: inline-block;
-    padding-left: 100%; /* يضمن بدء النص من خارج الحاوية */
-    animation: marquee 15s linear infinite;
-    direction:rtl;
-}
+     
+    .marquee {
+            display: inline-block;
+            animation: marquee 15s linear infinite; /* مدة الحركة 15 ثانية */
+            white-space: nowrap;
+        }
 
-@keyframes marquee {
-    0% { transform: translateX(0%); }
-    100% { transform: translateX(-100%);
-    direction:rtl; }
-}
-.marquee {
-    display: inline-block;
-    direction:rtl;
-    padding-left: 100%; /* يضمن بدء النص من خارج الحاوية */
-    animation: marquee 15s linear infinite; /* مدة الحركة 10 ثوانٍ */
-}
 
-@keyframes marquee {
-    0% { transform: translateX(0%); }
-    100% { transform: translateX(-100%); direction:rtl;}
-}     
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+    
       .number-container {
             display: flex;
             justify-content: space-around;
@@ -261,6 +251,13 @@ text-decoration:none;
     border:2px solid #000;
     padding: 5px; /* تعديل حجم الأيقونة داخل الزجاجية */
 }
+
+
+/* تخصيص للشاشات الصغيرة (مثل الهواتف المحمولة) */
+@media (max-width: 767px) 
+/* تخصيص للشاشات الكبيرة (مثل شاشات التلفاز) */
+@media (min-width: 768px)
+
                 </style>
                 
                 
@@ -298,20 +295,20 @@ text-decoration:none;
   <button class="button">
   <img src="https://wallpapercave.com/wp/wp8361676.jpg" alt="app tv" onerror="handleImageError(this)">
   <div class="Movies-name">
-<span class="marquee">مشاهدة فيلم Planet of the Apes 2001 مترجم </span>
+<span class="marquee"direction="right" >مشاهدة فيلم Planet of the Apes 2001 مترجم </span>
   </div>
   <div class="serveur">سيرفرات المشاهدة</div>
   <div class="number-container"id="myLink">
     <div>
       <img class="watched-icon" src="https://cdn-icons-png.freepik.com/512/686/686333.png?ga=GA1.1.1704221200.1716147359" alt="Watched Icon" style="display: none;">
     </div>
-  <a  href="intent://https://dl.dropbox.com/scl/fi/e1zkkdiavtf3ldavybbed/Planet.of.the.Apes.2001.mp4?rlkey=p8qlx89ah3ac09rbma5ze86dd&st=fx8ax3mx&dl=0#Intent;scheme=https;package=co.wuffy.player;end ">
+  <a  href="intent://dl.dropbox.com/scl/fi/e1zkkdiavtf3ldavybbed/Planet.of.the.Apes.2001.mp4?rlkey=p8qlx89ah3ac09rbma5ze86dd&st=fx8ax3mx&dl=0#Intent;scheme=https;package=co.wuffy.player;end ">
       <div id="remot" tabindex="1" class="number">FHD</div>
     </a>
-    <a href="iintent://https://dl.dropbox.com/scl/fi/e1zkkdiavtf3ldavybbed/Planet.of.the.Apes.2001.mp4?rlkey=p8qlx89ah3ac09rbma5ze86dd&st=fx8ax3mx&dl=0#Intent;scheme=https;package=co.wuffy.player;end"><div id="remot" tabindex="1" class="number">HD</div>
+    <a href="intent://dl.dropbox.com/scl/fi/e1zkkdiavtf3ldavybbed/Planet.of.the.Apes.2001.mp4?rlkey=p8qlx89ah3ac09rbma5ze86dd&st=fx8ax3mx&dl=0#Intent;scheme=https;package=co.wuffy.player;end"><div id="remot" tabindex="1" class="number">HD</div>
     </a>
     
-    <a href="intent://https://dl.dropbox.com/scl/fi/e1zkkdiavtf3ldavybbed/Planet.of.the.Apes.2001.mp4?rlkey=p8qlx89ah3ac09rbma5ze86dd&st=fx8ax3mx&dl=0#Intent;scheme=https;package=co.wuffy.player;end">
+    <a href="intent://dl.dropbox.com/scl/fi/e1zkkdiavtf3ldavybbed/Planet.of.the.Apes.2001.mp4?rlkey=p8qlx89ah3ac09rbma5ze86dd&st=fx8ax3mx&dl=0#Intent;scheme=https;package=co.wuffy.player;end">
       <div id="remot" tabindex="1" class="number">SD</div>
     </a>
   </div>
@@ -371,7 +368,7 @@ text-decoration:none;
     </div>
      <a  href="intent://stream.fushaar.link/movie/16962/16962.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ">
       <div id="remot" tabindex="1" class="number">FHD</div>
-    </a>$
+    </a>
     <a href="intent://stream.fushaar.link/movie/16962/16962-480p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end"><div id="remot" tabindex="1" class="number">HD</div>
     </a>
     
@@ -391,19 +388,25 @@ text-decoration:none;
   <div class="number-container">
    <div><img class="watched-icon" src="https://cdn-icons-png.freepik.com/512/686/686333.png?ga=GA1.1.1704221200.1716147359" alt="Watched Icon" style="display: none;">
     </div>
-     <a  href="intent://stream.fushaar.link/movie/1364/1364.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ">
+     <a  href="intent://dl.dropbox.com/scl/fi/cfi88wjh0w5cazavsh9ex/Kingdom-of-the-Planet-of-the-Apes-2024.ts?rlkey=6g6vhqtfe2k3aa1idotiblazh&st=m041jsm6&dl=0#Intent;scheme=https;package=co.wuffy.player;end ">
       <div id="remot" tabindex="1" class="number">FHD</div>
     </a>
-    <a href="intent://stream.fushaar.link/movie/1364/1364-480p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end"><div id="remot" tabindex="1" class="number">HD</div>
+    <a href="intent://dl.dropbox.com/scl/fi/cfi88wjh0w5cazavsh9ex/Kingdom-of-the-Planet-of-the-Apes-2024.ts?rlkey=6g6vhqtfe2k3aa1idotiblazh&st=m041jsm6&dl=0#Intent;scheme=https;package=co.wuffy.player;end"><div id="remot" tabindex="1" class="number">HD</div>
     </a>
     
-    <a href="intent://stream.fushaar.link/movie/1364/1364-240p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end">
+    <a href="intent://dl.dropbox.com/scl/fi/cfi88wjh0w5cazavsh9ex/Kingdom-of-the-Planet-of-the-Apes-2024.ts?rlkey=6g6vhqtfe2k3aa1idotiblazh&st=m041jsm6&dl=0#Intent;scheme=https;package=co.wuffy.player;end">
       <div id="remot" tabindex="1" class="number">SD</div>
     </a>
   </div>
 </button>  
 
-
+<script>
+        // تطبيق تأخير عشوائي لكل عنصر .marquee
+        document.querySelectorAll('.marquee').forEach((el, index) => {
+            const delay = Math.random() * 6; // تأخير عشوائي يصل إلى 5 ثواني
+            el.style.animationDelay = `${delay}s`;
+        });
+    </script>
   
    <script>
 function handleImageError(img) {
