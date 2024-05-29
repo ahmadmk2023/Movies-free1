@@ -181,8 +181,9 @@ z-index: 1;
             border-radius: 1vw; /* نصف قطر الحدود النسبي */
             border: 0.3vw solid gold; /* حدود النسبي */
             position: relative;
-             width: 140px; /* عرض الحاوية */
-    height: 18px;
+            width: 140px; /* عرض الحاوية */
+            height: 18px;
+            margin-top: 5px;
         }
 
      
@@ -191,13 +192,11 @@ z-index: 1;
             animation: marquee 15s linear infinite; /* مدة الحركة 15 ثانية */
             white-space: nowrap;
         }
-
-
-        @keyframes marquee {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
+    @keyframes marquee {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
         }
-    
+
       .number-container {
             display: flex;
             justify-content: space-around;
@@ -237,7 +236,10 @@ text-decoration:none;
             width: 100%;
         }
         
-                
+    .watched-container {
+            position: relative;
+            display: inline-block;
+        }            
 /* تظهر الأيقونة أعلى الزجاجية */
 .watched-icon {
     position: absolute;
@@ -252,6 +254,9 @@ text-decoration:none;
     padding: 5px; /* تعديل حجم الأيقونة داخل الزجاجية */
 }
 
+        .watched-container:hover .watched-icon {
+            display: block;
+        }
 
 /* تخصيص للشاشات الصغيرة (مثل الهواتف المحمولة) */
 @media (max-width: 767px) 
@@ -295,7 +300,7 @@ text-decoration:none;
   <button class="button">
   <img src="https://wallpapercave.com/wp/wp8361676.jpg" alt="app tv" onerror="handleImageError(this)">
   <div class="Movies-name">
-<span class="marquee"direction="right" >مشاهدة فيلم Planet of the Apes 2001 مترجم </span>
+<span class="marquee"> مترجم Planet of the Apes 2001 مشاهدة فيلم</span>
   </div>
   <div class="serveur">سيرفرات المشاهدة</div>
   <div class="number-container"id="myLink">
@@ -401,17 +406,20 @@ text-decoration:none;
 </button>  
 
 <script>
-        // تطبيق تأخير عشوائي لكل عنصر .marquee
-        document.querySelectorAll('.marquee').forEach((el, index) => {
-            const delay = Math.random() * 6; // تأخير عشوائي يصل إلى 5 ثواني
-            el.style.animationDelay = `${delay}s`;
-        });
+
     </script>
   
    <script>
 function handleImageError(img) {
   img.src = 'https://i.imgur.com/MXnSqzd.png';
 }
+        // تطبيق تأخير عشوائي لكل عنصر .marquee
+        document.querySelectorAll('.marquee').forEach((el, index) => {
+            const delay = Math.random() * 6; // تأخير عشوائي يصل إلى 5 ثواني
+            el.style.animationDelay = `${delay}s`;
+        });
+        
+
 </script>
 
   </div> 
