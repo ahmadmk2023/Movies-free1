@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="AR" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies  Resident Evil </title>
+  <link href="https://cdn.icon-icons.com/icons2/125/PNG/96/movies_drive_20265.png" rel="icon" type="image/x-icon">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://raw.githack.com/ahmadmk2023/code-java/main/watched-icon.js"></script>      
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>      
+</head>
+<!-- lçaima l3lwia -->
+<body>
+
+    <!----------  اكواد استايل القائمة  ------------>
+    <style>
+         body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+   z-index: 999; /* لضمان ظهوره فوق المحتوى */
+        }
+
+        .topnav {
+          position: fixed;
+overflow: hidden;
+border-radius:4px;
+   background-image: linear-gradient(132deg, #3c4a71 0%, #339a8a 100%);
+z-index: 999; /* لضمان ظهوره فوق المحتوى */
+top: 0;
+height: 54px;
+width: 100%;
+box-shadow: 5px 5px 7px #fff;
+z-index: 1;
+}  
+
+        .topnav a {
+            float: left;
+            color: #ffffff;
+            text-align: center;
+            padding: 15px 10px;
+            text-decoration: none;
+            font-size: 19px;
+        }
+
+       
+       .topnav a:focus,.topnav a:hover {
+            background-color: #ccc; /* يمكنك تغيير اللون إلى أي لون تفضله */
+            color: #000; /* تغيير لون النص إلى اللون المناسب للخلفية */
+            outline: none; /* إزالة تأثير الـ focus الافتراضي */
+            border-radius: 8px; border: 2px solid #ff0066;
+        }
+
+        .topnav-centered a {
+
+            float: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .topnav-right {
+            float: right;
+        }
+
+        /* Responsive navigation menu (for mobile devices) */
+        @media screen and (max-width: 100%) {
+            .topnav a,
+            .topnav-right {
+                float: none;
+                display: block;
+            }
+
+            .topnav-centered a {
+                position: relative;
+                top: 0;
+                left: 0;
+                transform: none;
+                color: #ffff;
+            }
+        }
+    </style>
+    <head>
+
+        <body>
+
+    
+
+            <!-- lçaima l3lwia and-->
+            
+            <html>
+<head>
+    
+    <style>
+   body {
+                height: 100%;
+                margin: auto;
+                position: relative;
+           background:#339a8a;
+             background-position: center;
+                align-items: center;
+                justify-content: center;
+           
+            }
+
+           .button {
+                 position: relative;
+                align:center;
+                display: inline-block; /* لجعل الزر عنصراً مستطيل الشكل */
+            padding:2px; /* تعيين الهامش الداخلي للزر */
+            border-radius: 8px; /* تدوير الزوايا لتصميم أفضل */
+            width: 155px;
+            height: 215px;
+                margin: 6px;
+              border-color: #000;
+                 background: #3c4a71; 
+            }
+
+ 
+
+          button img {
+         width: 100%; /* تحكم في عرض الصورة */
+    height: 105px; /* احتفاظ بالتناسب أثناء تغيير الحجم */
+    margin: -1px auto; /* تحكم في التباعد بين الصورة والعناصر الأخرى */
+    display: block; /* جعل الصورة تظهر بشكل مستقل */
+    border-radius: 4px; /* تحديد إطار بسمك 2 بكسل ولون أزرق */
+
+}
+ #remot:focus,#remot:hover {
+         background: #ccc; /* لون	 خلفية الزر */
+         color: #000 ;
+          border-radius: 50%;
+          outline: none; /* إزالة تأثير الـ focus الافتراضي */
+             border: 2px solid #ff0066;
+            transform: scale(1.5);
+        }
+  
+            /* .ازالة شريط التمرير اسفل المدونة*/
+            html {
+                
+            }
+
+            /* ازالة تغيير شكل السكرول بار Scroll.Bar */
+            ::-webkit-scrollbar {
+                width: 8px;
+                height: 105px;
+               overflow-x: hidden; 
+                /**  تغير  لون القائمة **/
+            }
+
+            ::-webkit-scrollbar-thumb {
+                -webkit-shadow: inset 0 0 0 #000000;
+                -webkit-border-radius: 0;
+                background-image: -webkit-linear-gradient(top, #111 100%, #000 100%);border-radius: 12px;
+            }
+
+            ::-webkit-scrollbar-track {
+                -webkit-shadow: inset 0 0 0 #000000;
+                -webkit-border-radius: 100px;
+            }
+
+ .container {
+            display: flex;
+            gap: 5px; /* المسافة بين السيرفر واسم الفيلم */
+        }
+
+        .serveur, .Movies-name {
+            padding: 2px; /* تعيين الهامش الداخلي للزر */
+            text-align: center;
+            font-size: 15px; /* حجم الخط النسبي */
+            color: #fff;
+            font-weight: bold;
+            display: flex; /* لتفعيل align-items و justify-content */
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap; /* لمنع النصوص الطويلة من الانتقال للسطر التالي */
+            overflow: hidden; /* إخفاء النص الزائد */
+            border-radius: 1vw; /* نصف قطر الحدود النسبي */
+            border: 0.3vw solid gold; /* حدود النسبي */
+            position: relative;
+            width: 140px; /* عرض الحاوية */
+            height: 18px;
+            margin-top: 5px;
+        }
+
+     
+    .marquee {
+            display: inline-block;
+            animation: marquee 15s linear infinite; /* مدة الحركة 15 ثانية */
+            white-space: nowrap;
+        }
+    @keyframes marquee {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+      .number-container {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin-top: 5px;
+          
+        }
+
+
+
+        .number {
+            width: 30px;
+            height: 30px;
+             background:#339a8a;
+            border-radius: 50%;
+             border:3px solid #333;
+            color: #FFF;
+         font-size: 12px;
+         font-weight: bold  ;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+       a{
+color: black;
+text-decoration:none;
+}
+#al{
+color: yellow;
+text-decoration:none;
+
+}
+                #page {
+            margin-top: 60px;
+            width: 100%;
+        }
+        
+    .watched-container {
+            position: relative;
+            display: inline-block;
+        }            
+/* تظهر الأيقونة أعلى الزجاجية */
+.watched-icon {
+    position: absolute;
+    top: 0;
+    left: 0; /* يمكنك ضبط القيمة الأفضل حسب تصميمك */
+    width: 20px;
+    height: 20px;
+     /* لجعلها تظهر فوق الزجاجية */
+    background:#fff; /* لخلفية زجاجية بلون أبيض شفاف */
+    border-radius: 5px; /* للزوايا المستديرة */
+    border:2px solid #000;
+    padding: 5px; /* تعديل حجم الأيقونة داخل الزجاجية */
+}
+
+        .watched-container:hover .watched-icon {
+            display: block;
+        }
+
+/* تخصيص للشاشات الصغيرة (مثل الهواتف المحمولة) */
+@media (max-width: 767px) 
+/* تخصيص للشاشات الكبيرة (مثل شاشات التلفاز) */
+@media (min-width: 768px)
+
+                </style>
+                
+                
+          <!-- Top navigation -->
+            <div class="topnav">
+                <!-- ISIM TATBI9 -->
+                <div class="topnav-centered">
+                 <a><h6>افلام هندي مترجمة</h6> </a>
+                </div>
+                <!-- ISIM TATBI9 -->
+
+                <!-- ZIR ROJO3 -->
+<a href="go:afmv "><i  class="fa fa-reply "style="font-size: 20px;"></i>
+                </a>
+                <!-- ZIR ROJO3 -->
+
+ <a ><i class="fa fa-film"></i></a>
+                <!-- ZIR LBAHT-search -->
+                
+                
+                <div class="topnav-right">
+                    <a href="http://action_search/"><i class="fa fa-search " style="font-size: 20px;"></i></a>
+                    <!-- ZIR LBAHT-search -->
+
+                </div></div>                 
+                
+</head>
+<body>
+<div align="center" >
+<div class="container">
+<div id="page">
+<div class="section" data-section="movise-india">
+<!--+++++++++++++++++-->  
+<button class="button">
+  <img src="https://media.fushaar.com/media/2023/12/zRusAvFszxi96hzBfAQWezqnUQl-329x495.jpg" alt="app tv" onerror="handleImageError(this)">
+  <div class="Movies-name">
+<span class="marquee"> مترجم Iraivan 2023  مشاهدة فيلم</span>
+  </div>
+  <div class="serveur">سيرفرات المشاهدة</div>
+  <div class="number-container">
+    <div>
+      <img class="watched-icon" src="https://cdn-icons-png.freepik.com/512/686/686333.png?ga=GA1.1.1704221200.1716147359" alt="Watched Icon" style="display: none;">
+    </div>
+ <a  href="intent://stream.fushaar.link/movie/46924/46924.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ">
+      <div id="remot" tabindex="1" class="number">FHD</div>
+    </a>
+    
+    <a href="intent://stream.fushaar.link/movie/46924/46924-480p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end"><div id="remot" tabindex="1" class="number">HD</div>
+    </a>
+    
+    <a href="intent://stream.fushaar.link/movie/46924/46924-240p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end">
+      <div id="remot" tabindex="1" class="number">SD</div>
+    </a>
+    
+  </div>
+</button>             
+
+   <button class="button">
+  <img src="https://media.fushaar.com/media/2023/12/vVBOUGpDRQTq2m8uRTmiqJaYphS-329x495.jpg" alt="app tv" onerror="handleImageError(this)">
+  <div class="Movies-name">
+<span class="marquee"> مترجم Amigos 2023 مشاهدة فيلم</span>
+  </div>
+  <div class="serveur">سيرفرات المشاهدة</div>
+  <div class="number-container">
+    <div>
+      <img class="watched-icon" src="https://cdn-icons-png.freepik.com/512/686/686333.png?ga=GA1.1.1704221200.1716147359" alt="Watched Icon" style="display: none;">
+    </div>
+ <a  href="intent://stream.fushaar.link/movie/46919/46919.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ">
+      <div id="remot" tabindex="1" class="number">FHD</div>
+    </a>
+    
+    <a href="intent://stream.fushaar.link/movie/46919/46919-480p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end"><div id="remot" tabindex="1" class="number">HD</div>
+    </a>
+    
+    <a href="intent://stream.fushaar.link/movie/46919/46919-240p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end">
+      <div id="remot" tabindex="1" class="number">SD</div>
+    </a>
+    
+  </div>
+</button>             
+            
+<!--+++++++++++++++++--> 
+
+  <button class="button">
+  <img src="https://media.fushaar.com/media/2024/02/gq5OlT5ImxsNpkirpgf4rYngd3M-229x337.jpg" alt="app tv" onerror="handleImageError(this)">
+  <div class="Movies-name">
+<span class="marquee"> مترجم Captain Miller مشاهدة فيلم</span>
+  </div>
+  <div class="serveur">سيرفرات المشاهدة</div>
+  <div class="number-container"id="myLink">
+    <div>
+      <img class="watched-icon" src="https://cdn-icons-png.freepik.com/512/686/686333.png?ga=GA1.1.1704221200.1716147359" alt="Watched Icon" style="display: none;">
+    </div>
+ <a  href="intent://stream.fushaar.link/movie/47354/47354.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ">
+      <div id="remot" tabindex="1" class="number">FHD</div>
+    </a>
+    
+    <a href="intent://stream.fushaar.link/movie/47354/47354-480p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end"><div id="remot" tabindex="1" class="number">HD</div>
+    </a>
+    
+    <a href="intent://stream.fushaar.link/movie/47354/47354-240p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end">
+      <div id="remot" tabindex="1" class="number">SD</div>
+    </a>
+    
+  </div>
+</button> 
+<!--+++++++++++++++++--> 
+
+  <button class="button">
+  <img src="https://media.fushaar.com/media/2024/01/7wgED7Yx9VLcNWSO91VgwicHmMD-229x337.jpg" alt="app tv" onerror="handleImageError(this)">
+  <div class="Movies-name">
+<span class="marquee"> مترجم Tiger 3 مشاهدة فيلم</span>
+  </div>
+  <div class="serveur">سيرفرات المشاهدة</div>
+  <div class="number-container">
+    <div>
+      <img class="watched-icon" src="https://cdn-icons-png.freepik.com/512/686/686333.png?ga=GA1.1.1704221200.1716147359" alt="Watched Icon" style="display: none;">
+    </div>
+ <a  href="intent://stream.fushaar.link/movie/47160/47160.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ">
+      <div id="remot" tabindex="1" class="number">FHD</div>
+    </a>
+    
+    <a href="intent://stream.fushaar.link/movie/47160/47160-480p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end"><div id="remot" tabindex="1" class="number">HD</div>
+    </a>
+    
+    <a href="intent://stream.fushaar.link/movie/47160/47160-240p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end">
+      <div id="remot" tabindex="1" class="number">SD</div>
+    </a>
+    
+  </div>
+</button>             
+ <!--+++++++++++++++++--> 
+   <button class="button">
+  <img src="https://media.fushaar.com/media/2023/07/n3tDKjw14Ig3suHOx8GSBtCxEX7-229x337.jpg" alt="app tv" onerror="handleImageError(this)">
+  <div class="Movies-name">
+<span class="marquee"> مترجم IB 71 مشاهدة فيلم</span>
+  </div>
+  <div class="serveur">سيرفرات المشاهدة</div>
+  <div class="number-container">
+    <div>
+      <img class="watched-icon" src="https://cdn-icons-png.freepik.com/512/686/686333.png?ga=GA1.1.1704221200.1716147359" alt="Watched Icon" style="display: none;">
+    </div>
+ <a  href="intent://stream.fushaar.link/movie/45830/45830.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ">
+      <div id="remot" tabindex="1" class="number">FHD</div>
+    </a>
+    
+    <a href="intent://stream.fushaar.link/movie/45830/45830-480p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end"><div id="remot" tabindex="1" class="number">HD</div>
+    </a>
+    
+    <a href="intent://stream.fushaar.link/movie/45830/45830-240p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end">
+      <div id="remot" tabindex="1" class="number">SD</div>
+    </a>
+    
+  </div>
+</button>             
+  <!--+++++++++++++++++--> 
+   <button class="button">
+  <img src="https://media.fushaar.com/media/2023/11/jFt1gS4BGHlK8xt76Y81Alp4dbt-229x337.jpg" alt="app tv" onerror="handleImageError(this)">
+  <div class="Movies-name">
+<span class="marquee"> مترجم Jawan مشاهدة فيلم</span>
+  </div>
+  <div class="serveur">سيرفرات المشاهدة</div>
+  <div class="number-container">
+    <div>
+      <img class="watched-icon" src="https://cdn-icons-png.freepik.com/512/686/686333.png?ga=GA1.1.1704221200.1716147359" alt="Watched Icon" style="display: none;">
+    </div>
+ <a  href="intent://stream.fushaar.link/movie/46686/46686.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ">
+      <div id="remot" tabindex="1" class="number">FHD</div>
+    </a>
+    
+    <a href="intent://stream.fushaar.link/movie/46686/46686-480p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end"><div id="remot" tabindex="1" class="number">HD</div>
+    </a>
+    
+    <a href="intent://stream.fushaar.link/movie/46686/46686-240p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end">
+      <div id="remot" tabindex="1" class="number">SD</div>
+    </a>
+    
+  </div>
+</button>
+
+     <!--+++++++++++++++++-->        
+
+   <button class="button">
+  <img src="https://media.fushaar.com/media/2023/10/gX8k6oKpIsWHpfWNz3Bu4wUuliA-229x337.jpg" alt="app tv" onerror="handleImageError(this)">
+  <div class="Movies-name">
+<span class="marquee"> مترجم Mast Mein Rehne Ka
+مشاهدة فيلم</span>
+  </div>
+  <div class="serveur">سيرفرات المشاهدة</div>
+  <div class="number-container">
+    <div>
+      <img class="watched-icon" src="https://cdn-icons-png.freepik.com/512/686/686333.png?ga=GA1.1.1704221200.1716147359" alt="Watched Icon" style="display: none;">
+    </div>
+ <a  href="intent://stream.fushaar.link/movie/46551/46551.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ">
+      <div id="remot" tabindex="1" class="number">FHD</div>
+    </a>
+    
+    <a href="intent://stream.fushaar.link/movie/46551/46551-480p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end"><div id="remot" tabindex="1" class="number">HD</div>
+    </a>
+    
+    <a href="intent://stream.fushaar.link/movie/46551/46551-240p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end">
+      <div id="remot" tabindex="1" class="number">SD</div>
+    </a>
+    
+  </div>
+</button>
+
+     <!--+++++++++++++++++-->        
+<button class="button">
+  <img src="https://media.fushaar.com/media/2023/12/l2y2693EHKtrpNtOuy0goF38XZX-229x337.jpg" alt="app tv" onerror="handleImageError(this)">
+  <div class="Movies-name">
+<span class="marquee"> مترجم Bloody Daddy
+مشاهدة فيلم</span>
+  </div>
+  <div class="serveur">سيرفرات المشاهدة</div>
+  <div class="number-container">
+    <div>
+      <img class="watched-icon" src="https://cdn-icons-png.freepik.com/512/686/686333.png?ga=GA1.1.1704221200.1716147359" alt="Watched Icon" style="display: none;">
+    </div>
+ <a  href="intent://stream.fushaar.link/movie/47020/47020.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ">
+      <div id="remot" tabindex="1" class="number">FHD</div>
+    </a>
+    
+    <a href="intent://stream.fushaar.link/movie/47020/47020-480p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end"><div id="remot" tabindex="1" class="number">HD</div>
+    </a>
+    
+    <a href="intent://stream.fushaar.link/movie/47020/47020-240p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end">
+      <div id="remot" tabindex="1" class="number">SD</div>
+    </a>
+    
+  </div>
+</button>
+
+     <!--+++++++++++++++++-->     
+
+     <!--+++++++++++++++++-->        
+<button class="button">
+  <img src="https://media.fushaar.com/media/2023/07/tL1pf85mtn1SEHODLetoHRGdxnN-329x495.jpg" alt="app tv" onerror="handleImageError(this)">
+  <div class="Movies-name">
+<span class="marquee"> مترجم Pathonpatham Noottandu
+مشاهدة فيلم</span>
+  </div>
+  <div class="serveur">سيرفرات المشاهدة</div>
+  <div class="number-container">
+    <div>
+      <img class="watched-icon" src="https://cdn-icons-png.freepik.com/512/686/686333.png?ga=GA1.1.1704221200.1716147359" alt="Watched Icon" style="display: none;">
+    </div>
+ <a  href="intent://stream.fushaar.link/movie/45690/45690.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ">
+      <div id="remot" tabindex="1" class="number">FHD</div>
+    </a>
+    
+    <a href="intent://stream.fushaar.link/movie/45690/45690-480p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end"><div id="remot" tabindex="1" class="number">HD</div>
+    </a>
+    
+    <a href="intent://stream.fushaar.link/movie/45690/45690-240p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end">
+      <div id="remot" tabindex="1" class="number">SD</div>
+    </a>
+    
+  </div>
+</button>
+
+     <!--+++++++++++++++++-->     
+
+<button class="button">
+  <img src="https://media.fushaar.com/media/2023/06/jIsKmkxMzdCZ0Ux1GVSnu8m6Na6-229x337.jpg" alt="app tv" onerror="handleImageError(this)">
+  <div class="Movies-name">
+<span class="marquee"> مترجم Kantara
+مشاهدة فيلم</span>
+  </div>
+  <div class="serveur">سيرفرات المشاهدة</div>
+  <div class="number-container">
+    <div>
+      <img class="watched-icon" src="https://cdn-icons-png.freepik.com/512/686/686333.png?ga=GA1.1.1704221200.1716147359" alt="Watched Icon" style="display: none;">
+    </div>
+ <a  href="intent://stream.fushaar.link/movie/45580/45580.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ">
+      <div id="remot" tabindex="1" class="number">FHD</div>
+    </a>
+    
+    <a href="intent://stream.fushaar.link/movie/45580/45580-480p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end"><div id="remot" tabindex="1" class="number">HD</div>
+    </a>
+    
+    <a href="intent://stream.fushaar.link/movie/45580/45580-240p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end">
+      <div id="remot" tabindex="1" class="number">SD</div>
+    </a>
+    
+  </div>
+</button>
+
+     <!--+++++++++++++++++--> 
+<button class="button">
+  <img src="https://media.fushaar.com/media/2023/06/qLQKCGNAl5b0DZihbyWhtLzESwR-229x337.jpg" alt="app tv" onerror="handleImageError(this)">
+  <div class="Movies-name">
+<span class="marquee"> مترجم Thunivu
+مشاهدة فيلم</span>
+  </div>
+  <div class="serveur">سيرفرات المشاهدة</div>
+  <div class="number-container">
+    <div>
+      <img class="watched-icon" src="https://cdn-icons-png.freepik.com/512/686/686333.png?ga=GA1.1.1704221200.1716147359" alt="Watched Icon" style="display: none;">
+    </div>
+ <a  href="intent://stream.fushaar.link/movie/45575/45575.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ">
+      <div id="remot" tabindex="1" class="number">FHD</div>
+    </a>
+    
+    <a href="intent://stream.fushaar.link/movie/45575/45575-480p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end"><div id="remot" tabindex="1" class="number">HD</div>
+    </a>
+    
+    <a href="intent://stream.fushaar.link/movie/45575/45575-240p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end">
+      <div id="remot" tabindex="1" class="number">SD</div>
+    </a>
+    
+  </div>
+</button>
+
+     <!--+++++++++++++++++-->
+
+
+  </div> 
+         </div>
+        </div>
+    </div>
+</body>
+</html>
