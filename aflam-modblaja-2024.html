@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movies the media</title>
+    <title>Movies  Resident Evil </title>
   <link href="https://cdn.icon-icons.com/icons2/125/PNG/96/movies_drive_20265.png" rel="icon" type="image/x-icon">
+  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        
-  <script src="https://raw.githack.com/ahmadmk2023/code-java/main/watched-icon.js"></script>       
-        
+  <script src="https://raw.githack.com/ahmadmk2023/code-java/main/watched-icon.js"></script>      
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>      
+</head>
+<!-- lçaima l3lwia -->
 <body>
 
     <!----------  اكواد استايل القائمة  ------------>
@@ -28,7 +30,7 @@ border-radius:4px;
    background-image: linear-gradient(132deg, #3c4a71 0%, #339a8a 100%);
 z-index: 999; /* لضمان ظهوره فوق المحتوى */
 top: 0;
-height: 52px;
+height: 54px;
 width: 100%;
 box-shadow: 5px 5px 7px #fff;
 z-index: 1;
@@ -38,16 +40,19 @@ z-index: 1;
             float: left;
             color: #ffffff;
             text-align: center;
-            padding: 14px 16px;
+            padding: 15px 10px;
             text-decoration: none;
-            font-size: 17px;
+            font-size: 19px;
         }
+
+       
        .topnav a:focus,.topnav a:hover {
             background-color: #ccc; /* يمكنك تغيير اللون إلى أي لون تفضله */
             color: #000; /* تغيير لون النص إلى اللون المناسب للخلفية */
             outline: none; /* إزالة تأثير الـ focus الافتراضي */
             border-radius: 8px; border: 2px solid #ff0066;
         }
+
         .topnav-centered a {
 
             float: none;
@@ -157,41 +162,40 @@ z-index: 1;
                 -webkit-border-radius: 100px;
             }
 
-.lkhat1 {
-position: relative; 
-        align:center;
-        padding:2px; /* تعيين الهامش الداخلي للزر */
-        text-align: center;
-        font-size: 15px;
-       color: #fff;
-         font-weight: bold  ;
-     margin-top: 5px ;
-      align-items: center;
-      justify-content: center;
-    width: 140px;
-    height: 18px;
-    border-radius: 8px;
-   border:2px solid gold;
-      
-      
+ .container {
+            display: flex;
+            gap: 5px; /* المسافة بين السيرفر واسم الفيلم */
         }
-        
-.khlfia {
-    background: #000; /* لون	 خلفية الزر */
-    position: relative;
-    padding:2px; /* تعيين الهامش الداخلي للزر */
-        text-align: center;
-        font-size: 15px;
-       color: #fff;
-         font-weight: bold  ;
-      margin-top: 5px;
-      align-items: center;
-      justify-content: center;
-    width: 140px;
-    height: 18px;
-    border-radius: 4px;
-   border:2px solid gold;
-        }      
+
+        .serveur, .Movies-name {
+            padding: 2px; /* تعيين الهامش الداخلي للزر */
+            text-align: center;
+            font-size: 15px; /* حجم الخط النسبي */
+            color: #fff;
+            font-weight: bold;
+            display: flex; /* لتفعيل align-items و justify-content */
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap; /* لمنع النصوص الطويلة من الانتقال للسطر التالي */
+            overflow: hidden; /* إخفاء النص الزائد */
+            border-radius: 1vw; /* نصف قطر الحدود النسبي */
+            border: 0.3vw solid gold; /* حدود النسبي */
+            position: relative;
+            width: 140px; /* عرض الحاوية */
+            height: 18px;
+            margin-top: 5px;
+        }
+
+     
+    .marquee {
+            display: inline-block;
+            animation: marquee 15s linear infinite; /* مدة الحركة 15 ثانية */
+            white-space: nowrap;
+        }
+    @keyframes marquee {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
 
       .number-container {
             display: flex;
@@ -201,8 +205,9 @@ position: relative;
           
         }
 
+
+
         .number {
-        
             width: 30px;
             height: 30px;
              background:#339a8a;
@@ -227,11 +232,14 @@ text-decoration:none;
 
 }
                 #page {
-            margin-top: 55px;
+            margin-top: 60px;
             width: 100%;
         }
         
-                
+    .watched-container {
+            position: relative;
+            display: inline-block;
+        }            
 /* تظهر الأيقونة أعلى الزجاجية */
 .watched-icon {
     position: absolute;
@@ -245,12 +253,15 @@ text-decoration:none;
     border:2px solid #000;
     padding: 5px; /* تعديل حجم الأيقونة داخل الزجاجية */
 }
-.watched-icon-img{
 
-    width: 25px;
-    height: 25px;
-    
-}
+        .watched-container:hover .watched-icon {
+            display: block;
+        }
+
+/* تخصيص للشاشات الصغيرة (مثل الهواتف المحمولة) */
+@media (max-width: 767px) 
+/* تخصيص للشاشات الكبيرة (مثل شاشات التلفاز) */
+@media (min-width: 768px)
 
                 </style>
                 
@@ -264,165 +275,69 @@ text-decoration:none;
                 <!-- ISIM TATBI9 -->
 
                 <!-- ZIR ROJO3 -->
-                <a href="go:afmv ">
-                    <i  class="fa fa-reply fa-beat"style="font-size: 20px;"></i>
+<a href="go:afmv "><i  class="fa fa-reply "style="font-size: 20px;"></i>
                 </a>
                 <!-- ZIR ROJO3 -->
 
-<img src="https://cdn.icon-icons.com/icons2/12/PNG/256/movies_movie_oscar_themedia_1735.png"style="width: 45px;
-    height: 38px; margin-top: 7px;border-radius: 8px;" alt="beIN MAX">
+ <a ><i class="fa fa-film"></i></a>
                 <!-- ZIR LBAHT-search -->
                 
                 
                 <div class="topnav-right">
-                    <a href="http://action_search/"><i class="fa fa-search fa-beat" style="font-size: 20px;"></i></a>
+                    <a href="http://action_search/"><i class="fa fa-search " style="font-size: 20px;"></i></a>
                     <!-- ZIR LBAHT-search -->
 
-                </div>
-
-            </div>              
-  
-
- <script src="https://t4cce4ma.shop/wp-content/themes/Mycima2021/js/vidjs-2.js"></script>
-
-
+                </div></div>                 
+                
 </head>
 <body>
 <div align="center" >
 <div class="container">
 <div id="page">
-<div class="section" data-section="افلام مدبلجة">
-        <!--+++++++++++++++++-->  
-         
-<button class="button"><img src="https://t4cce4ma.shop/wp-content/uploads/2024/01/Cult-Killer-scaled.jpg" alt="app tv">
-        <div class="lkhat1"> Cult Killer 2024</div>
-   <div class="khlfia">  سيرفرات المشاهدة</div> 
-                        <!-- إضافة شكل الأرقام الدائرية -->
-                        <div class="number-container">  <div> 
-<img class="watched-icon" src="https://cdn-icons-png.freepik.com/512/2009/2009778.png?ga=GA1.1.696197500.1713527064" alt="Watched Icon" style="display: none;"></div>
-   <a href="intent://aHR0cHM6Ly90Z2I0LnRvcDE1dG9wLnNob3AvOGNmdnpjcXdya2ZwL0N1bHQuS2lsbGVyLjIwMjQu
-MTA4MHAuV0VCUmlwLkFSLkRVQi5XZWNpbWEudHViZS5tcDQuaHRtbD9LZXk9cm9CdWI0cDFLdFVP
-VE1wbmZkVF9hQSZFeHBpcmVzPTE3MTU4MTExNzM=#Intent;scheme=xmtv;package=co.wuffy.player;end "><div id="remot" tabindex="1" class="number">FHD</div></a>
+<div class="section" data-section="movise-india">
+<!--+++++++++++++++++-->  
+<button class="button">
+  <img src="https://wecima.show/wp-content/uploads/2024/05/Arcadian-2024.jpg" alt="app tv" onerror="handleImageError(this)">
+  <div class="Movies-name">
+<span class="marquee">مدبلج Arcadian 2024مشاهدة فيلم </span>
+  </div>
+  <div class="serveur">سيرفرات المشاهدة</div>
+  <div class="number-container">
+    <div>
+      <img class="watched-icon" src="https://cdn-icons-png.freepik.com/512/686/686333.png?ga=GA1.1.1704221200.1716147359" alt="Watched Icon" style="display: none;">
+    </div>
+ <a  href="intent://aHR0cHM6Ly9sb2NhbGhvc3QvcnVuLzQ5YTg3Yjg2YzQ5ZTE1ZmMyNjMyOWZjYTk5ZDg5NDg3OThm
+Nzk0NzVhNDI4YjQ2OTUwODdkNGRmYTk5ZDlmN2U4YjM0ZDBjNjA0ZWQ5NzBhY2QyMjBjZjc2ZGMz
+MTQ1NDViYzM0YjBmNTdhYTYwNGI1NDExYTRlZGQ3ODJlY2ViNTUzYjIxYmI0ZmVlNWZiYjBmNTA1
+ZDFhMjc5ZjQ0NGM5ZGRkYzZiNmUzN2UwMmNhMzJjMzgyZGM5ZjZhMzkxYTcwMDBmMy8/S2V5PWZx
+TGJ2cUdnQ1k1ckZuZzlsbUUtYVEmRXhwaXJlcz0xNzE3MzQxMjYyJmF1dG89dHJ1ZQ==#Intent;scheme=xmtv;package=co.wuffy.player;end">
+      <div id="remot" tabindex="1" class="number">FHD</div>
+    </a>
+    
+    <a href="intent://aHR0cHM6Ly9sb2NhbGhvc3QvcnVuLzQ5YTg3Yjg2YzQ5ZTE1ZmMyNjMyOWZjYTk5ZDg5NDg3OThm
+Nzk0NzVhNDI4YjQ2OTUwODdkNGRmYTk5ZDlmN2U4YjM0ZDBjNjA0ZWQ5NzBhY2QyMjBjZjc2ZGMz
+MTQ1NDViYzM0YjBmNTdhYTYwNGI1NDExYTRlZGQ3ODJlY2ViNTUzYjIxYmI0ZmVlNWZiYjBmNTA1
+ZDFhMjc5ZjQ0NGM5ZGRkYzZiNmUzN2UwMmNhMzJjMzgyZGM5ZjZhMzkxYTcwMDBmMy8/S2V5PWZx
+TGJ2cUdnQ1k1ckZuZzlsbUUtYVEmRXhwaXJlcz0xNzE3MzQxMjYyJmF1dG89dHJ1ZQ==#Intent;scheme=xmtv;package=co.wuffy.player;end"><div id="remot" tabindex="1" class="number">HD</div>
+    </a>
+    
+    <a href="intent://aHR0cHM6Ly9sb2NhbGhvc3QvcnVuLzQ5YTg3Yjg2YzQ5ZTE1ZmMyNjMyOWZjYTk5ZDg5NDg3OThm
+Nzk0NzVhNDI4YjQ2OTUwODdkNGRmYTk5ZDlmN2U4YjM0ZDBjNjA0ZWQ5NzBhY2QyMjBjZjc2ZGMz
+MTQ1NDViYzM0YjBmNTdhYTYwNGI1NDExYTRlZGQ3ODJlY2ViNTUzYjIxYmI0ZmVlNWZiYjBmNTA1
+ZDFhMjc5ZjQ0NGM5ZGRkYzZiNmUzN2UwMmNhMzJjMzgyZGM5ZjZhMzkxYTcwMDBmMy8/S2V5PWZx
+TGJ2cUdnQ1k1ckZuZzlsbUUtYVEmRXhwaXJlcz0xNzE3MzQxMjYyJmF1dG89dHJ1ZQ==#Intent;scheme=xmtv;package=co.wuffy.player;end">
+      <div id="remot" tabindex="1" class="number">SD</div>
+    </a>
+    
+  </div>
+</button>             
 
-                                        <a href="intent://aHR0cHM6Ly90Z2I0LnRvcDE1dG9wLnNob3AvOXY1b3FlcHFwOTV4L0N1bHQuS2lsbGVyLjIwMjQu
-NzIwcC5XRUJSaXAuQVIuRFVCLldlY2ltYS50dWJlLm1wNC5odG1sP0tleT05U0E4VXdmeVFVRFF0
-SjBVUTV4Wm93JkV4cGlyZXM9MTcxNTgwOTI5Mg==#Intent;scheme=xmtv;package=co.wuffy.player;end "><div id="remot" tabindex="1" class="number">HD</div></a>
-                                         <a href="intent://aHR0cHM6Ly90Z2I0LnRvcDE1dG9wLnNob3Ava3ZwNnAyd2x4cmRrL0N1bHQuS2lsbGVyLjIwMjQu
-NDgwcC5XRUJSaXAuQVIuRFVCLldlY2ltYS50dWJlLm1wNC5odG1sP0tleT05U0E4VXdmeVFVRFF0
-SjBVUTV4Wm93JkV4cGlyZXM9MTcxNTgwOTI5Mg==#Intent;scheme=xmtv;package=co.wuffy.player;end "><div id="remot" tabindex="1" class="number" >SD</div></a> </div ></button> 
-               <!--+++++++++++++++++--> 
-               
-  <button class="button"><img src="https://t4cce4ma.shop/wp-content/uploads/2024/04/Godzilla-x-Kong-The-New-Empire-2024-مدبلج-scaled.jpg" alt="app tv">
-        <div class="lkhat1">Godzilla x Kong</div>
-   <div class="khlfia">  سيرفرات المشاهدة</div> 
-                        <!-- إضافة شكل الأرقام الدائرية -->
-                        <div class="number-container">  <div> 
-<img class="watched-icon" src="https://cdn-icons-png.freepik.com/512/2009/2009778.png?ga=GA1.1.696197500.1713527064" alt="Watched Icon" style="display: none;"></div>
-   <a href="intent://aHR0cHM6Ly90Z2I0LnRvcDE1dG9wLnNob3AvbmpkanhoZzRpMDdvL0dvZHppbGxhLnguS29uZy5U
-aGUuTmV3LkVtcGlyZS4yMDI0LjEwODBwLldFQlJpcC5BUi5EVUIud2VjaWltYS5hdXRvcy5tcDQu
-aHRtbD9LZXk9SDMzX3NacENPNlNWWm5lUDVUaTV0ZyZhbXA7RXhwaXJlcz0xNzE1ODEzMjE2#Intent;scheme=xmtv;package=co.wuffy.player;end "><div id="remot" tabindex="1" class="number">FHD</div></a>
 
-                                        <a href="intent://aHR0cHM6Ly90Z2I0LnRvcDE1dG9wLnNob3AvbmpkanhoZzRpMDdvL0dvZHppbGxhLnguS29uZy5U
-aGUuTmV3LkVtcGlyZS4yMDI0LjEwODBwLldFQlJpcC5BUi5EVUIud2VjaWltYS5hdXRvcy5tcDQu
-aHRtbD9LZXk9ZTA3THg5aENkNEdSMFkzWHhJeWpydyZFeHBpcmVzPTE3MTU4MDk0ODU=#Intent;scheme=xmtv;package=co.wuffy.player;end "><div id="remot" tabindex="1" class="number">HD</div></a>
-                                         <a href="intent://aHR0cHM6Ly90Z2I0LnRvcDE1dG9wLnNob3AvbmpkanhoZzRpMDdvL0dvZHppbGxhLnguS29uZy5U
-aGUuTmV3LkVtcGlyZS4yMDI0LjEwODBwLldFQlJpcC5BUi5EVUIud2VjaWltYS5hdXRvcy5tcDQu
-aHRtbD9LZXk9ZTA3THg5aENkNEdSMFkzWHhJeWpydyZFeHBpcmVzPTE3MTU4MDk0ODU=#Intent;scheme=xmtv;package=co.wuffy.player;end "><div id="remot" tabindex="1" class="number" >SD</div></a> </div ></button> 
 
-               <!--+++++++++++++++++-->               
-               
-               
-               
- <button class="button"><img src="https://t4cce4ma.shop/wp-content/uploads/2024/05/The-Ministry-of-Ungentlemanly-Warfare.jpg" alt="app tv">
-        <div class="lkhat1">وزارة الحرب</div>
-   <div class="khlfia">  سيرفرات المشاهدة</div> 
-                        <!-- إضافة شكل الأرقام الدائرية -->
-                        <div class="number-container">  <div> 
-<img class="watched-icon" src="https://cdn-icons-png.freepik.com/512/2009/2009778.png?ga=GA1.1.696197500.1713527064" alt="Watched Icon" style="display: none;"></div>
-   <a href="https://raw.githack.com/ahmadmk2023/aflm-ajnabi-AR/main/The%20Ministry%20of%20.html "><div id="remot" tabindex="1" class="number">FHD</div></a>
 
-                                        <a href="intent://aHR0cHM6Ly90Z2I0LnRvcDE1dG9wLnNob3Avd2lmMW5vMGJkZGJ2L0NpdmlsLldhci4yMDI0Ljcy
-MHAuQ0FNUmlwLkFSLkhRLkRVQi53ZWNpaW1hLmF1dG9zLm1wNC5odG1sP0tleT1KOTFZUkdqZFFa
-SFBZZUxyNk5Ld29nJkV4cGlyZXM9MTcxNDMxNzU3NA==#Intent;scheme=xmtv;package=co.wuffy.player;end "><div id="remot" tabindex="1" class="number">HD</div></a>
-                                         <a href="intent://aHR0cHM6Ly90Z2I0LnRvcDE1dG9wLnNob3Avd2lmMW5vMGJkZGJ2L0NpdmlsLldhci4yMDI0Ljcy
-MHAuQ0FNUmlwLkFSLkhRLkRVQi53ZWNpaW1hLmF1dG9zLm1wNC5odG1sP0tleT1KOTFZUkdqZFFa
-SFBZZUxyNk5Ld29nJkV4cGlyZXM9MTcxNDMxNzU3NA==#Intent;scheme=xmtv;package=co.wuffy.player;end "><div id="remot" tabindex="1" class="number" >SD</div></a> </div ></button> 
-               <!--+++++++++++++++++-->                          
-                         
- <button class="button"><img src="https://t4cce4ma.shop/wp-content/uploads/2024/03/Ghostbusters-Frozen-Empire-2024-مدبلج.jpg" alt="app tv">
-        <div class="lkhat1">صائدو الأشباح</div>
-   <div class="khlfia">  سيرفرات المشاهدة</div> 
-                        <!-- إضافة شكل الأرقام الدائرية -->
-                        <div class="number-container">  <div> 
-<img class="watched-icon" src="https://cdn-icons-png.freepik.com/512/2009/2009778.png?ga=GA1.1.696197500.1713527064" alt="Watched Icon" style="display: none;"></div>
-
-   <a href="intent://aHR0cHM6Ly90Z2I0LnRvcDE1dG9wLnNob3AvdDZlamZhcTQ0dmUwL0dob3N0YnVzdGVycy5Gcm96
-ZW4uRW1waXJlLjIwMjQuMTA4MHAuV0VCUmlwLkFSLkRVQi53ZWNpaW1hLmF1dG9zLm1wNC5odG1s
-P0tleT1RZ2UyTkVHd0ppVUV5dmxDbFBHN1Z3JkV4cGlyZXM9MTcxNjE0ODk1NQ==#Intent;scheme=xmtv;package=co.wuffy.player;end "><div id="remot" tabindex="1" class="number">FHD</div></a>
-
-                                        <a href="https://raw.githack.com/ahmadmk2023/aflm-ajnabi-AR/main/Ghostbusters%20Frozen.html"><div id="remot" tabindex="1" class="number">HD</div></a>
-                                         <a href="https://raw.githack.com/ahmadmk2023/aflm-ajnabi-AR/main/Ghostbusters%20Frozen.html"><div id="remot" tabindex="1" class="number" >SD</div></a> </div ></button> 
-
-<!--+++++++++++++++++-->                          
- <button class="button">
- <img src="https://t4cce4ma.shop/wp-content/uploads/2024/01/فيلم-Sixty-Minutes-2024-مترجم.jpg" alt="app tv">
-        <div class="lkhat1">Sixty Minutes</div>
-   <div class="khlfia">  سيرفرات المشاهدة</div> 
-                        <!-- إضافة شكل الأرقام الدائرية -->
-                        <div class="number-container">  <div> 
-<img class="watched-icon" src="https://cdn-icons-png.freepik.com/512/2009/2009778.png?ga=GA1.1.696197500.1713527064" alt="Watched Icon" style="display: none;"></div>
-
-   <a href="intent://aHR0cHM6Ly90Z2I0LnRvcDE1dG9wLnNob3AvcW83aGhzNDU3azl2L1NpeHR5Lk1pbnV0ZXMuMjAy
-NC4xMDgwcC5XRUJSaXAuQVIuSFEuRFVCLldFQ0lNQS5tcDQuaHRtbD9LZXk9UE5ma2pkeksxNFpC
-eU5COVEwa083USZFeHBpcmVzPTE3MTQzMTc4MDI=#Intent;scheme=xmtv;package=co.wuffy.player;end "><div id="remot" tabindex="1" class="number">FHD</div></a>
-
-                                        <a href="intent://aHR0cHM6Ly90Z2I0LnRvcDE1dG9wLnNob3AvcW83aGhzNDU3azl2L1NpeHR5Lk1pbnV0ZXMuMjAy
-NC4xMDgwcC5XRUJSaXAuQVIuSFEuRFVCLldFQ0lNQS5tcDQuaHRtbD9LZXk9UE5ma2pkeksxNFpC
-eU5COVEwa083USZFeHBpcmVzPTE3MTQzMTc4MDI=#Intent;scheme=xmtv;package=co.wuffy.player;end "><div id="remot" tabindex="1" class="number">HD</div></a>
-                                         <a href="intent://aHR0cHM6Ly90Z2I0LnRvcDE1dG9wLnNob3AvcW83aGhzNDU3azl2L1NpeHR5Lk1pbnV0ZXMuMjAy
-NC4xMDgwcC5XRUJSaXAuQVIuSFEuRFVCLldFQ0lNQS5tcDQuaHRtbD9LZXk9UE5ma2pkeksxNFpC
-eU5COVEwa083USZFeHBpcmVzPTE3MTQzMTc4MDI=#Intent;scheme=xmtv;package=co.wuffy.player;end "><div id="remot" tabindex="1" class="number" >SD</div></a> </div ></button> 
-<!--+++++++++++++++++-->                          
- <button class="button">
- <img src="https://t4cce4ma.shop/wp-content/uploads/2024/02/The-End-We-Start-From-2023-scaled.jpg" alt="app tv">
-        <div class="lkhat1">The End We Start</div>
-   <div class="khlfia">  سيرفرات المشاهدة</div> 
-                        <!-- إضافة شكل الأرقام الدائرية -->
-                        <div class="number-container">  <div> 
-<img class="watched-icon" src="https://cdn-icons-png.freepik.com/512/2009/2009778.png?ga=GA1.1.696197500.1713527064" alt="Watched Icon" style="display: none;"></div>
-
-   <a href="intent://aHR0cHM6Ly90Z2I0LnRvcDE1dG9wLnNob3AvengxaGY0ZGd6N3MwL1RoZS5FbmQuV2UuU3RhcnQu
-RnJvbS4yMDIzLjEwODBwLldFQlJpcC5BUi5EVUIuV0VDSU1BLm1wNC5odG1sP0tleT0xaTFwRy1Z
-OG1ycm1lYmozdzdvUk1RJkV4cGlyZXM9MTcxNDMxODQ0MQ==#Intent;scheme=xmtv;package=co.wuffy.player;end "><div id="remot" tabindex="1" class="number">FHD</div></a>
-
-                                        <a href="intent://aHR0cHM6Ly90Z2I0LnRvcDE1dG9wLnNob3AvaHZuNXRwYzN4cDYxL1RoZS5FbmQuV2UuU3RhcnQu
-RnJvbS4yMDIzLjcyMHAuV0VCLURMLldlY2ltYS50dWJlLm1wNC5odG1sP0tleT1yaEpVNVU2RVBI
-TFNtMUpId1RZMGxnJkV4cGlyZXM9MTcxNDMxMzQzNQ==#Intent;scheme=xmtv;package=co.wuffy.player;end "><div id="remot" tabindex="1" class="number">HD</div></a>
-                                         <a href="intent://aHR0cHM6Ly90Z2I0LnRvcDE1dG9wLnNob3AvNGh3MnJwNnBzemZuL1RoZS5FbmQuV2UuU3RhcnQu
-RnJvbS4yMDIzLjQ4MHAuV0VCLURMLldlY2ltYS50dWJlLm1wNC5odG1sP0tleT1yaEpVNVU2RVBI
-TFNtMUpId1RZMGxnJkV4cGlyZXM9MTcxNDMxMzQzNQ==#Intent;scheme=xmtv;package=co.wuffy.player;end "><div id="remot" tabindex="1" class="number" >SD</div></a> </div ></button> 
-
-<!--+++++++++++++++++-->                          
- <button class="button">
- <img src="https://t4cce4ma.shop/wp-content/uploads/2024/01/The-Beekeeper-2024.jpg" alt="app tv">
-        <div class="lkhat1">النحّال</div>
-   <div class="khlfia">  سيرفرات المشاهدة</div> 
-                        <!-- إضافة شكل الأرقام الدائرية -->
-                        <div class="number-container">  <div> 
-<img class="watched-icon" src="https://cdn-icons-png.freepik.com/512/2009/2009778.png?ga=GA1.1.696197500.1713527064" alt="Watched Icon" style="display: none;"></div>
-
-   <a href="https://raw.githack.com/ahmadmk2023/aflm-ajnabi-AR/main/The%20Beekeeper%20(2024).html"><div id="remot" tabindex="1" class="number">FHD</div></a>
-
-                                        <a href="intent://aHR0cHM6Ly90Z2I0LnRvcDE1dG9wLnNob3AvanNnanRyajFyeGcyL05vY2hlLmRlLmJvZGFzLjIw
-MjQuRHViYmVkLjcyMHAuSERDQU0uV2VjaW1hLnR1YmUubXA0Lmh0bWw/S2V5PUpXZ3hzblFBRzBn
-OUlrcEJwZDRGemcmRXhwaXJlcz0xNzE0MzE3NTUz#Intent;scheme=xmtv;package=co.wuffy.player;end "><div id="remot" tabindex="1" class="number">HD</div></a>
-                                         <a href="intent://aHR0cHM6Ly90Z2I0LnRvcDE1dG9wLnNob3AvanNnanRyajFyeGcyL05vY2hlLmRlLmJvZGFzLjIw
-MjQuRHViYmVkLjcyMHAuSERDQU0uV2VjaW1hLnR1YmUubXA0Lmh0bWw/S2V5PW9GaVQwb19JLWls
-bzhjUVFRb2pYY2cmRXhwaXJlcz0xNzEzNTQwNjUy#Intent;scheme=xmtv;package=co.wuffy.player;end "><div id="remot" tabindex="1" class="number" >SD</div></a> </div ></button> 
   </div> 
          </div>
         </div>
     </div>
 </body>
 </html>
-
