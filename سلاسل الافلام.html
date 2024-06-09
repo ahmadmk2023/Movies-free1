@@ -190,28 +190,15 @@ text-decoration:none;
     height: 18px;
 }
 
-.marquee {
-    display: inline-block;
-    padding-left: 100%; /* يضمن بدء النص من خارج الحاوية */
-    animation: marquee 8s linear infinite;
-    direction: ltr;
-}
-
-@keyframes marquee {
-    0% { transform: translateX(0%); }
-    100% { transform: translateX(-100%); }
-}
-.marquee {
-    display: inline-block;
-    padding-left: 100%; /* يضمن بدء النص من خارج الحاوية */
-    animation: marquee 12s linear infinite; /* مدة الحركة 10 ثوانٍ */
-}
-
-@keyframes marquee {
-    0% { transform: translateX(0%); }
-    100% { transform: translateX(-100%); }
-} 
-        
+    .marquee {
+            display: inline-block;
+            animation: marquee 8s linear infinite; /* مدة الحركة 15 ثانية */
+            white-space: nowrap;
+        }
+    @keyframes marquee {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }     
     </style>
     
 
@@ -262,11 +249,21 @@ text-decoration:none;
       
       <button class="button"onclick="window.open('https://raw.githack.com/ahmadmk2023/Movies-free1/main/movise-underworld.html')">
       <img src="https://w0.peakpx.com/wallpaper/66/483/HD-wallpaper-underworld-rise-of-the-lycans-michael-sheen-movie-action-film-rise-of-the-lycans-ovie-underworld-lucian-vampire-lycan-rhona-mitra.jpg" alt="thumb"onerror="handleImageError(this)"><div class="Movies-name"><span class="marquee">مشاهدة الافلام underworld  مترجم</span> </div></button>        
-           
+  
+      <button class="button"onclick="window.open('https://raw.githack.com/ahmadmk2023/Movies-free1/main/movise-Undisputed.html')">
+      <img src="https://c4.wallpaperflare.com/wallpaper/673/888/899/boyka-undisputed-scott-adkins-shirtless-wallpaper-preview.jpg" alt="thumb"onerror="handleImageError(this)"><div class="Movies-name"><span class="marquee">مشاهدة الافلام Boyka: Undisputed  مترجم</span> </div></button>   
+  
+  
    <script>
 function handleImageError(img) {
   img.src = 'https://i.imgur.com/MXnSqzd.png';
 }
+document.querySelectorAll('.marquee').forEach((el, index) => {
+  const delay = Math.random() * 6; // تأخير عشوائي يصل إلى 6 ثوان
+  el.style.animation = 'marquee 20s linear infinite';
+  el.style.animationDelay = `${delay}s`;
+});
+
 </script>
 </div>  
  </div>
