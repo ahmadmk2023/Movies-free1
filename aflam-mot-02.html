@@ -250,7 +250,72 @@ h1 {
              border: 2px solid #ff0066;
            
 	}  
-    
+          
+#searchbar {
+    /* position: relative; */
+    direction: rtl;
+    margin: 10px;
+    padding: 10px; 
+    font-size: 19px;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 70%;
+    height: 35px; 
+     margin-top: 10px; /* تترك مساحة للشريط العلوي */
+    margin-bottom: 7px; /
+    border: 2px solid gold;
+    box-sizing: border-box;
+}
+#button {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.animals {
+    padding: 10px;
+    border: 1px solid #666;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+#searchbar {
+    display: none;
+    margin-left: 10px;
+}
+
+#searchbar.show {
+    display: inline-block;
+}
+
+#searchbar:focus,#searchbar:hover {
+         background: #ccc; /* لون	 خلفية الزر */
+         color: #000 ;
+          border-radius: 5px;
+          outline: none; /* إزالة تأثير الـ focus الافتراضي */
+             border: 2px solid #ff0066;   
+        }
+
+
+
+.animals:last-child {
+    border-bottom: none;
+    color: red;
+    font-weight: bold;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+  .hidden { display: none; }
+        .show { display: block; } 
                 </style>
                 
                 
@@ -274,8 +339,11 @@ h1 {
                 
                 
                 <div class="topnav-right">
-                    <a href="http://action_search/"><i class="fa fa-search fa-beat" style="font-size: 20px;"></i></a>
-                    <!-- ZIR LBAHT-search -->
+                <!-- ico-search -->
+<a tabindex="1" href="javascript:void(0)"onclick="toggleSearchBar()">
+    <i class="fa fa-search" style="z-index: 1000;"></i>
+</a>
+                   <!-- ico-search -->
 
                 </div>
 
@@ -284,11 +352,18 @@ h1 {
 </head>
 <body>
 <div align="center" >
+
+
 <div class="container">
 <div id="page">
 <div class="section" data-section="aflam-modblja-002">
 <!--+++++++++++++++++-->
-
+<input id="searchbar" 
+       onkeyup="search_animal(); searchAnimals(event);" 
+       type="text" 
+       name="search" 
+       placeholder="ابحث عن فيلم..." 
+       tabindex="1">
 <!--+++++++++++++++++-->
 <button class="button"><img src="https://media.fushaar.com/media/2024/07/6XJM3C47iGOK9nFU6yLFCSf4U5c-229x337.jpg" alt="app tv"onerror="handleImageError(this)">
         <div class="lkhat1">Trigger Warning</div>
@@ -1094,7 +1169,47 @@ YXlsaXN0Lm0zdTg/d21zQXV0aFNpZ24=
                
   <a class="h1" href="https://raw.githack.com/ahmadmk2023/Movies-free1/main/aflam-mot-01.html"><div><h1 class="h1"tabindex="1" > page-01-المزيد من الأفلام</h1></div> </a>            
                           </b>
-    
+   <script>
+// Définir la fonction toggleSearchBar
+function toggleSearchBar() {
+    let searchbar = document.getElementById('searchbar');
+    searchbar.classList.toggle('show');
+    searchbar.focus();  // Mettre le focus sur la barre de recherche lorsqu'elle est affichée
+}
+
+// Ajouter un écouteur d'événement de clic sur chaque icône de recherche
+document.querySelectorAll('a i.fa-search').forEach(function(element) {
+    element.addEventListener('click', toggleSearchBar);
+});
+
+// Définir la fonction search_animal pour filtrer les boutons
+function search_animal() {
+    let input = document.getElementById('searchbar').value.trim().toLowerCase();
+    let buttons = document.querySelectorAll('.button');
+
+    buttons.forEach(button => {
+        let buttonText = button.textContent.toLowerCase();
+        if (buttonText.includes(input)) {
+            button.classList.remove('hidden');
+        } else {
+            button.classList.add('hidden');
+        }
+    });
+}
+
+function searchAnimals() {
+  // Add your search functionality here
+  console.log('Searching for animals...');
+}
+
+document.addEventListener('keydown', function(event) {
+  // Check if the user pressed the 8/58 button on the remote control
+  if (event.key === '8' && event.key === '58') {
+    searchAnimals();
+  }
+});
+</script>
+
      <script>
 function handleImageError(img) {
   img.src = 'https://i.imgur.com/MXnSqzd.png';
