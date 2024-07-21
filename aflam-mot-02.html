@@ -386,8 +386,19 @@ h1 {
        tabindex="1"><i  class="fas fa-times" id="close-icon" style="cursor: pointer;"></i></div>
        
        
-       
-   <!--+++++++++++++++++-->
+       <!--+++++++++++++++++-->
+<button class="button"><img src="https://media.fushaar.com/media/2024/07/zszRKfzjM5jltiq8rk6rasKVpUv-329x495.jpg" alt="app tv"onerror="handleImageError(this)">
+        <div class="lkhat1">Beverly Hills Cop:</div>
+   <div class="khlfia">  سيرفرات المشاهدة</div> 
+                        <!-- إضافة شكل الأرقام الدائرية -->
+                        <div class="number-container">  <div> 
+<img class="watched-icon" src="https://cdn-icons-png.freepik.com/512/2009/2009778.png?ga=GA1.1.696197500.1713527064" alt="Watched Icon" style="display: none;"></div>
+
+   <a href="intent://stream.fushaar.link/movie/47968/47968.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end "><div id="remot" tabindex="1" class="number">FHD</div></a>
+
+ <a href="intent://stream.fushaar.link/movie/47968/47968-480p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end "><div id="remot" tabindex="1" class="number">HD</div></a>
+                                         <a href="intent://stream.fushaar.link/movie/47968/47968-240p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end "><div id="remot" tabindex="1" class="number" >SD</div></a> </div ></button>            
+ <!--+++++++++++++++++--> 
 <button class="button"><img src="https://media.fushaar.com/media/2024/07/o5pcDZaA9Up0X612os34JNCRX6j-329x495.jpg" alt="app tv"onerror="handleImageError(this)">
         <div class="lkhat1">بيئة عدائية</div>
    <div class="khlfia">  سيرفرات المشاهدة</div> 
@@ -1359,9 +1370,47 @@ document.addEventListener('keydown', function(event) {
 </script>
 
      <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const sections = document.querySelectorAll('.section');
+
+  sections.forEach(function(section) {
+    const buttons = section.querySelectorAll('.button');
+    buttons.forEach(function(button, index) {
+      const watchedIcon = button.querySelector('.watched-icon');
+      const episodeNumber = index + 1;
+      const storageKey = `section${section.dataset.section}-watchedIcon${episodeNumber}`;
+      const isWatched = localStorage.getItem(storageKey);
+
+      if (isWatched === "true") {
+        watchedIcon.style.display = "inline";
+      }
+
+     button.addEventListener('click', function () {
+                const isWatched = localStorage.getItem(storageKey);
+
+                if (isWatched === "true") {
+                    watchedIcon.style.display = "inline";
+                } else {
+                    watchedIcon.style.display = "inline";
+                    localStorage.setItem(storageKey, "true");
+                }
+            });
+        });
+    });
+});
+
+
 function handleImageError(img) {
   img.src = 'https://i.imgur.com/MXnSqzd.png';
 }
+ 
+
+document.querySelectorAll('.marquee').forEach((el, index) => {
+  const delay = Math.random() * 6; // تأخير عشوائي يصل إلى 6 ثوان
+  el.style.animation = 'marquee 10s linear infinite';
+  el.style.animationDelay = `${delay}s`;
+});
+
 </script>     
    
          </div>
