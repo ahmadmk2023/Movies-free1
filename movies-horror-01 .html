@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>movies-horror</title>
+    <title>Movies the media</title>
   <link href="https://cdn.icon-icons.com/icons2/125/PNG/96/movies_drive_20265.png" rel="icon" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- إضافة jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>     <!-- إضافة watched-icon -->
+    <script src="https://raw.githack.com/ahmadmk2023/code-java/main/watched-icon-V2.js"></script>     
         
-   <script src="https://raw.githack.com/ahmadmk2023/code-java/main/watched-icon-V2.js"></script>         
 <body>
 
     <!----------  اكواد استايل القائمة  ------------>
@@ -44,11 +46,11 @@ z-index: 1;
        .topnav a:focus,.topnav a:hover {
      background: #ccc;
     color: #000;
-    border-radius: 4px;
+    border-radius: 5px;
     outline: none;
     border: 2px solid #ff0066;
     transition-delay: 0s, 1s;
-    box-shadow: 0 0 10px #ff0066, 0 0 20px #ff0066, 0 0 40px #ff0066, 0 0 80px #ff0066, 0 0 160px #ff0066, 0 0 320px #ff0066; #ff0066;
+    box-shadow: 0 0 10px #ff0066, 0 0 20px #ff0066, 0 0 40px #ff0066, 0 0 80px #ff0066, 0 0 160px #ff0066;
         }
         .topnav-centered a {
 
@@ -104,7 +106,7 @@ z-index: 1;
             }
 
            .button {
-                 position: relative;
+            position: relative; /* Ensure the icon is positioned relative to the button */
                 align:center;
                 display: inline-block; /* لجعل الزر عنصراً مستطيل الشكل */
             padding:2px; /* تعيين الهامش الداخلي للزر */
@@ -211,22 +213,22 @@ text-decoration:none;
 
 }
                 #page {
-            margin-top: 55px;
+            margin-top: 60px;
             width: 100%;
         }
         
                 
 /* تظهر الأيقونة أعلى الزجاجية */
         .watched-icon {
-            position: absolute;
+            position: absolute; 
+            background: #fff;
+            border-radius: 4px;
+            border: 2px solid #ff0066;
+            box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 40px #FFD700;
             top: 0;
             left: 0;
             width: 20px;
             height: 20px;
-            background: #fff;
-            border-radius: 5px;
-            border: 2px solid #000;
-            padding: 5px;
             display: none; /* Initially hide the watched icon */
         }
 h1 {
@@ -349,7 +351,7 @@ h1 {
 
 @keyframes marquee {
   0% { transform: translateX(0); }
-  50% { transform: translateX(-40%); }
+  50% { transform: translateX(-50%); }
   100% { transform: translateX(0); }
 }
                 </style>
@@ -397,10 +399,62 @@ h1 {
        name="search" 
        placeholder="ابحث عن فيلم..." 
        tabindex="1"><i  class="fas fa-times" id="close-icon" style="cursor: pointer;"></i></div>
-<div class="section" data-section="movies-horror-1">                 
-  <!--+++++++++++++++++-->
-                   
-                   
+              <!--+++++++++++++++++-->
+    <div class="section" data-section="movies-horror-01">
+                  <!--+++++++++++++++++-->
+                  
+                  
+                  
+<!--+++++++++++++++++-->                   
+ <button class="button">
+            <img src="https://media.fushaar.com/media/2024/01/4aRvg2ybz646gciX5M6qaclunC2-229x337.jpg" alt="app tv" onerror="handleImageError(this)">
+        <div class="mov-name">
+<div class="tv-name-inner">Sunrise-(2024)/شروق الشمس</div></div>
+            <div class="link">سيرفرات المشاهدة</div>
+            <div class="number-container">
+                <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/47219/47219.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end')" id="remot" tabindex="1">FHD</div>
+                <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/47219/47219-480p.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end')" id="remot" tabindex="1">HD</div>
+                <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/47219/47219-240p.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end')" id="remot" tabindex="1">SD</div>
+            </div>
+        </button>
+<!--+++++++++++++++++-->                   
+ <button class="button">
+            <img src="https://media.fushaar.com/media/2024/05/m3bwUWLBe5ogVB8HmpQs2YNNq3S-329x495.jpg" alt="app tv" onerror="handleImageError(this)">
+        <div class="mov-name">
+<div class="tv-name-inner">Abigail-(2024)/أبيغيل</div></div>
+            <div class="link">سيرفرات المشاهدة</div>
+            <div class="number-container">
+                <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/47758/47758.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end')" id="remot" tabindex="1">FHD</div>
+                <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/47758/47758-480p.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end')" id="remot" tabindex="1">HD</div>
+                <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/47758/47758-240p.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end')" id="remot" tabindex="1">SD</div>
+            </div>
+        </button>
+ <!--+++++++++++++++++-->                   
+ <button class="button">
+            <img src="https://media.fushaar.com/media/2023/12/lhmdKoZciQsD6pOxIi0ZkXudISw-329x495.jpg" alt="app tv" onerror="handleImageError(this)">
+        <div class="mov-name">
+<div class="tv-name-inner">Thanksgiving-(2023)/عيد الشكر</div></div>
+            <div class="link">سيرفرات المشاهدة</div>
+            <div class="number-container">
+                <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/46873/46873.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end')" id="remot" tabindex="1">FHD</div>
+                <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/46873/46873-480p.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end')" id="remot" tabindex="1">HD</div>
+                <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/46873/46873-240p.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end')" id="remot" tabindex="1">SD</div>
+            </div>
+        </button>
+ <!--+++++++++++++++++-->                   
+ <button class="button"><img src="https://media.fushaar.com/media/2024/07/hU42CRk14JuPEdqZG3AWmagiPAP-229x337.jpg" alt="app tv"onerror="handleImageError(this)">
+<div class="mov-name">
+<div class="tv-name-inner">A Quiet Place: Day One
+-2024/مكان هادئ: اليوم الأول</div></div>
+   <div class="link">  سيرفرات المشاهدة</div> 
+                        <!-- إضافة شكل الأرقام الدائرية -->
+<div class="number-container">
+ <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/48028/48028.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ')" id="remot" tabindex="1">FHD</div>
+ 
+    <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/47989/47989-480p.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ')" id="remot" tabindex="1">HD</div>
+    
+    <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/47989/47989-240p.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end')" id="remot" tabindex="1">SD</div> </div ></button>                    
+                       <!--+++++++++++++++++-->
  <button class="button"><img src="https://media.fushaar.com/media/2024/07/gAEUXC37vl1SnM7PXsHTF23I2vq-229x337.jpg" alt="app tv"onerror="handleImageError(this)">
 <div class="mov-name">
 <div class="tv-name-inner">Tarot-2024/التارو</div></div>
@@ -431,9 +485,7 @@ h1 {
 <div class="tv-name-inner">The Strangers Chapter 1-2024/الغريبون الفصل الاول</div></div>
    <div class="link">  سيرفرات المشاهدة</div> 
                         <!-- إضافة شكل الأرقام الدائرية -->
-<div class="number-container">  <div> 
-<img class="watched-icon" src="https://cdn-icons-png.freepik.com/512/686/686333.png?ga=GA1.1.1704221200.1716147359" alt="Watched Icon" style="display: none;"></div>
-
+<div class="number-container">
  <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/47824/47824.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ')" id="remot" tabindex="1">FHD</div>
  
     <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/47824/47824-480p.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ')" id="remot" tabindex="1">HD</div>
@@ -664,6 +716,8 @@ document.addEventListener('keydown', function(event) {
   }
 });
 </script>
+
+
 
     
    </div></div>
