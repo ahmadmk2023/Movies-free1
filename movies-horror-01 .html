@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movies the media</title>
+    <title>Movies horror</title>
   <link href="https://cdn.icon-icons.com/icons2/125/PNG/96/movies_drive_20265.png" rel="icon" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
@@ -258,91 +258,59 @@ h1 {
 	}  
 #searchbar-container {
     position: relative;
-    direction: rtl;
     width: 70%;
-    margin: 10px;
-}
+    margin: 10px auto;
+    direction: rtl;
 
+}
+ #searchbar:focus,#searchbar:hover {
+       background: #ccc;
+    color: #000;
+    border-radius: 5px;
+    outline: none;
+    border: 2px solid #ff0066;
+    transition-delay: 0s, 1s;
+    box-shadow: 0 0 10px #ff0066, 0 0 20px #ff0066;
+    }
 #searchbar {
     width: 100%;
-    padding: 10px;
+    padding: 10px;margin-top:10px;
     font-size: 19px;
     font-weight: bold;
     border-radius: 5px;
     height: 35px;
-    margin-top: 10px;
-    margin-bottom: 7px;
     border: 2px solid gold;
     box-sizing: border-box;
-}
-
-#close-icon {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 10px; /* Adjust based on your layout */
-    cursor: pointer;
-    font-size: 20px;
-    color: grey;
-}
-
-
-#close-icon:focus,#close-icon:hover {
-    color: red;
-
-}
-
-
-#button {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.animals {
-    padding: 10px;
-    border: 1px solid #666;
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-#searchbar {
-    display: none;
-    margin-left: 10px;
+    display: none; /* Initially hide the search bar */
 }
 
 #searchbar.show {
     display: inline-block;
 }
 
-#searchbar:focus,#searchbar:hover {
-         background: #ccc; /* لون	 خلفية الزر */
-         color: #000 ;
-          border-radius: 5px;
-          outline: none; /* إزالة تأثير الـ focus الافتراضي */
-             border: 2px solid #ff0066;   
-        }
+#close-icon {
+    position: absolute;
+    top: 60%;
+    left: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 20px;
+    color: grey;
+    display: none; /* Initially hide the close icon */
+}
 
+#close-icon.show {
+    display: block;
+}
 
-
-.animals:last-child {
-    border-bottom: none;
+#close-icon:hover, #close-icon:focus {
     color: red;
-    font-weight: bold;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.hidden {
+    display: none;
 }
-  .hidden { display: none; }
-        .show { display: block; } 
+       
         .tv-name-inner {
   display: inline-block;
   padding-left: 100%;
@@ -375,16 +343,11 @@ h1 {
                 <!-- ZIR LBAHT-search -->
                 
                 
-                <div class="topnav-right">
-                <!-- ico-search -->
-<a tabindex="1" href="javascript:void(0)"onclick="toggleSearchBar()">
-    <i class="fa fa-search" style="z-index: 1000;"></i>
-</a>
-                   <!-- ico-search -->
-
-                </div>
-
-            </div>              
+    <div class="topnav-right">
+        <a tabindex="1" href="javascript:void(0)" id="search-icon">
+            <i class="fa fa-search"></i>
+        </a>
+    </div></div>              
               
 </head>
 <body>
@@ -393,12 +356,15 @@ h1 {
 <div id="page">
 
 <!--+++++++++++++++++-->
-<div align="center" id="searchbar-container"style="position: relative; width: 70%; margin: 10px;"><input id="searchbar" 
-       onkeyup="search_animal(); searchAnimals(event);" 
-       type="text" 
-       name="search" 
-       placeholder="ابحث عن فيلم..." 
-       tabindex="1"><i  class="fas fa-times" id="close-icon" style="cursor: pointer;"></i></div>
+    <div align="center" id="searchbar-container">
+        <input id="searchbar" 
+               onkeyup="search_animal();" 
+               type="text" 
+               name="search" 
+               placeholder="ابحث عن فيلم..." 
+               tabindex="1">
+        <i class="fas fa-times" tabindex="1"id="close-icon" onclick="toggleSearchBar()"></i>
+    </div>
               <!--+++++++++++++++++-->
     <div class="section" data-section="movies-horror-01">
                   <!--+++++++++++++++++-->
@@ -664,20 +630,24 @@ h1 {
     
     
      
-   <script>
-// Définir la fonction toggleSearchBar
+ <script>
+// Toggle search bar visibility
 function toggleSearchBar() {
     let searchbar = document.getElementById('searchbar');
-    searchbar.classList.toggle('show');
-    searchbar.focus();  // Mettre le focus sur la barre de recherche lorsqu'elle est affichée
+    let closeIcon = document.getElementById('close-icon');
+    let isVisible = searchbar.classList.contains('show');
+
+    if (isVisible) {
+        searchbar.classList.remove('show');
+        closeIcon.classList.remove('show');
+    } else {
+        searchbar.classList.add('show');
+        closeIcon.classList.add('show');
+        searchbar.focus();  // Set focus on the search bar when it is displayed
+    }
 }
 
-// Ajouter un écouteur d'événement de clic sur chaque icône de recherche
-document.querySelectorAll('a i.fa-search').forEach(function(element) {
-    element.addEventListener('click', toggleSearchBar);
-});
-
-// Définir la fonction search_animal pour filtrer les boutons
+// Filter buttons based on search input
 function search_animal() {
     let input = document.getElementById('searchbar').value.trim().toLowerCase();
     let buttons = document.querySelectorAll('.button');
@@ -692,30 +662,29 @@ function search_animal() {
     });
 }
 
-function searchAnimals() {
-  // Add your search functionality here
-  console.log('Searching for animals...');
-}
-// Add close-icon
-document.getElementById('close-icon').addEventListener('click', function() {
-    var searchbarContainer = document.getElementById('searchbar-container');
+// Add event listener to handle search icon click
+document.getElementById('search-icon').addEventListener('click', toggleSearchBar);
 
-    if (searchbarContainer.style.display === 'none') {
-        searchbarContainer.style.display = 'block';
-    } else {
-        searchbarContainer.style.display = 'none';
+// Optional: Add event listener for a specific keypress
+document.addEventListener('keydown', function(event) {
+    if (event.key === '8' && event.key === '58') {
+        searchAnimals();
     }
 });
 
+function searchAnimals() {
+    // Implement additional search functionality if needed
+    console.log('Searching for animals...');
+}
 
-
-document.addEventListener('keydown', function(event) {
-  // Check if the user pressed the 8/58 button on the remote control
-  if (event.key === '8' && event.key === '58') {
-    searchAnimals();
-  }
+// Add event listener to close icon click
+document.getElementById('close-icon').addEventListener('click', function() {
+    document.getElementById('searchbar').classList.remove('show');
+    document.getElementById('close-icon').classList.remove('show');
 });
-</script>
+
+
+    </script>
 
 
 
