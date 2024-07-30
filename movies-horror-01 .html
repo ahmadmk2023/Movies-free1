@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movies the media</title>
+    <title>movies-horror</title>
   <link href="https://cdn.icon-icons.com/icons2/125/PNG/96/movies_drive_20265.png" rel="icon" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
         
-   <script src="https://raw.githack.com/ahmadmk2023/code-java/main/watched-icon.js"></script>         
+   <script src="https://raw.githack.com/ahmadmk2023/code-java/main/watched-icon-V2.js"></script>         
 <body>
 
     <!----------  اكواد استايل القائمة  ------------>
@@ -217,18 +217,18 @@ text-decoration:none;
         
                 
 /* تظهر الأيقونة أعلى الزجاجية */
-.watched-icon {
-    position: absolute;
-    top: 0;
-    left: 0; /* يمكنك ضبط القيمة الأفضل حسب تصميمك */
-    width: 20px;
-    height: 20px;
-     /* لجعلها تظهر فوق الزجاجية */
-    background:#fff; /* لخلفية زجاجية بلون أبيض شفاف */
-    border-radius: 5px; /* للزوايا المستديرة */
-    border:2px solid #000;
-    padding: 5px; /* تعديل حجم الأيقونة داخل الزجاجية */
-}
+        .watched-icon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border-radius: 5px;
+            border: 2px solid #000;
+            padding: 5px;
+            display: none; /* Initially hide the watched icon */
+        }
 h1 {
     position: relative;
     align:center;
@@ -389,7 +389,7 @@ h1 {
 <div align="center" >
 <div class="container">
 <div id="page">
-<div class="section" data-section="movies-horror-01">
+
 <!--+++++++++++++++++-->
 <div align="center" id="searchbar-container"style="position: relative; width: 70%; margin: 10px;"><input id="searchbar" 
        onkeyup="search_animal(); searchAnimals(event);" 
@@ -397,17 +397,16 @@ h1 {
        name="search" 
        placeholder="ابحث عن فيلم..." 
        tabindex="1"><i  class="fas fa-times" id="close-icon" style="cursor: pointer;"></i></div>
-                   <!--+++++++++++++++++-->
+<div class="section" data-section="movies-horror-1">                 
+  <!--+++++++++++++++++-->
                    
                    
- <button class="button"><img src="https://media.fushaar.com/media/2024/07/5Bx5tG66PhX2Lb6nrZGDjNZJO5u-329x495.jpg" alt="app tv"onerror="handleImageError(this)">
+ <button class="button"><img src="https://media.fushaar.com/media/2024/07/gAEUXC37vl1SnM7PXsHTF23I2vq-229x337.jpg" alt="app tv"onerror="handleImageError(this)">
 <div class="mov-name">
 <div class="tv-name-inner">Tarot-2024/التارو</div></div>
    <div class="link">  سيرفرات المشاهدة</div> 
                         <!-- إضافة شكل الأرقام الدائرية -->
-<div class="number-container">  <div> 
-<img class="watched-icon" src="https://cdn-icons-png.freepik.com/512/686/686333.png?ga=GA1.1.1704221200.1716147359" alt="Watched Icon" style="display: none;"></div>
-
+<div class="number-container">
  <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/47989/47989.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ')" id="remot" tabindex="1">FHD</div>
  
     <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/47989/47989-480p.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ')" id="remot" tabindex="1">HD</div>
@@ -419,9 +418,7 @@ h1 {
 <div class="tv-name-inner">Handling the Undead-2024/التعامل مع اللاموتى</div></div>
    <div class="link">  سيرفرات المشاهدة</div> 
                         <!-- إضافة شكل الأرقام الدائرية -->
-<div class="number-container">  <div> 
-<img class="watched-icon" src="https://cdn-icons-png.freepik.com/512/686/686333.png?ga=GA1.1.1704221200.1716147359" alt="Watched Icon" style="display: none;"></div>
-
+<div class="number-container">
  <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/47933/47933.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ')" id="remot" tabindex="1">FHD</div>
  
     <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/47933/47933-480p.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ')" id="remot" tabindex="1">HD</div>
@@ -443,7 +440,7 @@ h1 {
     
     <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/47824/47824-240p.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end')" id="remot" tabindex="1">SD</div> </div ></button> 
                <!--+++++++++++++++++-->                   
- <button class="button"><img src="https://media.fushaar.com/media/2024/07/gAEUXC37vl1SnM7PXsHTF23I2vq-229x337.jpg" alt="app tv"onerror="handleImageError(this)">
+ <button class="button"><img src="https://media.fushaar.com/media/2024/07/5Bx5tG66PhX2Lb6nrZGDjNZJO5u-329x495.jpg" alt="app tv"onerror="handleImageError(this)">
         <div class="mov-name">
         <div class="tv-name-inner">Lowlifes-2024/حياة منخفضة</div></div>
    <div class="link">  سيرفرات المشاهدة</div> 
@@ -598,7 +595,19 @@ h1 {
     <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/47374/47374-480p.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ')" id="remot" tabindex="1">HD</div>
     
     <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/47374/47374-240p.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end')" id="remot" tabindex="1">SD</div> </div ></button>     
-                
+ <!--+++++++++++++++++-->             
+ <button class="button"><img src="https://media.fushaar.com/media/2023/04/gCUFtTvjK4gbmjVxhx8bhyOhAeW-229x337.jpg" alt="app tv"onerror="handleImageError(this)">
+<div class="mov-name">
+<div class="tv-name-inner">Blood-(2022)/الدم</div></div>
+   <div class="link">  سيرفرات المشاهدة</div> 
+                        <!-- إضافة شكل الأرقام الدائرية -->
+<div class="number-container"> 
+
+ <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/45132/45132.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ')" id="remot" tabindex="1">FHD</div>
+ 
+    <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/45132/45132-480p.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ')" id="remot" tabindex="1">HD</div>
+    
+    <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/45132/45132-240p.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end')" id="remot" tabindex="1">SD</div> </div ></button>                   
     
     
     
@@ -656,42 +665,7 @@ document.addEventListener('keydown', function(event) {
 });
 </script>
 
-     <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const sections = document.querySelectorAll('.section');
-
-  sections.forEach(function(section) {
-    const buttons = section.querySelectorAll('.button');
-    buttons.forEach(function(button, index) {
-      const watchedIcon = button.querySelector('.watched-icon');
-      const episodeNumber = index + 1;
-      const storageKey = `section${section.dataset.section}-watchedIcon${episodeNumber}`;
-      const isWatched = localStorage.getItem(storageKey);
-
-      if (isWatched === "true") {
-        watchedIcon.style.display = "inline";
-      }
-
-     button.addEventListener('click', function () {
-                const isWatched = localStorage.getItem(storageKey);
-
-                if (isWatched === "true") {
-                    watchedIcon.style.display = "inline";
-                } else {
-                    watchedIcon.style.display = "inline";
-                    localStorage.setItem(storageKey, "true");
-                }
-            });
-        });
-    });
-});
-
-
-function handleImageError(img) {
-  img.src = 'https://i.imgur.com/MXnSqzd.png';
-}
-
-</script>     
+    
    </div></div>
         </div>
     </div>
