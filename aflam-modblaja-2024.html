@@ -3,19 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movies  Resident Evil </title>
+    <title>Movies horror</title>
   <link href="https://cdn.icon-icons.com/icons2/125/PNG/96/movies_drive_20265.png" rel="icon" type="image/x-icon">
-  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script>
-
-  </script>      
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>      
-</head>
+  <!-- إضافة jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>     <!-- إضافة watched-icon -->
+    <script src="https://raw.githack.com/ahmadmk2023/code-java/main/watched-icon-V2.js"></script>     
+        
 <body>
-<!-- lçaima l3lwia -->
 
     <!----------  اكواد استايل القائمة  ------------>
     <style>
@@ -42,19 +39,19 @@ z-index: 1;
             float: left;
             color: #ffffff;
             text-align: center;
-            padding: 15px 10px;
+            padding: 12px 14px;
             text-decoration: none;
-            font-size: 19px;
+            font-size: 20px;
         }
-
-       
        .topnav a:focus,.topnav a:hover {
-            background-color: #ccc; /* يمكنك تغيير اللون إلى أي لون تفضله */
-            color: #000; /* تغيير لون النص إلى اللون المناسب للخلفية */
-            outline: none; /* إزالة تأثير الـ focus الافتراضي */
-            border-radius: 8px; border: 2px solid #ff0066;
+     background: #ccc;
+    color: #000;
+    border-radius: 5px;
+    outline: none;
+    border: 2px solid #ff0066;
+    transition-delay: 0s, 1s;
+    box-shadow: 0 0 10px #ff0066, 0 0 20px #ff0066, 0 0 40px #ff0066, 0 0 80px #ff0066, 0 0 160px #ff0066;
         }
-
         .topnav-centered a {
 
             float: none;
@@ -84,12 +81,24 @@ z-index: 1;
                 color: #ffff;
             }
         }
+    </style>
+    <head>
 
+        <body>
+
+    
+
+            <!-- lçaima l3lwia and-->
+            
+            <html>
+<head>
+    
+    <style>
    body {
                 height: 100%;
                 margin: auto;
                 position: relative;
-           background:#339a8a;
+          background:#339a8a;
              background-position: center;
                 align-items: center;
                 justify-content: center;
@@ -97,7 +106,7 @@ z-index: 1;
             }
 
            .button {
-                 position: relative;
+            position: relative; /* Ensure the icon is positioned relative to the button */
                 align:center;
                 display: inline-block; /* لجعل الزر عنصراً مستطيل الشكل */
             padding:2px; /* تعيين الهامش الداخلي للزر */
@@ -120,12 +129,14 @@ z-index: 1;
 
 }
  #remot:focus,#remot:hover {
-         background: #ccc; /* لون	 خلفية الزر */
-         color: #000 ;
-          border-radius: 50%;
-          outline: none; /* إزالة تأثير الـ focus الافتراضي */
-             border: 2px solid #ff0066;
-            transform: scale(1.5);
+    background: #ccc;
+    color: #000;
+    border-radius: 50%;
+    outline: none;
+    border: 2px solid #ff0066;
+    transform: scale(1.5);
+    transition-delay: 0s, 1s;
+    box-shadow: 0 0 10px #ff0066, 0 0 20px #ff0066, 0 0 40px #ff0066, 0 0 80px #ff0066, 0 0 160px #ff0066, 0 0 320px #ff0066;
         }
   
             /* .ازالة شريط التمرير اسفل المدونة*/
@@ -151,42 +162,23 @@ z-index: 1;
                 -webkit-shadow: inset 0 0 0 #000000;
                 -webkit-border-radius: 100px;
             }
-
- .container {
-            display: flex;
-            gap: 5px; /* المسافة بين السيرفر واسم الفيلم */
-        }
-
-        .serveur, .Movies-name {
-            padding: 2px; /* تعيين الهامش الداخلي للزر */
-            text-align: center;
-            font-size: 15px; /* حجم الخط النسبي */
-            color: #fff;
-            font-weight: bold;
-            display: flex; /* لتفعيل align-items و justify-content */
-            align-items: center;
-            justify-content: center;
-            white-space: nowrap; /* لمنع النصوص الطويلة من الانتقال للسطر التالي */
-            overflow: hidden; /* إخفاء النص الزائد */
-            border-radius: 1vw; /* نصف قطر الحدود النسبي */
-            border: 0.3vw solid gold; /* حدود النسبي */
-            position: relative;
-            width: 140px; /* عرض الحاوية */
-            height: 18px;
-            margin-top: 5px;
-        }
-
-     
-    .marquee {
-            display: inline-block;
-            animation: marquee 15s linear infinite; /* مدة الحركة 15 ثانية */
-            white-space: nowrap;
-        }
-    @keyframes marquee {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-
+.Movies-name,.serveur {
+    padding: 2px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 2px solid gold;
+    margin-top: 2px;
+    width: 140px;
+    height: 18px;
+}
       .number-container {
             display: flex;
             justify-content: space-around;
@@ -195,9 +187,8 @@ z-index: 1;
           
         }
 
-
-
         .number {
+        
             width: 30px;
             height: 30px;
              background:#339a8a;
@@ -226,33 +217,111 @@ text-decoration:none;
             width: 100%;
         }
         
-    .watched-container {
-            position: relative;
-            display: inline-block;
-        }            
+                
 /* تظهر الأيقونة أعلى الزجاجية */
-.watched-icon {
-    position: absolute;
-    top: 0;
-    left: 0; /* يمكنك ضبط القيمة الأفضل حسب تصميمك */
-    width: 20px;
-    height: 20px;
-     /* لجعلها تظهر فوق الزجاجية */
-    background:#fff; /* لخلفية زجاجية بلون أبيض شفاف */
-    border-radius: 5px; /* للزوايا المستديرة */
-    border:2px solid #000;
-    padding: 5px; /* تعديل حجم الأيقونة داخل الزجاجية */
+        .watched-icon {
+            position: absolute; 
+            background: #fff;
+            border-radius: 4px;
+            border: 2px solid #ff0066;
+            box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 40px #FFD700;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            display: none; /* Initially hide the watched icon */
+        }
+h1 {
+    position: relative;
+    align:center;
+    width: 90%;
+    height: 36px;
+    background: #3c4a71;
+    border-color: #fff;
+    border-radius: 8px; /* تدوير الزوايا لتصميم أفضل */
+    padding:5px; /* تعيين الهامش الداخلي للزر */
+	text-align: center;
+	margin-top:2px;
+	font-size: 20px;
+	color:#fff;
+	font-family: "Airarabia", Sans-serif;
+	font-weight: bold;
+	}
+    
+  .h1:focus,.h1:hover {
+   background: gold; /* لون	 خلفية الزر */
+         color: #000 ;
+          border-radius: 8px;
+          outline: none; /* إزالة تأثير الـ focus الافتراضي */
+             border: 2px solid #ff0066;
+           
+	}  
+#searchbar-container {
+    position: relative;
+    width: 70%;
+    margin: 10px auto;
+    direction: rtl;
+
+}
+ #searchbar:focus,#searchbar:hover {
+       background: #ccc;
+    color: #000;
+    border-radius: 5px;
+    outline: none;
+    border: 2px solid #ff0066;
+    transition-delay: 0s, 1s;
+    box-shadow: 0 0 10px #ff0066, 0 0 20px #ff0066;
+    }
+#searchbar {
+    width: 100%;
+    padding: 10px;margin-top:10px;
+    font-size: 19px;
+    font-weight: bold;
+    border-radius: 5px;
+    height: 35px;
+    border: 2px solid gold;
+    box-sizing: border-box;
+    display: none; /* Initially hide the search bar */
 }
 
-        .watched-container:hover .watched-icon {
-            display: block;
-        }
+#searchbar.show {
+    display: inline-block;
+}
 
-/* تخصيص للشاشات الصغيرة (مثل الهواتف المحمولة) */
-@media (max-width: 767px) 
-/* تخصيص للشاشات الكبيرة (مثل شاشات التلفاز) */
-@media (min-width: 768px)
+#close-icon {
+    position: absolute;
+    top: 60%;
+    left: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 20px;
+    color: grey;
+    display: none; /* Initially hide the close icon */
+}
 
+#close-icon.show {
+    display: block;
+}
+
+#close-icon:hover, #close-icon:focus {
+    color: red;
+}
+
+.hidden {
+    display: none;
+}
+       
+        .tv-name-inner {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 12s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
                 </style>
                 
                 
@@ -265,39 +334,67 @@ text-decoration:none;
                 <!-- ISIM TATBI9 -->
 
                 <!-- ZIR ROJO3 -->
-<a href="go:afmv "><i  class="fa fa-reply "style="font-size: 20px;"></i>
+                <a href="go:afmv ">
+                    <i  class="fa fa-reply "></i>
                 </a>
                 <!-- ZIR ROJO3 -->
 
- <a ><i class="fa fa-film"></i></a>
+<a><i class="fa-solid fa-clapperboard"></i></a>
                 <!-- ZIR LBAHT-search -->
                 
                 
-                <div class="topnav-right">
-                    <a href="http://action_search/"><i class="fa fa-search " style="font-size: 20px;"></i></a>
-                    <!-- ZIR LBAHT-search -->
-
-                </div></div>                 
-                
-
+    <div class="topnav-right">
+        <a tabindex="1" href="javascript:void(0)" id="search-icon">
+            <i class="fa fa-search"></i>
+        </a>
+    </div></div>              
+              
+</head>
+<body>
 <div align="center" >
 <div class="container">
 <div id="page">
-<div class="section" data-section="movise-AR01.DUB-">
 
+<!--+++++++++++++++++-->
+    <div align="center" id="searchbar-container">
+        <input id="searchbar" 
+               onkeyup="search_animal();" 
+               type="text" 
+               name="search" 
+               placeholder="ابحث عن فيلم..." 
+               tabindex="1">
+        <i class="fas fa-times" tabindex="1"id="close-icon" onclick="toggleSearchBar()"></i>
+    </div>
+              <!--+++++++++++++++++-->
+<div class="section" data-section="movise-AR.DUB-01">
 
-
+                  <!--+++++++++++++++++-->
+                  
+                     
+<!--+++++++++++++++++-->                   
+<button class="button">
+  <img src="https://w27.my-cima.net/uploads/articles/57366915.jpg" alt="app tv" onerror="handleImageError(this)">
+  <div class="Movies-name">
+<span class="tv-name-inner">Deadpool and Wolverine 2024/مدبلج</span>
+  </div>
+  <div class="serveur">سيرفرات المشاهدة</div>
+  <div class="number-container">
+    
+  <div class="number" onclick="window.open('intent://dl.dropbox.com/scl/fi/twjt7uqmc2penaa7fptp7/Cimawbas-Deadpool.-.Wolverine.2024..CAMRip.AR.DUB.V2.mp4?rlkey=2wt1cshk0oa7pelmyjhaau1ui&st=azm1myee&dl=0#Intent;scheme=https;package=co.wuffy.player;end')" id="remot" tabindex="1">1</div>
+                <div class="number" onclick="window.open('intent://dl.dropbox.com/scl/fi/twjt7uqmc2penaa7fptp7/Cimawbas-Deadpool.-.Wolverine.2024..CAMRip.AR.DUB.V2.mp4?rlkey=2wt1cshk0oa7pelmyjhaau1ui&st=azm1myee&dl=0#Intent;scheme=https;package=co.wuffy.player;end')" id="remot" tabindex="1">2</div>
+                <div class="number" onclick="window.open('https://vipserver.liiivideo.com/embed-h43vru1p0uws.html')" id="remot" tabindex="1">3</div>
+    
+  </div>
+</button>
 <!--+++++++++++++++++-->  
 <button class="button">
   <img src="https://w27.my-cima.net/uploads/articles/486a74aa.jpg" alt="app tv" onerror="handleImageError(this)">
   <div class="Movies-name">
-<span class="marquee">مدبلج  Wake Up 2023 مشاهدة فيلم </span>
+<span class="tv-name-inner">مدبلج  Wake Up 2023 مشاهدة فيلم </span>
   </div>
   <div class="serveur">سيرفرات المشاهدة</div>
   <div class="number-container">
-    <div>
-      <img class="watched-icon" src="https://cdn-icons-png.freepik.com/512/686/686333.png?ga=GA1.1.1704221200.1716147359" alt="Watched Icon" style="display: none;">
-    </div>
+    
  <a  href="intent://aHR0cHM6Ly9kbC5kcm9wYm94LmNvbS9zY2wvZmkvank4dTh5ZnM5ZjRzanU5ZzdtNHA1L0NpbWF3
 YmFzLVdha2UuVXAuMjAyMy4uQ0FNUmlwLkFSLkhRLkRVQi5tcDQ/cmxrZXk9djF1NHpwZzZrY3p3
 enBsOHN1bXJ2NnVzaCZzdD0wNnc1Mjd6aCZkbD0w#Intent;scheme=xmtv;package=co.wuffy.player;end">
@@ -319,7 +416,7 @@ enBsOHN1bXJ2NnVzaCZzdD0wNnc1Mjd6aCZkbD0w#Intent;scheme=xmtv;package=co.wuffy.pla
 <button class="button">
   <img src="https://w27.my-cima.net/uploads/articles/cad35b78.jpg" alt="app tv" onerror="handleImageError(this)">
   <div class="Movies-name">
-<span class="marquee">مدبلج Beverly Hills Cop Axel F 2024 مشاهدة فيلم </span>
+<span class="tv-name-inner">مدبلج Beverly Hills Cop Axel F 2024 مشاهدة فيلم </span>
   </div>
   <div class="serveur">سيرفرات المشاهدة</div>
   <div class="number-container">
@@ -344,11 +441,10 @@ bHpwdXZvamd3MGpocnFqJnN0PXNyOGlocjVyJmRsPTA=#Intent;scheme=xmtv;package=co.wuffy
   </div>
 </button>
 <!--+++++++++++++++++--> 
-<!--+++++++++++++++++-->  
 <button class="button">
   <img src="https://w27.my-cima.net/uploads/articles/b2decc1b.jpg" alt="app tv" onerror="handleImageError(this)">
   <div class="Movies-name">
-<span class="marquee">مدبلج Bad Boys 4 Ride or Die 2024 مشاهدة فيلم </span>
+<span class="tv-name-inner">مدبلج Bad Boys 4 Ride or Die 2024 مشاهدة فيلم </span>
   </div>
   <div class="serveur">سيرفرات المشاهدة</div>
   <div class="number-container">
@@ -376,7 +472,7 @@ MzIwNmNraGkmc3Q9Mmp0NTE1anomZGw9MA==#Intent;scheme=xmtv;package=co.wuffy.player;
 <button class="button">
   <img src="https://w27.my-cima.net/uploads/articles/92cd8261.jpg" alt="app tv" onerror="handleImageError(this)">
   <div class="Movies-name">
-<span class="marquee">مدبلج Hijack 1971 (2024) مشاهدة فيلم </span>
+<span class="tv-name-inner">مدبلج Hijack 1971 (2024) مشاهدة فيلم </span>
   </div>
   <div class="serveur">سيرفرات المشاهدة</div>
   <div class="number-container">
@@ -400,7 +496,7 @@ MzIwNmNraGkmc3Q9Mmp0NTE1anomZGw9MA==#Intent;scheme=xmtv;package=co.wuffy.player;
 <button class="button">
   <img src="https://w27.my-cima.net/uploads/articles/ff93ce50.jpg" alt="app tv" onerror="handleImageError(this)">
   <div class="Movies-name">
-<span class="marquee">مدبلج The End We Start From (2023) مشاهدة فيلم </span>
+<span class="tv-name-inner">مدبلج The End We Start From (2023) مشاهدة فيلم </span>
   </div>
   <div class="serveur">سيرفرات المشاهدة</div>
   <div class="number-container">
@@ -423,7 +519,7 @@ MzIwNmNraGkmc3Q9Mmp0NTE1anomZGw9MA==#Intent;scheme=xmtv;package=co.wuffy.player;
 <button class="button">
   <img src="https://w27.my-cima.net/uploads/articles/e5e6923c.jpg" alt="app tv" onerror="handleImageError(this)">
   <div class="Movies-name">
-<span class="marquee">مدبلج The End We Start From (2023) مشاهدة فيلم </span>
+<span class="tv-name-inner">مدبلج The End We Start From (2023) مشاهدة فيلم </span>
   </div>
   <div class="serveur">سيرفرات المشاهدة</div>
   <div class="number-container">
@@ -446,7 +542,7 @@ MzIwNmNraGkmc3Q9Mmp0NTE1anomZGw9MA==#Intent;scheme=xmtv;package=co.wuffy.player;
 <button class="button">
   <img src="https://w27.my-cima.net/uploads/articles/82ff5bb8.jpg" alt="app tv" onerror="handleImageError(this)">
   <div class="Movies-name">
-<span class="marquee">مدبلج The Exorcism (2023) مشاهدة فيلم </span>
+<span class="tv-name-inner">مدبلج The Exorcism (2023) مشاهدة فيلم </span>
   </div>
   <div class="serveur">سيرفرات المشاهدة</div>
   <div class="number-container">
@@ -475,7 +571,7 @@ dD0yMDJzc3lsaiZkbD0w#Intent;scheme=xmtv;package=co.wuffy.player;end">
 <button class="button">
   <img src="https://w27.my-cima.net/uploads/articles/da9405ae.jpg" alt="app tv" onerror="handleImageError(this)">
   <div class="Movies-name">
-<span class="marquee">مدبلج The Bikeriders (2023) مشاهدة فيلم </span>
+<span class="tv-name-inner">مدبلج The Bikeriders (2023) مشاهدة فيلم </span>
   </div>
   <div class="serveur">سيرفرات المشاهدة</div>
   <div class="number-container">
@@ -504,7 +600,7 @@ MTFobWJyMTQmc3Q9YmczY3psbzQmZGw9MA==#Intent;scheme=xmtv;package=co.wuffy.player;
 <button class="button">
   <img src="https://w27.my-cima.net/uploads/articles/67c99321.jpg" alt="app tv" onerror="handleImageError(this)">
   <div class="Movies-name">
-<span class="marquee">مدبلج Wild Eyed And Wicked (2023) مشاهدة فيلم </span>
+<span class="tv-name-inner">مدبلج Wild Eyed And Wicked (2023) مشاهدة فيلم </span>
   </div>
   <div class="serveur">سيرفرات المشاهدة</div>
   <div class="number-container">
@@ -562,7 +658,7 @@ aTR0M2NmN2x5b3I1cHp3cGd2dzZpYiZzdD04YzZ4Nmt5ZCZkbD0w#Intent;scheme=xmtv;package=
 <button class="button">
   <img src="https://wecima.show/wp-content/uploads/2024/01/The-Painter-2024.jpg" alt="app tv" onerror="handleImageError(this)">
   <div class="Movies-name">
-<span class="marquee">مدبلج The Painter (2024) مشاهدة فيلم </span>
+<span class="tv-name-inner">مدبلج The Painter (2024) مشاهدة فيلم </span>
   </div>
   <div class="serveur">سيرفرات المشاهدة</div>
   <div class="number-container">
@@ -592,7 +688,7 @@ MGRuZDFha3VwcyZzdD1yNGJwaG9ndyZkbD0w#Intent;scheme=xmtv;package=co.wuffy.player;
 <button class="button">
   <img src="https://cima4u.stream/wp-content/uploads/2024/06/Alienoid-Return-to-the-Future-2023-347x520-494476.jpg" alt="app tv" onerror="handleImageError(this)">
   <div class="Movies-name">
-<span class="marquee">مدبلج Alienoid: The Return to the Future (2024) مشاهدة فيلم </span>
+<span class="tv-name-inner">مدبلج Alienoid: The Return to the Future (2024) مشاهدة فيلم </span>
   </div>
   <div class="serveur">سيرفرات المشاهدة</div>
   <div class="number-container">
@@ -623,7 +719,7 @@ aHBoZ3dzOW5yeG1rOGwyejhlNXhnJnN0PTZibmNkM3I5JmRsPTA=#Intent;scheme=xmtv;package=
 <button class="button">
   <img src="https://wecima.show/wp-content/uploads/2024/05/Bloodline-Killer-2024.jpg" alt="app tv" onerror="handleImageError(this)">
   <div class="Movies-name">
-<span class="marquee">مدبلج Bloodline Killer (2024) مشاهدة فيلم </span>
+<span class="tv-name-inner">مدبلج Bloodline Killer (2024) مشاهدة فيلم </span>
   </div>
   <div class="serveur">سيرفرات المشاهدة</div>
   <div class="number-container">
@@ -653,7 +749,7 @@ cWttcCZzdD1tbzNiZ2JjZCZkbD0w#Intent;scheme=xmtv;package=co.wuffy.player;end">
 <button class="button">
   <img src="https://wecima.show/wp-content/uploads/2024/05/Monkey-Man-2024.jpg" alt="app tv" onerror="handleImageError(this)">
   <div class="Movies-name">
-<span class="marquee">مدبلج Monkey Man 2024 مشاهدة فيلم </span>
+<span class="tv-name-inner">مدبلج Monkey Man 2024 مشاهدة فيلم </span>
   </div>
   <div class="serveur">سيرفرات المشاهدة</div>
   <div class="number-container">
@@ -684,7 +780,7 @@ MA==#Intent;scheme=xmtv;package=co.wuffy.player;end">
 <button class="button">
   <img src="https://wecima.show/wp-content/uploads/2024/06/مشاهدة-فيلم-Among-the-Willows-2023-مترجم-347x520.jpg" alt="app tv" onerror="handleImageError(this)">
   <div class="Movies-name">
-<span class="marquee">مدبلج Among the Willows (2023) مشاهدة فيلم </span>
+<span class="tv-name-inner">مدبلج Among the Willows (2023) مشاهدة فيلم </span>
   </div>
   <div class="serveur">سيرفرات المشاهدة</div>
   <div class="number-container">
@@ -714,7 +810,7 @@ ZHgwNnl3ZzZmaTAmc3Q9eThiNWUwZHImZGw9MA==#Intent;scheme=xmtv;package=co.wuffy.pla
 <button class="button">
   <img src="https://w27.my-cima.net/uploads/articles/9db154c1.jpg" alt="app tv" onerror="handleImageError(this)">
   <div class="Movies-name">
-<span class="marquee">مدبلج Hit Man (2024) مشاهدة فيلم </span>
+<span class="tv-name-inner">مدبلج Hit Man (2024) مشاهدة فيلم </span>
   </div>
   <div class="serveur">سيرفرات المشاهدة</div>
   <div class="number-container">
@@ -738,7 +834,7 @@ ZHgwNnl3ZzZmaTAmc3Q9eThiNWUwZHImZGw9MA==#Intent;scheme=xmtv;package=co.wuffy.pla
 <button class="button">
   <img src="https://w27.my-cima.net/uploads/articles/38b53850.jpg" alt="app tv" onerror="handleImageError(this)">
   <div class="Movies-name">
-<span class="marquee">مدبلج Correr para Vivir (2024) مشاهدة فيلم </span>
+<span class="tv-name-inner">مدبلج Correr para Vivir (2024) مشاهدة فيلم </span>
   </div>
   <div class="serveur">سيرفرات المشاهدة</div>
   <div class="number-container">
@@ -763,7 +859,7 @@ ZHgwNnl3ZzZmaTAmc3Q9eThiNWUwZHImZGw9MA==#Intent;scheme=xmtv;package=co.wuffy.pla
 <button class="button">
   <img src="https://wecima.show/wp-content/uploads/2024/05/Arcadian-2024.jpg" alt="app tv" onerror="handleImageError(this)">
   <div class="Movies-name">
-<span class="marquee">مدبلج Arcadian 2024مشاهدة فيلم </span>
+<span class="tv-name-inner">مدبلج Arcadian 2024مشاهدة فيلم </span>
   </div>
   <div class="serveur">سيرفرات المشاهدة</div>
   <div class="number-container">
@@ -792,7 +888,7 @@ d2dlbDZyJmRsPTA=#Intent;scheme=xmtv;package=co.wuffy.player;end"><div id="remot"
 <button class="button">
   <img src="https://wecima.show/wp-content/uploads/2024/05/فيلم-Sleeping-Dogs-2024-مدبلج-scaled.jpg" alt="app tv" onerror="handleImageError(this)">
   <div class="Movies-name">
-<span class="marquee">مدبلج Sleeping Dogs (2024)مشاهدة فيلم </span>
+<span class="tv-name-inner">مدبلج Sleeping Dogs (2024)مشاهدة فيلم </span>
   </div>
   <div class="serveur">سيرفرات المشاهدة</div>
   <div class="number-container">
@@ -821,7 +917,7 @@ c3Q9dnJzMG8weWkmZGw9MA==#Intent;scheme=xmtv;package=co.wuffy.player;end"><div id
 <button class="button">
   <img src="https://wecima.show/wp-content/uploads/2024/04/Cash-Out-2024.jpg" alt="app tv" onerror="handleImageError(this)">
   <div class="Movies-name">
-<span class="marquee">مدبلج Cash Out (2024) مشاهدة فيلم </span>
+<span class="tv-name-inner">مدبلج Cash Out (2024) مشاهدة فيلم </span>
   </div>
   <div class="serveur">سيرفرات المشاهدة</div>
   <div class="number-container">
@@ -851,7 +947,7 @@ d2omc3Q9bjd5NTkycnQmZGw9MA==#Intent;scheme=xmtv;package=co.wuffy.player;end">
 <button class="button">
   <img src="https://w27.my-cima.net/uploads/articles/5e6c3330.jpg" alt="app tv" onerror="handleImageError(this)">
   <div class="Movies-name">
-<span class="marquee">مدبلج Boy Kills World 2023​ مشاهدة فيلم </span>
+<span class="tv-name-inner">مدبلج Boy Kills World 2023​ مشاهدة فيلم </span>
   </div>
   <div class="serveur">سيرفرات المشاهدة</div>
   <div class="number-container">
@@ -882,13 +978,10 @@ Zm9xYmxzb2I3YSZzdD1sbjBiOXgxcSZkbD0w#Intent;scheme=xmtv;package=co.wuffy.player;
 <button class="button">
   <img src="https://w27.my-cima.net/uploads/articles/de4b4d29.jpg" alt="app tv" onerror="handleImageError(this)">
   <div class="Movies-name">
-<span class="marquee">مدبلج Furiosa: A Mad Max Saga 2024 مشاهدة فيلم </span>
+<span class="tv-name-inner">مدبلج Furiosa: A Mad Max Saga 2024 مشاهدة فيلم </span>
   </div>
   <div class="serveur">سيرفرات المشاهدة</div>
   <div class="number-container">
-    <div>
-      <img class="watched-icon" src="https://cdn-icons-png.freepik.com/512/686/686333.png?ga=GA1.1.1704221200.1716147359" alt="Watched Icon" style="display: none;">
-    </div>
  <a  href="intent://aHR0cHM6Ly9kbC5kcm9wYm94LmNvbS9zY2wvZmkveGJjOWRqcjZ5enhkYW1xazRrZ3U2L0Z1cmlv
 c2EuQS5NYWQuTWF4LlNhZ2EuMjAyNC4uQ0FNUmlwLkFSLkRVQi5ta3YubXA0P3Jsa2V5PWFxNjNv
 emU5ejVwdnJka3VkdXhnejJwNmwmc3Q9OTNtOWg0dW4mZGw9MA==#Intent;scheme=xmtv;package=co.wuffy.player;end">
@@ -908,53 +1001,78 @@ emU5ejVwdnJka3VkdXhnejJwNmwmc3Q9OTNtOWg0dW4mZGw9MA==#Intent;scheme=xmtv;package=
     
   </div>
 </button>
+                  
+    
+    
+    
+     
+ <script>
+// Toggle search bar visibility
+function toggleSearchBar() {
+    let searchbar = document.getElementById('searchbar');
+    let closeIcon = document.getElementById('close-icon');
+    let isVisible = searchbar.classList.contains('show');
 
+    if (isVisible) {
+        searchbar.classList.remove('show');
+        closeIcon.classList.remove('show');
+    } else {
+        searchbar.classList.add('show');
+        closeIcon.classList.add('show');
+        searchbar.focus();  // Set focus on the search bar when it is displayed
+    }
+}
 
+// Filter buttons based on search input
+function search_animal() {
+    let input = document.getElementById('searchbar').value.trim().toLowerCase();
+    let buttons = document.querySelectorAll('.button');
 
-<script>
-
-  document.addEventListener('DOMContentLoaded', function() {
-  const sections = document.querySelectorAll('.section');
-
-  sections.forEach(function(section) {
-    const buttons = section.querySelectorAll('.button');
-    buttons.forEach(function(button, index) {
-      const watchedIcon = button.querySelector('.watched-icon');
-      const episodeNumber = index + 1;
-      const storageKey = `section${section.dataset.section}-watchedIcon${episodeNumber}`;
-      const isWatched = localStorage.getItem(storageKey);
-
-      if (isWatched === "true") {
-        watchedIcon.style.display = "inline";
-      }
-
-     button.addEventListener('click', function () {
-                const isWatched = localStorage.getItem(storageKey);
-
-                if (isWatched === "true") {
-                    watchedIcon.style.display = "inline";
-                } else {
-                    watchedIcon.style.display = "inline";
-                    localStorage.setItem(storageKey, "true");
-                }
-            });
-        });
+    buttons.forEach(button => {
+        let buttonText = button.textContent.toLowerCase();
+        if (buttonText.includes(input)) {
+            button.classList.remove('hidden');
+        } else {
+            button.classList.add('hidden');
+        }
     });
+}
+
+// Add event listener to handle search icon click
+document.getElementById('search-icon').addEventListener('click', toggleSearchBar);
+
+// Optional: Add event listener for a specific keypress
+document.addEventListener('keydown', function(event) {
+    if (event.key === '8' && event.key === '58') {
+        searchAnimals();
+    }
 });
 
+function searchAnimals() {
+    // Implement additional search functionality if needed
+    console.log('Searching for animals...');
+}
+
+// Add event listener to close icon click
+document.getElementById('close-icon').addEventListener('click', function() {
+    document.getElementById('searchbar').classList.remove('show');
+    document.getElementById('close-icon').classList.remove('show');
+});
+
+// ImageError
 
 function handleImageError(img) {
   img.src = 'https://i.imgur.com/MXnSqzd.png';
 }
+    </script>
 
 
-document.querySelectorAll('.marquee').forEach((el, index) => {
-  const delay = Math.random() * 12; // تأخير عشوائي يصل إلى 6 ثوان
-  el.style.animation = 'marquee 15s linear infinite';
-  el.style.animationDelay = `${delay}s`;
-});
-</script>
-</div></div>
-</div></div>
+
+    
+   </div></div>
+        </div>
+    </div>
 </body>
 </html>
+
+
