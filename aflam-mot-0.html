@@ -341,14 +341,14 @@ box-shadow: 0 0 5px #000;
         } 
 .plus {
     position: fixed; /* تثبيت العنصر في الشاشة */
-    bottom: 0; /* جعله في أسفل الصفحة */
+    bottom: 1px; /* جعله في أسفل الصفحة */
     left: 50%; /* توسيطه أفقيًا */
     transform: translateX(-50%); /* تصحيح التوسيط */
-    width: 60%; /* عرض العنصر */
+    width: 50%; /* عرض العنصر */
     height: 40px; /* ارتفاع العنصر */
     background: #3c4a71; /* لون الخلفية */
     border-radius: 4px; /* زوايا دائرية */
-    border-bottom: 3px solid #FFD700; /* خط سفلي */
+    border-top: 3px solid #FFD700; /* خط سفلي */
     display: flex; /* استخدام flexbox لتوسيط المحتوى */
     justify-content: center; /* توسيط النص أفقيًا */
     align-items: center; /* توسيط النص عموديًا */
@@ -364,7 +364,23 @@ box-shadow: 0 0 5px #000;
     border: 2px solid #ff0066;
     box-shadow: 0 0 10px #ff0066, 0 0 20px #ff0066;
 }
- 
+.mazid-mov {
+   padding: 5px;
+    text-align: center;
+    font-size: 20px;
+    font-family: "Airarabia", Sans-serif;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    overflow: hidden;
+     width: 100%; /* عرض العنصر */
+    height: 40px;
+        margin-bottom: 15px; /* تترك مساحة للقائمة السفلية */
+
+    
+        }
                </style>
                 
                 
@@ -926,16 +942,17 @@ box-shadow: 0 0 5px #000;
  </div ></button> 
       <!-- ✅  زر الفيلم -->
 
-  <button class="plus" tabindex="1"onclick="window.open('https://raw.githack.com/ahmadmk2023/Movies-free1/main/aflam-mot-02.html')"><div><h1  tabindex="0" >  المزيد من الأفلام      <i class="fa-solid fa-plus"></i></h1></div>
-</button> 
-   
+
 
 
 
 </div>
 </div>   <h1 id="no-results" style="display: none; color: #fff; text-align: center; font-size: 20px; font-weight: bold;">لم يتم العثور على نتائج⚠️</h1>
  </main> 
-
+ 
+  <button class="plus" tabindex="1"onclick="window.open('https://raw.githack.com/ahmadmk2023/Movies-free1/main/aflam-mot-02.html')"><div><h1  class="mazid-mov " >  المزيد من الأفلام      <i class="fa-solid fa-plus"></i></h1></div>
+</button> 
+   
 <script>
   const packageName = "co.wuffy.player";
   const playStream = (element) => {
