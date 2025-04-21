@@ -114,7 +114,7 @@
             padding:2px; /* تعيين الهامش الداخلي للزر */
             border-radius: 8px; /* تدوير الزوايا لتصميم أفضل */
             width: 155px;
-            height:230px;
+            height:238px;
                 margin: 6px;
     border: 2px solid #ccc;
                  background: #3c4a71; 
@@ -127,6 +127,8 @@
     width: 100%; /* ضمان أن العرض 100% */
     height: 130px; /* تعديل الارتفاع حسب الحاجة */
     position: relative; /* إضافة لتحديد موضع العناصر داخل الحاوية */
+     top:-4px;
+    margin-top:0px;
 
 }
 
@@ -157,7 +159,7 @@
 .link,.mov-name {
    padding: 2px;
     text-align: center;
-    font-size: 15px;
+    font-size: 19px;
      color: #fff;
     font-family: "Airarabia", Sans-serif;
     font-weight: bold;
@@ -167,10 +169,10 @@
     white-space: nowrap;
     overflow: hidden;
     border-radius: 8px;
-    border: 2px solid #ccc;
-    margin-top: 2px;
+        top:-3px;
+    margin-top:3px;
     width: 140px; /* عرض الحاوية */
-    height: 18px;
+    height: 20px;
         }
        .mov-name {
     direction: ltr;  /* تحديد اتجاه النص من اليمين لليسار */
@@ -181,19 +183,21 @@
             display: flex;
             justify-content: space-around;
             width: 100%;
-            margin-top: 1px;  
+            margin-top: 1px;
+            top:1px;
         }
 
         .number {
         
             width: 30px;
             height: 30px;
-             background:#339a8a;
-            border-radius: 8px;
-             border: 2px solid #fff;
-            color: #FFF;
-         font-family: "Airarabia", Sans-serif;
-    font-weight: bold;
+            background:#339a8a;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            font-size: 15px;
+            color: #fff;
+            font-family: "Airarabia", Sans-serif;
+            font-weight: bold;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -442,18 +446,68 @@ box-shadow: 0 0 5px #fff;
      tabindex="1">FHD</div>
 
 <div class="number" 
-     data-link="intent://dl.dl.dropbox.com/scl/fi/j3g0o35n2ga5yzyxp5lfi/A.Working.Man.AR.DUB.mp4?rlkey=9pbw472apafei05dbd3461rd8&st=9hrkamm4&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     data-link="intent://dl.dropbox.com/scl/fi/j3g0o35n2ga5yzyxp5lfi/A.Working.Man.AR.DUB.mp4?rlkey=9pbw472apafei05dbd3461rd8&st=9hrkamm4&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
      onclick="playStream(this)" 
      id="btn2" 
      tabindex="1">HD</div>
      
 <div class="number" 
-     data link="intent://dl.dl.dropbox.com/scl/fi/j3g0o35n2ga5yzyxp5lfi/A.Working.Man.AR.DUB.mp4?rlkey=9pbw472apafei05dbd3461rd8&st=9hrkamm4&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     data link="intent://dl.dropbox.com/scl/fi/j3g0o35n2ga5yzyxp5lfi/A.Working.Man.AR.DUB.mp4?rlkey=9pbw472apafei05dbd3461rd8&st=9hrkamm4&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
      onclick="playStream(this)" 
      id="btn3" 
      tabindex="1">SD</div>
  </div ></button> 
          <!-- ✅  زر الفيلم -->
+                <button class="button">
+    <img src="https://m.media-amazon.com/images/I/91iPCQk0swL._AC_SY445_.jpg" alt="app tv"onerror="handleImageError(this)">
+     <div class="mov-name">
+        <div class="tv-name-inner" >Long Gone Heroes-(2025)-أبطال رحلوا منذ زمن طويل</div></div> 
+        <div class="link">سيرفرات المشاهدة</div> 
+           <div class="number-container">
+<div class="number" 
+     data-link="intent://dl.dropbox.com/scl/fi/r9a1mb6k30h0b6708w5fy/Cimawbas-Long.Gone.Heroes.2024...AR.DUB.mp4?rlkey=vmeukztadun2h1tur5htgkfft&st=5dpgvo10&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn1" 
+     tabindex="1">FHD</div>
+
+<div class="number" 
+     data-link="intent://dl.dropbox.com/scl/fi/r9a1mb6k30h0b6708w5fy/Cimawbas-Long.Gone.Heroes.2024...AR.DUB.mp4?rlkey=vmeukztadun2h1tur5htgkfft&st=5dpgvo10&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn2" 
+     tabindex="1">HD</div>
+     
+<div class="number" 
+     data link="intent://dl.dropbox.com/scl/fi/r9a1mb6k30h0b6708w5fy/Cimawbas-Long.Gone.Heroes.2024...AR.DUB.mp4?rlkey=vmeukztadun2h1tur5htgkfft&st=5dpgvo10&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn3" 
+     tabindex="1">SD</div>
+ </div ></button> 
+            <!-- ✅  زر الفيلم -->
+
+             <button class="button">
+    <img src="https://fr.web.img6.acsta.net/c_310_420/img/08/cb/08cbc086754676cc9fe70edae5d76a7f.jpg" alt="app tv"onerror="handleImageError(this)">
+     <div class="mov-name">
+        <div class="tv-name-inner1" >Ash-(2025)-رماد</div></div> 
+        <div class="link">سيرفرات المشاهدة</div> 
+           <div class="number-container">
+<div class="number" 
+     data-link="intent://dl.dropbox.com/scl/fi/tql2eisqyt08umwvxex4c/Ash.2025.AR.mp4?rlkey=jq3v1sdbc89237pzq2qk54yqo&st=xj0dn96p&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn1" 
+     tabindex="1">FHD</div>
+
+<div class="number" 
+     data-link="intent://dl.dropbox.com/scl/fi/tql2eisqyt08umwvxex4c/Ash.2025.AR.mp4?rlkey=jq3v1sdbc89237pzq2qk54yqo&st=xj0dn96p&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn2" 
+     tabindex="1">HD</div>
+     
+<div class="number" 
+     data link="intent://dl.dropbox.com/scl/fi/tql2eisqyt08umwvxex4c/Ash.2025.AR.mp4?rlkey=jq3v1sdbc89237pzq2qk54yqo&st=xj0dn96p&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn3" 
+     tabindex="1">SD</div>
+ </div ></button> 
          <!-- ✅  زر الفيلم -->
        <button class="button">
     <img src="https://m.media-amazon.com/images/I/81uuRKKmhtL._AC_UY218_.jpg" alt="app tv"onerror="handleImageError(this)">
