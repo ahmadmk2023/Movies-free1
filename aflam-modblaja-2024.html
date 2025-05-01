@@ -108,28 +108,27 @@
             }
 
            .button {
-                 position: relative;
-                align:center;
-                display: inline-block; /* لجعل الزر عنصراً مستطيل الشكل */
+            position: relative;
+            align:center;
+            display: inline-block; /* لجعل الزر عنصراً مستطيل الشكل */
             padding:2px; /* تعيين الهامش الداخلي للزر */
             border-radius: 8px; /* تدوير الزوايا لتصميم أفضل */
             width: 155px;
-            height:238px;
-                margin: 6px;
-    border: 2px solid #ccc;
-                 background: #3c4a71; 
+            height:245px;
+            margin: 6px;
+            border: 2px solid #ccc;
+            background: #3c4a71; 
             }
           .button img {
-  background-size: cover; /* جعل الصورة تمتد لتغطي الحاوية بالكامل */
+    background-size: cover; /* جعل الصورة تمتد لتغطي الحاوية بالكامل */
     background-position: center;    
     background-size: 100% 100%; /* جعل الصورة تمتد لتغطي الحاوية بالكامل */
     background-repeat: no-repeat; /* منع تكرار الصورة */
     width: 100%; /* ضمان أن العرض 100% */
     height: 130px; /* تعديل الارتفاع حسب الحاجة */
     position: relative; /* إضافة لتحديد موضع العناصر داخل الحاوية */
-     top:-4px;
-    margin-top:0px;
-
+    top:-5px;
+    border-radius: 8px;
 }
 
   
@@ -157,9 +156,9 @@
 }
 
 .link,.mov-name {
-   padding: 2px;
+   padding: 3px;
     text-align: center;
-    font-size: 19px;
+    font-size: 18px;
      color: #fff;
     font-family: "Airarabia", Sans-serif;
     font-weight: bold;
@@ -169,8 +168,9 @@
     white-space: nowrap;
     overflow: hidden;
     border-radius: 8px;
-        top:-3px;border: 2px solid #d0368a;
-    margin-top:3px;
+    top:-10px;
+    border-top: 2px solid #d0368a;
+    margin-top:4px;
     width: 140px; /* عرض الحاوية */
     height: 20px;
         }
@@ -183,18 +183,17 @@
             display: flex;
             justify-content: space-around;
             width: 100%;
-            margin-top: 1px;
-            top:1px;
+            
         }
 
         .number {
         
-            width: 30px;
+            width: 32px;
             height: 30px;
             background:#339a8a;
             border-radius: 50%;
             border: 2px solid #fff;
-            font-size: 15px;
+            font-size: 14px;
             color: #fff;
             font-family: "Airarabia", Sans-serif;
             font-weight: bold;
@@ -202,6 +201,8 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
+            margin-top: 0px;
+            
         }
         
        /* تأثير عند التركيز (للتحكم عن بُعد على Android TV) */
@@ -351,10 +352,9 @@ box-shadow: 0 0 5px #fff;
     transform: translateX(-50%); /* تصحيح التوسيط */
     width: 220px; /* عرض العنصر */
     height: 40px; /* ارتفاع العنصر */
-      background-image: linear-gradient(180deg, #d0368a 0%, #708ad4 99%);
+      background: #339a8a;
  /* لون الخلفية */
     border-radius: 8px; /* زوايا دائرية */
-    border: 3px solid #FFD700; /* خط سفلي */
     box-shadow: 0 0 10px #ff0066, 0 0 20px #ff0066;
     display: flex; /* استخدام flexbox لتوسيط المحتوى */
     justify-content: center; /* توسيط النص أفقيًا */
@@ -433,31 +433,130 @@ box-shadow: 0 0 5px #fff;
 
             <!-- ✅  زر الفيلم -->
   <button class="button">
-    <img src="https://fr.web.img4.acsta.net/c_310_420/img/98/2f/982faa79408ae6f833933f43977c2dd1.jpg" alt="app tv"onerror="handleImageError(this)">
+    <img src="https://fr.web.img4.acsta.net/c_310_420/img/c5/05/c505b0f6236c06a7887b162758ee96a4.gif" alt="app tv"onerror="handleImageError(this)">
      <div class="mov-name">
-        <div class="tv-name-inner" >In The Lost Lands-(2025)-في الأراضي المفقودة</div></div> 
+        <div class="tv-name-inner" >The Amateur-(2025)-الهواة</div></div> 
         <div class="link">سيرفرات المشاهدة</div> 
            <div class="number-container">
 <div class="number" 
-     data-link="intent://dl.dropbox.com/scl/fi/kmftdv68l5wd1a3vh7gwv/In.The.Lost.Lands.2025.AR.mp4?rlkey=05nk85z2af52y2e5idfrqjvdb&st=y7n7vk88&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     data-link="intent://dl.dropbox.com/scl/fi/uxd7yotln9vu1ja64qpmb/.The.Amateur.2025.AR.mp4?rlkey=nf0jbnhlmqw0uioy1ctaxgyf5&st=91b5oups&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
      onclick="playStream(this)" 
      id="btn1" 
      tabindex="1">FHD</div>
 
 <div class="number" 
-     data-link="intent://dldropbox.com/scl/fi/kmftdv68l5wd1a3vh7gwv/In.The.Lost.Lands.2025.AR.mp4?rlkey=05nk85z2af52y2e5idfrqjvdb&st=y7n7vk88&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     data-link="intent://dl.dropbox.com/scl/fi/uxd7yotln9vu1ja64qpmb/.The.Amateur.2025.AR.mp4?rlkey=nf0jbnhlmqw0uioy1ctaxgyf5&st=91b5oups&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
      onclick="playStream(this)" 
      id="btn2" 
      tabindex="1">HD</div>
      
 <div class="number" 
-     data-link="intent://dl.dropbox.com/scl/fi/kmftdv68l5wd1a3vh7gwv/In.The.Lost.Lands.2025.AR.mp4?rlkey=05nk85z2af52y2e5idfrqjvdb&st=y7n7vk88&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     data-link="intent://dl.dropbox.com/scl/fi/uxd7yotln9vu1ja64qpmb/.The.Amateur.2025.AR.mp4?rlkey=nf0jbnhlmqw0uioy1ctaxgyf5&st=91b5oups&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
      onclick="playStream(this)" 
      id="btn2" 
      tabindex="1">SD</div>
  </div ></button>
-            <!-- ✅  زر الفيلم -->
+              <!-- ✅  زر الفيلم -->
+              <button class="button">
+    <img src="https://fr.web.img2.acsta.net/c_310_420/img/a9/cf/a9cfe0493dee80e422dea7c061bec8a5.jpg" alt="app tv"onerror="handleImageError(this)">
+     <div class="mov-name">
+        <div class="tv-name-inner" >Death Of A Unicorn-(2025)-موت وحيد القرن</div></div> 
+        <div class="link">سيرفرات المشاهدة</div> 
+           <div class="number-container">
+<div class="number" 
+     data-link="intent://dl.dropbox.com/scl/fi/i51rlbzigcib1wcp1izhn/.Death.Of.A.Unicorn.2025...AR.mp4?rlkey=ilq50z5ju483zrkifdb9twxk0&st=fl9ma1kb&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn1" 
+     tabindex="1">FHD</div>
 
+<div class="number" 
+     data-link="intent://dl.dropbox.com/scl/fi/i51rlbzigcib1wcp1izhn/.Death.Of.A.Unicorn.2025...AR.mp4?rlkey=ilq50z5ju483zrkifdb9twxk0&st=fl9ma1kb&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn2" 
+     tabindex="1">HD</div>
+     
+<div class="number" 
+     data-link="intent://dl.dropbox.com/scl/fi/i51rlbzigcib1wcp1izhn/.Death.Of.A.Unicorn.2025...AR.mp4?rlkey=ilq50z5ju483zrkifdb9twxk0&st=fl9ma1kb&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn2" 
+     tabindex="1">SD</div>
+ </div ></button>
+             <!-- ✅  زر الفيلم -->
+
+<button class="button">
+    <img src="https://es.web.img3.acsta.net/c_310_420/img/46/43/4643c20f14b4196a97b79bcec5987736.jpg" alt="app tv"onerror="handleImageError(this)">
+     <div class="mov-name">
+        <div class="tv-name-inner" >Black Bag-(2025)-حقيبة السوداء</div></div> 
+        <div class="link">سيرفرات المشاهدة</div> 
+           <div class="number-container">
+<div class="number" 
+     data-link="intent://dl.dropbox.com/scl/fi/aigiohqg2xyp4fwt8rsgn/.Black.Bag.2025.AR.mp4?rlkey=qu08vywmsvajk3762zjgibrby&st=htmvek90&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn1" 
+     tabindex="1">FHD</div>
+
+<div class="number" 
+     data-link="intent://dl.dropbox.com/scl/fi/aigiohqg2xyp4fwt8rsgn/.Black.Bag.2025.AR.mp4?rlkey=qu08vywmsvajk3762zjgibrby&st=htmvek90&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn2" 
+     tabindex="1">HD</div>
+     
+<div class="number" 
+     data-link="intent://dl.dropbox.com/scl/fi/aigiohqg2xyp4fwt8rsgn/.Black.Bag.2025.AR.mp4?rlkey=qu08vywmsvajk3762zjgibrby&st=htmvek90&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn2" 
+     tabindex="1">SD</div>
+ </div ></button>
+             <!-- ✅  زر الفيلم -->
+<button class="button">
+    <img src="https://fr.web.img6.acsta.net/c_310_420/img/50/5a/505af7db726cc4ac28690cb7403ffca2.jpg" alt="app tv"onerror="handleImageError(this)">
+     <div class="mov-name">
+        <div class="tv-name-inner" >Last Breath-(2025)-النفس الأخير</div></div> 
+        <div class="link">سيرفرات المشاهدة</div> 
+           <div class="number-container">
+<div class="number" 
+     data-link="intent://dl.dropbox.com/scl/fi/eesjmw4rny2ww89itx51v/Last.Breath.2025.AR.mp4?rlkey=mziit7xru9prbhyyoitw4siif&st=m0lq9bpm&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn1" 
+     tabindex="1">FHD</div>
+
+<div class="number" 
+     data-link="intent://dl.dropbox.com/scl/fi/eesjmw4rny2ww89itx51v/Last.Breath.2025.AR.mp4?rlkey=mziit7xru9prbhyyoitw4siif&st=m0lq9bpm&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn2" 
+     tabindex="1">HD</div>
+     
+<div class="number" 
+     data-link="intent://dl.dropbox.com/scl/fi/eesjmw4rny2ww89itx51v/Last.Breath.2025.AR.mp4?rlkey=mziit7xru9prbhyyoitw4siif&st=m0lq9bpm&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn2" 
+     tabindex="1">SD</div>
+ </div ></button>
+             <!-- ✅  زر الفيلم -->
+  <button class="button">
+    <img src="https://fr.web.img2.acsta.net/c_310_420/img/a5/5e/a55e6a3b1771606323178493aae5e262.jpg" alt="app tv"onerror="handleImageError(this)">
+     <div class="mov-name">
+        <div class="tv-name-inner" >Mickey 17-(2025)ميكي</div></div> 
+        <div class="link">سيرفرات المشاهدة</div> 
+           <div class="number-container">
+<div class="number" 
+     data-link="intent://dl.dropbox.com/scl/fi/u2xf4prpyq8vvq9b9zvjr/Mickey.17.2025.AR.mp4?rlkey=z6ewf8i3ba52aail8wlev5zoh&st=5iak79an&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn1" 
+     tabindex="1">FHD</div>
+
+<div class="number" 
+     data-link="intent://dl.dropbox.com/scl/fi/u2xf4prpyq8vvq9b9zvjr/Mickey.17.2025.AR.mp4?rlkey=z6ewf8i3ba52aail8wlev5zoh&st=5iak79an&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn2" 
+     tabindex="1">HD</div>
+     
+<div class="number" 
+     data-link="intent://dl.dropbox.com/scl/fi/u2xf4prpyq8vvq9b9zvjr/Mickey.17.2025.AR.mp4?rlkey=z6ewf8i3ba52aail8wlev5zoh&st=5iak79an&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn2" 
+     tabindex="1">SD</div>
+ </div ></button>
          <!-- ✅  زر الفيلم -->
          <button class="button">
     <img src="https://es.web.img2.acsta.net/c_310_420/img/0c/f1/0cf1003455a669b6aaef859b766b2921.jpg" alt="app tv"onerror="handleImageError(this)">
@@ -484,6 +583,32 @@ box-shadow: 0 0 5px #fff;
      tabindex="1">SD</div>
  </div ></button> 
          <!-- ✅  زر الفيلم -->
+ <button class="button">
+    <img src="https://fr.web.img4.acsta.net/c_310_420/img/98/2f/982faa79408ae6f833933f43977c2dd1.jpg" alt="app tv"onerror="handleImageError(this)">
+     <div class="mov-name">
+        <div class="tv-name-inner" >In The Lost Lands-(2025)-في الأراضي المفقودة</div></div> 
+        <div class="link">سيرفرات المشاهدة</div> 
+           <div class="number-container">
+<div class="number" 
+     data-link="intent://dl.dropbox.com/scl/fi/kmftdv68l5wd1a3vh7gwv/In.The.Lost.Lands.2025.AR.mp4?rlkey=05nk85z2af52y2e5idfrqjvdb&st=y7n7vk88&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn1" 
+     tabindex="1">FHD</div>
+
+<div class="number" 
+     data-link="intent://dldropbox.com/scl/fi/kmftdv68l5wd1a3vh7gwv/In.The.Lost.Lands.2025.AR.mp4?rlkey=05nk85z2af52y2e5idfrqjvdb&st=y7n7vk88&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn2" 
+     tabindex="1">HD</div>
+     
+<div class="number" 
+     data-link="intent://dl.dropbox.com/scl/fi/kmftdv68l5wd1a3vh7gwv/In.The.Lost.Lands.2025.AR.mp4?rlkey=05nk85z2af52y2e5idfrqjvdb&st=y7n7vk88&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn2" 
+     tabindex="1">SD</div>
+ </div ></button>
+            <!-- ✅  زر الفيلم -->
+
           <!-- ✅  زر الفيلم -->
   <button class="button">
     <img src="https://m.media-amazon.com/images/I/91qMd51aqvL._AC_UY218_.jpg" alt="app tv"onerror="handleImageError(this)">
