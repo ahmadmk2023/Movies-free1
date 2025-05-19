@@ -119,6 +119,8 @@
             margin: 6px;
             border: 2px solid #ccc;
             background: #3c4a71; 
+            z-index: 1; /* التأكد من أنه يظهر فوق المحتويات الأخرى */
+
             }
           .button img {
     background-size: cover; /* جعل الصورة تمتد لتغطي الحاوية بالكامل */
@@ -347,13 +349,15 @@ box-shadow: 0 0 5px #fff;
             display: none; /* Initially hide the watched icon */
         } 
 .plus {
-    position: fixed; /* تثبيت العنصر في الشاشة */
-    bottom: 1px; /* جعله في أسفل الصفحة */
+    position:  absolute; /* تثبيت العنصر في الشاشة */
+    margin-top: 40px; /* تترك مساحة للشريط العلوي */
+    margin-bottom: 5px; /* تترك مساحة للقائمة السفلية */
     left: 50%; /* توسيطه أفقيًا */
     transform: translateX(-50%); /* تصحيح التوسيط */
     width: 220px; /* عرض العنصر */
-    height: 40px; /* ارتفاع العنصر */
-      background: #339a8a;
+    height: 35px; /* ارتفاع العنصر */
+      background: #3c4a71;        
+      z-index: -1; /* لضمان ظهوره فوق المحتوى */
  /* لون الخلفية */
     border-radius: 8px; /* زوايا دائرية */
     box-shadow: 0 0 10px #ff0066, 0 0 20px #ff0066;
@@ -362,7 +366,7 @@ box-shadow: 0 0 5px #fff;
     align-items: center; /* توسيط النص عموديًا */
     color: #fff; /* لون النص */
     padding: 5px;
-    z-index: 1; /* التأكد من أنه يظهر فوق المحتويات الأخرى */
+    z-index: 0; /* التأكد من أنه يظهر فوق المحتويات الأخرى */
 }
 
 
@@ -431,11 +435,183 @@ box-shadow: 0 0 5px #fff;
 <div align="center">
               <!--+++++++++++++++++-->
               <div class="section" data-section="aflam-tarjama-01">
- 
         <!--+++++++++++++++++--> 
         
-        
-        
+        <button class="button">
+<img src="https://resizing.flixster.com/D6aLbOtCJdj4ItAJL_UgDI_lzzA=/206x305/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p29939361_v_v9_aa.jpg" alt="app tv"onerror="handleImageError(this)">
+     <div class="mov-name">
+        <div class="tv-name-inner" >iHostage-(2025)-الرهينة</div></div> 
+        <div class="link">سيرفرات المشاهدة</div> 
+           <div class="number-container">
+<div class="number" 
+     data-link="intent://stream.fushaar.link/movie/49104/49104.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn1" 
+     tabindex="1">FHD</div>
+
+<div class="number" 
+     data-link="intent://stream.fushaar.link/movie/49104/49104-480p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn2" 
+     tabindex="1">HD</div>
+     
+<div class="number" 
+     data link="intent://stream.fushaar.link/movie/49104/49104-240p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn3" 
+     tabindex="1">SD</div>
+ </div ></button>  
+                              <!-- ✅  زر الفيلم -->
+        <button class="button">
+<img src="https://resizing.flixster.com/D6aLbOtCJdj4ItAJL_UgDI_lzzA=/206x305/v2/https://resizing.flixster.com/9GzvfSWe1iPtRk_vtcfpHIQGyCI=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2U2MzgyZDIyLWNjZmYtNGU5NS05ZjczLTYyZGE1ZGIyYzIxNC5qcGc=" alt="app tv"onerror="handleImageError(this)">
+     <div class="mov-name">
+        <div class="tv-name-inner" >Thunderbolts-(2025)-الصواعق</div></div> 
+        <div class="link">سيرفرات المشاهدة</div> 
+           <div class="number-container">
+<div class="number" 
+     data-link="intent://stream.fushaar.link/movie/49140/49140.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn1" 
+     tabindex="1">FHD</div>
+
+<div class="number" 
+     data-link="intent://stream.fushaar.link/movie/49140/49140-480p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn2" 
+     tabindex="1">HD</div>
+     
+<div class="number" 
+     data link="intent://stream.fushaar.link/movie/49140/49140-240p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn3" 
+     tabindex="1">SD</div>
+ </div ></button>  
+                              <!-- ✅  زر الفيلم -->        
+        <button class="button">
+<img src="https://resizing.flixster.com/D6aLbOtCJdj4ItAJL_UgDI_lzzA=/206x305/v2/https://resizing.flixster.com/HRvybtIE_oA26ZcYx6o1Uv_OOQc=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzI3YzkwOGRkLTNiMzgtNDNhMS1hYzVhLWM4ZmZlYjQ1YmNjNy5qcGc=" alt="app tv"onerror="handleImageError(this)">
+     <div class="mov-name">
+        <div class="tv-name-inner" >L2 Empuraan-(2025)-إل 2: إمبوران</div></div> 
+        <div class="link">سيرفرات المشاهدة</div> 
+           <div class="number-container">
+<div class="number" 
+     data-link="intent://stream.fushaar.link/movie/49127/49127.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn1" 
+     tabindex="1">FHD</div>
+
+<div class="number" 
+     data-link="intent://stream.fushaar.link/movie/49127/49127-480p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn2" 
+     tabindex="1">HD</div>
+     
+<div class="number" 
+     data link="intent://stream.fushaar.link/movie/49127/49127-240p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn3" 
+     tabindex="1">SD</div>
+ </div ></button>  
+                              <!-- ✅  زر الفيلم -->
+<button class="button">
+<img src="https://resizing.flixster.com/D6aLbOtCJdj4ItAJL_UgDI_lzzA=/206x305/v2/https://resizing.flixster.com/2bkyVmLlw_8s0SzA8C1gaYNdoZY=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzJlNTkwNTIxLTM0YmYtNDgzNi1hZGFlLThjODM2ZTA5OTEzMi5qcGc=" alt="app tv"onerror="handleImageError(this)">
+     <div class="mov-name">
+        <div class="tv-name-inner" >Havoc-(2025)-الخراب</div></div> 
+        <div class="link">سيرفرات المشاهدة</div> 
+           <div class="number-container">
+<div class="number" 
+     data-link="intent://stream.fushaar.link/movie/49113/49113.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn1" 
+     tabindex="1">FHD</div>
+
+<div class="number" 
+     data-link="intent://stream.fushaar.link/movie/49113/49113-480p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn2" 
+     tabindex="1">HD</div>
+     
+<div class="number" 
+     data link="intent://stream.fushaar.link/movie/49113/49113-240p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn3" 
+     tabindex="1">SD</div>
+ </div ></button>  
+                              <!-- ✅  زر الفيلم -->
+<button class="button">
+<img src="https://resizing.flixster.com/D6aLbOtCJdj4ItAJL_UgDI_lzzA=/206x305/v2/https://resizing.flixster.com/9i6nUDu7dOYZhy9VhQdimCo9S-g=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2E3OWYzYzU3LWFkY2ItNDAwYS05NzAzLTcxODgyNGI5YjhlYi5qcGc=" alt="app tv"onerror="handleImageError(this)">
+     <div class="mov-name">
+        <div class="tv-name-inner" >The Woman in the Yard-(2025)-امرأة في الفناء الخلفي</div></div> 
+        <div class="link">سيرفرات المشاهدة</div> 
+           <div class="number-container">
+<div class="number" 
+     data-link="intent://stream.fushaar.link/movie/49072/49072.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn1" 
+     tabindex="1">FHD</div>
+
+<div class="number" 
+     data-link="intent://stream.fushaar.link/movie/49072/49072-480p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn2" 
+     tabindex="1">HD</div>
+     
+<div class="number" 
+     data link="intent://stream.fushaar.link/movie/49072/49072-240p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn3" 
+     tabindex="1">SD</div>
+ </div ></button>  
+                              <!-- ✅  زر الفيلم -->
+<button class="button">
+<img src="https://resizing.flixster.com/D6aLbOtCJdj4ItAJL_UgDI_lzzA=/206x305/v2/https://resizing.flixster.com/BlDUukmqBSBjPBSVwvTFfYzyWV4=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzNkZDRkZDM2LTNhOTAtNDQxMC04ZGJmLTE2OThiZWE2ZDI4MS5qcGc=" alt="app tv"onerror="handleImageError(this)">
+     <div class="mov-name">
+        <div class="tv-name-inner" >Fog of War-(2025)-ضباب الحرب</div></div> 
+        <div class="link">سيرفرات المشاهدة</div> 
+           <div class="number-container">
+<div class="number" 
+     data-link="intent://stream.fushaar.link/movie/49066/49066.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn1" 
+     tabindex="1">FHD</div>
+
+<div class="number" 
+     data-link="intent://stream.fushaar.link/movie/49066/49066-480p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn2" 
+     tabindex="1">HD</div>
+     
+<div class="number" 
+     data link="intent://stream.fushaar.link/movie/49066/49066-240p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn3" 
+     tabindex="1">SD</div>
+ </div ></button>  
+                    <!-- ✅  زر الفيلم -->
+
+        <button class="button">
+<img src="https://resizing.flixster.com/64oXHgNW29bMmVL_n4LKB8o2DQ8=/fit-in/705x460/v2/https://resizing.flixster.com/Lm8zk-sPUKEJ4ivswAWUfqEQaDE=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2FmZDE1MDZmLTgyZGItNDYyNi04ZmQyLTcwMDE0MzViOWJiNi5qcGc=" alt="app tv"onerror="handleImageError(this)">
+     <div class="mov-name">
+        <div class="tv-name-inner" >Control Freak-(2025)-مهووس التحكم</div></div> 
+        <div class="link">سيرفرات المشاهدة</div> 
+           <div class="number-container">
+<div class="number" 
+     data-link="intent://stream.fushaar.link/movie/49033/49033.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn1" 
+     tabindex="1">FHD</div>
+
+<div class="number" 
+     data-link="intent://stream.fushaar.link/movie/49033/49033-480p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn2" 
+     tabindex="1">HD</div>
+     
+<div class="number" 
+     data link="intent://stream.fushaar.link/movie/49033/49033-240p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn3" 
+     tabindex="1">SD</div>
+ </div ></button>  
                               <!-- ✅  زر الفيلم -->
                              
                               <button class="button">
@@ -1485,12 +1661,12 @@ box-shadow: 0 0 5px #fff;
 
 
 
-
+<div  class="plus"tabindex="1"onclick="window.open('https://raw.githack.com/ahmadmk2023/Movies-free1/main/aflam-mot-02.html')"><h1 class="h1">  المزيد من الأفلام         <i class="fa-solid fa-plus"></i></h1></div>
 
 </div>
 </div>   <h1 id="no-results" style="display: none; color: #fff; text-align: center; font-size: 20px; font-weight: bold;">لم يتم العثور على نتائج⚠️</h1>
 
-<div  class="plus"tabindex="1"onclick="window.open('https://raw.githack.com/ahmadmk2023/Movies-free1/main/aflam-mot-02.html')"><h1 class="h1">  المزيد من الأفلام      <i class="fa-solid fa-plus"></i></h1></div>
+
   
  </main> 
  
