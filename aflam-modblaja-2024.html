@@ -26,7 +26,7 @@
 
         .topnav { 
         border-top : 3px solid #FFD700;  
-        z-index: 2; /* لضمان ظهوره فوق المحتوى */
+        z-index: 7; /* لضمان ظهوره فوق المحتوى */
         position: fixed;
         overflow: hidden;
         border-radius:4px;
@@ -109,6 +109,7 @@
 
            .button {
             position: relative;
+            z-index: 0; /* لضمان ظهوره فوق المحتوى */
             align:center;
             display: inline-block; /* لجعل الزر عنصراً مستطيل الشكل */
             padding:2px; /* تعيين الهامش الداخلي للزر */
@@ -187,7 +188,7 @@
         }
 
         .number {
-        
+            z-index: 6; /* لضمان ظهوره فوق المحتوى */
             width: 32px;
             height: 30px;
             background:#339a8a;
@@ -363,7 +364,6 @@ box-shadow: 0 0 5px #fff;
     align-items: center; /* توسيط النص عموديًا */
     color: #fff; /* لون النص */
     padding: 5px;
-    z-index: 0; /* التأكد من أنه يظهر فوق المحتويات الأخرى */
 }
 
 .plus:hover,.plus:focus{
