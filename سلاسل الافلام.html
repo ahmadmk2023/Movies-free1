@@ -381,7 +381,11 @@ box-shadow: 0 0 5px #000;
         <div class="tv-name-inner" >Resident Evil- مشاهدة سلاسل الافلام مترجم</div></div> 
    </button> 
       <!-- ✅  زر الفيلم -->
-      
+                                       <button class="button"onclick="window.open('https://raw.githack.com/ahmadmk2023/Movies-free1/main/movise-Predator.html')">
+    <img src="https://resizing.flixster.com/NNztqL7gNnEx5JjjwpuIwpEKFvs=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p192847_i_v4_aa.jpg" alt="app tv"onerror="handleImageError(this)">
+     <div class="Series-name">
+        <div class="tv-name-inner" >Transformers- سلاسل الافلام مترجم</div></div> 
+   </button>
       <!-- ✅  زر الفيلم -->
                       <button class="button"onclick="window.open('https://raw.githack.com/ahmadmk2023/Movies-free1/main/movies%20Spider%20Man.html')">
     <img src="https://fr.web.img3.acsta.net/c_310_420/medias/nmedia/00/00/00/33/spiderman.jpg" alt="app tv"onerror="handleImageError(this)">
@@ -435,8 +439,25 @@ box-shadow: 0 0 5px #000;
 
       <!-- ✅  زر الفيلم -->
  
+<audio id="hoverSound" src="https://sounds.pond5.com/game-interface-hover-sound-1-sound-effect-221424346_nw_prev.m4a" preload="auto"></audio>
 
+<script>
+    // تشغيل الصوت عند التأشير أو التركيز
+    const sound = document.getElementById('hoverSound');
+    const categories = document.querySelectorAll('.topnav a ,.button');
 
+    categories.forEach(cat => {
+      cat.addEventListener('mouseenter', () => {
+        sound.currentTime = 0;
+        sound.play();
+      });
+      cat.addEventListener('focus', () => {
+        sound.currentTime = 0;
+        sound.play();
+      });
+    });
+
+  </script>
 
       
    <h1 id="no-results" style="display: none; color: #fff; text-align: center; font-size: 20px; font-weight: bold;">لم يتم العثور على نتائج⚠️</h1>
