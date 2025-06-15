@@ -443,7 +443,31 @@ box-shadow: 0 0 5px #fff;
                              <!-- ✅  زر الفيلم -->
                              <!-- ✅  زر الفيلم -->
                              
-                             <!-- ✅  زر الفيلم -->        
+                             <!-- ✅  زر الفيلم -->  
+                             <button class="button">
+    <img src="https://splendid-film.de/webfile/img/113774/escape-opener.jpg?x=350&y=495" alt="app tv"onerror="handleImageError(this)">
+     <div class="mov-name">
+<div class="tv-name-inner" >Escape-(2024)-هروب</div></div> 
+        <div class="link">سيرفرات المشاهدة</div> 
+           <div class="number-container">
+<div class="number" 
+     data-link="intent://stream.fushaar.link/movie/48298/48298.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn1" 
+     tabindex="1">FHD</div>
+
+<div class="number" 
+     data-link="intent://stream.fushaar.link/movie/48298/48298-480p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn2" 
+     tabindex="1">HD</div>
+     
+<div class="number" 
+     data link="intent://stream.fushaar.link/movie/48298/48298-240p.mp4/playlist.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn3" 
+     tabindex="1">SD</div>
+ </div ></button>            
                              <!-- ✅  زر الفيلم -->
 <button class="button">
     <img src="https://resizing.flixster.com/Ck4lJ6cxcwLVXljAf0hPRcFvVuA=/fit-in/80x126/v2/https://resizing.flixster.com/Zx8GuCKOuTXHyRICRTD6l4idFQE=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzJjMjk3NDVlLTMzOGEtNDEwNy1iZGMwLWU5NDEwMTZmMzVhOC5qcGc=" alt="app tv"onerror="handleImageError(this)">
@@ -2216,38 +2240,32 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 
+
+<audio id="hoverSound" src="https://sounds.pond5.com/game-interface-hover-sound-1-sound-effect-221424346_nw_prev.m4a" preload="auto"></audio>
+
 <script>
-  function playClickSound() {
-    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    const oscillator = audioCtx.createOscillator();
-    const gainNode = audioCtx.createGain();
+    // تشغيل الصوت عند التأشير أو التركيز
+    const sound = document.getElementById('hoverSound');
+    const categories = document.querySelectorAll('.topnav a ,.number');
 
-    oscillator.type = 'sine'; // نغمة ناعمة مثل Android
-    oscillator.frequency.setValueAtTime(650, audioCtx.currentTime); // تردد متوسط مرتفع
-    gainNode.gain.setValueAtTime(0.05, audioCtx.currentTime); // صوت خفيف
-
-    oscillator.connect(gainNode);
-    gainNode.connect(audioCtx.destination);
-
-    oscillator.start();
-    oscillator.stop(audioCtx.currentTime + 0.07); // صوت سريع وناعم
-  }
-
-  const numberButtons = document.querySelectorAll('.number');
-
-  numberButtons.forEach(el => {
-    el.addEventListener('mouseenter', playClickSound);  // عند تمرير الماوس
-    el.addEventListener('click', playClickSound);       // عند النقر
-    el.addEventListener('focus', playClickSound);       // عند التنقل بالأسهم (Android TV)
-    el.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') playClickSound();          // عند ضغط Enter من الريموت
+    categories.forEach(cat => {
+      cat.addEventListener('mouseenter', () => {
+        sound.currentTime = 0;
+        sound.play();
+      });
+      cat.addEventListener('focus', () => {
+        sound.currentTime = 0;
+        sound.play();
+      });
     });
-  });
-</script>
+
+  </script>
+
 
 
 
 
 </body>
 </html>
+
 
