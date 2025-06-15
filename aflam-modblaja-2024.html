@@ -2110,7 +2110,25 @@ emU5ejVwdnJka3VkdXhnejJwNmwmc3Q9OTNtOWg0dW4mZGw9MA==#Intent;scheme=xmtv;package=
   <br>
  </main> 
  
+<audio id="hoverSound" src="https://sounds.pond5.com/game-interface-hover-sound-1-sound-effect-221424346_nw_prev.m4a" preload="auto"></audio>
 
+<script>
+    // تشغيل الصوت عند التأشير أو التركيز
+    const sound = document.getElementById('hoverSound');
+    const categories = document.querySelectorAll('.topnav a ,.number');
+
+    categories.forEach(cat => {
+      cat.addEventListener('mouseenter', () => {
+        sound.currentTime = 0;
+        sound.play();
+      });
+      cat.addEventListener('focus', () => {
+        sound.currentTime = 0;
+        sound.play();
+      });
+    });
+
+  </script>
    
 <script>
   const packageName = "co.wuffy.player";
