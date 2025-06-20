@@ -385,6 +385,50 @@ box-shadow: 0 0 5px #000;
               <!--+++++++++++++++++-->
               <div class="section" data-section="aflam-arabi-01">
         <!--+++++++++++++++++--> 
+ <button class="button">
+    <img src="https://upload.wikimedia.org/wikipedia/ar/thumb/5/5d/Leila_el_Eid_film_poster.jpg/300px-Leila_el_Eid_film_poster.jpg" alt="app tv"onerror="handleImageError(this)">
+     <div class="mov-name">
+        <div class="tv-name-inner" >(2024)-ليلة العيد </div></div> 
+        <div class="link">سيرفرات المشاهدة</div> 
+           <div class="number-container">
+<div class="number" 
+   data-link="intent://dl.dropbox.com/scl/fi/glkrtv954qmzebdbofduy/Laylet.El.Eid.2024.mp4?rlkey=qmwsy2ij060hmbo88gtjio12k&st=brw19ol5&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
+     id="btn1" 
+     tabindex="1">1</div>
+
+<div class="number" 
+     data-link="intent://dl.dropbox.com/scl/fi/glkrtv954qmzebdbofduy/Laylet.El.Eid.2024.mp4?rlkey=qmwsy2ij060hmbo88gtjio12k&st=brw19ol5&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
+     id="btn2" 
+     tabindex="1">2</div>
+     
+<div class="number" 
+         data-link="intent://dl.dropbox.com/scl/fi/glkrtv954qmzebdbofduy/Laylet.El.Eid.2024.mp4?rlkey=qmwsy2ij060hmbo88gtjio12k&st=brw19ol5&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
+     id="btn3" 
+     tabindex="1">3</div>
+ </div ></button> 
+                  <!-- ✅  زر الفيلم -->        
+ <button class="button">
+    <img src="https://upload.wikimedia.org/wikipedia/ar/thumb/3/3c/%D9%85%D9%84%D8%B5%D9%82_%D9%81%D9%8A%D9%84%D9%85_%D8%B3%D9%8A%D9%83%D9%88_%D8%B3%D9%8A%D9%83%D9%88.jpg/330px-%D9%85%D9%84%D8%B5%D9%82_%D9%81%D9%8A%D9%84%D9%85_%D8%B3%D9%8A%D9%83%D9%88_%D8%B3%D9%8A%D9%83%D9%88.jpg" alt="app tv"onerror="handleImageError(this)">
+     <div class="mov-name">
+        <div class="tv-name-inner" >(2024)-سيكو سيكو </div></div> 
+        <div class="link">سيرفرات المشاهدة</div> 
+           <div class="number-container">
+<div class="number" 
+   data-link="intent://dl.dropbox.com/scl/fi/k7eiqlmhtq1jzwsb5sfvw/Siko.Siko.2025.WEB-DL.mp4?rlkey=9t5d825ubzylcc2iimkb358et&st=o4n92ufl&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
+     id="btn1" 
+     tabindex="1">1</div>
+
+<div class="number" 
+     data-link="intent://dl.dropbox.com/scl/fi/k7eiqlmhtq1jzwsb5sfvw/Siko.Siko.2025.WEB-DL.mp4?rlkey=9t5d825ubzylcc2iimkb358et&st=o4n92ufl&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
+     id="btn2" 
+     tabindex="1">2</div>
+     
+<div class="number" 
+         data-link="intent://dl.dropbox.com/scl/fi/k7eiqlmhtq1jzwsb5sfvw/Siko.Siko.2025.WEB-DL.mp4?rlkey=9t5d825ubzylcc2iimkb358et&st=o4n92ufl&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
+     id="btn3" 
+     tabindex="1">3</div>
+ </div ></button> 
+                  <!-- ✅  زر الفيلم -->        
          <button class="button">
     <img src="https://wecima.video/wp-content/uploads/2024/12/مشاهدة-فيلم-الحريفة-2-2024-كامل-370x453.jpg" alt="app tv"onerror="handleImageError(this)">
      <div class="mov-name">
@@ -616,6 +660,26 @@ box-shadow: 0 0 5px #000;
 
 </div>
 </div>
+
+
+<audio id="hoverSound" src="https://sounds.pond5.com/game-interface-hover-sound-1-sound-effect-221424346_nw_prev.m4a" preload="auto"></audio>
+
+<script>
+    // تشغيل الصوت عند التأشير أو التركيز
+    const sound = document.getElementById('hoverSound');
+    const categories = document.querySelectorAll('.topnav a ,.number');
+
+    categories.forEach(cat => {
+      cat.addEventListener('mouseenter', () => {
+        sound.currentTime = 0;
+        sound.play();
+      });
+      cat.addEventListener('focus', () => {
+        sound.currentTime = 0;
+        sound.play();
+      });
+    });
+
  </main> 
 
 <script>
