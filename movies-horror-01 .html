@@ -15,22 +15,41 @@
 <body>
 
     <!----------  اكواد استايل القائمة  ------------>
+    <!----------  اكواد استايل القائمة  ------------>
      <style>
-         body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
+        body {
+            margin: 0;
+            font-family: 'Montserrat', 'Cairo', Arial, sans-serif;
+            font-weight: 400; /* قيمة صحيحة للوزن */
+            background-color: #339a8a; /* لون موحد للخلفية */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* لضمان أن الجسم يملأ الشاشة بالكامل */
         }
 
+        /* شريط التمرير */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+            border-radius: 7px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-image: linear-gradient(180deg, #d0368a 0%, #708ad4 99%);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b30000;
+        }
         .topnav { 
         border-top : 3px solid #FFD700;  
-        z-index: 2; /* لضمان ظهوره فوق المحتوى */
+        z-index: 10; /* لضمان ظهوره فوق المحتوى */
         position: fixed;
-        overflow: hidden;
+            overflow: hidden;
         border-radius:4px;
-        background-image: linear-gradient(132deg, #3c4a71 0%, #339a8a 100%);
+       border-radius: 0 0 4px 4px; /* تعديل الزوايا لتكون سفلية فقط */
+            background-image: linear-gradient(132deg, #3c4a71 0%, #339a8a 100%);
         top: 0;
         height: 58px;
         width: 100%;
@@ -43,23 +62,24 @@
             text-align: center;
             padding: 13px 13px;
             text-decoration: none;
-            font-size: 16px;
+            font-size: 16px;            
+            transition: all 0.3s ease; /* إضافة انتقال سلس */
+            align-items: center;
+            justify-content: center;border-radius: 8px; /* لتكون متناسقة مع تأثير التركيز */
         }
-       .topnav a:focus, .topnav a:hover {
- background: #ccc;
-    color: #000;
-    outline: none;
-    border: 2px solid #ff0066;
-    border-radius: 8px;
-    box-shadow: 0 0 10px #ff0066, 0 0 20px #ff0066, 0 0 40px #ff0066, 0 0 80px #ff0066, 0 0 160px #ff0066, 0 0 320px #ff0066;  
-}
-.topnav a:focus svg path,
-.topnav a:hover svg path {
-  fill: #000; /* تغيير لون الملء للمسار إلى الأسود */
-  outline: none; /* إزالة تأثير التركيز الافتراضي */
-  border-radius: 8px;
-  border: 2px solid #ff0066;
-}
+ .topnav a:focus,
+        .topnav a:hover {
+            background: #ccc;
+            color: #000;
+            outline: none;
+            border: 2px solid #ff0066;
+            box-shadow: 0 0 10px #ff0066, 0 0 20px #ff0066, 0 0 40px #ff0066;
+        }
+
+        .topnav a:focus svg path,
+        .topnav a:hover svg path {
+            fill: #000;
+        }
         .topnav-centered a {
             font-family: "Airarabia", Sans-serif;
             float: none;
@@ -81,7 +101,12 @@
                 float: none;
                 display: block;
             }
-
+       .topnav-centered h5 {
+            font-family: 'Cairo', sans-serif; /* استخدام خط القاهرة للعناوين العربية */
+            font-size: 20px;
+            color: #ffffff;
+            margin: 0; /* إزالة الهامش الافتراضي */
+        }
             .topnav-centered a {
                 position: relative;
                 top: 0;
@@ -108,59 +133,62 @@
             }
 
            .button {
-                 position: relative;
-                align:center;
-                display: inline-block; /* لجعل الزر عنصراً مستطيل الشكل */
-            padding:2px; /* تعيين الهامش الداخلي للزر */
-            border-radius: 8px; /* تدوير الزوايا لتصميم أفضل */
-            width: 155px;
-            height:238px;
-                margin: 6px;
-    border: 2px solid #ccc;
-                 background: #3c4a71; 
-            }
-          .button img {
-  background-size: cover; /* جعل الصورة تمتد لتغطي الحاوية بالكامل */
-    background-position: center;    
-    background-size: 100% 100%; /* جعل الصورة تمتد لتغطي الحاوية بالكامل */
-    background-repeat: no-repeat; /* منع تكرار الصورة */
-    width: 100%; /* ضمان أن العرض 100% */
-    height: 130px; /* تعديل الارتفاع حسب الحاجة */
-    position: relative; /* إضافة لتحديد موضع العناصر داخل الحاوية */
-     top:-4px;
-    margin-top:0px;
+            position: relative;
+            align:center;
+            display: inline-block; /* لجعل الزر عنصراً مستطيل الشكل */
+            padding:0px; /* تعيين الهامش الداخلي للزر */
+               border-radius: 8px;
+            width: 155px; /* عرض ثابت */
+            height: 255px; /* ارتفاع ثابت */
+            border: 2px solid #ccc;
+            background: #3c4a71;
+            margin: 6px;
+           justify-content: space-between; /* لتوزيع المحتوى داخل الزر */
+            overflow: hidden; /* لإخفاء أي جزء من الاسم يتجاوز الحاوية */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* ظل للأزرار */
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
 
-}
+            }
+        .button img {
+            width: 100%;
+            height: 150px; /* ارتفاع الصورة ثابت */
+            border-radius: 4px 4px 0 0; /* زوايا دائرية علوية فقط */
+            display: block; /* لإزالة أي مسافة إضافية تحت الصورة */
+        }
+ .button:focus,
+        .button:hover {
+            transform: scale(1.05); /* تكبير طفيف عند التركيز/التمرير */
+            outline: none;
+            border-color: #ff0066;
+            box-shadow: 0 0 15px #ff0066, 0 0 30px #ff0066;
+        }
 
   
-            /* .ازالة شريط التمرير اسفل المدونة*/
-/* width */
-::-webkit-scrollbar {
-  width: 10px;
-}
+   /* أيقونة المشاهدة */
+        .watched-icon {
+            position: absolute;
+            background: #fff;
+            border-radius: 4px;
+            border: 2px solid #ff0066;
+            box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 40px #FFD700;
+            top: 0;
+            right: 0; /* تغيير الموقع لليمين العلوي */
+            width: 25px; /* تكبير الحجم قليلاً */
+            height: 25px;
+            display: none;
+            display: flex; /* لتوسيط المحتوى داخل الأيقونة */
+            align-items: center;
+            justify-content: center;
+            font-size: 18px; /* حجم أيقونة العين */
+            color: #ff0066; /* لون العين */            
+            display: none; /* Initially hide the watched icon */
 
-/* Track */
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey; 
-  border-radius: 7px;
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background-image: linear-gradient(180deg, #d0368a 0%, #708ad4 99%);
-  border-radius: 10px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #b30000; 
-}
-
+        }
 .link,.mov-name {
-   padding: 2px;
+   padding: 1px;
     text-align: center;
-    font-size: 19px;
-     color: #fff;
+    font-size: 18px;
+            color: #ffff; /* لون ذهبي */
     font-family: "Airarabia", Sans-serif;
     font-weight: bold;
     display: flex;
@@ -169,9 +197,10 @@
     white-space: nowrap;
     overflow: hidden;
     border-radius: 8px;
-        top:-3px;border: 2px solid #d0368a;
-    margin-top:3px;
-    width: 140px; /* عرض الحاوية */
+    top:-10px;
+    border-top: 2px solid #d0368a;
+    margin-top:4px;
+    width: 149px; /* عرض الحاوية */
     height: 20px;
         }
        .mov-name {
@@ -179,43 +208,47 @@
     text-align: right;  /* محاذاة النص إلى اليمين */
   }
    
-     .number-container {
+.number-container {
             display: flex;
             justify-content: space-around;
             width: 100%;
-            margin-top: 1px;
-            top:1px;
+            padding: 5px 0;
+            background-color: #3c4a71; /* خلفية لأرقام السيرفرات */
+            border-top: 1px solid #2a3553;
         }
 
         .number {
-        
             width: 30px;
             height: 30px;
-            background:#339a8a;
+            background: #339a8a;
             border-radius: 50%;
             border: 2px solid #fff;
-            font-size: 15px;
+            font-size: 14px;
             color: #fff;
-            font-family: "Airarabia", Sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-weight: bold;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
+            z-index: 8;
+            transition: all 0.3s ease;
         }
+
         
        /* تأثير عند التركيز (للتحكم عن بُعد على Android TV) */
    
- .number:focus,.number:hover {
-    background: #ccc;
-    color: #000;
-    border-radius: 8px;
-    outline: none;
-    border: 2px solid #ff0066;
-    transform: scale(1.5);
-    transition-delay: 0s, 1s;
-    box-shadow: 0 0 10px #ff0066, 0 0 20px #ff0066, 0 0 40px #ff0066, 0 0 80px #ff0066, 0 0 160px #ff0066, 0 0 320px #ff0066;
+ .number:focus,
+        .number:hover {
+            background: #ccc;
+            color: #000;
+            border-radius: 8px;
+            outline: none;
+            border: 2px solid #ff0066;
+            transform: scale(1.3); /* تأثير تكبير أقل حدة */
+            box-shadow: 0 0 8px #ff0066, 0 0 16px #ff0066;
         }
+
 
        a{
 color: black;
@@ -226,14 +259,16 @@ color: yellow;
 text-decoration:none;
 
 }
-   main {
-    padding: 5px;
-    position: relative;
-    margin-top: 60px; /* تترك مساحة للشريط العلوي */
-    margin-bottom: 70px; /* تترك مساحة للقائمة السفلية */
-}
-        
-   
+        main {
+            padding: 5px;
+            margin-top: 50px; /* تترك مساحة للشريط العلوي */
+            margin-bottom: 70px; /* تترك مساحة للقائمة السفلية */
+            flex-grow: 1; /* لتوسيع المحتوى ليملأ المساحة المتاحة */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         .tv-name-inner {
   display: inline-block;
   padding-left: 100%;
@@ -249,119 +284,104 @@ text-decoration:none;
   100% { transform: translateX(0); }
 }
 
-  
-#searchbar-container {
-    position: relative;
-    width: 70%;
-    margin: 10px auto;
-    direction: rtl;
-
-}
- #searchbar:focus,#searchbar:hover {
-       background: #ccc;
-    color: #000;
-    border-radius: 5px;
-    outline: none;
-    border: 2px solid #ff0066;
-    transition-delay: 0s, 1s;
-    box-shadow: 0 0 10px #ff0066, 0 0 20px #ff0066;
-    }
-#searchbar {
-    width: 100%;
-    padding: 10px;margin-top:10px;
-    font-size: 19px;
-    font-weight: bold;
-    border-radius: 5px;
-    height: 35px;
-    border: 2px solid gold;
-    box-sizing: border-box;
-    display: none; /* Initially hide the search bar */
-}
-
-#searchbar.show {
-    display: inline-block;
-}
-
-
-.x{
-    background: #111;
-        position: absolute;
-    top: 60%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    display: none; /* Initially hide the close icon */
-    color: #000;
-    top:27px;
-    left:6px;
-    font-size: 19x;
-    border-radius: 8px;
-    outline: none;
-    border: 2px solid #000;
-box-shadow: 0 0 5px #fff;
+        /* شريط البحث */
+        #searchbar-container {
+            position: relative;
+            width: 90%; /* زيادة العرض ليتناسب مع الشاشات المختلفة */
+            max-width: 600px; /* تحديد أقصى عرض */
+            margin: 15px auto;
+            direction: rtl;
+            display: flex; /* لجعل الزر X بجانب شريط البحث */
+            align-items: center;
         }
-.x:focus,.x:hover {
-    background: #2222;
-    color: #000;
-    border-radius: 8px;
-    outline: none;
-    border: 2px solid #ff0066;
-    transition-delay: 0s, 1s;
-    box-shadow: 0 0 10px #ff0066;
+
+        #searchbar {
+            width: 100%;
+            padding: 10px 15px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            height: 40px; /* ارتفاع مناسب */
+            border: 2px solid gold;
+            box-sizing: border-box;
+            display: none; /* إخفاء في البداية */
+            color: #333; /* لون النص داخل شريط البحث */
+            background-color: #f0f0f0;
+            transition: all 0.3s ease;
         }
-#close-icon.show {
-    display: block;
-}
-.hidden {
-    display: none;
-}
 
-    .search-input {
-    padding: 8px;
-    font-size:15px; 
-     font-weight: bold  ;
-         color: #000;
-
-     }
-    
-    #no-results-message { 
-    color: red;              
-    font-family: "Montserrat", serif;
-    margin-top: 10px;
-    font-size: 25px; 
-     font-weight: bold;
-     }
-     
-    /* تظهر الأيقونة أعلى الزجاجية */
-        .watched-icon {
-            position: absolute; 
+        #searchbar:focus,
+        #searchbar:hover {
             background: #fff;
-            border-radius: 4px;
-            border: 2px solid #ff0066;
-            box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 40px #FFD700;
-            top: 0;
-            left: 0;
-            width: 20px;
-            height: 20px;
-            display: none; /* Initially hide the watched icon */
-        } 
+            color: #000;
+            border-color: #ff0066;
+            box-shadow: 0 0 10px #ff0066, 0 0 20px #ff0066;
+        }
+
+        #searchbar.show {
+            display: block; /* إظهار الشريط */
+        }
+
+        #close-icon {
+            background: #111;
+            color: #fff; /* لون أيقونة الإغلاق */
+            border: 2px solid #000;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #fff;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 8px 10px;
+            margin-right: 5px; /* مسافة بين شريط البحث و زر الإغلاق */
+            display: none; /* إخفاء في البداية */
+            transition: all 0.3s ease;
+        }
+
+        #close-icon:focus,
+        #close-icon:hover {
+            background: #222;
+            color: #ff0066;
+            border-color: #ff0066;
+            box-shadow: 0 0 10px #ff0066;
+        }
+
+        #close-icon.show {
+            display: block;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #no-results-message {
+            color: red;
+            font-family: 'Cairo', sans-serif;
+            margin-top: 20px;
+            font-size: 25px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+
+         
 .plus {
-    position: fixed; /* تثبيت العنصر في الشاشة */
-    bottom: 1px; /* جعله في أسفل الصفحة */
+    position:  absolute; /* تثبيت العنصر في الشاشة */
+    margin-top: 40px; /* تترك مساحة للشريط العلوي */
+    margin-bottom: 5px; /* تترك مساحة للقائمة السفلية */
     left: 50%; /* توسيطه أفقيًا */
     transform: translateX(-50%); /* تصحيح التوسيط */
     width: 220px; /* عرض العنصر */
-    height: 40px; /* ارتفاع العنصر */
-      background-image: linear-gradient(180deg, #d0368a 0%, #708ad4 99%);
+    height: 35px; /* ارتفاع العنصر */
+      background: #3c4a71;        
+      z-index: -1; /* لضمان ظهوره فوق المحتوى */
  /* لون الخلفية */
     border-radius: 8px; /* زوايا دائرية */
-    border: 3px solid #FFD700; /* خط سفلي */
     box-shadow: 0 0 10px #ff0066, 0 0 20px #ff0066;
     display: flex; /* استخدام flexbox لتوسيط المحتوى */
     justify-content: center; /* توسيط النص أفقيًا */
     align-items: center; /* توسيط النص عموديًا */
     color: #fff; /* لون النص */
     padding: 5px;
-    z-index: 1; /* التأكد من أنه يظهر فوق المحتويات الأخرى */
+    z-index: 0; /* التأكد من أنه يظهر فوق المحتويات الأخرى */
 }
 
 
@@ -393,24 +413,23 @@ box-shadow: 0 0 5px #fff;
             <div class="topnav">
                <!-- icon-reply -->
 <div class="topnav-centered">
-                 <a><h5>افلام الرعب مترجمة</h5> </a></div>
+                 <a><h5> افلام الرعب مترجمة</h5> </a></div>
                <!-- icon-reply -->
 
                   <!-- icon-reply -->
-                <a onclick="window.open('go:1')"tabindex="0">
+<a onclick="history.back()" tabindex="0" title="الرجوع" role="button">
     <svg width="25" height="20" fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
         <path d="M209.4 39.5c-9.1-9.6-24.3-10-33.9-.9L33.8 173.2c-19.9 18.9-19.9 50.7 0 69.6L175.5 377.4c9.6 9.1 24.8 8.7 33.9-.9s8.7-24.8-.9-33.9L66.8 208 208.5 73.4c9.6-9.1 10-24.3 .9-33.9zM352 64c0-12.6-7.4-24.1-19-29.2s-25-3-34.4 5.4l-160 144c-6.7 6.1-10.6 14.7-10.6 23.8s3.9 17.7 10.6 23.8l160 144c9.4 8.5 22.9 10.6 34.4 5.4s19-16.6 19-29.2l0-64 32 0c53 0 96 43 96 96c0 30.4-12.8 47.9-22.2 56.7c-5.5 5.1-9.8 12-9.8 19.5c0 10.9 8.8 19.7 19.7 19.7c2.8 0 5.6-.6 8.1-1.9C494.5 467.9 576 417.3 576 304c0-97.2-78.8-176-176-176l-48 0 0-64z"></path>
     </svg>
-                </a>
+</a>
                    <!-- icon-reply -->
                    
                  <!-- icon-logo -->
-<a >  <svg width="25" height="25" fill="#fff"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>افلام اجنبية مدبلجة</title><path d="M4,6H2V20A2,2 0 0,0 4,22H18V20H4V6M20,2H8A2,2 0 0,0 6,4V16A2,2 0 0,0 8,18H20A2,2 0 0,0 22,16V4A2,2 0 0,0 20,2M10,15H8V13H10V15M10,11H8V9H10V11M10,7H8V5H10V7M20,15H18V13H20V15M20,11H18V9H20V11M20,7H18V5H20V7Z" /></svg> 
+<a > <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="24px"viewBox="0 0 24 24" height="24px" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M18 4l2 3h-3l-2-3h-2l2 3h-3l-2-3H8l2 3H7L5 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4m-6.75 11.25L10 18l-1.25-2.75L6 14l2.75-1.25L10 10l1.25 2.75L14 14l-2.75 1.25m5.69-3.31L16 14l-.94-2.06L13 11l2.06-.94L16 8l.94 2.06L19 11l-2.06.94z" fill="#fff"></path></svg>
         </a>
-
+      
    <!-- icon-logo -->
-          
-          
+                
    <!-- icon-search -->                
 <div class="topnav-right">
 <a tabindex="1" href="javascript:void(0)" id="search-icon"><svg enable-background="new 0 0 32 32" id="Glyph" version="1.1" width="25" height="25" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -428,12 +447,175 @@ box-shadow: 0 0 5px #fff;
            placeholder="ابحث عن افـــلام ...." 
            tabindex="1">
 <button tabindex="1"id="close-icon"class="x">❌</button></div>
-<div align="center">   <div class="section" data-section="movise-AR.DUB-01">
+<div align="center">
               <!--+++++++++++++++++-->
+              <div class="section" data-section="horror-00">
+        <!--+++++++++++++++++--> 
+                             <!-- ✅  زر الفيلم -->
+                             
+                             <!-- ✅  زر الفيلم -->    
+                             
+                             <!-- ✅  زر الفيلم -->
+                             
+                             <!-- ✅  زر الفيلم -->
+                             
+                             <!-- ✅  زر الفيلم -->
+                             
+                             <!-- ✅  زر الفيلم -->
+                             
+                             <!-- ✅  زر الفيلم --> 
+                              <button class="button">
+    <img src="https://resizing.flixster.com/0CkWwOZzrLhLfygLthzDG78UZgo=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p28568748_v_v13_ah.jpg" alt="app tv"onerror="handleImageError(this)">
+     <div class="mov-name">
+<div class="tv-name-inner" >Peter Pans Neverland Nightmare-(2025)-</div></div> 
+        <div class="link">سيرفرات المشاهدة</div> 
+           <div class="number-container">
+<div class="number" 
+     data-link="intent://dl.dropbox.com/scl/fi/m49nutn8i2y9a2ntyo506/Peter.Pans.Neverland.Nightmare.2025..AR..mp4?rlkey=3gce5dd0gvm6g4zji0klktlax&st=oagbw9r6&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn1" 
+     tabindex="1">FHD</div>
 
+<div class="number" 
+     data-link="intent://dl.dropbox.com/scl/fi/m49nutn8i2y9a2ntyo506/Peter.Pans.Neverland.Nightmare.2025..AR..mp4?rlkey=3gce5dd0gvm6g4zji0klktlax&st=oagbw9r6&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn2" 
+     tabindex="1">HD</div>
+     
+<div class="number" 
+     data-link="intent://dl.dropbox.com/scl/fi/m49nutn8i2y9a2ntyo506/Peter.Pans.Neverland.Nightmare.2025..AR..mp4?rlkey=3gce5dd0gvm6g4zji0klktlax&st=oagbw9r6&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn2" 
+     tabindex="1">SD</div>
+ </div ></button> 
+                               <!-- ✅  زر الفيلم -->
 
+               <button class="button">
+    <img src="https://i.imgur.com/p988Uxn.jpeg" alt="app tv"onerror="handleImageError(this)">
+     <div class="mov-name">
+<div class="tv-name-inner" >The Devils Bride-(2024)-عروس الشيطان</div></div> 
+        <div class="link">سيرفرات المشاهدة</div> 
+           <div class="number-container">
+<div class="number" 
+     data-link="intent://dl.dropbox.com/scl/fi/2pmglmz2m0aa1rfqzkr81/The.Devils.Bride.2025.mp4?rlkey=272pq4lfhybi0c8pbltbn0t7l&st=2d9iy01u&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn1" 
+     tabindex="1">FHD</div>
 
-          <!-- ✅  زر الفيلم -->
+<div class="number" 
+     data-link="intent://dl.dropbox.com/scl/fi/2pmglmz2m0aa1rfqzkr81/The.Devils.Bride.2025.mp4?rlkey=272pq4lfhybi0c8pbltbn0t7l&st=2d9iy01u&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn2" 
+     tabindex="1">HD</div>
+     
+<div class="number" 
+     data-link="intent://dl.dropbox.com/scl/fi/2pmglmz2m0aa1rfqzkr81/The.Devils.Bride.2025.mp4?rlkey=272pq4lfhybi0c8pbltbn0t7l&st=2d9iy01u&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn2" 
+     tabindex="1">SD</div>
+ </div ></button>   
+                             <!-- ✅  زر الفيلم -->
+                              <button class="button">
+    <img src="https://resizing.flixster.com/OJqeRkYRVnVvnm-r2cHTKzPsCr0=/206x305/v2/https://resizing.flixster.com/4piFgrjX_dbjitE78ILbti9RWZs=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzY3ZWI3ZWI0LTJkNTYtNGViZC05NjIxLTY4Y2NkYTViOGE1Mi5qcGc=" alt="app tv"onerror="handleImageError(this)">
+     <div class="mov-name">
+        <div class="tv-name-inner" >Until Dawn-(2024)-حتى الفجر</div></div> 
+        <div class="link">سيرفرات المشاهدة</div> 
+           <div class="number-container">
+<div class="number" 
+     data-link="intent://dl.dropbox.com/scl/fi/4l3qw1tij2fszfzh9xc72/Until.Dawn.2025...AR.DUB.mp4?rlkey=9t63bsap9nz3v8sbb5t3z3ex3&st=1tfg1qdf&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn1" 
+     tabindex="1">FHD</div>
+
+<div class="number" 
+     data-link="intent://dl.dropbox.com/scl/fi/4l3qw1tij2fszfzh9xc72/Until.Dawn.2025...AR.DUB.mp4?rlkey=9t63bsap9nz3v8sbb5t3z3ex3&st=1tfg1qdf&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn2" 
+     tabindex="1">HD</div>
+     
+<div class="number" 
+     data-link="intent://dl.dropbox.com/scl/fi/4l3qw1tij2fszfzh9xc72/Until.Dawn.2025...AR.DUB.mp4?rlkey=9t63bsap9nz3v8sbb5t3z3ex3&st=1tfg1qdf&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn2" 
+     tabindex="1">SD</div>
+ </div ></button>
+                             <!-- ✅  زر الفيلم -->
+                               <button class="button">
+    <img src="https://resizing.flixster.com/gLnc5SzmOCyCJLnKMFJBQM2xAW4=/206x305/v2/https://resizing.flixster.com/NkIqUFGlPZwDqziUn_4x_zwRSy4=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzE3ODE2OTQ0LWQyZWEtNDIxMi05NTQ1LTZkYWQ4OTdjZDdkZC5qcGc=" alt="app tv"onerror="handleImageError(this)">
+     <div class="mov-name">
+        <div class="tv-name-inner" >Terrifier 3-(2024)-المرعب 3</div></div> 
+        <div class="link">سيرفرات المشاهدة</div> 
+           <div class="number-container">
+<div class="number" 
+     data-link="intent://dl.dropbox.com/scl/fi/rrburtwuqmbxjwpnmfq2e/Terrifier.3.2024...AR.DUB.mp4?rlkey=blvqp1cj698cl2rp9jklm7ub3&st=9l1xr801&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn1" 
+     tabindex="1">FHD</div>
+
+<div class="number" 
+     data-link="intent://dl.dropbox.com/scl/fi/rrburtwuqmbxjwpnmfq2e/Terrifier.3.2024...AR.DUB.mp4?rlkey=blvqp1cj698cl2rp9jklm7ub3&st=9l1xr801&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn2" 
+     tabindex="1">HD</div>
+     
+<div class="number" 
+     data-link="intent://dl.dropbox.com/scl/fi/rrburtwuqmbxjwpnmfq2e/Terrifier.3.2024...AR.DUB.mp4?rlkey=blvqp1cj698cl2rp9jklm7ub3&st=9l1xr801&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn2" 
+     tabindex="1">SD</div>
+ </div ></button>
+                              <!-- ✅  زر الفيلم -->
+ <button class="button">
+    <img src="https://m.media-amazon.com/images/I/81yMrYZJmIL._AC_UY218_.jpg" alt="app tv"onerror="handleImageError(this)">
+     <div class="mov-name">
+        <div class="tv-name-inner" >The Rule of Jenny Pen-(2024)-</div></div> 
+        <div class="link">سيرفرات المشاهدة</div> 
+           <div class="number-container">
+<div class="number" 
+     data-link="intent://dl.dropbox.com/scl/fi/t99gu9dwgaa9o5crm3ilu/.T.he.Rule.of.Jenny.Pen.AR.mp4?rlkey=21dcxgt5f5ss7qwauccfgsa5j&st=7qoz38ni&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn1" 
+     tabindex="1">FHD</div>
+
+<div class="number" 
+     data-link="intent://dl.dropbox.com/scl/fi/t99gu9dwgaa9o5crm3ilu/.T.he.Rule.of.Jenny.Pen.AR.mp4?rlkey=21dcxgt5f5ss7qwauccfgsa5j&st=7qoz38ni&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn2" 
+     tabindex="1">HD</div>
+     
+<div class="number" 
+     data-link="intent://dl.dropbox.com/scl/fi/t99gu9dwgaa9o5crm3ilu/.T.he.Rule.of.Jenny.Pen.AR.mp4?rlkey=21dcxgt5f5ss7qwauccfgsa5j&st=7qoz38ni&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn2" 
+     tabindex="1">SD</div>
+ </div ></button>
+            <!-- ✅  زر الفيلم -->
+             <button class="button">
+    <img src="https://m.media-amazon.com/images/I/81LeHDpjazL._AC_UY218_.jpg" alt="app tv"onerror="handleImageError(this)">
+     <div class="mov-name">
+        <div class="tv-name-inner" >Screamboat-(2024)-قارب الصراخ</div></div> 
+        <div class="link">سيرفرات المشاهدة</div> 
+           <div class="number-container">
+<div class="number" 
+     data-link="intent://dl.dropbox.com/scl/fi/e64x35xkeqt00f0ujyifv/Screamboat.25.AR.mp4?rlkey=c23cqasjhshm9am8evdj616zm&st=gockqgxu&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn1" 
+     tabindex="1">FHD</div>
+
+<div class="number" 
+     data-link="intent://dl.dropbox.com/scl/fi/e64x35xkeqt00f0ujyifv/Screamboat.25.AR.mp4?rlkey=c23cqasjhshm9am8evdj616zm&st=gockqgxu&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn2" 
+     tabindex="1">HD</div>
+     
+<div class="number" 
+     data-link="intent://dl.dropbox.com/scl/fi/e64x35xkeqt00f0ujyifv/Screamboat.25.AR.mp4?rlkey=c23cqasjhshm9am8evdj616zm&st=gockqgxu&dl=1#Intent;scheme=https;package=co.wuffy.player;end" 
+     onclick="playStream(this)" 
+     id="btn2" 
+     tabindex="1">SD</div>
+ </div ></button>
+                                    
+                                    <!-- ✅  زر الفيلم -->
   <button class="button">
     <img src="https://m.media-amazon.com/images/I/91qMd51aqvL._AC_UY218_.jpg" alt="app tv"onerror="handleImageError(this)">
      <div class="mov-name">
@@ -460,7 +642,7 @@ box-shadow: 0 0 5px #fff;
  </div ></button> 
          <!-- ✅  زر الفيلم -->
      <button class="button">
-            <img src="https://media.fushaar.com/media/2024/01/4aRvg2ybz646gciX5M6qaclunC2-229x337.jpg" alt="app tv" onerror="handleImageError(this)">
+            <img src="https://resizing.flixster.com/hjCAyMx_zK1BaqAwkDLYP84bKQw=/206x305/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p26177409_p_v13_aa.jpg" alt="app tv" onerror="handleImageError(this)">
         <div class="mov-name">
 <div class="tv-name-inner">Sunrise-(2024)/شروق الشمس</div></div>
             <div class="link">سيرفرات المشاهدة</div>
@@ -472,7 +654,7 @@ box-shadow: 0 0 5px #fff;
         </button>
 <!--+++++++++++++++++-->                   
  <button class="button">
-            <img src="https://media.fushaar.com/media/2024/05/m3bwUWLBe5ogVB8HmpQs2YNNq3S-329x495.jpg" alt="app tv" onerror="handleImageError(this)">
+            <img src="https://resizing.flixster.com/D6aLbOtCJdj4ItAJL_UgDI_lzzA=/206x305/v2/https://resizing.flixster.com/_3auZfilUqYm0D5ahozuLUmwTc4=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzIxNWM1ZmNmLTlmZmMtNDU1ZC05MTQ4LTdlODA2OGMwYzgyMC5qcGc=" alt="app tv" onerror="handleImageError(this)">
         <div class="mov-name">
 <div class="tv-name-inner">Abigail-(2024)/أبيغيل</div></div>
             <div class="link">سيرفرات المشاهدة</div>
@@ -484,7 +666,7 @@ box-shadow: 0 0 5px #fff;
         </button>
  <!--+++++++++++++++++-->                   
  <button class="button">
-            <img src="https://media.fushaar.com/media/2023/12/lhmdKoZciQsD6pOxIi0ZkXudISw-329x495.jpg" alt="app tv" onerror="handleImageError(this)">
+            <img src="https://resizing.flixster.com/D6aLbOtCJdj4ItAJL_UgDI_lzzA=/206x305/v2/https://resizing.flixster.com/H5CIRmSezlafOc8Fte3v2PNGr1M=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzNjN2ZiOTBmLTczODctNGU1MS05NGUyLTRmZThjZDk1ZGVkMC5qcGc=" alt="app tv" onerror="handleImageError(this)">
         <div class="mov-name">
 <div class="tv-name-inner">Thanksgiving-(2023)/عيد الشكر</div></div>
             <div class="link">سيرفرات المشاهدة</div>
@@ -495,10 +677,9 @@ box-shadow: 0 0 5px #fff;
             </div>
         </button>
  <!--+++++++++++++++++-->                   
- <button class="button"><img src="https://media.fushaar.com/media/2024/07/hU42CRk14JuPEdqZG3AWmagiPAP-229x337.jpg" alt="app tv"onerror="handleImageError(this)">
+ <button class="button"><img src="https://resizing.flixster.com/D6aLbOtCJdj4ItAJL_UgDI_lzzA=/206x305/v2/https://resizing.flixster.com/52tNaAdGhYWG4PukngNz7iOu4NA=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzIyNDlkYjk2LTUwZmQtNDgzOS04ZGIyLWI3NzZlMWE0OGNkNi5qcGc=" alt="app tv"onerror="handleImageError(this)">
 <div class="mov-name">
-<div class="tv-name-inner">A Quiet Place: Day One
--2024/مكان هادئ: اليوم الأول</div></div>
+<div class="tv-name-inner">A Quiet Place: Day One-2024/مكان هادئ: اليوم الأول</div></div>
    <div class="link">  سيرفرات المشاهدة</div> 
                         <!-- إضافة شكل الأرقام الدائرية -->
 <div class="number-container">
@@ -508,7 +689,7 @@ box-shadow: 0 0 5px #fff;
     
     <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/47989/47989-240p.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end')" id="remot" tabindex="1">SD</div> </div ></button>                    
                        <!--+++++++++++++++++-->
- <button class="button"><img src="https://media.fushaar.com/media/2024/07/gAEUXC37vl1SnM7PXsHTF23I2vq-229x337.jpg" alt="app tv"onerror="handleImageError(this)">
+ <button class="button"><img src="https://resizing.flixster.com/D6aLbOtCJdj4ItAJL_UgDI_lzzA=/206x305/v2/https://resizing.flixster.com/m_QuXwEuc9K1_tsvIxnlH_WDwWM=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzY3ZTU0ZDRiLTA0MTctNGU3OC04ODAwLTE5NDIwZTA5NjhjYi5qcGc=" alt="app tv"onerror="handleImageError(this)">
 <div class="mov-name">
 <div class="tv-name-inner">Tarot-2024/التارو</div></div>
    <div class="link">  سيرفرات المشاهدة</div> 
@@ -520,7 +701,7 @@ box-shadow: 0 0 5px #fff;
     
     <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/47989/47989-240p.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end')" id="remot" tabindex="1">SD</div> </div ></button>                    
                    <!--+++++++++++++++++-->                   
- <button class="button"><img src="https://media.fushaar.com/media/2024/06/8Jk3aS7tMOD9VRHy7GPIP5OibWw-329x495.jpg" alt="app tv"onerror="handleImageError(this)">
+ <button class="button"><img src="https://resizing.flixster.com/D6aLbOtCJdj4ItAJL_UgDI_lzzA=/206x305/v2/https://resizing.flixster.com/RBd6wRMZScfVv57dGjpd2VLdF9g=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzc2ZmU0MDgxLTM3YWEtNDQ5Mi1hZmMzLTM0MDNiZTFjNTE3MS5qcGc=" alt="app tv"onerror="handleImageError(this)">
 <div class="mov-name">
 <div class="tv-name-inner">Handling the Undead-2024/التعامل مع اللاموتى</div></div>
    <div class="link">  سيرفرات المشاهدة</div> 
@@ -533,7 +714,7 @@ box-shadow: 0 0 5px #fff;
     <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/47933/47933-240p.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end')" id="remot" tabindex="1">SD</div> </div ></button> 
                    
                    
- <button class="button"><img src="https://media.fushaar.com/media/2024/06/qyT2xw9FBxHlNXQYsuNCu8T7Rbo-229x337.jpg" alt="app tv"onerror="handleImageError(this)">
+ <button class="button"><img src="https://resizing.flixster.com/D6aLbOtCJdj4ItAJL_UgDI_lzzA=/206x305/v2/https://resizing.flixster.com/BWVTnVaPemly2yL4PxH9zZO5GJw=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2UzNjRkOGFhLWNlZjktNDk3OC1iOTVkLThjOWQ5OTRlNjg3Mi5qcGc=" alt="app tv"onerror="handleImageError(this)">
 <div class="mov-name">
 <div class="tv-name-inner">The Strangers Chapter 1-2024/الغريبون الفصل الاول</div></div>
    <div class="link">  سيرفرات المشاهدة</div> 
@@ -545,7 +726,7 @@ box-shadow: 0 0 5px #fff;
     
     <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/47824/47824-240p.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end')" id="remot" tabindex="1">SD</div> </div ></button> 
                <!--+++++++++++++++++-->                   
- <button class="button"><img src="https://media.fushaar.com/media/2024/07/5Bx5tG66PhX2Lb6nrZGDjNZJO5u-329x495.jpg" alt="app tv"onerror="handleImageError(this)">
+ <button class="button"><img src="https://resizing.flixster.com/D6aLbOtCJdj4ItAJL_UgDI_lzzA=/206x305/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p27150620_v_v13_aa.jpg" alt="app tv"onerror="handleImageError(this)">
         <div class="mov-name">
         <div class="tv-name-inner">Lowlifes-2024/حياة منخفضة</div></div>
    <div class="link">  سيرفرات المشاهدة</div> 
@@ -560,7 +741,7 @@ box-shadow: 0 0 5px #fff;
     <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/48007/48007-240p.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end')" id="remot" tabindex="1">SD</div> </div ></button> 
                          
                    <!--+++++++++++++++++-->                   
- <button class="button"><img src="https://media.fushaar.com/media/2024/05/ecOvKaoM1hwQbp0uTnULGrSV32e-229x337.jpg" alt="app tv"onerror="handleImageError(this)">
+ <button class="button"><img src="https://resizing.flixster.com/D6aLbOtCJdj4ItAJL_UgDI_lzzA=/206x305/v2/https://resizing.flixster.com/LcZmQLfVxBVz0CsG7FFiXyU03qA=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2E3ZGFlYjA2LTkzM2UtNDQ2My05ZjhkLTVhZmZhOGUxMjYwYi5qcGc=" alt="app tv"onerror="handleImageError(this)">
 <div class="mov-name">
 <div class="tv-name-inner">Humane-2024/انسانية</div></div>
    <div class="link">  سيرفرات المشاهدة</div> 
@@ -574,7 +755,7 @@ box-shadow: 0 0 5px #fff;
     
     <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/47753/47753-240p.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end')" id="remot" tabindex="1">SD</div> </div ></button> 
                     <!--+++++++++++++++++-->                   
- <button class="button"><img src="https://media.fushaar.com/media/2024/04/9u6HEtZJdZDjPGGJq6YEuhPnoan-329x495.jpg" alt="app tv"onerror="handleImageError(this)">
+ <button class="button"><img src="https://resizing.flixster.com/D6aLbOtCJdj4ItAJL_UgDI_lzzA=/206x305/v2/https://resizing.flixster.com/hiEvYpVxvdVtWDWy3xFfyg1--k8=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzUxOTQxMjRhLTE4N2YtNGRkMy1iNGZiLWI3MGU4ZjA1MWQ4MS5qcGc=" alt="app tv"onerror="handleImageError(this)">
 <div class="mov-name">
 <div class="tv-name-inner">Imaginary-2024/خيالي</div></div>
    <div class="link">  سيرفرات المشاهدة</div> 
@@ -588,7 +769,7 @@ box-shadow: 0 0 5px #fff;
     
     <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/47635/47635-240p.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end')" id="remot" tabindex="1">SD</div> </div ></button> 
                         <!--+++++++++++++++++-->                   
- <button class="button"><img src="https://media.fushaar.com/media/2024/07/o5pcDZaA9Up0X612os34JNCRX6j-329x495.jpg" alt="app tv"onerror="handleImageError(this)">
+ <button class="button"><img src="https://resizing.flixster.com/D6aLbOtCJdj4ItAJL_UgDI_lzzA=/206x305/v2/https://resizing.flixster.com/m7_SFUcIedHhXwKYxtdFsYMPU3U=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzY1YzAyZGUxLTdjZWItNDZjYS04ODA2LTkxNDVjN2YxZmZjNC5qcGc=" alt="app tv"onerror="handleImageError(this)">
 <div class="mov-name">
 <div class="tv-name-inner">In a Violent Nature-2024/بيئة عدائية</div></div>
    <div class="link">  سيرفرات المشاهدة</div> 
@@ -602,7 +783,7 @@ box-shadow: 0 0 5px #fff;
     
     <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/47963/47963-240p.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end')" id="remot" tabindex="1">SD</div> </div ></button> 
                              <!--+++++++++++++++++-->                   
- <button class="button"><img src="https://media.fushaar.com/media/2024/04/lbOyeiiRYAE6Nm2e7xiNAAaRwZB-329x495.jpg" alt="app tv"onerror="handleImageError(this)">
+ <button class="button"><img src="https://resizing.flixster.com/D6aLbOtCJdj4ItAJL_UgDI_lzzA=/206x305/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p26097425_p_v13_ae.jpg" alt="app tv"onerror="handleImageError(this)">
 <div class="mov-name">
 <div class="tv-name-inner">Baghead-(2023)/باجهيد</div></div>
    <div class="link">  سيرفرات المشاهدة</div> 
@@ -617,7 +798,7 @@ box-shadow: 0 0 5px #fff;
     <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/47618/47618-240p.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end')" id="remot" tabindex="1">SD</div> </div ></button>      
                     <!--+++++++++++++++++-->                   
      
- <button class="button"><img src="https://media.fushaar.com/media/2024/04/fdZpvODTX5wwkD0ikZNaClE4AoW-229x337.jpg" alt="app tv"onerror="handleImageError(this)">
+ <button class="button"><img src="https://resizing.flixster.com/D6aLbOtCJdj4ItAJL_UgDI_lzzA=/206x305/v2/https://resizing.flixster.com/n5-EKOFILhRi8IFCCNSNzff0YAE=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2M2ODY1NTM0LTJkODktNDQ4Mi04MTM4LTJmZTQxOGRiZWIxZi5qcGc=" alt="app tv"onerror="handleImageError(this)">
 <div class="mov-name">
 <div class="tv-name-inner">Immaculate-(2023)/الطاهرة</div></div>
    <div class="link">  سيرفرات المشاهدة</div> 
@@ -631,7 +812,7 @@ box-shadow: 0 0 5px #fff;
     
     <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/47697/47697-240p.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end')" id="remot" tabindex="1">SD</div> </div ></button>      
                     <!--+++++++++++++++++-->                   
- <button class="button"><img src="https://media.fushaar.com/media/2024/03/dnKod1VGfTR44CCvsABd8D0ifVK-229x337.jpg" alt="app tv"onerror="handleImageError(this)">
+ <button class="button"><img src="https://resizing.flixster.com/D6aLbOtCJdj4ItAJL_UgDI_lzzA=/206x305/v2/https://resizing.flixster.com/OmHzrEzClU57YVDVV6LfD3lzrjQ=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2RkODViYjRhLTFlMGYtNGRkZC1iNDY4LTQ5N2MzNzFmMWQ3MS5qcGc=" alt="app tv"onerror="handleImageError(this)">
 <div class="mov-name">
 <div class="tv-name-inner">Sijjin-(2023)/سجين</div></div>
    <div class="link">  سيرفرات المشاهدة</div> 
@@ -645,7 +826,7 @@ box-shadow: 0 0 5px #fff;
     
     <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/47569/47569-240p.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end')" id="remot" tabindex="1">SD</div> </div ></button>      
                     <!--+++++++++++++++++-->             
- <button class="button"><img src="https://media.fushaar.com/media/2024/03/shsdw00R6RwkGsUmT7O5cKhmLqv-329x495.jpg" alt="app tv"onerror="handleImageError(this)">
+ <button class="button"><img src="https://resizing.flixster.com/D6aLbOtCJdj4ItAJL_UgDI_lzzA=/206x305/v2/https://resizing.flixster.com/dgjoKHhkuLNUQKnDowFdDSd2FVg=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2ViNDQzYjU2LTRlMjgtNGVjZC1iZjI2LTcyZDliMjY0NzcwNC5qcGc=" alt="app tv"onerror="handleImageError(this)">
 <div class="mov-name">
 <div class="tv-name-inner">Night Shift-(2023)/مناوبة ليلية</div></div>
    <div class="link">  سيرفرات المشاهدة</div> 
@@ -659,7 +840,7 @@ box-shadow: 0 0 5px #fff;
     
     <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/47520/47520-240p.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end')" id="remot" tabindex="1">SD</div> </div ></button>     
  <!--+++++++++++++++++-->             
- <button class="button"><img src="https://media.fushaar.com/media/2024/01/gSkfBGdxdialBMM7P02V4hcI6Ij-329x495.jpg" alt="app tv"onerror="handleImageError(this)">
+ <button class="button"><img src="https://resizing.flixster.com/D6aLbOtCJdj4ItAJL_UgDI_lzzA=/206x305/v2/https://resizing.flixster.com/HUH8eIaDWE1jpxe8j93fBHDyUi4=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2FlYjYwYjc0LTU4YTgtNDI0Zi04ZjMyLWM1N2Q4YzlkYTkwNi5qcGc=" alt="app tv"onerror="handleImageError(this)">
 <div class="mov-name">
 <div class="tv-name-inner">Night Swim-(2024)/سباحة ليلية</div></div>
    <div class="link">  سيرفرات المشاهدة</div> 
@@ -673,7 +854,7 @@ box-shadow: 0 0 5px #fff;
     
     <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/47155/47155-240p.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end')" id="remot" tabindex="1">SD</div> </div ></button>     
  <!--+++++++++++++++++-->             
- <button class="button"><img src="https://media.fushaar.com/media/2024/02/mdPnNWU05ivcVp0rF2Dv9n5Maf4-229x337.jpg" alt="app tv"onerror="handleImageError(this)">
+ <button class="button"><img src="https://resizing.flixster.com/D6aLbOtCJdj4ItAJL_UgDI_lzzA=/206x305/v2/https://resizing.flixster.com/MA1jApUB2_khJgmMVN-0VOseqrA=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzRlZGUyZmRiLWViMDQtNDVmZC1iOTI5LTE2NmJhMzIzM2NhNy5qcGc=" alt="app tv"onerror="handleImageError(this)">
 <div class="mov-name">
 <div class="tv-name-inner">Lisa Frankenstein-(2024)/ليزا فرانكيشتاين</div></div>
    <div class="link">  سيرفرات المشاهدة</div> 
@@ -687,7 +868,7 @@ box-shadow: 0 0 5px #fff;
     
     <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/47438/47438-240p.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end')" id="remot" tabindex="1">SD</div> </div ></button>     
  <!--+++++++++++++++++-->             
- <button class="button"><img src="https://media.fushaar.com/media/2024/02/yqnNLn24shYnZ6kqGpbwuB3NJ0D-229x337.jpg" alt="app tv"onerror="handleImageError(this)">
+ <button class="button"><img src="https://resizing.flixster.com/D6aLbOtCJdj4ItAJL_UgDI_lzzA=/206x305/v2/https://resizing.flixster.com/U9RhWi-TsG5l8eE_P7qliIjMicw=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2U2NzAyNjVjLWI1YjUtNDEyOC05NTdiLWFmNTJhMDU5NDZhYy5qcGc=" alt="app tv"onerror="handleImageError(this)">
 <div class="mov-name">
 <div class="tv-name-inner">Pet Sematary: Bloodlines-(2024)/مقبرة الحيوانات الأليفة: سلالات الدم</div></div>
    <div class="link">  سيرفرات المشاهدة</div> 
@@ -701,7 +882,7 @@ box-shadow: 0 0 5px #fff;
     
     <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/47374/47374-240p.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end')" id="remot" tabindex="1">SD</div> </div ></button>     
  <!--+++++++++++++++++-->             
- <button class="button"><img src="https://media.fushaar.com/media/2023/04/gCUFtTvjK4gbmjVxhx8bhyOhAeW-229x337.jpg" alt="app tv"onerror="handleImageError(this)">
+ <button class="button"><img src="https://resizing.flixster.com/D6aLbOtCJdj4ItAJL_UgDI_lzzA=/206x305/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p30087573_b_v13_ae.jpg" alt="app tv"onerror="handleImageError(this)">
 <div class="mov-name">
 <div class="tv-name-inner">Blood-(2022)/الدم</div></div>
    <div class="link">  سيرفرات المشاهدة</div> 
@@ -712,13 +893,12 @@ box-shadow: 0 0 5px #fff;
  
     <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/45132/45132-480p.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end ')" id="remot" tabindex="1">HD</div>
     
-    <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/45132/45132-240p.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end')" id="remot" tabindex="1">SD</div> </div ></button>                   
-    
-
+    <div class="number" onclick="window.open('intent://stream.fushaar.link/movie/45132/45132-240p.mp4/chunk.m3u8?wmsAuthSign=#Intent;scheme=https;package=co.wuffy.player;end')" id="remot" tabindex="1">SD</div> </div ></button>     
 </div>
-</div>   <h1 id="no-results" style="display: none; color: #fff; text-align: center; font-size: 20px; font-weight: bold;">لم يتم العثور على نتائج⚠️</h1>
+</div>
+  <h1 id="no-results" style="display: none; color: #fff; text-align: center; font-size: 20px; font-weight: bold;">لم يتم العثور على نتائج⚠️</h1>
 
-<div  class="plus"tabindex="1"onclick="window.open('https://raw.githack.com/ahmadmk2023/Movies-free1/main/aflam-mot-02.html')"><h1 class="h1">  المزيد من الأفلام      <i class="fa-solid fa-plus"></i></h1></div>
+
   
  </main> 
  
@@ -821,12 +1001,48 @@ document.addEventListener("DOMContentLoaded", function () {
     //✅ دالة التعامل مع خطأ تحميل الصورة
     function handleImageError(img) {
         // تغيير مصدر الصورة إلى صورة بديلة في حال حدوث خطأ في تحميل الصورة الأصلية
-        img.src = "https://raw.githubusercontent.com/aminemk640/Movies-free/refs/heads/main/00.png";
+        img.src = "https://raw.githubusercontent.com/aminemk640/Movies-free/refs/heads/main/00.png?text=صورة+غير+متاحة'; // صورة بديلة";
         img.onerror = null; // إيقاف محاولة تحميل الصورة مرة أخرى
+        
     }
 </script>
 
 
+<audio id="hoverSound" src="https://sounds.pond5.com/game-interface-hover-sound-1-sound-effect-221424346_nw_prev.m4a" preload="auto"></audio>
+
+<script>
+    // تشغيل الصوت عند التأشير أو التركيز
+    const sound = document.getElementById('hoverSound');
+    const categories = document.querySelectorAll('.topnav a ,.number');
+
+    categories.forEach(cat => {
+      cat.addEventListener('mouseenter', () => {
+        sound.currentTime = 0;
+        sound.play();
+      });
+      cat.addEventListener('focus', () => {
+        sound.currentTime = 0;
+        sound.play();
+      });
+    });
+
+  </script>
+
+
+ <script> 
+// يفضل وضعه بعد إغلاق $(document).ready(...)
+
+$(document).on('keydown', function(event) {
+    // التحقق من زر "X" أو "الرجوع" في جهاز التحكم (عادةً Backspace أو Escape)
+    if (event.key === 'Backspace' || event.key === 'Escape' || event.keyCode === 461) {
+        // keyCode 461 هو رمز شائع لزر العودة في Android TV
+        history.back(); // العودة إلى الصفحة السابقة في السجل
+        event.preventDefault(); // منع السلوك الافتراضي للمتصفح (لتجنب الرجوع المزدوج أو إغلاق التطبيق)
+    }
+});
+ </script>
 </body>
 </html>
+
+
 
