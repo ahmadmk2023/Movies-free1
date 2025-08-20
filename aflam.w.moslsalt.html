@@ -121,12 +121,12 @@
           .button img {
   background-size: cover; /* جعل الصورة تمتد لتغطي الحاوية بالكامل */
     background-position: center;    
-    background-size: 100% 100%; /* جعل الصورة تمتد لتغطي الحاوية بالكامل */
     background-repeat: no-repeat; /* منع تكرار الصورة */
     width: 100%; /* ضمان أن العرض 100% */
     height: 190px; /* تعديل الارتفاع حسب الحاجة */
     position: relative; /* إضافة لتحديد موضع العناصر داخل الحاوية */
-    border-radius: 8px;margin-top: -15px;
+    border-radius: 8px;
+    margin-top: -15px;
 
 }
 
@@ -201,8 +201,9 @@ text-decoration:none;
 
 }
    main {
-    padding: 5px;position: relative;
-    margin-top: 60px; /* تترك مساحة للشريط العلوي */
+    padding: 5px;
+    position: relative;
+    margin-top: 50px; /* تترك مساحة للشريط العلوي */
     margin-bottom: 70px; /* تترك مساحة للقائمة السفلية */
 }
         
@@ -225,101 +226,82 @@ text-decoration:none;
 }
 
 
-#searchbar-container {
-    position: relative;
-    width: 70%;
-    margin: 10px auto;
-    direction: rtl;
-
-}
- #searchbar:focus,#searchbar:hover {
-       background: #ccc;
-    color: #000;
-    border-radius: 5px;
-    outline: none;
-    border: 2px solid #ff0066;
-    transition-delay: 0s, 1s;
-    box-shadow: 0 0 10px #ff0066, 0 0 20px #ff0066;
-    }
-#searchbar {
-    width: 100%;
-    padding: 10px;margin-top:10px;
-    font-size: 19px;
-    font-weight: bold;
-    border-radius: 5px;
-    height: 35px;
-    border: 2px solid gold;
-    box-sizing: border-box;
-    display: none; /* Initially hide the search bar */
-}
-
-#searchbar.show {
-    display: inline-block;
-}
-
-
-.x{
-    background: #2222;
-        position: absolute;
-    top: 60%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    display: none; /* Initially hide the close icon */
-    color: #000;
-    top:27px;
-    left:5px;
-    font-size: 16x;
-    border-radius: 8px;
-    outline: none;
-    border: 2px solid #000;
-box-shadow: 0 0 5px #000;
+     /* شريط البحث */
+        #searchbar-container {
+            position: relative;
+            width: 90%; /* زيادة العرض ليتناسب مع الشاشات المختلفة */
+            max-width: 600px; /* تحديد أقصى عرض */
+            margin: 15px auto;
+            direction: rtl;
+            display: flex; /* لجعل الزر X بجانب شريط البحث */
+            align-items: center;
         }
-.x:focus,.x:hover {
-    background: #2222;
-    color: #000;
-    border-radius: 8px;
-    outline: none;
-    border: 2px solid #ff0066;
-    transition-delay: 0s, 1s;
-    box-shadow: 0 0 10px #ff0066;
+
+        #searchbar {
+            width: 90%;
+            padding: 10px 15px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            height: 40px; /* ارتفاع مناسب */
+            border: 2px solid gold;
+            box-sizing: border-box;
+            display: none; /* إخفاء في البداية */
+            color: #000; /* لون النص داخل شريط البحث */
+            background-color: #1322;
+            transition: all 0.3s ease;
         }
-#close-icon.show {
-    display: block;
-}
-.hidden {
-    display: none;
-}
 
-    .search-input {
-    padding: 8px;
-    font-size:15px; 
-     font-weight: bold  ;
-         color: #000;
+        #searchbar:focus,
+        #searchbar:hover {
+            background: #ccc;
+            color: #000;
+            border-color: #ff0066;
+            box-shadow: 0 0 10px #ff0066, 0 0 20px #ff0066;
+        }
 
-     }
-    
-    #no-results-message { 
-    color: red;              
-    font-family: "Montserrat", serif;
-    margin-top: 10px;
-    font-size: 25px; 
-     font-weight: bold;
-     }
-     
-    /* تظهر الأيقونة أعلى الزجاجية */
-        .watched-icon {
-            position: absolute; 
-            background: #fff;
-            border-radius: 4px;
-            border: 2px solid #ff0066;
-            box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 40px #FFD700;
-            top: 0;
-            left: 0;
-            width: 20px;
-            height: 20px;
-            display: none; /* Initially hide the watched icon */
-        } 
-     
+        #searchbar.show {
+            display: block; /* إظهار الشريط */
+        }
+
+        #close-icon {
+            background: #1322;
+            color: #fff; /* لون أيقونة الإغلاق */
+            border: 2px solid #000;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #fff;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 8px 10px;
+            margin-right: 5px; /* مسافة بين شريط البحث و زر الإغلاق */
+            display: none; /* إخفاء في البداية */
+            transition: all 0.3s ease;
+        }
+
+        #close-icon:focus,
+        #close-icon:hover {
+            background: #222;
+            color: #ff0066;
+            border-color: #ff0066;
+            box-shadow: 0 0 10px #ff0066;
+        }
+
+        #close-icon.show {
+            display: block;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #no-results-message {
+            color: red;
+            font-family: 'Cairo', sans-serif;
+            margin-top: 20px;
+            font-size: 25px;
+            font-weight: bold;
+            text-align: center;
+        }
                 </style>
                 
                 
@@ -331,11 +313,12 @@ box-shadow: 0 0 5px #000;
                <!-- icon-reply -->
 
                   <!-- icon-reply -->
-                <a onclick="window.open('go:1')"tabindex="0">
+                  <!-- icon-reply -->
+<a onclick="history.back()" tabindex="0" title="الرجوع" role="button">
     <svg width="25" height="20" fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
         <path d="M209.4 39.5c-9.1-9.6-24.3-10-33.9-.9L33.8 173.2c-19.9 18.9-19.9 50.7 0 69.6L175.5 377.4c9.6 9.1 24.8 8.7 33.9-.9s8.7-24.8-.9-33.9L66.8 208 208.5 73.4c9.6-9.1 10-24.3 .9-33.9zM352 64c0-12.6-7.4-24.1-19-29.2s-25-3-34.4 5.4l-160 144c-6.7 6.1-10.6 14.7-10.6 23.8s3.9 17.7 10.6 23.8l160 144c9.4 8.5 22.9 10.6 34.4 5.4s19-16.6 19-29.2l0-64 32 0c53 0 96 43 96 96c0 30.4-12.8 47.9-22.2 56.7c-5.5 5.1-9.8 12-9.8 19.5c0 10.9 8.8 19.7 19.7 19.7c2.8 0 5.6-.6 8.1-1.9C494.5 467.9 576 417.3 576 304c0-97.2-78.8-176-176-176l-48 0 0-64z"></path>
     </svg>
-                </a>
+</a>
                    <!-- icon-reply -->
                    
                  <!-- icon-logo -->
@@ -363,75 +346,76 @@ box-shadow: 0 0 5px #000;
 <button tabindex="1"id="close-icon"class="x">❌</button></div>
 <div align="center">
 
-      
+                 <!-- ✅  زر الفيلم -->
+                        <button class="button"onclick="window.open('https://raw.githack.com/ahmadmk2023/Movies-free1/main/aflam-modblaja-2024.html')">
+    <img src="https://raw.githubusercontent.com/ahmadmk2023/Movies-free1/refs/heads/main/bst.mov/AC1.png" alt="app tv"onerror="handleImageError(this)">
+     <div class="Series-name">
+        <div class="tv-name-inner1" >الافلام  مدبلجة</div></div> 
+   </button> 
+             <!-- ✅  زر الفيلم -->
+             
 <!-- ✅  زر الفيلم -->
              <button class="button"onclick="window.open('https://raw.githack.com/ahmadmk2023/Movies-free1/main/aflam-mot-0.html')">
-    <img src="https://i.imgur.com/wt1vRhn.png" alt="app tv"onerror="handleImageError(this)">
+    <img src="https://raw.githubusercontent.com/ahmadmk2023/Movies-free1/refs/heads/main/bst.mov/AC.png" alt="app tv"onerror="handleImageError(this)">
      <div class="Series-name">
 <div class="tv-name-inner1" >الافلام الاجنبية</div></div> 
    </button> 
       <!-- ✅  زر الفيلم -->
 
                         <button class="button"onclick="window.open('https://raw.githack.com/ahmadmk2023/Movies-free1/main/movies-horror-01%20.html')">
-    <img src="https://raw.githubusercontent.com/ahmadmk2023/Movies-free1/refs/heads/main/logo.webp" alt="app tv"onerror="handleImageError(this)">
+    <img src="https://raw.githubusercontent.com/ahmadmk2023/Movies-free1/refs/heads/main/bst.mov/HO1.png" alt="app tv"onerror="handleImageError(this)">
      <div class="Series-name">
         <div class="tv-name-inner1" >الافلام  الرعب</div></div> 
    </button> 
-           <!-- ✅  زر الفيلم -->
-                        <button class="button"onclick="window.open('https://raw.githack.com/ahmadmk2023/Movies-free1/main/aflam-modblaja-2024.html')">
-    <img src="https://i.imgur.com/KcDK4R8.png" alt="app tv"onerror="handleImageError(this)">
-     <div class="Series-name">
-        <div class="tv-name-inner1" >الافلام  مدبلجة</div></div> 
-   </button> 
-             <!-- ✅  زر الفيلم -->
+
                         <button class="button"onclick="window.open('https://raw.githack.com/ahmadmk2023/Movies-free1/main/%D8%A7%D9%81%D9%84%D8%A7%D9%85%20%D8%B9%D8%B1%D8%A8%D9%8A.html')">
-    <img src="https://i.imgur.com/zxVhgvr.png" alt="app tv"onerror="handleImageError(this)">
+    <img src="https://raw.githubusercontent.com/ahmadmk2023/Movies-free1/refs/heads/main/bst.mov/AR.png" alt="app tv"onerror="handleImageError(this)">
      <div class="Series-name">
         <div class="tv-name-inner1" >الافلام  العربية</div></div> 
    </button> 
    <!-- ✅  زر الفيلم -->
              <button class="button"onclick="window.open('https://raw.githack.com/ahmadmk2023/Movies-free1/main/movis-india-01.html')">
-    <img src="https://i.imgur.com/U99SSVJ.png" alt="app tv"onerror="handleImageError(this)">
+    <img src="https://raw.githubusercontent.com/ahmadmk2023/Movies-free1/refs/heads/main/bst.mov/IN.png" alt="app tv"onerror="handleImageError(this)">
      <div class="Series-name">
         <div class="tv-name-inner1" >افلام-هندي</div></div> 
    </button> 
       <!-- ✅  زر الفيلم -->
 
               <button class="button"onclick="window.open('https://raw.githack.com/ahmadmk2023/Movies-anime/main/movies%20anime.html')">
-    <img src="https://i.imgur.com/BrzOmZw.png" alt="app tv"onerror="handleImageError(this)">
+    <img src="https://raw.githubusercontent.com/ahmadmk2023/Movies-free1/refs/heads/main/bst.mov/AN1.png" alt="app tv"onerror="handleImageError(this)">
      <div class="Series-name">
         <div class="tv-name-inner1" >الافلام الانمي</div></div> 
    </button> 
 
       <!-- ✅  زر الفيلم -->
                       <button class="button"onclick="window.open('https://raw.githack.com/ahmadmk2023/Movies-free1/main/%D8%B3%D9%84%D8%A7%D8%B3%D9%84%20%D8%A7%D9%84%D8%A7%D9%81%D9%84%D8%A7%D9%85.html')">
-    <img src="https://cdn.icon-icons.com/icons2/41/PNG/128/movies_theater_media_7139.png" alt="app tv"onerror="handleImageError(this)">
+    <img src="https://raw.githubusercontent.com/ahmadmk2023/Movies-free1/refs/heads/main/bst.mov/SRI3.png" alt="app tv"onerror="handleImageError(this)">
      <div class="Series-name">
         <div class="tv-name-inner1" >سلاسل الافلام</div></div> 
    </button>     
               <!-- ✅  زر الفيلم -->
              <button class="button"onclick="window.open('go:srtr')">
-    <img src="https://i.imgur.com/JTS6qDT.png" alt="app tv"onerror="handleImageError(this)">
+    <img src="https://raw.githubusercontent.com/ahmadmk2023/Movies-free1/refs/heads/main/bst.mov/TR.png" alt="app tv"onerror="handleImageError(this)">
      <div class="Series-name">
         <div class="tv-name-inner1" >مسلسلات تركية</div></div> 
    </button> 
          
       <!-- ✅  زر الفيلم -->
                       <button class="button"onclick="window.open('https://raw.githack.com/ahmadmk2023/series-ajnabi/main/Man%20vs%20Bee.html')">
-    <img src="https://i.imgur.com/a9J8ipW.png" alt="app tv"onerror="handleImageError(this)">
+    <img src="https://raw.githubusercontent.com/ahmadmk2023/Movies-free1/refs/heads/main/bst.mov/SRI2.png" alt="app tv"onerror="handleImageError(this)">
      <div class="Series-name">
         <div class="tv-name-inner1" >مسلسلات اجنبية</div></div> 
    </button> 
 
 <button class="button"onclick="window.open('go:sear')">
-    <img src="https://i.imgur.com/VUzbP2e.png" alt="app tv"onerror="handleImageError(this)">
+    <img src="https://raw.githubusercontent.com/ahmadmk2023/Movies-free1/refs/heads/main/bst.mov/AR.png" alt="app tv"onerror="handleImageError(this)">
      <div class="Series-name">
         <div class="tv-name-inner1" >مسلسلات عربية</div></div> 
    </button>
 
       <!-- ✅  زر الفيلم -->
 <button class="button"onclick="window.open('go:seanm')">
-    <img src="https://i.imgur.com/sSlegfk.png" alt="app tv"onerror="handleImageError(this)">
+    <img src="https://raw.githubusercontent.com/ahmadmk2023/Movies-free1/refs/heads/main/bst.mov/AN3.png" alt="app tv"onerror="handleImageError(this)">
      <div class="Series-name">
         <div class="tv-name-inner1" >مسلسلات الانمي</div></div> 
    </button>
@@ -442,10 +426,34 @@ box-shadow: 0 0 5px #000;
 
 
       
-   <h1 id="no-results" style="display: none; color: #fff; text-align: center; font-size: 20px; font-weight: bold;">لم يتم العثور على نتائج⚠️</h1>
+   <h1 id="no-results" style="display: none; color: red; text-align: center; font-size: 25px; font-weight: bold;">لم يتم العثور على نتائج⚠️</h1>
 </div>
  </main> 
 
+<audio id="hoverSound" src="https://github.com/ahmadmk2023/Movies-free1/raw/refs/heads/main/mp3/btn-hover01.mp3" preload="auto"></audio>
+
+<script>
+    // تشغيل الصوت عند التأشير أو التركيز
+    const sound = document.getElementById('hoverSound');
+    const categories = document.querySelectorAll('.topnav a ,.button,#close-icon');
+
+    categories.forEach(cat => {
+      cat.addEventListener('mouseenter', () => {
+        sound.currentTime = 0;
+        sound.play();
+      });
+      cat.addEventListener('focus', () => {
+        sound.currentTime = 0;
+        sound.play();
+      });
+    });
+
+  </script>
+   
+
+
+
+ 
 <!-- JavaScript -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -516,9 +524,21 @@ document.addEventListener("DOMContentLoaded", function () {
         img.src = "https://raw.githubusercontent.com/aminemk640/Movies-free/refs/heads/main/00.png";
         img.onerror = null; // إيقاف محاولة تحميل الصورة مرة أخرى
     }
-</script>
+    
+    //✅ يفضل وضعه بعد إغلاق $(document).ready(...)
 
+$(document).on('keydown', function(event) {
+    // التحقق من زر "X" أو "الرجوع" في جهاز التحكم (عادةً Backspace أو Escape)
+    if (event.key === 'Backspace' || event.key === 'Escape' || event.keyCode === 461) {
+        // keyCode 461 هو رمز شائع لزر العودة في Android TV
+        history.back(); // العودة إلى الصفحة السابقة في السجل
+        event.preventDefault(); // منع السلوك الافتراضي للمتصفح (لتجنب الرجوع المزدوج أو إغلاق التطبيق)
+    }
+}); 
+    
+</script>
 
 </body>
 </html>
+
 
