@@ -1,955 +1,1327 @@
 <!DOCTYPE html>
-<html lang="AR" dir="ltr">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>افـــلام عـــــربـــي</title>
-  <link href="https://raw.githubusercontent.com/aminemk640/Movies-free/refs/heads/main/00.png" rel="icon" type="image/x-icon">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
- <!-- إضافة jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>     <!-- إضافة watched-icon -->
-    <script src="https://raw.githack.com/ahmadmk2023/code-java/main/watched-icon-V2.js"></script>  
- </head>   
-<body>
+    <title>أفلام عربي - LABIL TV PRO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-teal: #33a08c;
+            --dark-blue: #0b1424;
+            --gold-gradient: linear-gradient(45deg, #FFD700, #FDB931);
+            --glass-bg: rgba(255, 255, 255, 0.07);
+            --accent-pink: #ff0066;
+            --focus-glow: 0 0 25px rgba(255, 0, 102, 0.8);
+            --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            --card-bg: rgba(30, 40, 60, 0.8);
+            --glass-overlay: rgba(0, 0, 0, 0.5);
+        }
 
-    <!----------  اكواد استايل القائمة  ------------>
-    <!----------  اكواد استايل القائمة  ------------>
-     <style>
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
         body {
             margin: 0;
-            font-family: 'Montserrat', 'Cairo', Arial, sans-serif;
-            font-weight: 400; /* قيمة صحيحة للوزن */
-            background-color: #339a8a; /* لون موحد للخلفية */
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh; /* لضمان أن الجسم يملأ الشاشة بالكامل */
-        }
-
-        /* شريط التمرير */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        ::-webkit-scrollbar-track {
-            box-shadow: inset 0 0 5px grey;
-            border-radius: 7px;
-        }
-        ::-webkit-scrollbar-thumb {
-            background-image: linear-gradient(180deg, #d0368a 0%, #708ad4 99%);
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #b30000;
-        }
-        .topnav { 
-        border-top : 3px solid #FFD700;  
-        z-index: 10; /* لضمان ظهوره فوق المحتوى */
-        position: fixed;
-            overflow: hidden;
-        border-radius:4px;
-       border-radius: 0 0 4px 4px; /* تعديل الزوايا لتكون سفلية فقط */
-            background-image: linear-gradient(132deg, #3c4a71 0%, #339a8a 100%);
-        top: 0;
-        height: 58px;
-        width: 100%;
-        box-shadow: 5px 5px 7px #fff;
-}  
-
-        .topnav a {
-            float: left;
-            color: #ffffff;
-            text-align: center;
-            padding: 13px 13px;
-            text-decoration: none;
-            font-size: 16px;            
-            transition: all 0.3s ease; /* إضافة انتقال سلس */
-            align-items: center;
-            justify-content: center;border-radius: 8px; /* لتكون متناسقة مع تأثير التركيز */
-        }
- .topnav a:focus,
-        .topnav a:hover {
-            background: #ccc;
-            color: #000;
-            outline: none;
-            border: 2px solid #ff0066;
-            box-shadow: 0 0 10px #ff0066, 0 0 20px #ff0066, 0 0 40px #ff0066;
-        }
-
-        .topnav a:focus svg path,
-        .topnav a:hover svg path {
-            fill: #000;
-        }
-        .topnav-centered a {
-            font-family: "Airarabia", Sans-serif;
-            float: none;
-            position: absolute;
-            top: 50%;
-            left: 50%;            
-            font-size: 20px;
-            transform: translate(-50%, -50%);
-        }
-
-        .topnav-right {
-            float: right;
-        }
-
-        /* Responsive navigation menu (for mobile devices) */
-        @media screen and (max-width: 100%) {
-            .topnav a,
-            .topnav-right {
-                float: none;
-                display: block;
-            }
-       .topnav-centered h5 {
-            font-family: 'Cairo', sans-serif; /* استخدام خط القاهرة للعناوين العربية */
-            font-size: 20px;
-            color: #ffffff;
-            margin: 0; /* إزالة الهامش الافتراضي */
-        }
-            .topnav-centered a {
-                position: relative;
-                top: 0;
-                left: 0;
-                transform: none;
-                color: #ffff;
-            }
-        }
-
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-   body {
-                height: 100%;
-                margin: auto;
-                position: relative;
-           background:#339a8a;
-             background-position: center;
-                align-items: center;
-                justify-content: center; 
-                font-family: "Montserrat", serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-           
-            }
-
-           .button {
-            position: relative;
-            align:center;
-            display: inline-block; /* لجعل الزر عنصراً مستطيل الشكل */
-            padding:0px; /* تعيين الهامش الداخلي للزر */
-               border-radius: 8px;
-            width: 155px; /* عرض ثابت */
-            height: 255px; /* ارتفاع ثابت */
-            border: 2px solid #ccc;
-            background: #3c4a71;
-            margin: 6px;
-           justify-content: space-between; /* لتوزيع المحتوى داخل الزر */
-            overflow: hidden; /* لإخفاء أي جزء من الاسم يتجاوز الحاوية */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* ظل للأزرار */
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-            }
-        .button img {
-            width: 100%;
-            height: 150px; /* ارتفاع الصورة ثابت */
-            object-fit: cover; /* لضمان تغطية الصورة للمساحة دون تشويه */
-            border-radius: 4px 4px 0 0; /* زوايا دائرية علوية فقط */
-            display: block; /* لإزالة أي مسافة إضافية تحت الصورة */
-        }
- .button:focus,
-        .button:hover {
-            transform: scale(1.05); /* تكبير طفيف عند التركيز/التمرير */
-            outline: none;
-            border-color: #ff0066;
-            box-shadow: 0 0 15px #ff0066, 0 0 30px #ff0066;
-        }
-
-  
-   /* أيقونة المشاهدة */
-        .watched-icon {
-            position: absolute;
-            background: #fff;
-            border-radius: 4px;
-            border: 2px solid #ff0066;
-            box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 40px #FFD700;
-            top: 0;
-            right: 0; /* تغيير الموقع لليمين العلوي */
-            width: 25px; /* تكبير الحجم قليلاً */
-            height: 25px;
-            display: none;
-            display: flex; /* لتوسيط المحتوى داخل الأيقونة */
-            align-items: center;
-            justify-content: center;
-            font-size: 18px; /* حجم أيقونة العين */
-            color: #ff0066; /* لون العين */            
-            display: none; /* Initially hide the watched icon */
-
-        }
-.link,.mov-name {
-   padding: 1px;
-    text-align: center;
-    font-size: 18px;
-            color: gold; /* لون ذهبي */
-    font-family: "Airarabia", Sans-serif;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    white-space: nowrap;
-    overflow: hidden;
-    border-radius: 8px;
-    top:-10px;
-    border-top: 2px solid #d0368a;
-    margin-top:4px;
-    width: 149px; /* عرض الحاوية */
-    height: 20px;
-        }
-       .mov-name {
-    direction: ltr;  /* تحديد اتجاه النص من اليمين لليسار */
-    text-align: right;  /* محاذاة النص إلى اليمين */
-  }
-   
-.number-container {
-            display: flex;
-            justify-content: space-around;
-            width: 100%;
-            padding: 5px 0;
-            background-color: #3c4a71; /* خلفية لأرقام السيرفرات */
-            border-top: 1px solid #2a3553;
-        }
-
-        .number {
-            width: 30px;
-            height: 30px;
-            background: #339a8a;
-            border-radius: 50%;
-            border: 2px solid #fff;
-            font-size: 14px;
+            padding: 0;
+            background: radial-gradient(circle at center, #1e3a44 0%, var(--dark-blue) 100%);
+            background-attachment: fixed;
             color: #fff;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: bold;
+            font-family: 'Tajawal', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+            direction: rtl;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: rgba(11, 20, 36, 0.5); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb { 
+            background: var(--gold-gradient); 
+            border-radius: 4px;
+            border: 1px solid rgba(255,215,0,0.3);
+        }
+        ::-webkit-scrollbar-thumb:hover { background: var(--accent-pink); }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 75px;
+            background: rgba(11, 20, 36, 0.95);
+            backdrop-filter: blur(15px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 25px;
+            z-index: 1000;
+            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .header-left, .header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .header-center {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
+            white-space: nowrap;
+            text-align: center;
+        }
+
+        .btn-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            background: var(--glass-bg);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: white;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            z-index: 8;
-            transition: all 0.3s ease;
-        }
-
-        
-       /* تأثير عند التركيز (للتحكم عن بُعد على Android TV) */
-   
- .number:focus,
-        .number:hover {
-            background: #ccc;
-            color: #000;
-            border-radius: 8px;
+            transition: var(--transition);
             outline: none;
-            border: 2px solid #ff0066;
-            transform: scale(1.3); /* تأثير تكبير أقل حدة */
-            box-shadow: 0 0 8px #ff0066, 0 0 16px #ff0066;
         }
 
+        .btn-icon:focus, .btn-icon:hover { 
+            background: var(--accent-pink);
+            border-color: #fff;
+            box-shadow: var(--focus-glow);
+            transform: translateY(-2px);
+        }
 
-       a{
-color: black;
-text-decoration:none;
-}
-#al{
-color: yellow;
-text-decoration:none;
+        /* Search Container */
+        .search-container {
+            position: fixed;
+            top: 85px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 90%;
+            max-width: 600px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            display: none;
+            z-index: 999;
+        }
 
-}
-        main {
-            padding: 5px;
-            margin-top: 50px; /* تترك مساحة للشريط العلوي */
-            margin-bottom: 70px; /* تترك مساحة للقائمة السفلية */
-            flex-grow: 1; /* لتوسيع المحتوى ليملأ المساحة المتاحة */
+        .search-container.visible { 
+            display: flex;
+            animation: slideDown 0.4s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateX(50%) translateY(-20px); opacity: 0; }
+            to { transform: translateX(50%) translateY(0); opacity: 1; }
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 16px 55px 16px 20px;
+            border-radius: 18px;
+            border: 2px solid rgba(255, 215, 0, 0.4);
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            color: white;
+            font-size: 1.1rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .search-input:focus {
+            border-color: var(--accent-pink);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: var(--focus-glow);
+        }
+
+        .search-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #FFD700;
+            font-size: 1.2rem;
+        }
+
+        .close-search {
+            background: var(--glass-bg);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: white;
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            outline: none;
+            font-size: 1.2rem;
+        }
+
+        .close-search:focus, .close-search:hover {
+            background: var(--accent-pink);
+            border-color: #fff;
+            box-shadow: var(--focus-glow);
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        .main-content { 
+            padding: 100px 20px 50px;
             display: flex;
             flex-direction: column;
             align-items: center;
+            min-height: 100vh;
         }
 
-        .tv-name-inner {
-  display: inline-block;
-  padding-left: 100%;
-  animation: marquee 20s linear infinite;
- font-family: "Airarabia", Sans-serif;
-    font-weight: bold;
-
-}
-
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  50% { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
-}
-
-        /* شريط البحث */
-        #searchbar-container {
-            position: relative;
-            width: 90%; /* زيادة العرض ليتناسب مع الشاشات المختلفة */
-            max-width: 600px; /* تحديد أقصى عرض */
-            margin: 15px auto;
-            direction: rtl;
-            display: flex; /* لجعل الزر X بجانب شريط البحث */
-            align-items: center;
-        }
-
-        #searchbar {
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 25px;
             width: 100%;
-            padding: 10px 15px;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 5px;
-            height: 40px; /* ارتفاع مناسب */
-            border: 2px solid gold;
-            box-sizing: border-box;
-            display: none; /* إخفاء في البداية */
-            color: #333; /* لون النص داخل شريط البحث */
-            background-color: #f0f0f0;
-            transition: all 0.3s ease;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
-        #searchbar:focus,
-        #searchbar:hover {
-            background: #fff;
-            color: #000;
-            border-color: #ff0066;
-            box-shadow: 0 0 10px #ff0066, 0 0 20px #ff0066;
-        }
-
-        #searchbar.show {
-            display: block; /* إظهار الشريط */
-        }
-
-        #close-icon {
-            background: #111;
-            color: #fff; /* لون أيقونة الإغلاق */
-            border: 2px solid #000;
-            border-radius: 5px;
-            box-shadow: 0 0 5px #fff;
+        /* Movie Card - NEW DESIGN */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            overflow: hidden;
             cursor: pointer;
-            font-size: 16px;
-            padding: 8px 10px;
-            margin-right: 5px; /* مسافة بين شريط البحث و زر الإغلاق */
-            display: none; /* إخفاء في البداية */
-            transition: all 0.3s ease;
+            transition: var(--transition);
+            outline: none;
+            position: relative;
+            will-change: transform, box-shadow;
+            backface-visibility: hidden;
+            height: 340px;
+            display: flex;
+            flex-direction: column;
         }
 
-        #close-icon:focus,
-        #close-icon:hover {
-            background: #222;
-            color: #ff0066;
-            border-color: #ff0066;
-            box-shadow: 0 0 10px #ff0066;
+        .card:focus, .card:hover {
+            transform: translateY(-8px) scale(1.03);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: var(--accent-pink);
+            box-shadow: var(--focus-glow);
+            z-index: 10;
         }
 
-        #close-icon.show {
-            display: block;
+        .card-img-wrapper {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
         }
 
-        .hidden {
-            display: none;
+        .card-img { 
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
         }
 
-        #no-results-message {
-            color: red;
-            font-family: 'Cairo', sans-serif;
-            margin-top: 20px;
-            font-size: 25px;
-            font-weight: bold;
+        .card:focus .card-img, .card:hover .card-img {
+            transform: scale(1.05);
+        }
+
+        /* Glass Overlay for Title */
+        .card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, 
+                rgba(0, 0, 0, 0.9) 0%, 
+                rgba(0, 0, 0, 0.7) 50%, 
+                rgba(0, 0, 0, 0.3) 100%);
+            backdrop-filter: blur(10px);
+            padding: 20px 15px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .card:focus .card-overlay, .card:hover .card-overlay {
+            background: linear-gradient(to top, 
+                rgba(0, 0, 0, 0.95) 0%, 
+                rgba(51, 160, 140, 0.8) 50%, 
+                rgba(255, 0, 102, 0.3) 100%);
+            padding: 25px 15px;
+        }
+
+        .card-title-container {
+            width: 100%;
             text-align: center;
         }
 
-
-         
-.plus {
-    position:  absolute; /* تثبيت العنصر في الشاشة */
-    margin-top: 40px; /* تترك مساحة للشريط العلوي */
-    margin-bottom: 5px; /* تترك مساحة للقائمة السفلية */
-    left: 50%; /* توسيطه أفقيًا */
-    transform: translateX(-50%); /* تصحيح التوسيط */
-    width: 220px; /* عرض العنصر */
-    height: 35px; /* ارتفاع العنصر */
-      background: #3c4a71;        
-      z-index: -1; /* لضمان ظهوره فوق المحتوى */
- /* لون الخلفية */
-    border-radius: 8px; /* زوايا دائرية */
-    box-shadow: 0 0 10px #ff0066, 0 0 20px #ff0066;
-    display: flex; /* استخدام flexbox لتوسيط المحتوى */
-    justify-content: center; /* توسيط النص أفقيًا */
-    align-items: center; /* توسيط النص عموديًا */
-    color: #fff; /* لون النص */
-    padding: 5px;
-    z-index: 0; /* التأكد من أنه يظهر فوق المحتويات الأخرى */
-}
-
-
-.plus:hover,.plus:focus{
-    background: #222;
-    color: #ff0066;
-    border: 3px solid #ff0066;
-    box-shadow: 0 0 10px #ffff, 0 0 20px #ffff;
-}
-.h1 {
-   padding: 4px;
-    text-align: center;
-    font-size: 20px;
-    font-family: "Airarabia", Sans-serif;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    white-space: nowrap;
-    overflow: hidden;
- margin-top: 5px; /* تترك مساحة للشريط العلوي */
-    margin-bottom: 10px; /* تترك مساحة للقائمة السفلية */
-    
+        .card-title {
+            font-size: 1rem;
+            font-weight: 800;
+            margin: 0;
+            color: #fff;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
-               </style>
-                
-                
-          <!-- Top navigation -->
-            <div class="topnav">
-               <!-- icon-reply -->
-<div class="topnav-centered">
-                 <a><h5>افـــلام عـــــربـــي</h5> </a></div>
-               <!-- icon-reply -->
 
-                  <!-- icon-reply -->
-<a onclick="history.back()" tabindex="0" title="الرجوع" role="button">
-    <svg width="25" height="20" fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-        <path d="M209.4 39.5c-9.1-9.6-24.3-10-33.9-.9L33.8 173.2c-19.9 18.9-19.9 50.7 0 69.6L175.5 377.4c9.6 9.1 24.8 8.7 33.9-.9s8.7-24.8-.9-33.9L66.8 208 208.5 73.4c9.6-9.1 10-24.3 .9-33.9zM352 64c0-12.6-7.4-24.1-19-29.2s-25-3-34.4 5.4l-160 144c-6.7 6.1-10.6 14.7-10.6 23.8s3.9 17.7 10.6 23.8l160 144c9.4 8.5 22.9 10.6 34.4 5.4s19-16.6 19-29.2l0-64 32 0c53 0 96 43 96 96c0 30.4-12.8 47.9-22.2 56.7c-5.5 5.1-9.8 12-9.8 19.5c0 10.9 8.8 19.7 19.7 19.7c2.8 0 5.6-.6 8.1-1.9C494.5 467.9 576 417.3 576 304c0-97.2-78.8-176-176-176l-48 0 0-64z"></path>
-    </svg>
-</a>
-                   <!-- icon-reply -->
-                   
-                 <!-- icon-logo -->
-<a > <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="24px"viewBox="0 0 24 24" height="24px" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M18 4l2 3h-3l-2-3h-2l2 3h-3l-2-3H8l2 3H7L5 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4m-6.75 11.25L10 18l-1.25-2.75L6 14l2.75-1.25L10 10l1.25 2.75L14 14l-2.75 1.25m5.69-3.31L16 14l-.94-2.06L13 11l2.06-.94L16 8l.94 2.06L19 11l-2.06.94z" fill="#fff"></path></svg>
-        </a>
-      
-   <!-- icon-logo -->
-                
-   <!-- icon-search -->                
-<div class="topnav-right">
-<a tabindex="1" href="javascript:void(0)" id="search-icon"><svg enable-background="new 0 0 32 32" id="Glyph" version="1.1" width="25" height="25" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <path fill="#fff" stroke-width="4" d="M27.414,24.586l-5.077-5.077C23.386,17.928,24,16.035,24,14c0-5.514-4.486-10-10-10S4,8.486,4,14  s4.486,10,10,10c2.035,0,3.928-0.614,5.509-1.663l5.077,5.077c0.78,0.781,2.048,0.781,2.828,0  C28.195,26.633,28.195,25.367,27.414,24.586z M7,14c0-3.86,3.14-7,7-7s7,3.14,7,7s-3.14,7-7,7S7,17.86,7,14z" id="XMLID_223_"></path>
-            </svg></a></div> </div>
-  
+        .card:focus .card-title, .card:hover .card-title {
+            color: #FFD700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+        }
+
+        /* Watched Icon Badge - EYE Icon */
+        .badge-watched {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 36px;
+            height: 36px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #00FF00;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+            z-index: 5;
+            color: #00FF00;
+            font-size: 16px;
+        }
+
+        .badge-watched.visible {
+            display: flex;
+        }
+
+        /* Quality Badge */
+        .badge-quality {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 0, 102, 0.9);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            z-index: 5;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Modal */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .modal.active { 
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: rgba(11, 20, 36, 0.95);
+            border-radius: 30px;
+            border: 3px solid #FFD700;
+            padding: 40px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+            animation: slideUp 0.4s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .server-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .server-btn {
+            width: 100%;
+            background: var(--glass-bg);
+            border: 1px solid rgba(255,255,255,0.15);
+            padding: 18px 25px;
+            border-radius: 15px;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            transition: var(--transition);
+            outline: none;
+            font-size: 1.1rem;
+        }
+
+        .server-btn i {
+            font-size: 1.3rem;
+            color: #FFD700;
+        }
+
+        .server-btn:focus, .server-btn:hover {
+            background: var(--primary-teal);
+            border: 3px solid #FFD700;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.5);
+        }
+
+        .modal-close {
+            background: var(--accent-pink);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition);
+            outline: none;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .modal-close:focus, .modal-close:hover {
+            background: #FFD700;
+            color: #000;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.5);
+        }
+
+        /* Empty State */
+        .empty-state {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .empty-state i {
+            font-size: 4rem;
+            color: var(--accent-pink);
+            margin-bottom: 20px;
+        }
+
+        .empty-state h2 {
+            font-size: 1.5rem;
+            margin: 0 0 10px 0;
+            color: #fff;
+        }
+
+        .empty-state p {
+            opacity: 0.7;
+            margin: 0 0 30px 0;
+        }
+
+        .empty-state-btn {
+            background: var(--primary-teal);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 12px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            outline: none;
+        }
+
+        .empty-state-btn:focus, .empty-state-btn:hover {
+            background: var(--accent-pink);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(255, 0, 102, 0.5);
+        }
+
+        /* Toast */
+        #toast {
+            position: fixed;
+            bottom: 30px;
+            right: 50%;
+            transform: translateX(50%);
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 12px;
+            z-index: 3000;
+            display: none;
+            border-left: 4px solid var(--accent-pink);
+            backdrop-filter: blur(10px);
+            max-width: 300px;
+            text-align: center;
+            animation: slideInRight 0.3s ease-out;
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(100%) translateX(50%); opacity: 0; }
+            to { transform: translateX(50%) translateX(0); opacity: 1; }
+        }
+
+        /* Android TV Specific */
+        @media (hover: none) and (pointer: coarse) {
+            .card {
+                height: 320px;
+            }
             
-       <main>     
-
-<div align="center" id="searchbar-container">
-    <input id="searchbar" 
-           onkeyup="search_animal();" 
-           type="text" 
-           name="search" 
-           placeholder="ابحث عن افـــلام ...." 
-           tabindex="1">
-<button tabindex="1"id="close-icon"class="x">❌</button></div>
-<div align="center">
-              <!--+++++++++++++++++-->
-              <div class="section" data-section="aflam-arabi-01">
-        <!--+++++++++++++++++--> 
-                             <!-- ✅  زر الفيلم -->
-                             
-                             <!-- ✅  زر الفيلم -->    
-                             
-                             <!-- ✅  زر الفيلم -->
-                             
-                             <!-- ✅  زر الفيلم -->
-                             
-                             <!-- ✅  زر الفيلم -->
-                             
-                             <!-- ✅  زر الفيلم -->
-                             
-                             <!-- ✅  زر الفيلم -->    
-                              <button class="button">
-    <img src="https://upimg.my/apis/56099c54-618a-4b7d-9c2c-93cc6e0601f0/movies/20270.webp" alt="app tv"onerror="handleImageError(this)">
-     <div class="mov-name">
-        <div class="tv-name-inner" >Project.X(2025)-X مشروع </div></div> 
-        <div class="link">سيرفرات المشاهدة</div> 
-           <div class="number-container">
-<div class="number" 
-   data-link="intent://dl.dropbox.com/scl/fi/mslogw27mpod2rakdnqwb/Project.X.2025..mp4?rlkey=aw4eyej0bo89cs5t1nc8wbqum&st=uukzqgts&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn1" 
-     tabindex="1">1</div>
-
-<div class="number" 
-     data-link="intent://kravaxxa.com/stream/Lbf-BTmBqFio5_BZVWUVzw/kjhhiuahiuhgihdf/1753781236/53235369/master.m3u8#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn2" 
-     tabindex="1">2</div>
-     
-<div class="number" 
-         data-link="intent://dl.dropbox.com/scl/fi/mslogw27mpod2rakdnqwb/Project.X.2025..mp4?rlkey=aw4eyej0bo89cs5t1nc8wbqum&st=uukzqgts&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn3" 
-     tabindex="1">3</div>
- </div ></button> 
-                             <!-- ✅  زر الفيلم -->
-                               <button class="button">
-    <img src="https://wecima.video/wp-content/uploads/2025/07/_320x_b9a407b11f4b8522890a2ba633004d94311b0b5eee2cf7e9158f40bfed2389e2211372729.jpg" alt="app tv"onerror="handleImageError(this)">
-     <div class="mov-name">
-        <div class="tv-name-inner" >Alshaateer(2025)-فيلم الشاطر </div></div> 
-        <div class="link">سيرفرات المشاهدة</div> 
-           <div class="number-container">
-<div class="number" 
-   data-link="intent://dl.dropbox.com/scl/fi/tcu5aib2ex9ybft7byzl4/Alshaateer.2025..mp4?rlkey=9enbkxbouhb0bxziadqp4be13&st=h842excc&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn1" 
-     tabindex="1">1</div>
-
-<div class="number" 
-     data-link="intent://dl.dropbox.com/scl/fi/tcu5aib2ex9ybft7byzl4/Alshaateer.2025..mp4?rlkey=9enbkxbouhb0bxziadqp4be13&st=h842excc&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn2" 
-     tabindex="1">2</div>
-     
-<div class="number" 
-         data-link="intent://dldropbox.com/scl/fi/tcu5aib2ex9ybft7byzl4/Alshaateer.2025..mp4?rlkey=9enbkxbouhb0bxziadqp4be13&st=h842excc&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn3" 
-     tabindex="1">3</div>
- </div ></button> 
-                             <!-- ✅  زر الفيلم -->
-                              <button class="button">
-    <img src="https://wecima.video/wp-content/uploads/2025/06/MV5BYjU3N2E2NWMtZGE3YS00OTY4LWJmNDItOGMyYTk4N2Q0YzJhXkEyXkFqcGc@._V1_FMjpg_UX1000_719022622.jpg_UY1200719022622.jpg" alt="app tv"onerror="handleImageError(this)">
-     <div class="mov-name">
-        <div class="tv-name-inner" >Restart (2025)-فيلم ريستارت </div></div> 
-        <div class="link">سيرفرات المشاهدة</div> 
-           <div class="number-container">
-<div class="number" 
-   data-link="intent://dl.dropbox.com/scl/fi/j1p7go5t9vjw8vgaiex2x/Restart.2025.mp4?rlkey=lph1zsf1owbvd13sz0kzgs23s&st=xo84if4u&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn1" 
-     tabindex="1">1</div>
-
-<div class="number" 
-     data-link="intent://dl.dropbox.com/scl/fi/j1p7go5t9vjw8vgaiex2x/Restart.2025.mp4?rlkey=lph1zsf1owbvd13sz0kzgs23s&st=xo84if4u&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn2" 
-     tabindex="1">2</div>
-     
-<div class="number" 
-         data-link="intent://dl.dropbox.com/scl/fi/j1p7go5t9vjw8vgaiex2x/Restart.2025.mp4?rlkey=lph1zsf1owbvd13sz0kzgs23s&st=xo84if4u&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn3" 
-     tabindex="1">3</div>
- </div ></button> 
-                             <!-- ✅  زر الفيلم -->
- <button class="button">
-    <img src="https://upload.wikimedia.org/wikipedia/ar/thumb/5/5d/Leila_el_Eid_film_poster.jpg/300px-Leila_el_Eid_film_poster.jpg" alt="app tv"onerror="handleImageError(this)">
-     <div class="mov-name">
-        <div class="tv-name-inner" >(2025)-ليلة العيد </div></div> 
-        <div class="link">سيرفرات المشاهدة</div> 
-           <div class="number-container">
-<div class="number" 
-   data-link="intent://dl.dropbox.com/scl/fi/glkrtv954qmzebdbofduy/Laylet.El.Eid.2024.mp4?rlkey=qmwsy2ij060hmbo88gtjio12k&st=brw19ol5&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn1" 
-     tabindex="1">1</div>
-
-<div class="number" 
-     data-link="intent://dl.dropbox.com/scl/fi/glkrtv954qmzebdbofduy/Laylet.El.Eid.2024.mp4?rlkey=qmwsy2ij060hmbo88gtjio12k&st=brw19ol5&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn2" 
-     tabindex="1">2</div>
-     
-<div class="number" 
-         data-link="intent://dl.dropbox.com/scl/fi/glkrtv954qmzebdbofduy/Laylet.El.Eid.2024.mp4?rlkey=qmwsy2ij060hmbo88gtjio12k&st=brw19ol5&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn3" 
-     tabindex="1">3</div>
- </div ></button> 
-                  <!-- ✅  زر الفيلم -->        
- <button class="button">
-    <img src="https://upload.wikimedia.org/wikipedia/ar/thumb/3/3c/%D9%85%D9%84%D8%B5%D9%82_%D9%81%D9%8A%D9%84%D9%85_%D8%B3%D9%8A%D9%83%D9%88_%D8%B3%D9%8A%D9%83%D9%88.jpg/330px-%D9%85%D9%84%D8%B5%D9%82_%D9%81%D9%8A%D9%84%D9%85_%D8%B3%D9%8A%D9%83%D9%88_%D8%B3%D9%8A%D9%83%D9%88.jpg" alt="app tv"onerror="handleImageError(this)">
-     <div class="mov-name">
-        <div class="tv-name-inner" >(2024)-سيكو سيكو </div></div> 
-        <div class="link">سيرفرات المشاهدة</div> 
-           <div class="number-container">
-<div class="number" 
-   data-link="intent://dl.dropbox.com/scl/fi/k7eiqlmhtq1jzwsb5sfvw/Siko.Siko.2025.WEB-DL.mp4?rlkey=9t5d825ubzylcc2iimkb358et&st=o4n92ufl&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn1" 
-     tabindex="1">1</div>
-
-<div class="number" 
-     data-link="intent://dl.dropbox.com/scl/fi/k7eiqlmhtq1jzwsb5sfvw/Siko.Siko.2025.WEB-DL.mp4?rlkey=9t5d825ubzylcc2iimkb358et&st=o4n92ufl&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn2" 
-     tabindex="1">2</div>
-     
-<div class="number" 
-         data-link="intent://dl.dropbox.com/scl/fi/k7eiqlmhtq1jzwsb5sfvw/Siko.Siko.2025.WEB-DL.mp4?rlkey=9t5d825ubzylcc2iimkb358et&st=o4n92ufl&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn3" 
-     tabindex="1">3</div>
- </div ></button> 
-                  <!-- ✅  زر الفيلم -->        
-         <button class="button">
-    <img src="https://wecima.video/wp-content/uploads/2024/12/مشاهدة-فيلم-الحريفة-2-2024-كامل-370x453.jpg" alt="app tv"onerror="handleImageError(this)">
-     <div class="mov-name">
-        <div class="tv-name-inner" >(2024)-الحريفة 2: الريمونتادا </div></div> 
-        <div class="link">سيرفرات المشاهدة</div> 
-           <div class="number-container">
-<div class="number" 
-   data-link="intent://dl.dropbox.com/scl/fi/7ot3jomoacf2mrvg0ylom/El_Hareefa_2_Remontada.2024.480p.YangoPlay.Web-Dl.WeCima.mp4?rlkey=2pagjahri14mjgail4es621od&st=0vdd64y6&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn1" 
-     tabindex="1">1</div>
-
-<div class="number" 
-     data-link="intent://dl.dropbox.com/scl/fi/7ot3jomoacf2mrvg0ylom/El_Hareefa_2_Remontada.2024.480p.YangoPlay.Web-Dl.WeCima.mp4?rlkey=2pagjahri14mjgail4es621od&st=0vdd64y6&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn2" 
-     tabindex="1">2</div>
-     
-<div class="number" 
-         data-link="intent://dl.dropbox.com/scl/fi/7ot3jomoacf2mrvg0ylom/El_Hareefa_2_Remontada.2024.480p.YangoPlay.Web-Dl.WeCima.mp4?rlkey=2pagjahri14mjgail4es621od&st=0vdd64y6&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn3" 
-     tabindex="1">3</div>
- </div ></button> 
-                  <!-- ✅  زر الفيلم -->
-          <button class="button">
-    <img src="https://wecima.video/wp-content/uploads/2025/04/_320x_a0d0fc146a7019801ec50a212bde5fdb1cd7a67781fde008d1c38fcfcfbafdbb1364005856.jpg" alt="app tv"onerror="handleImageError(this)">
-     <div class="mov-name">
-        <div class="tv-name-inner" >(2024)-الفستان الأبيض</div></div> 
-        <div class="link">سيرفرات المشاهدة</div> 
-           <div class="number-container">
-<div class="number" 
-   data-link="intent://dl.dropbox.com/scl/fi/jt8uzaq3w42rutgk5ofc8/The.Inevitable.Journey.To.Find.A.Wedding.Dress_24.mp4?rlkey=x1qynzrhdctqo4e66ot9nuh4c&st=kpg3zm8r&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn1" 
-     tabindex="1">1</div>
-
-<div class="number" 
-     data-link="intent://dl.dropbox.com/scl/fi/jt8uzaq3w42rutgk5ofc8/The.Inevitable.Journey.To.Find.A.Wedding.Dress_24.mp4?rlkey=x1qynzrhdctqo4e66ot9nuh4c&st=kpg3zm8r&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn2" 
-     tabindex="1">2</div>
-     
-<div class="number" 
-         data-link="intent://dl.dropbox.com/scl/fi/jt8uzaq3w42rutgk5ofc8/The.Inevitable.Journey.To.Find.A.Wedding.Dress_24.mp4?rlkey=x1qynzrhdctqo4e66ot9nuh4c&st=kpg3zm8r&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn3" 
-     tabindex="1">3</div>
- </div ></button> 
-                  <!-- ✅  زر الفيلم -->
-        <button class="button">
-    <img src="https://wecima.film/wp-content/uploads/2019/04/2051037--370x454.jpg" alt="app tv"onerror="handleImageError(this)">
-     <div class="mov-name">
-        <div class="tv-name-inner" >(2018)-فيلم ليلة هنا وسرور</div></div> 
-        <div class="link">سيرفرات المشاهدة</div> 
-           <div class="number-container">
-<div class="number" 
-   data-link="intent://dl.dropbox.com/scl/fi/8nvacspvb8c2hfispmkno/Lelet.Hana.Wa.Sror.2018.mp4?rlkey=3icl0vbqff21np1on2xopabfo&st=t2y63wvx&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn1" 
-     tabindex="1">1</div>
-
-<div class="number" 
-     data-link="intent://dl.dropbox.com/scl/fi/8nvacspvb8c2hfispmkno/Lelet.Hana.Wa.Sror.2018.mp4?rlkey=3icl0vbqff21np1on2xopabfo&st=t2y63wvx&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn2" 
-     tabindex="1">2</div>
-     
-<div class="number" 
-         data-link="intent://dl.dropbox.com/scl/fi/8nvacspvb8c2hfispmkno/Lelet.Hana.Wa.Sror.2018.mp4?rlkey=3icl0vbqff21np1on2xopabfo&st=t2y63wvx&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn3" 
-     tabindex="1">3</div>
- </div ></button> 
-                  <!-- ✅  زر الفيلم -->
-
-        <button class="button">
-    <img src="https://wecima.film/wp-content/uploads/2024/12/بضع-ساعات-في-يوم-ما-370x424.jpg" alt="app tv"onerror="handleImageError(this)">
-     <div class="mov-name">
-        <div class="tv-name-inner" >(2024)-بضع ساعات في يوم ما</div></div> 
-        <div class="link">سيرفرات المشاهدة</div> 
-           <div class="number-container">
-<div class="number" 
-   data-link="intent://dl.dropbox.com/scl/fi/5bamqpqn75cvbezybx23y/Badaa.Saat.Fi.Yawman.Ma.mp4?rlkey=azxxsit8yh7dx54w10wtzgwyy&st=q2h1wocy&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn1" 
-     tabindex="1">1</div>
-
-<div class="number" 
-     data-link="intent://dl.dropbox.com/scl/fi/5bamqpqn75cvbezybx23y/Badaa.Saat.Fi.Yawman.Ma.mp4?rlkey=azxxsit8yh7dx54w10wtzgwyy&st=q2h1wocy&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn2" 
-     tabindex="1">2</div>
-     
-<div class="number" 
-         data-link="intent://dl.dropbox.com/scl/fi/5bamqpqn75cvbezybx23y/Badaa.Saat.Fi.Yawman.Ma.mp4?rlkey=azxxsit8yh7dx54w10wtzgwyy&st=q2h1wocy&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn3" 
-     tabindex="1">3</div>
- </div ></button> 
-          <!-- ✅  زر الفيلم -->
-<button class="button">
-    <img src="https://raw.githubusercontent.com/ahmadmk2023/Movies-free1/refs/heads/main/bst.mov/Al.Leib.Maa.Al.Eyal.jpg" alt="app tv"onerror="handleImageError(this)">
-     <div class="mov-name">
-        <div class="tv-name-inner" >Al Leib Maa Al Eyal-(2024)-اللعب مع العيال</div></div> 
-        <div class="link">سيرفرات المشاهدة</div> 
-           <div class="number-container">
-<div class="number" 
-   data-link="intent://dl.dropbox.com/scl/fi/liee825c6bb3fx7o2bvl8/Al.Leib.Maa.Al.Eyal.mp4?rlkey=gn23v3khym8f2g44qjvktsrkh&st=ks3yf93h&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn1" 
-     tabindex="1">1</div>
-
-<div class="number" 
-     data-link="intent://dl.dropbox.com/scl/fi/liee825c6bb3fx7o2bvl8/Al.Leib.Maa.Al.Eyal.mp4?rlkey=gn23v3khym8f2g44qjvktsrkh&st=ks3yf93h&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn2" 
-     tabindex="1">2</div>
-     
-<div class="number" 
-         data-link="intent://dl.dropbox.com/scl/fi/liee825c6bb3fx7o2bvl8/Al.Leib.Maa.Al.Eyal.mp4?rlkey=gn23v3khym8f2g44qjvktsrkh&st=ks3yf93h&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn3" 
-     tabindex="1">3</div>
- </div ></button> 
-          <!-- ✅  زر الفيلم -->
-          
-          <button class="button">
-    <img src="https://raw.githubusercontent.com/ahmadmk2023/Movies-free1/refs/heads/main/bst.mov/Ashaan.Khargen.jpg" alt="app tv"onerror="handleImageError(this)">
-     <div class="mov-name">
-        <div class="tv-name-inner" >(2016)-عشان خارجين</div></div> 
-        <div class="link">سيرفرات المشاهدة</div> 
-           <div class="number-container">
-<div class="number" 
-   data-link="intent://dl.dropbox.com/scl/fi/g9qxgatyh4r7k7j8ytplf/Ashaan.Khargen.2016.480p.mp4?rlkey=rlppyxdcdeu83vyq0gugt7a0h&st=wlbxe0jh&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn1" 
-     tabindex="1">1</div>
-
-<div class="number" 
-     data-link="intent://dl.dropbox.com/scl/fi/g9qxgatyh4r7k7j8ytplf/Ashaan.Khargen.2016.480p.mp4?rlkey=rlppyxdcdeu83vyq0gugt7a0h&st=wlbxe0jh&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn2" 
-     tabindex="1">2</div>
-     
-<div class="number" 
-         data-link="intent://dl.dropbox.com/scl/fi/g9qxgatyh4r7k7j8ytplf/Ashaan.Khargen.2016.480p.mp4?rlkey=rlppyxdcdeu83vyq0gugt7a0h&st=wlbxe0jh&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn3" 
-     tabindex="1">3</div>
- </div ></button> 
-          <!-- ✅  زر الفيلم -->
-
-       <button class="button">
-    <img src="https://raw.githubusercontent.com/ahmadmk2023/Movies-free1/refs/heads/main/bst.mov/Aldashash.jpg" alt="app tv"onerror="handleImageError(this)">
-     <div class="mov-name">
-        <div class="tv-name-inner" >Aldashash-(2025)-فيلم - الدشاش </div></div> 
-        <div class="link">سيرفرات المشاهدة</div> 
-           <div class="number-container">
-<div class="number" 
-   data-link="intent://dl.dropbox.com/scl/fi/664mmbgqpyalqkqfcv7fk/Aldashash.mp4?rlkey=l8084zrbidtm748jg6dswaxlx&st=k12mpo6p&dl=1##Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn1" 
-     tabindex="1">1</div>
-
-<div class="number" 
-     data-link="intent://dl.dropbox.com/scl/fi/664mmbgqpyalqkqfcv7fk/Aldashash.mp4?rlkey=l8084zrbidtm748jg6dswaxlx&st=k12mpo6p&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn2" 
-     tabindex="1">2</div>
-     
-<div class="number" 
-         data-link="intent://dl.dropbox.com/scl/fi/664mmbgqpyalqkqfcv7fk/Aldashash.mp4?rlkey=l8084zrbidtm748jg6dswaxlx&st=k12mpo6p&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn3" 
-     tabindex="1">3</div>
- </div ></button> 
-     
-  <!-- ✅  زر الفيلم -->
-             <button class="button">
-    <img src="https://raw.githubusercontent.com/ahmadmk2023/Movies-free1/refs/heads/main/bst.mov/leawl_mara.jpg" alt="app tv"onerror="handleImageError(this)">
-     <div class="mov-name">
-        <div class="tv-name-inner" >leawl_mara-(2025)- لأول مرة</div></div> 
-        <div class="link">سيرفرات المشاهدة</div> 
-           <div class="number-container">
-<div class="number" 
-   data-link="intent://dl.dropbox.com/scl/fi/wey2s6j1mlpxahbs1facb/leawl_mara.mp4?rlkey=ly0gfxzvmznvnt11rymwcj3kr&st=hcxxd0hw&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn1" 
-     tabindex="1">1</div>
-
-<div class="number" 
-     data-link="intent://dl.dropbox.com/scl/fi/wey2s6j1mlpxahbs1facb/leawl_mara.mp4?rlkey=ly0gfxzvmznvnt11rymwcj3kr&st=hcxxd0hw&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn2" 
-     tabindex="1">2</div>
-     
-<div class="number" 
-         data-link="intent://dl.dropbox.com/scl/fi/wey2s6j1mlpxahbs1facb/leawl_mara.mp4?rlkey=ly0gfxzvmznvnt11rymwcj3kr&st=hcxxd0hw&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn3" 
-     tabindex="1">3</div>
- </div ></button> 
-      <!-- ✅  زر الفيلم -->
-             <button class="button">
-    <img src="https://raw.githubusercontent.com/ahmadmk2023/Movies-free1/refs/heads/main/bst.mov/Abo.Nasab.jpg" alt="app tv"onerror="handleImageError(this)">
-     <div class="mov-name">
-        <div class="tv-name-inner" >Abo Nasab-(2024)-أبو نسب </div></div> 
-        <div class="link">سيرفرات المشاهدة</div> 
-           <div class="number-container">
-<div class="number" 
-   data-link="intent://dl.dropbox.com/scl/fi/hk8ray7vmqbjok5llt5ed/Abo_Nasab.2023.mp4?rlkey=naynv15pz0xxrawhxm632fyfn&st=xz0yjyoz&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn1" 
-     tabindex="1">1</div>
-
-<div class="number" 
-     data-link="intent://dl.dropbox.com/scl/fi/hk8ray7vmqbjok5llt5ed/Abo_Nasab.2023.mp4?rlkey=naynv15pz0xxrawhxm632fyfn&st=xz0yjyoz&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn2" 
-     tabindex="1">2</div>
-     
-<div class="number" 
-         data-link="intent://dl.dropbox.com/scl/fi/hk8ray7vmqbjok5llt5ed/Abo_Nasab.2023.mp4?rlkey=naynv15pz0xxrawhxm632fyfn&st=xz0yjyoz&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn3" 
-     tabindex="1">3</div>
- </div ></button> 
-      <!-- ✅  زر الفيلم -->
-
+            .card-title {
+                font-size: 1.1rem;
+            }
             
-             <button class="button">
-    <img src="https://raw.githubusercontent.com/ahmadmk2023/Movies-free1/refs/heads/main/bst.mov/Al%20Serb.jpg" alt="app tv"onerror="handleImageError(this)">
-     <div class="mov-name">
-<div class="tv-name-inner" >Al Serb-(2024)- السرب</div></div> 
-        <div class="link">سيرفرات المشاهدة</div> 
-             <div class="number-container">
-<div class="number" 
-   data-link="intent://dl.dropbox.com/scl/fi/c0avbktc0nm6gp5s2368e/sarab-2024.mp4?rlkey=czqlqf2bwqzdolefogh0rm861&st=87pnxmeh&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn1" 
-     tabindex="1">1</div>
-
-<div class="number" 
-     data-link="intent://dl.dropbox.com/scl/fi/c0avbktc0nm6gp5s2368e/sarab-2024.mp4?rlkey=czqlqf2bwqzdolefogh0rm861&st=87pnxmeh&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn2" 
-     tabindex="1">2</div>
-     
-<div class="number" 
-         data-link="intent://dl.dropbox.com/scl/fi/c0avbktc0nm6gp5s2368e/sarab-2024.mp4?rlkey=czqlqf2bwqzdolefogh0rm861&st=87pnxmeh&dl=1#Intent;scheme=https;package=co.wuffy.player;end" onclick="playStream(this)" 
-     id="btn3" 
-     tabindex="1">3</div>
- </div ></button> 
-      <!-- ✅  زر الفيلم --> 
-  
-</div>
-</div>
-  <h1 id="no-results" style="display: none; color: #fff; text-align: center; font-size: 20px; font-weight: bold;">لم يتم العثور على نتائج⚠️</h1>
-
-
-  
- </main> 
- 
-
-   
-<script>
-  const packageName = "co.wuffy.player";
-  const playStream = (element) => {
-    const streamLink = element.getAttribute("data-link");
-
-    // محاولة فتح التطبيق باستخدام intent
-    const iframe = document.createElement("iframe");
-    iframe.style.display = "none";
-    iframe.src = streamLink;
-    document.body.appendChild(iframe);
-
-    let playStoreRedirected = false;
-
-    // إذا لم يغادر المستخدم الصفحة بعد فترة قصيرة
-    setTimeout(() => {
-      document.body.removeChild(iframe);
-
-      if (document.visibilityState === "visible" && !playStoreRedirected) {
-        // إذا بقي المستخدم في الصفحة، يتم تحويله إلى متجر Google Play
-        playStoreRedirected = true;
-        const playStoreIntent = `intent://details?id=${packageName}#Intent;scheme=market;package=com.android.vending;end`;
-        window.location.href = playStoreIntent;
-      }
-    }, 1000); // زمن انتظار قصير (1 ثانية)
-  };
-</script>
-
-
-
- 
-<!-- JavaScript -->
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const searchbar = document.getElementById("searchbar");
-    const closeIcon = document.getElementById("close-icon");
-    const searchIcon = document.getElementById("search-icon");
-    const noResults = document.getElementById("no-results");
-    const buttons = document.querySelectorAll(".button");
-
-    if (searchIcon && searchbar && closeIcon && noResults) {
-        // ✅ فتح شريط البحث عند الضغط على أيقونة البحث
-        searchIcon.addEventListener("click", function () {
-            searchbar.classList.add("show");
-            closeIcon.classList.add("show");
-            searchbar.focus();
-        });
-
-        // ✅ إغلاق شريط البحث عند الضغط على زر الإغلاق أو خارج شريط البحث
-        function closeSearchBar() {
-            if (searchbar.classList.contains("show")) {
-                searchbar.classList.remove("show");
-                closeIcon.classList.remove("show");
-                noResults.style.display = "none";
-                searchbar.value = ""; // مسح البحث
-                buttons.forEach(button => button.classList.remove("hidden")); // إظهار جميع الأزرار
+            .btn-icon {
+                min-width: 60px;
+                min-height: 60px;
             }
         }
 
-        closeIcon.addEventListener("click", closeSearchBar);
-        document.addEventListener("click", function (event) {
-            if (!searchbar.contains(event.target) && !searchIcon.contains(event.target) && !closeIcon.contains(event.target)) {
-                closeSearchBar();
+        /* Responsive */
+        @media (max-width: 768px) {
+            .grid { 
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); 
+                gap: 15px;
             }
+            
+            .card {
+                height: 300px;
+            }
+            
+            .card-title {
+                font-size: 0.95rem;
+            }
+            
+            .logo {
+                font-size: 1.3rem;
+            }
+            
+            .btn-icon {
+                width: 42px;
+                height: 42px;
+            }
+            
+            .main-content {
+                padding: 90px 15px 30px;
+            }
+            
+            .modal-content {
+                padding: 30px 20px;
+            }
+            
+            .modal-title {
+                font-size: 1.4rem;
+            }
+            
+            .server-btn {
+                padding: 15px 20px;
+                font-size: 1rem;
+            }
+            
+            .search-container {
+                top: 80px;
+                width: 95%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .grid { 
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); 
+                gap: 10px;
+            }
+            
+            .card {
+                height: 280px;
+            }
+            
+            .card-overlay {
+                padding: 15px 10px;
+                min-height: 80px;
+            }
+            
+            .card-title {
+                font-size: 0.9rem;
+            }
+            
+            .header {
+                padding: 0 15px;
+            }
+            
+            .main-content {
+                padding: 90px 10px 20px;
+            }
+            
+            .search-input {
+                padding: 12px 40px 12px 15px;
+                font-size: 1rem;
+            }
+            
+            .badge-watched {
+                width: 32px;
+                height: 32px;
+                font-size: 14px;
+            }
+        }
+
+        /* Focus Styles */
+        .focusable:focus-visible {
+            outline: none;
+            box-shadow: 0 0 0 3px #fff, var(--focus-glow);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <button class="btn-icon focusable" id="back-nav" tabindex="1" title="رجوع">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        
+        <div class="header-center">
+            <div class="logo" id="page-title">أفلام عربي</div>
+        </div>
+        
+        <div class="header-right">
+            <button class="btn-icon focusable" id="toggle-search" tabindex="2" title="بحث">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Search Container -->
+    <div class="search-container" id="search-box">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" class="search-input focusable" id="search-input" placeholder="ابحث عن فيلم..." tabindex="3">
+        <button class="close-search focusable" id="close-search" tabindex="4" title="إغلاق البحث">✕</button>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="grid" id="movies-grid"></div>
+
+        <div class="empty-state" id="empty-state">
+            <i class="fas fa-search-minus"></i>
+            <h2 id="no-results-title">لا توجد نتائج!</h2>
+            <p id="no-results-message">تأكد من كتابة الاسم بشكل صحيح أو ابحث عن كلمة مختلفة.</p>
+            <button onclick="resetSearch()" class="empty-state-btn focusable" tabindex="5" id="reset-search-btn">العودة للرئيسية</button>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal" id="movie-modal">
+        <div class="modal-content">
+            <h4 class="modal-title" id="modal-title">اختر سيرفر المشاهدة</h4>
+            <div class="server-list" id="server-list"></div>
+            <button onclick="closeModal()" class="modal-close focusable" id="close-modal" tabindex="6">إغلاق</button>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast"></div>
+
+    <script>
+        /**
+         * ===========================================
+         * MOVIES DATA - الأسماء الحقيقية فقط
+         * ===========================================
+         */
+        const MOVIES_DB = [
+        
+        
+        
+                   {
+                id: 15,
+                title: "روكي الغلابة (2025)",
+                img: "https://a.asd.homes/wp-content/uploads/2025/10/660x990-367x550.webp",
+                quality: "HD",
+                servers: [
+                    "intent://dl.dropbox.com/scl/fi/wk7cqfo5md3na1onoyqgo/Rocky.El.Ghalaba.2025.mp4?rlkey=5w5nnzh7pu97q54vw5pt1o00o&st=butgmz6j&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=روكي الغلابة (2025);end",
+                    "intent://dl.dropbox.com/scl/fi/wk7cqfo5md3na1onoyqgo/Rocky.El.Ghalaba.2025.mp4?rlkey=5w5nnzh7pu97q54vw5pt1o00o&st=butgmz6j&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=روكي الغلابة (2025);end",
+                    "intent://dl.dropbox.com/scl/fi/wk7cqfo5md3na1onoyqgo/Rocky.El.Ghalaba.2025.mp4?rlkey=5w5nnzh7pu97q54vw5pt1o00o&st=butgmz6j&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=روكي الغلابة (2025);end"
+                ]
+            }
+        ,
+            {
+                id: 14,
+                title: "السادة الافاضل (2025)",
+                img: "https://a.asd.homes/wp-content/uploads/2026/01/8LjhxTjblaE17VQSbKwNNvhXYc-scaled-367x550.webp",
+                quality: "HD",
+                servers: [
+                    "intent://dl.dropbox.com/scl/fi/f4khhrg5h0oc6d3v3euz1/Al.Sada.Al.Afadel.2025.mp4?rlkey=mer9g2k7yy24bz0yku5c9w2k3&st=slz12xj9&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=السادة الافاضل (2025);end",
+                    "intent://dl.dropbox.com/scl/fi/f4khhrg5h0oc6d3v3euz1/Al.Sada.Al.Afadel.2025.mp4?rlkey=mer9g2k7yy24bz0yku5c9w2k3&st=slz12xj9&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=السادة الافاضل (2025);end",
+                    "intent://dl.dropbox.com/scl/fi/f4khhrg5h0oc6d3v3euz1/Al.Sada.Al.Afadel.2025.mp4?rlkey=mer9g2k7yy24bz0yku5c9w2k3&st=slz12xj9&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=السادة الافاضل (2025);end"
+                ]
+            },
+            {
+                id: 13,
+                title: "فيها إيه يعني (2025)",
+                img: "https://a.asd.homes/wp-content/uploads/2025/12/wkGXajJLwIXT70tyKuJCSnHEBEC-scaled-367x550.webp",
+                quality: "FHD",
+                servers: [
+                    "intent://dl.dropbox.com/scl/fi/ga80hn8uajt1t0o843d9r/Feeha.Eh.Yaani.2025..mp4?rlkey=b8u4w9aqigo75xxfq4cj20vzp&st=bpuykrwl&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=فيها إيه يعني (2025);end",
+                    "intent://dl.dropbox.com/scl/fi/ga80hn8uajt1t0o843d9r/Feeha.Eh.Yaani.2025..mp4?rlkey=b8u4w9aqigo75xxfq4cj20vzp&st=bpuykrwl&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=فيها إيه يعني (2025);end",
+                    "intent://dl.dropbox.com/scl/fi/ga80hn8uajt1t0o843d9r/Feeha.Eh.Yaani.2025..mp4?rlkey=b8u4w9aqigo75xxfq4cj20vzp&st=bpuykrwl&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=فيها إيه يعني (2025);end"
+                ]
+            },
+            {
+                id: 12,
+                title: "المشروع اكس ( 2025 )",
+                img: "https://a.asd.homes/wp-content/uploads/2025/09/anuoOC2JRaBq5EaWrf9X48nDE5A-scaled-367x550.webp",
+                quality: "HD",
+                servers: [
+                    "intent://dl.dropbox.com/scl/fi/mslogw27mpod2rakdnqwb/Project.X.2025..mp4?rlkey=aw4eyej0bo89cs5t1nc8wbqum&st=uukzqgts&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=روكي الغلابة (2025);end",
+                    "intent://dl.dropbox.com/scl/fi/mslogw27mpod2rakdnqwb/Project.X.2025..mp4?rlkey=aw4eyej0bo89cs5t1nc8wbqum&st=uukzqgts&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=روكي الغلابة (2025);end",
+                    "intent://dl.dropbox.com/scl/fi/mslogw27mpod2rakdnqwb/Project.X.2025..mp4?rlkey=aw4eyej0bo89cs5t1nc8wbqum&st=uukzqgts&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=روكي الغلابة (2025);end"
+                ]
+           },
+            {
+                            id: 11,
+                title: "الشاطر ( 2025 )",
+                img: "https://a.asd.homes/wp-content/uploads/2025/11/Agyty4ksMnW2O7s3Spg17ERUTfU-scaled-367x550.webp",
+                quality: "FHD",
+                servers: [
+                    "intent://dl.dropbox.com/scl/fi/tcu5aib2ex9ybft7byzl4/Alshaateer.2025..mp4?rlkey=9enbkxbouhb0bxziadqp4be13&st=h842excc&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=فيها إيه يعني (2025);end",
+                    "intent://dl.dropbox.com/scl/fi/tcu5aib2ex9ybft7byzl4/Alshaateer.2025..mp4?rlkey=9enbkxbouhb0bxziadqp4be13&st=h842excc&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=فيها إيه يعني (2025);end",
+                    "intent://dl.dropbox.com/scl/fi/tcu5aib2ex9ybft7byzl4/Alshaateer.2025..mp4?rlkey=9enbkxbouhb0bxziadqp4be13&st=h842excc&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=فيها إيه يعني (2025);end"
+                ]
+            },
+            {
+                id: 10,
+                title: "ريستارت ( 2025 )",
+                img: "https://a.asd.homes/wp-content/uploads/2025/07/i7azEvi5NTaDzaj7dQiiJyX1BEI-367x550.webp",
+                quality: "HD",
+                servers: [
+                    "intent://dl.dropbox.com/scl/fi/j1p7go5t9vjw8vgaiex2x/Restart.2025.mp4?rlkey=lph1zsf1owbvd13sz0kzgs23s&st=xo84if4u&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end",
+                    "intent://dl.dropbox.com/scl/fi/j1p7go5t9vjw8vgaiex2x/Restart.2025.mp4?rlkey=lph1zsf1owbvd13sz0kzgs23s&st=xo84if4u&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end",
+                    "intent://dl.dropbox.com/scl/fi/j1p7go5t9vjw8vgaiex2x/Restart.2025.mp4?rlkey=lph1zsf1owbvd13sz0kzgs23s&st=xo84if4u&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end"
+                ]
+            },
+            {
+                id: 9,
+                title: "ليلة العيد ( 2024 )",
+                img: "https://a.asd.homes/wp-content/uploads/2025/06/e44d7f1a5b54744ffa4c1154ed5a1ee1fc65e93438b4956a3fce7f5806c3da69-385x550.webp",
+                quality: "HD",
+                servers: [
+                    "intent://dl.dropbox.com/scl/fi/glkrtv954qmzebdbofduy/Laylet.El.Eid.2024.mp4?rlkey=qmwsy2ij060hmbo88gtjio12k&st=brw19ol5&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end",
+                    "intent://dl.dropbox.com/scl/fi/glkrtv954qmzebdbofduy/Laylet.El.Eid.2024.mp4?rlkey=qmwsy2ij060hmbo88gtjio12k&st=brw19ol5&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end",
+                    "intent://dl.dropbox.com/scl/fi/glkrtv954qmzebdbofduy/Laylet.El.Eid.2024.mp4?rlkey=qmwsy2ij060hmbo88gtjio12k&st=brw19ol5&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end"
+                ]
+            }
+            
+        ,
+            {
+                id: 8,
+                title: "سيكو سيكو ( 2024 )",
+                img: "https://a.asd.homes/wp-content/uploads/2025/06/rlNIIPi3pm7kY5MgiN3gDHESEkk-367x550.webp",
+                quality: "HD",
+                servers: [
+                    "intent://dl.dropbox.com/scl/fi/k7eiqlmhtq1jzwsb5sfvw/Siko.Siko.2025.WEB-DL.mp4?rlkey=9t5d825ubzylcc2iimkb358et&st=o4n92ufl&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end",
+                    "intent://dl.dropbox.com/scl/fi/k7eiqlmhtq1jzwsb5sfvw/Siko.Siko.2025.WEB-DL.mp4?rlkey=9t5d825ubzylcc2iimkb358et&st=o4n92ufl&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end",
+                    "intent://dl.dropbox.com/scl/fi/k7eiqlmhtq1jzwsb5sfvw/Siko.Siko.2025.WEB-DL.mp4?rlkey=9t5d825ubzylcc2iimkb358et&st=o4n92ufl&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end"
+                ]
+            }
+                   ,
+            {
+                id: 7,
+                title: "الحريفة 2: الريمونتادا ( 2024 )",
+                img: "https://a.asd.homes/wp-content/uploads/2025/03/otGXsG3sMPZBi2VXD3XfXg94DBa-scaled-367x550.webp",
+                quality: "HD",
+                servers: [
+                    "intent://dl.dropbox.com/scl/fi/7ot3jomoacf2mrvg0ylom/El_Hareefa_2_Remontada.2024.480p.YangoPlay.Web-Dl.WeCima.mp4?rlkey=2pagjahri14mjgail4es621od&st=0vdd64y6&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end",
+                    "intent://dl.dropbox.com/scl/fi/7ot3jomoacf2mrvg0ylom/El_Hareefa_2_Remontada.2024.480p.YangoPlay.Web-Dl.WeCima.mp4?rlkey=2pagjahri14mjgail4es621od&st=0vdd64y6&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end",
+                    "intent://dl.dropbox.com/scl/fi/7ot3jomoacf2mrvg0ylom/El_Hareefa_2_Remontada.2024.480p.YangoPlay.Web-Dl.WeCima.mp4?rlkey=2pagjahri14mjgail4es621od&st=0vdd64y6&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end"
+                ]
+            } ,
+            {
+                id: 6,
+                title: "الفستان الابيض ( 2024 )",
+                img: "https://a.asd.homes/wp-content/uploads/2025/04/gDYCqJyOvtKMGhfnsNcim8ncm24-366x550.webp",
+                quality: "HD",
+                servers: [
+                    "intent://dl.dropbox.com/scl/fi/jt8uzaq3w42rutgk5ofc8/The.Inevitable.Journey.To.Find.A.Wedding.Dress_24.mp4?rlkey=x1qynzrhdctqo4e66ot9nuh4c&st=kpg3zm8r&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end",
+                    "intent://dl.dropbox.com/scl/fi/jt8uzaq3w42rutgk5ofc8/The.Inevitable.Journey.To.Find.A.Wedding.Dress_24.mp4?rlkey=x1qynzrhdctqo4e66ot9nuh4c&st=kpg3zm8r&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end",
+                    "intent://dl.dropbox.com/scl/fi/jt8uzaq3w42rutgk5ofc8/The.Inevitable.Journey.To.Find.A.Wedding.Dress_24.mp4?rlkey=x1qynzrhdctqo4e66ot9nuh4c&st=kpg3zm8r&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end"
+                ]
+            },
+            {
+                id: 5,
+                title: " ليلة هنا وسرور  ( 2018 )",
+                img: "https://a.asd.homes/wp-content/uploads/2020/05/5b4b192e4bce9-185200-450x550.webp",
+                quality: "HD",
+                servers: [
+                    "intent://dl.dropbox.com/scl/fi/8nvacspvb8c2hfispmkno/Lelet.Hana.Wa.Sror.2018.mp4?rlkey=3icl0vbqff21np1on2xopabfo&st=t2y63wvx&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end",
+                    "intent://dl.dropbox.com/scl/fi/8nvacspvb8c2hfispmkno/Lelet.Hana.Wa.Sror.2018.mp4?rlkey=3icl0vbqff21np1on2xopabfo&st=t2y63wvx&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end",
+                    "intent://dl.dropbox.com/scl/fi/8nvacspvb8c2hfispmkno/Lelet.Hana.Wa.Sror.2018.mp4?rlkey=3icl0vbqff21np1on2xopabfo&st=t2y63wvx&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end"
+                ]
+            },
+            {
+                id: 4,
+                title: "االلعب مع العيال  2024  ",
+                img: "https://raw.githubusercontent.com/ahmadmk2023/Movies-free1/refs/heads/main/bst.mov/Al.Leib.Maa.Al.Eyal.jpg",
+                quality: "HD",
+                servers: [
+                    "intent://dl.dropbox.com/scl/fi/liee825c6bb3fx7o2bvl8/Al.Leib.Maa.Al.Eyal.mp4?rlkey=gn23v3khym8f2g44qjvktsrkh&st=ks3yf93h&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end",
+                    "intent://dl.dropbox.com/scl/fi/liee825c6bb3fx7o2bvl8/Al.Leib.Maa.Al.Eyal.mp4?rlkey=gn23v3khym8f2g44qjvktsrkh&st=ks3yf93h&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end",
+                    "intent://dl.dropbox.com/scl/fi/liee825c6bb3fx7o2bvl8/Al.Leib.Maa.Al.Eyal.mp4?rlkey=gn23v3khym8f2g44qjvktsrkh&st=ks3yf93h&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end"
+                ]
+            },
+            {
+                id: 1,
+                title: "عشان خارجين  2016",
+                img: "https://raw.githubusercontent.com/ahmadmk2023/Movies-free1/refs/heads/main/bst.mov/Ashaan.Khargen.jpg",
+                quality: "HD",
+                servers: [
+                    "intent://dl.dropbox.com/scl/fi/g9qxgatyh4r7k7j8ytplf/Ashaan.Khargen.2016.480p.mp4?rlkey=rlppyxdcdeu83vyq0gugt7a0h&st=wlbxe0jh&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end",
+                    "intent://dl.dropbox.com/scl/fi/g9qxgatyh4r7k7j8ytplf/Ashaan.Khargen.2016.480p.mp4?rlkey=rlppyxdcdeu83vyq0gugt7a0h&st=wlbxe0jh&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end",
+                    "intent://dl.dropbox.com/scl/fi/g9qxgatyh4r7k7j8ytplf/Ashaan.Khargen.2016.480p.mp4?rlkey=rlppyxdcdeu83vyq0gugt7a0h&st=wlbxe0jh&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end"
+                ]
+            }
+              ,
+            {
+                id: 3,
+                title: "فيلم - الدشاش   2025",
+                img: "https://raw.githubusercontent.com/ahmadmk2023/Movies-free1/refs/heads/main/bst.mov/Aldashash.jpg",
+                quality: "HD",
+                servers: [
+                    "intent://dl.dropbox.com/scl/fi/664mmbgqpyalqkqfcv7fk/Aldashash.mp4?rlkey=l8084zrbidtm748jg6dswaxlx&st=k12mpo6p&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end",
+                    "intent://dl.dropbox.com/scl/fi/664mmbgqpyalqkqfcv7fk/Aldashash.mp4?rlkey=l8084zrbidtm748jg6dswaxlx&st=k12mpo6p&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end",
+                    "intent://dl.dropbox.com/scl/fi/664mmbgqpyalqkqfcv7fk/Aldashash.mp4?rlkey=l8084zrbidtm748jg6dswaxlx&st=k12mpo6p&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end"
+                ]
+            }
+             ,
+            {
+                id: 2,
+                title: "أبو نسب  2024",
+                img: "https://raw.githubusercontent.com/ahmadmk2023/Movies-free1/refs/heads/main/bst.mov/Abo.Nasab.jpg",
+                quality: "HD",
+                servers: [
+                    "intent://dl.dropbox.com/scl/fi/hk8ray7vmqbjok5llt5ed/Abo_Nasab.2023.mp4?rlkey=naynv15pz0xxrawhxm632fyfn&st=xz0yjyoz&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end",
+                    "intent://dl.dropbox.com/scl/fi/hk8ray7vmqbjok5llt5ed/Abo_Nasab.2023.mp4?rlkey=naynv15pz0xxrawhxm632fyfn&st=xz0yjyoz&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end",
+                    "intent://dl.dropbox.com/scl/fi/hk8ray7vmqbjok5llt5ed/Abo_Nasab.2023.mp4?rlkey=naynv15pz0xxrawhxm632fyfn&st=xz0yjyoz&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end"
+                ]
+            }   ,
+            {
+                id: 1,
+                title: "السرب  2024",
+                img: "https://raw.githubusercontent.com/ahmadmk2023/Movies-free1/refs/heads/main/bst.mov/Al%20Serb.jpg",
+                quality: "HD",
+                servers: [
+                    "intent://dl.dropbox.com/scl/fi/c0avbktc0nm6gp5s2368e/sarab-2024.mp4?rlkey=czqlqf2bwqzdolefogh0rm861&st=87pnxmeh&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end",
+                    "intent://dl.dropbox.com/scl/fi/c0avbktc0nm6gp5s2368e/sarab-2024.mp4?rlkey=czqlqf2bwqzdolefogh0rm861&st=87pnxmeh&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end",
+                    "intent://dl.dropbox.com/scl/fi/c0avbktc0nm6gp5s2368e/sarab-2024.mp4?rlkey=czqlqf2bwqzdolefogh0rm861&st=87pnxmeh&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end"
+                ]
+            }  
+              
+              
+            
+        ];
+
+        /**
+         * ===========================================
+         * GLOBAL VARIABLES
+         * ===========================================
+         */
+        let watched = JSON.parse(localStorage.getItem('watched_movies') || '[]');
+        let currentMovieId = null;
+        let currentMovieTitle = null;
+
+        /**
+         * ===========================================
+         * INITIALIZATION
+         * ===========================================
+         */
+        document.addEventListener('DOMContentLoaded', function() {
+            // Detect if Android
+            detectAndroid();
+            
+            // Load movies
+            render(MOVIES_DB);
+            
+            // Initialize event listeners
+            initializeEventListeners();
+            
+            // Initialize keyboard navigation
+            initializeKeyboardNavigation();
+            
+            // Focus first movie card
+            setTimeout(() => {
+                const firstCard = document.querySelector('.card');
+                if (firstCard) firstCard.focus();
+            }, 500);
         });
 
-        // ✅ إغلاق شريط البحث عند الضغط على زر Escape
-        document.addEventListener("keydown", function (event) {
-            if (event.key === "Escape") {
-                event.preventDefault(); // منع أي تأثيرات أخرى
-                closeSearchBar();
+        /**
+         * ===========================================
+         * ANDROID DETECTION
+         * ===========================================
+         */
+        function detectAndroid() {
+            const userAgent = navigator.userAgent.toLowerCase();
+            const isAndroid = userAgent.indexOf("android") > -1;
+            
+            if (isAndroid) {
+                document.body.classList.add('android-device');
+                console.log("Android device detected");
             }
-        });
+        }
 
-        // ✅ البحث وإظهار النتائج
-        searchbar.addEventListener("input", function () {
-            const input = searchbar.value.trim().toLowerCase();
-            let found = false;
+        /**
+         * ===========================================
+         * RENDER FUNCTIONS
+         * ===========================================
+         */
+        function render(data) {
+            const grid = document.getElementById('movies-grid');
+            const empty = document.getElementById('empty-state');
+            
+            if (data.length === 0) {
+                grid.style.display = 'none';
+                empty.style.display = 'flex';
+                return;
+            }
 
-            buttons.forEach(button => {
-                if (button.textContent.toLowerCase().includes(input)) {
-                    button.classList.remove("hidden");
-                    found = true;
+            grid.style.display = 'grid';
+            empty.style.display = 'none';
+
+            grid.innerHTML = data.map((movie, index) => {
+                return `
+                    <div class="card focusable" 
+                         data-id="${movie.id}"
+                         onclick="openModal(${movie.id})" 
+                         onkeydown="handleCardKey(event, ${movie.id})" 
+                         tabindex="${index + 10}" 
+                         title="${movie.title} - اضغط للفتح">
+                        
+                        <div class="badge-watched ${watched.includes(movie.id) ? 'visible' : ''}">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        
+                        ${movie.quality ? `<div class="badge-quality">${movie.quality}</div>` : ''}
+                        
+                        <div class="card-img-wrapper">
+                            <img src="${movie.img}" 
+                                 class="card-img" 
+                                 alt="${movie.title}" 
+                                 onerror="this.src='https://raw.githubusercontent.com/aminemk640/Movies-free/refs/heads/main/00.png'">
+                            
+                            <div class="card-overlay">
+                                <div class="card-title-container">
+                                    <h3 class="card-title">${movie.title}</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        /**
+         * ===========================================
+         * EVENT LISTENERS
+         * ===========================================
+         */
+        function initializeEventListeners() {
+            // Back button
+            document.getElementById('back-nav').addEventListener('click', () => {
+                if (document.referrer && document.referrer.includes(location.hostname)) {
+                    window.history.back();
                 } else {
-                    button.classList.add("hidden");
+                    // If no referrer, go to home or close
+                    window.location.href = 'index.html';
                 }
             });
 
-            // ✅ إظهار أو إخفاء رسالة "لم يتم العثور على نتائج"
-            noResults.style.display = found ? "none" : "block";
-        });
-    }
-});
+            // Search toggle
+            document.getElementById('toggle-search').addEventListener('click', toggleSearch);
+            
+            // Close search
+            document.getElementById('close-search').addEventListener('click', closeSearch);
+            
+            // Search input
+            document.getElementById('search-input').addEventListener('input', handleSearch);
+            
+            // Close modal when clicking outside
+            document.getElementById('movie-modal').addEventListener('click', (e) => {
+                if (e.target === document.getElementById('movie-modal')) {
+                    closeModal();
+                }
+            });
+        }
 
+        function toggleSearch() {
+            const searchBox = document.getElementById('search-box');
+            const isVisible = searchBox.classList.contains('visible');
+            
+            if (isVisible) {
+                closeSearch();
+            } else {
+                searchBox.classList.add('visible');
+                document.getElementById('search-input').focus();
+            }
+        }
 
-    //✅ دالة التعامل مع خطأ تحميل الصورة
-    function handleImageError(img) {
-        // تغيير مصدر الصورة إلى صورة بديلة في حال حدوث خطأ في تحميل الصورة الأصلية
-        img.src = "https://raw.githubusercontent.com/aminemk640/Movies-free/refs/heads/main/00.png?text=صورة+غير+متاحة'; // صورة بديلة";
-        img.onerror = null; // إيقاف محاولة تحميل الصورة مرة أخرى
-        
-    }
-</script>
+        function closeSearch() {
+            const searchBox = document.getElementById('search-box');
+            searchBox.classList.remove('visible');
+            document.getElementById('search-input').value = '';
+            render(MOVIES_DB);
+        }
 
+        function handleSearch(e) {
+            const searchTerm = e.target.value.toLowerCase().trim();
+            
+            if (searchTerm === '') {
+                render(MOVIES_DB);
+                return;
+            }
+            
+            const filteredMovies = MOVIES_DB.filter(movie => {
+                return movie.title.toLowerCase().includes(searchTerm);
+            });
+            
+            render(filteredMovies);
+        }
 
-<audio id="hoverSound" src="https://sounds.pond5.com/game-interface-hover-sound-1-sound-effect-221424346_nw_prev.m4a" preload="auto"></audio>
+        function resetSearch() {
+            closeSearch();
+        }
 
-<script>
-    // تشغيل الصوت عند التأشير أو التركيز
-    const sound = document.getElementById('hoverSound');
-    const categories = document.querySelectorAll('.topnav a ,.number');
+        /**
+         * ===========================================
+         * MODAL FUNCTIONS
+         * ===========================================
+         */
+        function openModal(id) {
+            currentMovieId = id;
+            const movie = MOVIES_DB.find(m => m.id === id);
+            
+            if (!movie) return;
+            
+            currentMovieTitle = movie.title;
+            
+            // Update modal title
+            document.getElementById('modal-title').textContent = 
+                `${movie.title} - اختر سيرفر المشاهدة`;
+            
+            // Clear and add servers
+            const serverList = document.getElementById('server-list');
+            serverList.innerHTML = '';
+            
+            movie.servers.forEach((server, index) => {
+                const serverBtn = document.createElement('button');
+                serverBtn.className = 'server-btn focusable';
+                serverBtn.tabIndex = 200 + index;
+                serverBtn.title = `سيرفر ${index + 1}`;
+                serverBtn.dataset.link = server;
+                
+                serverBtn.innerHTML = `
+                    <i class="fas fa-play-circle"></i>
+                    <span>سيرفر ${index + 1} - ${movie.quality || 'HD'}</span>
+                `;
+                
+                serverBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    launchWuffyPlayer(server, movie.title);
+                });
+                
+                serverList.appendChild(serverBtn);
+            });
+            
+            // Show modal
+            document.getElementById('movie-modal').classList.add('active');
+            
+            // Focus first server button
+            setTimeout(() => {
+                const firstServer = document.querySelector('.server-btn');
+                if (firstServer) firstServer.focus();
+            }, 100);
+        }
 
-    categories.forEach(cat => {
-      cat.addEventListener('mouseenter', () => {
-        sound.currentTime = 0;
-        sound.play();
-      });
-      cat.addEventListener('focus', () => {
-        sound.currentTime = 0;
-        sound.play();
-      });
-    });
+        function closeModal() {
+            document.getElementById('movie-modal').classList.remove('active');
+            currentMovieId = null;
+            currentMovieTitle = null;
+            
+            // Refocus on the movie card that was clicked
+            if (currentMovieId) {
+                const movieCard = document.querySelector(`.card[data-id="${currentMovieId}"]`);
+                if (movieCard) movieCard.focus();
+            }
+        }
 
-  </script>
+        /**
+         * ===========================================
+         * WUFFY PLAYER LAUNCH
+         * ===========================================
+         */
+        function launchWuffyPlayer(intentUrl, title) {
+            // Mark as watched
+            if (!watched.includes(currentMovieId)) {
+                watched.push(currentMovieId);
+                localStorage.setItem('watched_movies', JSON.stringify(watched));
+                render(MOVIES_DB);
+            }
+            
+            // Close modal
+            closeModal();
+            
+            // Show loading toast
+            showToast("جاري فتح الفيلم في Wuffy Player...");
+            
+            // Try to open Wuffy Player with intent
+            setTimeout(() => {
+                try {
+                    // Create iframe for intent
+                    const iframe = document.createElement('iframe');
+                    iframe.style.display = 'none';
+                    iframe.src = intentUrl;
+                    document.body.appendChild(iframe);
+                    
+                    // Fallback after 2 seconds
+                    setTimeout(() => {
+                        document.body.removeChild(iframe);
+                        
+                        // Check if app was opened
+                        if (document.hasFocus()) {
+                            // App didn't open, show install message
+                            showToast("يرجى تثبيت Wuffy Player من متجر جوجل بلاي");
+                            
+                            // Try direct link as fallback
+                            try {
+                                const directLink = intentUrl
+                                    .replace('intent://', 'https://')
+                                    .split('#Intent')[0];
+                                
+                                // Open in new tab for direct streaming
+                                window.open(directLink, '_blank');
+                            } catch (error) {
+                                console.error('Fallback failed:', error);
+                            }
+                        }
+                    }, 2000);
+                    
+                } catch (error) {
+                    console.error('Intent launch failed:', error);
+                    showToast("حدث خطأ في فتح المشغل");
+                }
+            }, 500);
+        }
 
+        /**
+         * ===========================================
+         * KEYBOARD NAVIGATION
+         * ===========================================
+         */
+        function initializeKeyboardNavigation() {
+            document.addEventListener('keydown', (e) => {
+                const modalOpen = document.getElementById('movie-modal').classList.contains('active');
+                
+                if (modalOpen) {
+                    handleModalNavigation(e);
+                } else {
+                    handleMainNavigation(e);
+                }
+            });
+        }
 
- <script> 
-// يفضل وضعه بعد إغلاق $(document).ready(...)
+        function handleMainNavigation(e) {
+            // Arrow navigation
+            if (e.key.startsWith('Arrow')) {
+                e.preventDefault();
+                
+                const direction = e.key.replace('Arrow', '').toLowerCase();
+                const focusableElements = Array.from(document.querySelectorAll('.focusable:not([style*="display: none"])'));
+                const currentIndex = focusableElements.indexOf(document.activeElement);
+                let newIndex = currentIndex;
+                
+                switch(direction) {
+                    case 'up':
+                        newIndex = Math.max(0, currentIndex - 1);
+                        break;
+                    case 'down':
+                        newIndex = Math.min(focusableElements.length - 1, currentIndex + 1);
+                        break;
+                    case 'right':
+                        newIndex = Math.max(0, currentIndex - 1);
+                        break;
+                    case 'left':
+                        newIndex = Math.min(focusableElements.length - 1, currentIndex + 1);
+                        break;
+                }
+                
+                if (focusableElements[newIndex]) {
+                    focusableElements[newIndex].focus();
+                }
+            }
+            
+            // Enter key - open modal
+            if (e.key === 'Enter' || e.key === ' ') {
+                const active = document.activeElement;
+                
+                if (active && active.classList.contains('card')) {
+                    const movieId = parseInt(active.dataset.id);
+                    if (movieId) openModal(movieId);
+                }
+            }
+            
+            // Back button (Escape/Backspace)
+            if (e.key === 'Escape' || e.key === 'Backspace') {
+                e.preventDefault();
+                
+                // Close search if open
+                const searchBox = document.getElementById('search-box');
+                if (searchBox.classList.contains('visible')) {
+                    closeSearch();
+                } else {
+                    // Go back
+                    if (document.referrer && document.referrer.includes(location.hostname)) {
+                        window.history.back();
+                    } else {
+                        window.close();
+                    }
+                }
+            }
+            
+            // Search shortcut (S)
+            if (e.key === 's' || e.key === 'S') {
+                e.preventDefault();
+                toggleSearch();
+            }
+        }
 
-$(document).on('keydown', function(event) {
-    // التحقق من زر "X" أو "الرجوع" في جهاز التحكم (عادةً Backspace أو Escape)
-    if (event.key === 'Backspace' || event.key === 'Escape' || event.keyCode === 461) {
-        // keyCode 461 هو رمز شائع لزر العودة في Android TV
-        history.back(); // العودة إلى الصفحة السابقة في السجل
-        event.preventDefault(); // منع السلوك الافتراضي للمتصفح (لتجنب الرجوع المزدوج أو إغلاق التطبيق)
-    }
-});
- </script>
+        function handleModalNavigation(e) {
+            // Arrow navigation in modal
+            if (e.key.startsWith('Arrow')) {
+                e.preventDefault();
+                
+                const direction = e.key.replace('Arrow', '').toLowerCase();
+                const focusableElements = Array.from(document.querySelectorAll('#movie-modal .focusable'));
+                const currentIndex = focusableElements.indexOf(document.activeElement);
+                let newIndex = currentIndex;
+                
+                switch(direction) {
+                    case 'up':
+                    case 'right':
+                        newIndex = Math.max(0, currentIndex - 1);
+                        break;
+                    case 'down':
+                    case 'left':
+                        newIndex = Math.min(focusableElements.length - 1, currentIndex + 1);
+                        break;
+                }
+                
+                if (focusableElements[newIndex]) {
+                    focusableElements[newIndex].focus();
+                }
+            }
+            
+            // Enter key in modal
+            if (e.key === 'Enter' || e.key === ' ') {
+                const active = document.activeElement;
+                
+                if (active && active.classList.contains('server-btn')) {
+                    active.click();
+                }
+            }
+            
+            // Close modal on ESC
+            if (e.key === 'Escape') {
+                e.preventDefault();
+                closeModal();
+            }
+        }
+
+        function handleCardKey(e, id) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openModal(id);
+            }
+        }
+
+        /**
+         * ===========================================
+         * TOAST FUNCTIONS
+         * ===========================================
+         */
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.style.display = 'block';
+            
+            setTimeout(() => {
+                toast.style.display = 'none';
+            }, 4000);
+        }
+
+    </script>
 </body>
 </html>
-
-
