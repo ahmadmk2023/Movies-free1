@@ -1,1010 +1,552 @@
 <!DOCTYPE html>
-<html lang="AR" dir="rtl">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>افـــلام عـــــربـــي</title>
-    <link href="https://raw.githubusercontent.com/aminemk640/Movies-free/main/00.png" rel="icon" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>موقع الأفلام العربي</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #1a2b3c;
-            --secondary: #2d4a5f;
-            --accent: #00a8ff;
-            --accent-light: #4dc9ff;
-            --gold: #ffd700;
-            --silver: #c0c0c0;
-            --bronze: #cd7f32;
-            --success: #00d166;
-            --danger: #ff4757;
-            --dark: #0d1821;
-            --light: #f8f9fa;
-            --glass: rgba(255, 255, 255, 0.1);
-            --border-radius: 10px;
-            --transition: all 0.3s ease;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
         body {
             font-family: 'Cairo', sans-serif;
-            background: linear-gradient(135deg, #0d1821 0%, #1a2b3c 100%);
-            color: var(--light);
-            min-height: 100vh;
-            line-height: 1.6;
+            background-color: #0f172a;
+            color: #f8fafc;
         }
-        
-        /* شريط التمرير */
-        ::-webkit-scrollbar {
+        .movie-card:hover .play-overlay {
+            opacity: 1;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
             width: 6px;
         }
-        
-        ::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.05);
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #1e293b;
         }
-        
-        ::-webkit-scrollbar-thumb {
-            background: var(--accent);
-            border-radius: 3px;
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #3b82f6;
+            border-radius: 10px;
         }
-        
-        /* الشريط العلوي - أنيق وبسيط */
-        .topnav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            height: 50px;
-            background: rgba(26, 43, 60, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0, 168, 255, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 12px;
-            z-index: 1000;
-        }
-        
-        .nav-left {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .nav-center {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .logo {
-            font-family: 'Cairo', sans-serif;
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--accent);
-            white-space: nowrap;
-        }
-        
-        .nav-btn {
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.08);
-            border: none;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: var(--transition);
-            font-size: 14px;
-        }
-        
-        .nav-btn:hover {
-            background: var(--accent);
-            transform: scale(1.05);
-        }
-        
-        /* شريط البحث */
-        .search-container {
-            position: relative;
-            width: 100%;
-            max-width: 350px;
-            margin: 60px auto 15px;
-            display: none;
-        }
-        
-        .search-container.show {
-            display: block;
-            animation: fadeIn 0.3s ease;
-        }
-        
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-8px); }
+            from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        
-        .search-box {
-            width: 100%;
-            padding: 10px 35px 10px 12px;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 20px;
-            color: white;
-            font-size: 13px;
-            font-family: 'Cairo', sans-serif;
-            transition: var(--transition);
-        }
-        
-        .search-box:focus {
-            outline: none;
-            border-color: var(--accent);
-            background: rgba(255, 255, 255, 0.12);
-            box-shadow: 0 0 0 2px rgba(0, 168, 255, 0.1);
-        }
-        
-        .search-icon {
-            position: absolute;
-            left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--accent);
-            font-size: 14px;
-        }
-        
-        /* شبكة الأفلام - بطاقات صغيرة ومتساوية */
-        .movies-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-            gap: 14px;
-            padding: 15px 12px;
-            max-width: 1100px;
-            margin: 60px auto 15px;
-        }
-        
-        /* بطاقة الفيلم - صورة كاملة */
-        .movie-card {
-            background: transparent;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            position: relative;
-            cursor: pointer;
-            transition: var(--transition);
-            height: 210px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        }
-        
-        .movie-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(0, 168, 255, 0.2);
-        }
-        
-        /* الصورة كاملة */
-        .movie-poster {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-        
-        .movie-card:hover .movie-poster {
-            transform: scale(1.03);
-        }
-        
-        /* اسم الفيلم بخلفية زجاجية فوق الصورة */
-        .movie-title-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7), transparent);
-            padding: 10px 8px;
-            backdrop-filter: blur(5px);
-        }
-        
-        .movie-title {
-            font-size: 12px;
-            font-weight: 600;
-            color: white;
-            line-height: 1.3;
-            text-align: center;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-height: 32px;
-            transition: font-size 0.2s ease;
-        }
-        
-        .movie-year {
-            font-size: 10px;
-            color: var(--accent);
-            text-align: center;
-            margin-top: 2px;
-        }
-        
-        /* أيقونة المشاهدة - صغيرة */
-        .watched-icon {
-            position: absolute;
-            top: 8px;
-            right: 8px;
-            width: 22px;
-            height: 22px;
-            background: var(--success);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 10px;
-            z-index: 2;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-        }
-        
-        /* نافذة السيرفرات */
-        .servers-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.92);
-            z-index: 2000;
-            align-items: center;
-            justify-content: center;
-            padding: 12px;
-        }
-        
-        .servers-content {
-            background: linear-gradient(135deg, #1a2b3c, #2d4a5f);
-            border-radius: var(--border-radius);
-            width: 100%;
-            max-width: 350px;
-            border: 1px solid var(--accent);
-            overflow: hidden;
-            animation: modalIn 0.3s ease;
-        }
-        
-        @keyframes modalIn {
-            from { opacity: 0; transform: scale(0.9); }
-            to { opacity: 1; transform: scale(1); }
-        }
-        
-        .servers-header {
-            padding: 12px;
-            background: rgba(0, 0, 0, 0.3);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .servers-header h3 {
-            font-size: 14px;
-            color: var(--accent);
-        }
-        
-        .close-modal {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-        }
-        
-        .close-modal:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: rotate(90deg);
-        }
-        
-        /* شبكة السيرفرات */
-        .servers-grid {
-            padding: 12px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
-        }
-        
-        .server-btn {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 6px;
-            padding: 10px 4px;
-            color: white;
-            font-family: 'Cairo', sans-serif;
-            font-size: 11px;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2px;
-        }
-        
-        .server-btn:hover {
-            background: rgba(0, 168, 255, 0.2);
-            border-color: var(--accent);
-            transform: translateY(-2px);
-        }
-        
-        .server-quality {
-            font-weight: 700;
-            font-size: 12px;
-        }
-        
-        .fhd { color: var(--gold); }
-        .hd { color: var(--silver); }
-        .sd { color: var(--bronze); }
-        
-        .server-speed {
-            font-size: 9px;
-            color: rgba(255, 255, 255, 0.7);
-        }
-        
-        /* رسالة عدم وجود نتائج مع زرين */
-        .no-results {
-            display: none;
-            text-align: center;
-            padding: 40px 15px;
-            max-width: 400px;
-            margin: 100px auto;
-            background: rgba(45, 74, 95, 0.3);
-            border-radius: var(--border-radius);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .no-results-icon {
-            font-size: 40px;
-            color: var(--danger);
-            margin-bottom: 12px;
-            opacity: 0.7;
-        }
-        
-        .no-results h3 {
-            font-size: 18px;
-            color: var(--accent);
-            margin-bottom: 8px;
-        }
-        
-        .no-results p {
-            font-size: 13px;
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 20px;
-        }
-        
-        /* زرين للنتائج */
-        .results-buttons {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .action-btn {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 20px;
-            padding: 10px 20px;
-            color: white;
-            font-family: 'Cairo', sans-serif;
-            font-size: 13px;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            min-width: 140px;
-            justify-content: center;
-        }
-        
-        .action-btn:hover {
-            transform: translateY(-2px);
-        }
-        
-        .show-all-btn {
-            background: var(--accent);
-            border-color: var(--accent);
-        }
-        
-        .show-all-btn:hover {
-            background: var(--accent-light);
-            box-shadow: 0 4px 12px rgba(0, 168, 255, 0.3);
-        }
-        
-        .home-btn-main {
-            background: rgba(255, 255, 255, 0.1);
-        }
-        
-        .home-btn-main:hover {
-            background: rgba(255, 255, 255, 0.15);
-            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
-        }
-        
-        /* تأثيرات دخول */
         .fade-in {
-            animation: fadeInUp 0.4s ease forwards;
-            opacity: 0;
+            animation: fadeIn 0.3s ease forwards;
         }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .quality-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            z-index: 10;
         }
-        
-        /* تحسينات للهواتف */
-        @media (max-width: 768px) {
-            .movies-grid {
-                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-                gap: 12px;
-                padding: 15px 10px;
-                margin-top: 55px;
-            }
-            
-            .movie-card {
-                height: 180px;
-            }
-            
-            .movie-title {
-                font-size: 11px;
-            }
-            
-            .servers-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .topnav {
-                height: 48px;
-                padding: 0 10px;
-            }
-            
-            .logo {
-                font-size: 14px;
-            }
-            
-            .nav-btn {
-                width: 32px;
-                height: 32px;
-                font-size: 13px;
-            }
-            
-            .results-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .action-btn {
-                width: 100%;
-                max-width: 200px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .movies-grid {
-                grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-                gap: 10px;
-            }
-            
-            .movie-card {
-                height: 170px;
-            }
-            
-            .movie-title {
-                font-size: 10px;
-                -webkit-line-clamp: 2;
-                max-height: 28px;
-            }
-            
-            .servers-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        /* تحسين أسماء الأفلام الطويلة */
-        .movie-title.long {
-            font-size: 11px;
-        }
-        
-        @media (max-width: 360px) {
-            .movie-title {
-                font-size: 10px;
-            }
-            
-            .movie-title.long {
-                font-size: 9px;
-            }
-        }
+        .fhd { background: linear-gradient(45deg, #f59e0b, #d97706); }
+        .hd { background: linear-gradient(45deg, #6b7280, #4b5563); }
     </style>
 </head>
-<body>
-    <!-- شريط التنقل العلوي -->
-    <nav class="topnav">
-        <div class="nav-left">
-            <button class="nav-btn" onclick="goBack()" title="الرجوع">
-                <i class="fas fa-arrow-right"></i>
-            </button>
-        </div>
-        
-        <div class="nav-center">
-            <div class="logo">🎬 أفلام عربية</div>
-        </div>
-        
-        <div class="nav-right">
-            <button class="nav-btn" id="searchToggle" title="بحث">
-                <i class="fas fa-search"></i>
-            </button>
-        </div>
-    </nav>
-    
-    <!-- شريط البحث -->
-    <div class="search-container" id="searchContainer">
-        <input type="text" 
-               class="search-box" 
-               id="searchInput" 
-               placeholder="ابحث عن فيلم..."
-               tabindex="1">
-        <i class="fas fa-search search-icon"></i>
-    </div>
-    
-    <!-- شبكة الأفلام -->
-    <div class="movies-grid" id="moviesGrid">
-        <!-- الأفمال تضاف بواسطة JavaScript -->
-    </div>
-    
-    <!-- رسالة عدم وجود نتائج مع زرين -->
-    <div class="no-results" id="noResults">
-        <div class="no-results-icon">
-            <i class="fas fa-film"></i>
-        </div>
-        <h3>لم يتم العثور على أفلام</h3>
-        <p>لا توجد نتائج مطابقة لبحثك</p>
-        <div class="results-buttons">
-            <button class="action-btn show-all-btn" onclick="showAllMovies()">
-                <i class="fas fa-th"></i> عرض جميع الأفلام
-            </button>
-            <button class="action-btn home-btn-main" onclick="goToHome()">
-                <i class="fas fa-home"></i> الصفحة الرئيسية
-            </button>
-        </div>
-    </div>
-    
-    <!-- نافذة السيرفرات -->
-    <div class="servers-modal" id="serversModal">
-        <div class="servers-content">
-            <div class="servers-header">
-                <h3 id="modalMovieTitle">اختر جودة المشاهدة</h3>
-                <button class="close-modal" id="closeModal">
-                    <i class="fas fa-times"></i>
-                </button>
+<body class="custom-scrollbar">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-40 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 shadow-lg">
+        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-blue-500 rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"></path>
+                    </svg>
+                </div>
+                <h1 class="text-2xl font-bold text-blue-400">موفي <span class="text-white">ستار</span></h1>
             </div>
             
-            <div class="servers-grid" id="serversGrid">
-                <!-- السيرفرات تضاف ديناميكياً -->
+            <div class="relative w-full md:w-96">
+                <input type="text" id="searchInput" placeholder="ابحث عن فيلم..." 
+                       class="w-full bg-slate-800/50 border border-slate-700 rounded-full py-3 px-12 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-sm placeholder-slate-400">
+                <svg class="w-5 h-5 absolute right-3 top-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+            </div>
+            
+            <div class="text-xs text-slate-400">
+                <span id="movieCount" class="bg-slate-800/50 px-3 py-1.5 rounded-full">جاري التحميل...</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="flex items-center justify-between mb-8">
+            <h2 class="text-xl font-bold border-r-4 border-blue-500 pr-3 flex items-center gap-2">
+                <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                </svg>
+                أحدث الأفلام العربية
+            </h2>
+            <button id="randomBtn" class="text-sm text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-1">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                </svg>
+                فيلم عشوائي
+            </button>
+        </div>
+
+        <!-- Movie Grid -->
+        <div id="movieGrid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+            <!-- Movie cards will be injected here -->
+        </div>
+        
+        <!-- Loading State -->
+        <div id="loading" class="text-center py-12">
+            <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500"></div>
+            <p class="text-slate-400 mt-4 text-sm">جاري تحميل الأفلام...</p>
+        </div>
+    </main>
+
+    <!-- Movie Modal -->
+    <div id="movieModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/95 backdrop-blur-sm">
+        <div class="bg-slate-900 w-full max-w-2xl rounded-2xl overflow-hidden border border-slate-800 relative shadow-2xl">
+            <button onclick="closeModal()" class="absolute top-4 left-4 text-slate-400 hover:text-white z-10 bg-slate-900/80 backdrop-blur-sm w-10 h-10 rounded-full flex items-center justify-center transition-all hover:bg-slate-800 hover:scale-110">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            
+            <div class="flex flex-col md:flex-row">
+                <div class="w-full md:w-2/5 relative">
+                    <img id="modalImg" src="" alt="" class="w-full h-64 md:h-auto object-cover aspect-[2/3]">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                        <h3 id="modalTitle" class="text-xl font-bold mb-1"></h3>
+                        <div id="modalQuality" class="inline-block px-2 py-1 text-xs font-bold rounded w-fit"></div>
+                    </div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col">
+                    <div class="mb-6">
+                        <h4 class="text-lg font-bold text-blue-400 mb-3 flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path>
+                            </svg>
+                            سيرفرات المشاهدة
+                        </h4>
+                        <p class="text-slate-400 text-sm">اختر سيرفراً لبدء المشاهدة (يتطلب تطبيق Wuffy Player)</p>
+                    </div>
+                    
+                    <div id="serverList" class="space-y-3 flex-1 overflow-y-auto max-h-60 pr-2">
+                        <!-- Servers will be injected here -->
+                    </div>
+                    
+                    <div class="mt-6 pt-6 border-t border-slate-800">
+                        <p class="text-xs text-slate-500 text-center">
+                            جميع الحقوق محفوظة لأصحاب الأفلام © 2024
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    
+
     <script>
-        // بيانات الأفلام
-        const moviesData = [
+        // بيانات الأفلام المحدثة
+        const MOVIES_DB = [
             {
-                id: 1,
-                title: "Project.X (2025) - X مشروع",
+                id: 16,
+                title: "روكي الغلابة",
                 year: "2025",
-                image: "https://a.asd.homes/wp-content/uploads/2025/09/anuoOC2JRaBq5EaWrf9X48nDE5A-scaled-367x550.webp",
-                watched: true,
-                servers: [
-                    { quality: "FHD", link: "intent://dl.dropbox.com/scl/fi/mslogw27mpod2rakdnqwb/Project.X.2025..mp4?rlkey=aw4eyej0bo89cs5t1nc8wbqum&st=uukzqgts&dl=1#Intent;scheme=https;package=co.wuffy.player;end", speed: "سريع" },
-                    { quality: "HD", link: "intent://kravaxxa.com/stream/Lbf-BTmBqFio5_BZVWUVzw/kjhhiuahiuhgihdf/1753781236/53235369/master.m3u8#Intent;scheme=https;package=co.wuffy.player;end", speed: "متوسط" },
-                    { quality: "SD", link: "intent://dl.dropbox.com/scl/fi/mslogw27mpod2rakdnqwb/Project.X.2025..mp4?rlkey=aw4eyej0bo89cs5t1nc8wbqum&st=uukzqgts&dl=1#Intent;scheme=https;package=co.wuffy.player;end", speed: "بطيء" }
-                ]
-            },
-            {
-                id: 2,
-                title: "Alshaateer - فيلم الشاطر (2025)",
-                year: "2025",
-                image: "https://a.asd.homes/wp-content/uploads/2025/11/Agyty4ksMnW2O7s3Spg17ERUTfU-scaled-367x550.webp",
-                watched: false,
-                servers: [
-                    { quality: "FHD", link: "intent://dl.dropbox.com/scl/fi/tcu5aib2ex9ybft7byzl4/Alshaateer.2025..mp4?rlkey=9enbkxbouhb0bxziadqp4be13&st=h842excc&dl=1#Intent;scheme=https;package=co.wuffy.player;end", speed: "سريع" },
-                    { quality: "HD", link: "intent://dl.dropbox.com/scl/fi/tcu5aib2ex9ybft7byzl4/Alshaateer.2025..mp4?rlkey=9enbkxbouhb0bxziadqp4be13&st=h842excc&dl=1#Intent;scheme=https;package=co.wuffy.player;end", speed: "متوسط" },
-                    { quality: "SD", link: "intent://dldropbox.com/scl/fi/tcu5aib2ex9ybft7byzl4/Alshaateer.2025..mp4?rlkey=9enbkxbouhb0bxziadqp4be13&st=h842excc&dl=1#Intent;scheme=https;package=co.wuffy.player;end", speed: "بطيء" }
-                ]
-            },
-            {
-                id: 3,
-                title: "Restart - فيلم ريستارت (2025)",
-                year: "2025",
-                image: "https://a.asd.homes/wp-content/uploads/2025/07/i7azEvi5NTaDzaj7dQiiJyX1BEI-367x550.webp",
-                watched: true,
-                servers: [
-                    { quality: "FHD", link: "intent://dl.dropbox.com/scl/fi/j1p7go5t9vjw8vgaiex2x/Restart.2025.mp4?rlkey=lph1zsf1owbvd13sz0kzgs23s&st=xo84if4u&dl=1#Intent;scheme=https;package=co.wuffy.player;end", speed: "سريع" },
-                    { quality: "HD", link: "intent://dl.dropbox.com/scl/fi/j1p7go5t9vjw8vgaiex2x/Restart.2025.mp4?rlkey=lph1zsf1owbvd13sz0kzgs23s&st=xo84if4u&dl=1#Intent;scheme=https;package=co.wuffy.player;end", speed: "متوسط" },
-                    { quality: "SD", link: "intent://dl.dropbox.com/scl/fi/j1p7go5t9vjw8vgaiex2x/Restart.2025.mp4?rlkey=lph1zsf1owbvd13sz0kzgs23s&st=xo84if4u&dl=1#Intent;scheme=https;package=co.wuffy.player;end", speed: "بطيء" }
-                ]
-            },
-            {
-                id: 4,
-                title: "ليلة العيد - فيلم (2025)",
-                year: "2025",
-                image: "https://upload.wikimedia.org/wikipedia/ar/thumb/5/5d/Leila_el_Eid_film_poster.jpg/300px-Leila_el_Eid_film_poster.jpg",
-                watched: false,
-                servers: [
-                    { quality: "FHD", link: "intent://dl.dropbox.com/scl/fi/glkrtv954qmzebdbofduy/Laylet.El.Eid.2024.mp4?rlkey=qmwsy2ij060hmbo88gtjio12k&st=brw19ol5&dl=1#Intent;scheme=https;package=co.wuffy.player;end", speed: "سريع" },
-                    { quality: "HD", link: "intent://dl.dropbox.com/scl/fi/glkrtv954qmzebdbofduy/Laylet.El.Eid.2024.mp4?rlkey=qmwsy2ij060hmbo88gtjio12k&st=brw19ol5&dl=1#Intent;scheme=https;package=co.wuffy.player;end", speed: "متوسط" },
-                    { quality: "SD", link: "intent://dl.dropbox.com/scl/fi/glkrtv954qmzebdbofduy/Laylet.El.Eid.2024.mp4?rlkey=qmwsy2ij060hmbo88gtjio12k&st=brw19ol5&dl=1#Intent;scheme=https;package=co.wuffy.player;end", speed: "بطيء" }
-                ]
-            },
-            {
-                id: 5,
-                title: "سيكو سيكو - فيلم مصري (2024)",
-                year: "2024",
-                image: "https://upload.wikimedia.org/wikipedia/ar/thumb/3/3c/%D9%85%D9%84%D8%B5%D9%82_%D9%81%D9%8A%D9%84%D9%85_%D8%B3%D9%8A%D9%83%D9%88_%D8%B3%D9%8A%D9%83%D9%88.jpg/330px-%D9%85%D9%84%D8%B5%D9%82_%D9%81%D9%8A%D9%84%D9%85_%D8%B3%D9%8A%D9%83%D9%88_%D8%B3%D9%8A%D9%83%D9%88.jpg",
-                watched: true,
-                servers: [
-                    { quality: "FHD", link: "intent://dl.dropbox.com/scl/fi/k7eiqlmhtq1jzwsb5sfvw/Siko.Siko.2025.WEB-DL.mp4?rlkey=9t5d825ubzylcc2iimkb358et&st=o4n92ufl&dl=1#Intent;scheme=https;package=co.wuffy.player;end", speed: "سريع" },
-                    { quality: "HD", link: "intent://dl.dropbox.com/scl/fi/k7eiqlmhtq1jzwsb5sfvw/Siko.Siko.2025.WEB-DL.mp4?rlkey=9t5d825ubzylcc2iimkb358et&st=o4n92ufl&dl=1#Intent;scheme=https;package=co.wuffy.player;end", speed: "متوسط" },
-                    { quality: "SD", link: "intent://dl.dropbox.com/scl/fi/k7eiqlmhtq1jzwsb5sfvw/Siko.Siko.2025.WEB-DL.mp4?rlkey=9t5d825ubzylcc2iimkb358et&st=o4n92ufl&dl=1#Intent;scheme=https;package=co.wuffy.player;end", speed: "بطيء" }
-                ]
-            },
-            {
-                id: 6,
-                title: "الحريفة 2: الريمونتادا - الجزء الثاني",
-                year: "2024",
-                image: "https://a.asd.homes/wp-content/uploads/2025/03/otGXsG3sMPZBi2VXD3XfXg94DBa-scaled-367x550.webp",
-                watched: false,
-                servers: [
-                    { quality: "HD", link: "intent://dl.dropbox.com/scl/fi/7ot3jomoacf2mrvg0ylom/El_Hareefa_2_Remontada.2024.480p.YangoPlay.Web-Dl.WeCima.mp4?rlkey=2pagjahri14mjgail4es621od&st=0vdd64y6&dl=1#Intent;scheme=https;package=co.wuffy.player;end", speed: "متوسط" },
-                    { quality: "SD", link: "intent://dl.dropbox.com/scl/fi/7ot3jomoacf2mrvg0ylom/El_Hareefa_2_Remontada.2024.480p.YangoPlay.Web-Dl.WeCima.mp4?rlkey=2pagjahri14mjgail4es621od&st=0vdd64y6&dl=1#Intent;scheme=https;package=co.wuffy.player;end", speed: "بطيء" }
-                ]
-            },
-            {
-                id: 7,
-                title: "الفستان الأبيض  ",
-                year: "2024",
-                image: "https://a.asd.homes/wp-content/uploads/2025/04/gDYCqJyOvtKMGhfnsNcim8ncm24-366x550.webp",
-                watched: false,
-                servers: [
-                    { quality: "FHD", link: "intent://dl.dropbox.com/scl/fi/jt8uzaq3w42rutgk5ofc8/The.Inevitable.Journey.To.Find.A.Wedding.Dress_24.mp4?rlkey=x1qynzrhdctqo4e66ot9nuh4c&st=kpg3zm8r&dl=1#Intent;scheme=https;package=co.wuffy.player;end", speed: "سريع" },
-                    { quality: "HD", link: "intent://dl.dropbox.com/scl/fi/jt8uzaq3w42rutgk5ofc8/The.Inevitable.Journey.To.Find.A.Wedding.Dress_24.mp4?rlkey=x1qynzrhdctqo4e66ot9nuh4c&st=kpg3zm8r&dl=1#Intent;scheme=https;package=co.wuffy.player;end", speed: "متوسط" }
-                ]
-            }
-            
-,
-            {
-                id: 8,
-                title: " ليلة هنا وسرور  ( 2018 )",
-                                year: "2024",
-                image: "https://a.asd.homes/wp-content/uploads/2020/05/5b4b192e4bce9-185200-450x550.webp",
-                quality: "HD",
-                link: [
-                    "intent://dl.dropbox.com/scl/fi/8nvacspvb8c2hfispmkno/Lelet.Hana.Wa.Sror.2018.mp4?rlkey=3icl0vbqff21np1on2xopabfo&st=t2y63wvx&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end",
-                    "intent://dl.dropbox.com/scl/fi/8nvacspvb8c2hfispmkno/Lelet.Hana.Wa.Sror.2018.mp4?rlkey=3icl0vbqff21np1on2xopabfo&st=t2y63wvx&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end",
-                    "intent://dl.dropbox.com/scl/fi/8nvacspvb8c2hfispmkno/Lelet.Hana.Wa.Sror.2018.mp4?rlkey=3icl0vbqff21np1on2xopabfo&st=t2y63wvx&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end"
-                ]
-            },
-            {
-                id: 9,
-                title: "االلعب مع العيال  2024  ",
-                image: "https://raw.githubusercontent.com/ahmadmk2023/Movies-free1/refs/heads/main/bst.mov/Al.Leib.Maa.Al.Eyal.jpg",
+                img: "https://a.asd.homes/wp-content/uploads/2025/10/660x990-367x550.webp",
                 quality: "HD",
                 servers: [
-                    "intent://dl.dropbox.com/scl/fi/liee825c6bb3fx7o2bvl8/Al.Leib.Maa.Al.Eyal.mp4?rlkey=gn23v3khym8f2g44qjvktsrkh&st=ks3yf93h&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end",
-                    "intent://dl.dropbox.com/scl/fi/liee825c6bb3fx7o2bvl8/Al.Leib.Maa.Al.Eyal.mp4?rlkey=gn23v3khym8f2g44qjvktsrkh&st=ks3yf93h&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end",
-                    "intent://dl.dropbox.com/scl/fi/liee825c6bb3fx7o2bvl8/Al.Leib.Maa.Al.Eyal.mp4?rlkey=gn23v3khym8f2g44qjvktsrkh&st=ks3yf93h&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end"
+                    {
+                        quality: "HD",
+                        speed: "متوسط",
+                        link: "intent://dl.dropbox.com/scl/fi/wk7cqfo5md3na1onoyqgo/Rocky.El.Ghalaba.2025.mp4?rlkey=5w5nnzh7pu97q54vw5pt1o00o&st=butgmz6j&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=روكي الغلابة (2025);end"
+                    },
+                    {
+                        quality: "HD",
+                        speed: "جيد",
+                        link: "intent://dl.dropbox.com/scl/fi/wk7cqfo5md3na1onoyqgo/Rocky.El.Ghalaba.2025.mp4?rlkey=5w5nnzh7pu97q54vw5pt1o00o&st=butgmz6j&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=روكي الغلابة (2025);end"
+                    }
+                ]
+            },
+            {
+                id: 15,
+                title: "السادة الافاضل",
+                year: "2025",
+                img: "https://a.asd.homes/wp-content/uploads/2026/01/8LjhxTjblaE17VQSbKwNNvhXYc-scaled-367x550.webp",
+                quality: "HD",
+                servers: [
+                    {
+                        quality: "HD",
+                        speed: "سريع",
+                        link: "intent://dl.dropbox.com/scl/fi/f4khhrg5h0oc6d3v3euz1/Al.Sada.Al.Afadel.2025.mp4?rlkey=mer9g2k7yy24bz0yku5c9w2k3&st=slz12xj9&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=السادة الافاضل (2025);end"
+                    }
+                ]
+            },
+            {
+                id: 14,
+                title: "فيها إيه يعني",
+                year: "2025",
+                img: "https://a.asd.homes/wp-content/uploads/2025/12/wkGXajJLwIXT70tyKuJCSnHEBEC-scaled-367x550.webp",
+                quality: "FHD",
+                servers: [
+                    {
+                        quality: "FHD",
+                        speed: "سريع",
+                        link: "intent://dl.dropbox.com/scl/fi/ga80hn8uajt1t0o843d9r/Feeha.Eh.Yaani.2025..mp4?rlkey=b8u4w9aqigo75xxfq4cj20vzp&st=bpuykrwl&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=فيها إيه يعني (2025);end"
+                    }
+                ]
+            },
+            {
+                id: 13,
+                title: "المشروع اكس",
+                year: "2025",
+                img: "https://a.asd.homes/wp-content/uploads/2025/09/anuoOC2JRaBq5EaWrf9X48nDE5A-scaled-367x550.webp",
+                quality: "HD",
+                servers: [
+                    {
+                        quality: "HD",
+                        speed: "متوسط",
+                        link: "intent://dl.dropbox.com/scl/fi/mslogw27mpod2rakdnqwb/Project.X.2025..mp4?rlkey=aw4eyej0bo89cs5t1nc8wbqum&st=uukzqgts&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=روكي الغلابة (2025);end"
+                    }
+                ]
+            },
+            {
+                id: 12,
+                title: "الشاطر",
+                year: "2025",
+                img: "https://a.asd.homes/wp-content/uploads/2025/11/Agyty4ksMnW2O7s3Spg17ERUTfU-scaled-367x550.webp",
+                quality: "FHD",
+                servers: [
+                    {
+                        quality: "FHD",
+                        speed: "سريع",
+                        link: "intent://dl.dropbox.com/scl/fi/tcu5aib2ex9ybft7byzl4/Alshaateer.2025..mp4?rlkey=9enbkxbouhb0bxziadqp4be13&st=h842excc&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=فيها إيه يعني (2025);end"
+                    }
+                ]
+            },
+            {
+                id: 11,
+                title: "ريستارت",
+                year: "2025",
+                img: "https://a.asd.homes/wp-content/uploads/2025/07/i7azEvi5NTaDzaj7dQiiJyX1BEI-367x550.webp",
+                quality: "HD",
+                servers: [
+                    {
+                        quality: "HD",
+                        speed: "متوسط",
+                        link: "intent://dl.dropbox.com/scl/fi/j1p7go5t9vjw8vgaiex2x/Restart.2025.mp4?rlkey=lph1zsf1owbvd13sz0kzgs23s&st=xo84if4u&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end"
+                    }
                 ]
             },
             {
                 id: 10,
-                title: "عشان خارجين  2016",
-                image: "https://raw.githubusercontent.com/ahmadmk2023/Movies-free1/refs/heads/main/bst.mov/Ashaan.Khargen.jpg",
+                title: "ليلة العيد",
+                year: "2024",
+                img: "https://a.asd.homes/wp-content/uploads/2025/06/e44d7f1a5b54744ffa4c1154ed5a1ee1fc65e93438b4956a3fce7f5806c3da69-385x550.webp",
                 quality: "HD",
                 servers: [
-                    "intent://dl.dropbox.com/scl/fi/g9qxgatyh4r7k7j8ytplf/Ashaan.Khargen.2016.480p.mp4?rlkey=rlppyxdcdeu83vyq0gugt7a0h&st=wlbxe0jh&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end",
-                    "intent://dl.dropbox.com/scl/fi/g9qxgatyh4r7k7j8ytplf/Ashaan.Khargen.2016.480p.mp4?rlkey=rlppyxdcdeu83vyq0gugt7a0h&st=wlbxe0jh&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end",
-                    "intent://dl.dropbox.com/scl/fi/g9qxgatyh4r7k7j8ytplf/Ashaan.Khargen.2016.480p.mp4?rlkey=rlppyxdcdeu83vyq0gugt7a0h&st=wlbxe0jh&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end"
+                    {
+                        quality: "HD",
+                        speed: "جيد",
+                        link: "intent://dl.dropbox.com/scl/fi/glkrtv954qmzebdbofduy/Laylet.El.Eid.2024.mp4?rlkey=qmwsy2ij060hmbo88gtjio12k&st=brw19ol5&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end"
+                    }
+                ]
+            },
+            {
+                id: 9,
+                title: "سيكو سيكو",
+                year: "2024",
+                img: "https://a.asd.homes/wp-content/uploads/2025/06/rlNIIPi3pm7kY5MgiN3gDHESEkk-367x550.webp",
+                quality: "HD",
+                servers: [
+                    {
+                        quality: "HD",
+                        speed: "متوسط",
+                        link: "intent://dl.dropbox.com/scl/fi/k7eiqlmhtq1jzwsb5sfvw/Siko.Siko.2025.WEB-DL.mp4?rlkey=9t5d825ubzylcc2iimkb358et&st=o4n92ufl&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end"
+                    }
+                ]
+            },
+            {
+                id: 8,
+                title: "الحريفة 2",
+                year: "2024",
+                img: "https://a.asd.homes/wp-content/uploads/2025/03/otGXsG3sMPZBi2VXD3XfXg94DBa-scaled-367x550.webp",
+                quality: "HD",
+                servers: [
+                    {
+                        quality: "HD",
+                        speed: "جيد",
+                        link: "intent://dl.dropbox.com/scl/fi/7ot3jomoacf2mrvg0ylom/El_Hareefa_2_Remontada.2024.480p.YangoPlay.Web-Dl.WeCima.mp4?rlkey=2pagjahri14mjgail4es621od&st=0vdd64y6&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end"
+                    }
+                ]
+            },
+            {
+                id: 7,
+                title: "الفستان الأبيض",
+                year: "2024",
+                img: "https://a.asd.homes/wp-content/uploads/2025/04/gDYCqJyOvtKMGhfnsNcim8ncm24-366x550.webp",
+                quality: "HD",
+                servers: [
+                    {
+                        quality: "HD",
+                        speed: "متوسط",
+                        link: "intent://dl.dropbox.com/scl/fi/jt8uzaq3w42rutgk5ofc8/The.Inevitable.Journey.To.Find.A.Wedding.Dress_24.mp4?rlkey=x1qynzrhdctqo4e66ot9nuh4c&st=kpg3zm8r&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end"
+                    }
+                ]
+            },
+            {
+                id: 6,
+                title: "ليلة هنا وسرور",
+                year: "2018",
+                img: "https://a.asd.homes/wp-content/uploads/2020/05/5b4b192e4bce9-185200-450x550.webp",
+                quality: "HD",
+                servers: [
+                    {
+                        quality: "HD",
+                        speed: "جيد",
+                        link: "intent://dl.dropbox.com/scl/fi/8nvacspvb8c2hfispmkno/Lelet.Hana.Wa.Sror.2018.mp4?rlkey=3icl0vbqff21np1on2xopabfo&st=t2y63wvx&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end"
+                    }
+                ]
+            },
+            {
+                id: 5,
+                title: "اللعب مع العيال",
+                year: "2024",
+                img: "https://raw.githubusercontent.com/ahmadmk2023/Movies-free1/refs/heads/main/bst.mov/Al.Leib.Maa.Al.Eyal.jpg",
+                quality: "HD",
+                servers: [
+                    {
+                        quality: "HD",
+                        speed: "متوسط",
+                        link: "intent://dl.dropbox.com/scl/fi/liee825c6bb3fx7o2bvl8/Al.Leib.Maa.Al.Eyal.mp4?rlkey=gn23v3khym8f2g44qjvktsrkh&st=ks3yf93h&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end"
+                    }
+                ]
+            },
+            {
+                id: 4,
+                title: "الدشاش",
+                year: "2025",
+                img: "https://raw.githubusercontent.com/ahmadmk2023/Movies-free1/refs/heads/main/bst.mov/Aldashash.jpg",
+                quality: "HD",
+                servers: [
+                    {
+                        quality: "HD",
+                        speed: "متوسط",
+                        link: "intent://dl.dropbox.com/scl/fi/664mmbgqpyalqkqfcv7fk/Aldashash.mp4?rlkey=l8084zrbidtm748jg6dswaxlx&st=k12mpo6p&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end"
+                    }
+                ]
+            },
+            {
+                id: 3,
+                title: "أبو نسب",
+                year: "2024",
+                img: "https://raw.githubusercontent.com/ahmadmk2023/Movies-free1/refs/heads/main/bst.mov/Abo.Nasab.jpg",
+                quality: "HD",
+                servers: [
+                    {
+                        quality: "HD",
+                        speed: "جيد",
+                        link: "intent://dl.dropbox.com/scl/fi/hk8ray7vmqbjok5llt5ed/Abo_Nasab.2023.mp4?rlkey=naynv15pz0xxrawhxm632fyfn&st=xz0yjyoz&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end"
+                    }
+                ]
+            },
+            {
+                id: 2,
+                title: "عشان خارجين",
+                year: "2016",
+                img: "https://raw.githubusercontent.com/ahmadmk2023/Movies-free1/refs/heads/main/bst.mov/Ashaan.Khargen.jpg",
+                quality: "HD",
+                servers: [
+                    {
+                        quality: "HD",
+                        speed: "متوسط",
+                        link: "intent://dl.dropbox.com/scl/fi/g9qxgatyh4r7k7j8ytplf/Ashaan.Khargen.2016.480p.mp4?rlkey=rlppyxdcdeu83vyq0gugt7a0h&st=wlbxe0jh&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end"
+                    }
+                ]
+            },
+            {
+                id: 1,
+                title: "السرب",
+                year: "2024",
+                img: "https://raw.githubusercontent.com/ahmadmk2023/Movies-free1/refs/heads/main/bst.mov/Al%20Serb.jpg",
+                quality: "HD",
+                servers: [
+                    {
+                        quality: "HD",
+                        speed: "سريع",
+                        link: "intent://dl.dropbox.com/scl/fi/c0avbktc0nm6gp5s2368e/sarab-2024.mp4?rlkey=czqlqf2bwqzdolefogh0rm861&st=87pnxmeh&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end"
+                    }
                 ]
             }
-              ,
-            {
-                id: 11,
-                title: "فيلم - الدشاش   2025",
-                image: "https://raw.githubusercontent.com/ahmadmk2023/Movies-free1/refs/heads/main/bst.mov/Aldashash.jpg",
-                quality: "HD",
-                servers: [
-                    "intent://dl.dropbox.com/scl/fi/664mmbgqpyalqkqfcv7fk/Aldashash.mp4?rlkey=l8084zrbidtm748jg6dswaxlx&st=k12mpo6p&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end",
-                    "intent://dl.dropbox.com/scl/fi/664mmbgqpyalqkqfcv7fk/Aldashash.mp4?rlkey=l8084zrbidtm748jg6dswaxlx&st=k12mpo6p&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end",
-                    "intent://dl.dropbox.com/scl/fi/664mmbgqpyalqkqfcv7fk/Aldashash.mp4?rlkey=l8084zrbidtm748jg6dswaxlx&st=k12mpo6p&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end"
-                ]
-            }
-             ,
-            {
-                id: 12,
-                title: "أبو نسب  2024",
-                image: "https://raw.githubusercontent.com/ahmadmk2023/Movies-free1/refs/heads/main/bst.mov/Abo.Nasab.jpg",
-                quality: "HD",
-                servers: [
-                    "intent://dl.dropbox.com/scl/fi/hk8ray7vmqbjok5llt5ed/Abo_Nasab.2023.mp4?rlkey=naynv15pz0xxrawhxm632fyfn&st=xz0yjyoz&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end",
-                    "intent://dl.dropbox.com/scl/fi/hk8ray7vmqbjok5llt5ed/Abo_Nasab.2023.mp4?rlkey=naynv15pz0xxrawhxm632fyfn&st=xz0yjyoz&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end",
-                    "intent://dl.dropbox.com/scl/fi/hk8ray7vmqbjok5llt5ed/Abo_Nasab.2023.mp4?rlkey=naynv15pz0xxrawhxm632fyfn&st=xz0yjyoz&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end"
-                ]
-            }   ,
-            {
-                id: 13,
-                title: "السرب  2024",
-                image: "https://raw.githubusercontent.com/ahmadmk2023/Movies-free1/refs/heads/main/bst.mov/Al%20Serb.jpg",
-                quality: "HD",
-                servers: [
-                    "intent://dl.dropbox.com/scl/fi/c0avbktc0nm6gp5s2368e/sarab-2024.mp4?rlkey=czqlqf2bwqzdolefogh0rm861&st=87pnxmeh&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end",
-                    "intent://dl.dropbox.com/scl/fi/c0avbktc0nm6gp5s2368e/sarab-2024.mp4?rlkey=czqlqf2bwqzdolefogh0rm861&st=87pnxmeh&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end",
-                    "intent://dl.dropbox.com/scl/fi/c0avbktc0nm6gp5s2368e/sarab-2024.mp4?rlkey=czqlqf2bwqzdolefogh0rm861&st=87pnxmeh&dl=1#Intent;scheme=https;package=co.wuffy.player;S.title=أفلام عربي;end"
-                ]
-            }              
-            
         ];
 
-        // عند تحميل الصفحة
-        document.addEventListener('DOMContentLoaded', function() {
-            const moviesGrid = document.getElementById('moviesGrid');
-            const searchToggle = document.getElementById('searchToggle');
-            const searchContainer = document.getElementById('searchContainer');
-            const searchInput = document.getElementById('searchInput');
-            const noResults = document.getElementById('noResults');
-            const serversModal = document.getElementById('serversModal');
-            const closeModal = document.getElementById('closeModal');
-            const modalMovieTitle = document.getElementById('modalMovieTitle');
-            const serversGrid = document.getElementById('serversGrid');
+        // تحسين هيكل السيرفرات وإضافة سرعة الاتصال
+        const movieGrid = document.getElementById('movieGrid');
+        const searchInput = document.getElementById('searchInput');
+        const movieCount = document.getElementById('movieCount');
+        const modal = document.getElementById('movieModal');
+        const loading = document.getElementById('loading');
+        const randomBtn = document.getElementById('randomBtn');
+
+        // تحسين أداء تحميل الصور
+        const imageCache = new Map();
+        let loadedImages = 0;
+        const totalImages = MOVIES_DB.length;
+
+        function preloadImages() {
+            MOVIES_DB.forEach(movie => {
+                const img = new Image();
+                img.src = movie.img;
+                img.onload = () => {
+                    imageCache.set(movie.img, true);
+                    loadedImages++;
+                    if (loadedImages === totalImages) {
+                        setTimeout(() => {
+                            loading.style.display = 'none';
+                            renderMovies(MOVIES_DB);
+                        }, 500);
+                    }
+                };
+                img.onerror = () => {
+                    // استبدال الصور التالفة بصورة افتراضية
+                    movie.img = 'https://raw.githubusercontent.com/aminemk640/Movies-free/main/00.png';
+                    loadedImages++;
+                    if (loadedImages === totalImages) {
+                        setTimeout(() => {
+                            loading.style.display = 'none';
+                            renderMovies(MOVIES_DB);
+                        }, 500);
+                    }
+                };
+            });
+        }
+
+        function renderMovies(movies) {
+            movieGrid.innerHTML = '';
+            movieCount.innerText = `${movies.length} فيلم`;
             
-            let currentMovie = null;
-            let watchedMovies = JSON.parse(localStorage.getItem('watchedMovies') || '[]');
-            
-            // عرض الأفلام
-            function displayMovies(movies) {
-                moviesGrid.innerHTML = '';
-                
-                if (movies.length === 0) {
-                    moviesGrid.style.display = 'none';
-                    noResults.style.display = 'block';
-                    return;
-                }
-                
-                moviesGrid.style.display = 'grid';
-                noResults.style.display = 'none';
-                
-                movies.forEach((movie, index) => {
-                    const isWatched = watchedMovies.includes(movie.id);
-                    const movieElement = createMovieCard(movie, isWatched, index);
-                    moviesGrid.appendChild(movieElement);
-                });
-                
-                // إضافة تأثيرات الدخول
-                const cards = document.querySelectorAll('.movie-card');
-                cards.forEach((card, index) => {
-                    card.style.animationDelay = `${index * 0.04}s`;
-                    card.classList.add('fade-in');
-                });
-            }
-            
-            // إنشاء بطاقة الفيلم
-            function createMovieCard(movie, isWatched, index) {
+            movies.forEach((movie, index) => {
                 const card = document.createElement('div');
-                card.className = 'movie-card';
-                card.tabIndex = 2 + index;
-                card.setAttribute('data-id', movie.id);
-                card.setAttribute('role', 'button');
-                card.setAttribute('aria-label', movie.title);
+                card.className = 'movie-card relative group cursor-pointer bg-slate-800/50 rounded-xl overflow-hidden shadow-lg transition-all hover:-translate-y-2 hover:shadow-xl fade-in';
+                card.style.animationDelay = `${index * 0.05}s`;
+                card.onclick = () => openModal(movie);
                 
-                // تحديد إذا كان الاسم طويلاً
-                const isLongTitle = movie.title.length > 25;
+                // ألوان مختلفة للجودة
+                const qualityClass = movie.quality === 'FHD' ? 'fhd' : 'hd';
+                const qualityColor = movie.quality === 'FHD' ? 'bg-amber-600' : 'bg-slate-600';
                 
                 card.innerHTML = `
-                    ${isWatched ? '<div class="watched-icon"><i class="fas fa-eye"></i></div>' : ''}
-                    <img src="${movie.image}" alt="${movie.title}" class="movie-poster" loading="lazy" onerror="handleImageError(this)">
-                    <div class="movie-title-overlay">
-                        <div class="movie-title ${isLongTitle ? 'long' : ''}">${movie.title}</div>
-                        <div class="movie-year">${movie.year}</div>
+                    <div class="aspect-[2/3] relative">
+                        <img src="${movie.img}" alt="${movie.title}" 
+                             class="w-full h-full object-cover transition-transform group-hover:scale-105 duration-300"
+                             loading="lazy">
+                        <div class="play-overlay absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 p-4">
+                            <div class="w-14 h-14 bg-blue-500 rounded-full flex items-center justify-center transform transition-transform group-hover:scale-110 shadow-lg">
+                                <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M4.5 3.5v13l11-6.5-11-6.5z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="${qualityClass} quality-badge ${qualityColor} text-white text-xs">
+                            ${movie.quality}
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-sm font-bold line-clamp-2 h-10 text-center group-hover:text-blue-300 transition-colors">${movie.title}</h3>
+                        <p class="text-xs text-slate-400 text-center mt-2">${movie.year}</p>
                     </div>
                 `;
-                
-                // عند النقر على الفيلم تظهر السيرفرات مباشرة
-                card.addEventListener('click', () => showServers(movie));
-                card.addEventListener('keypress', (e) => {
-                    if (e.key === 'Enter') showServers(movie);
-                });
-                
-                return card;
-            }
+                movieGrid.appendChild(card);
+            });
+        }
+
+        function openModal(movie) {
+            document.getElementById('modalTitle').innerText = `${movie.title} (${movie.year})`;
+            document.getElementById('modalImg').src = movie.img;
             
-            // عرض السيرفرات
-            function showServers(movie) {
-                currentMovie = movie;
-                modalMovieTitle.textContent = movie.title;
-                serversGrid.innerHTML = '';
-                
-                // تحديث حالة المشاهدة
-                if (!watchedMovies.includes(movie.id)) {
-                    watchedMovies.push(movie.id);
-                    localStorage.setItem('watchedMovies', JSON.stringify(watchedMovies));
-                    updateWatchedIcon(movie.id);
-                }
-                
-                // إضافة السيرفرات
-                movie.servers.forEach(server => {
-                    const serverBtn = document.createElement('button');
-                    serverBtn.className = `server-btn`;
-                    serverBtn.tabIndex = 100;
-                    serverBtn.innerHTML = `
-                        <span class="server-quality ${server.quality.toLowerCase()}">${server.quality}</span>
-                        <span class="server-speed">${server.speed}</span>
-                    `;
-                    
-                    serverBtn.addEventListener('click', () => playStream(server.link));
-                    serverBtn.addEventListener('keypress', (e) => {
-                        if (e.key === 'Enter') playStream(server.link);
-                    });
-                    
-                    serversGrid.appendChild(serverBtn);
-                });
-                
-                serversModal.style.display = 'flex';
-                document.body.style.overflow = 'hidden';
-            }
+            const qualityBadge = document.getElementById('modalQuality');
+            qualityBadge.innerText = movie.quality;
+            qualityBadge.className = movie.quality === 'FHD' 
+                ? 'inline-block px-3 py-1 bg-gradient-to-r from-amber-600 to-amber-700 text-white text-xs font-bold rounded'
+                : 'inline-block px-3 py-1 bg-gradient-to-r from-slate-600 to-slate-700 text-white text-xs font-bold rounded';
             
-            // تحديث أيقونة المشاهدة
-            function updateWatchedIcon(movieId) {
-                const card = document.querySelector(`[data-id="${movieId}"]`);
-                if (card && !card.querySelector('.watched-icon')) {
-                    const watchedIcon = document.createElement('div');
-                    watchedIcon.className = 'watched-icon';
-                    watchedIcon.innerHTML = '<i class="fas fa-eye"></i>';
-                    card.insertBefore(watchedIcon, card.firstChild);
-                }
-            }
+            const serverList = document.getElementById('serverList');
+            serverList.innerHTML = '';
             
-            // تشغيل الفيلم
-            function playStream(streamLink) {
-                const packageName = "co.wuffy.player";
-                
-                // محاولة فتح التطبيق
-                const iframe = document.createElement('iframe');
-                iframe.style.display = 'none';
-                iframe.src = streamLink;
-                document.body.appendChild(iframe);
-                
-                let playStoreRedirected = false;
-                
-                setTimeout(() => {
-                    document.body.removeChild(iframe);
-                    
-                    if (document.visibilityState === 'visible' && !playStoreRedirected) {
-                        playStoreRedirected = true;
-                        const playStoreIntent = `intent://details?id=${packageName}#Intent;scheme=market;package=com.android.vending;end`;
-                        window.location.href = playStoreIntent;
-                    }
-                    
-                    closeServersModal();
-                }, 1000);
-            }
+            movie.servers.forEach((server, index) => {
+                const btn = document.createElement('a');
+                btn.href = server.link;
+                btn.target = "_blank";
+                btn.className = 'flex items-center justify-between w-full bg-slate-800 hover:bg-blue-600 p-4 rounded-xl transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]';
+                btn.innerHTML = `
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-slate-900 flex items-center justify-center group-hover:bg-blue-700 transition-colors">
+                            <span class="font-bold text-lg">${index + 1}</span>
+                        </div>
+                        <div>
+                            <div class="font-bold flex items-center gap-2">
+                                <span>سيرفر ${index + 1}</span>
+                                <span class="text-xs px-2 py-0.5 rounded ${server.quality === 'FHD' ? 'bg-amber-600' : 'bg-slate-600'}">${server.quality}</span>
+                            </div>
+                            <div class="text-xs text-slate-400 group-hover:text-blue-200 transition-colors">${server.speed}</div>
+                        </div>
+                    </div>
+                    <svg class="w-5 h-5 text-blue-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                    </svg>
+                `;
+                serverList.appendChild(btn);
+            });
             
-            // إغلاق نافذة السيرفرات
-            function closeServersModal() {
-                serversModal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-                
-                // إعادة التركيز على البطاقة الحالية
-                if (currentMovie) {
-                    const card = document.querySelector(`[data-id="${currentMovie.id}"]`);
-                    if (card) card.focus();
-                }
-            }
-            
-            // البحث
-            function searchMovies() {
-                const searchTerm = searchInput.value.trim().toLowerCase();
-                
-                if (searchTerm.length === 0) {
-                    displayMovies(moviesData);
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // بحث متقدم مع debounce
+        let searchTimeout;
+        searchInput.addEventListener('input', (e) => {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                const term = e.target.value.trim().toLowerCase();
+                if (term === '') {
+                    renderMovies(MOVIES_DB);
                     return;
                 }
                 
-                const filteredMovies = moviesData.filter(movie => 
-                    movie.title.toLowerCase().includes(searchTerm) ||
-                    movie.year.includes(searchTerm)
+                const filtered = MOVIES_DB.filter(m => 
+                    m.title.toLowerCase().includes(term) ||
+                    m.year.includes(term) ||
+                    m.quality.toLowerCase().includes(term)
                 );
-                
-                displayMovies(filteredMovies);
-            }
-            
-            // عرض جميع الأفلام
-            window.showAllMovies = function() {
-                searchInput.value = '';
-                displayMovies(moviesData);
-                searchContainer.classList.remove('show');
-            };
-            
-            // العودة للصفحة الرئيسية
-            window.goToHome = function() {
-                searchInput.value = '';
-                displayMovies(moviesData);
-                searchContainer.classList.remove('show');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            };
-            
-            // العودة للخلف
-            window.goBack = function() {
-                if (window.history.length > 1) {
-                    window.history.back();
-                } else {
-                    goToHome();
-                }
-            };
-            
-            // معالجة أخطاء الصور
-            window.handleImageError = function(img) {
-                img.src = 'https://raw.githubusercontent.com/aminemk640/Movies-free/main/00.png';
-                img.onerror = null;
-                img.alt = 'صورة غير متاحة';
-                img.style.objectFit = 'contain';
-                img.style.backgroundColor = 'rgba(45, 74, 95, 0.3)';
-                img.style.padding = '5px';
-            };
-            
-            // أحداث
-            searchToggle.addEventListener('click', () => {
-                searchContainer.classList.toggle('show');
-                if (searchContainer.classList.contains('show')) {
-                    searchInput.focus();
-                } else {
-                    searchInput.value = '';
-                    displayMovies(moviesData);
-                }
-            });
-            
-            searchInput.addEventListener('input', searchMovies);
-            
-            closeModal.addEventListener('click', closeServersModal);
-            
-            serversModal.addEventListener('click', (e) => {
-                if (e.target === serversModal) {
-                    closeServersModal();
-                }
-            });
-            
-            // إغلاق بالضغط على ESC
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape') {
-                    if (searchContainer.classList.contains('show')) {
-                        searchContainer.classList.remove('show');
-                        searchInput.value = '';
-                        displayMovies(moviesData);
-                    }
-                    if (serversModal.style.display === 'flex') {
-                        closeServersModal();
-                    }
-                }
-            });
-            
-            // العرض الأولي
-            displayMovies(moviesData);
+                renderMovies(filtered);
+            }, 300);
         });
+
+        // زر فيلم عشوائي
+        randomBtn.addEventListener('click', () => {
+            const randomMovie = MOVIES_DB[Math.floor(Math.random() * MOVIES_DB.length)];
+            openModal(randomMovie);
+        });
+
+        // إغلاق المودال بالضغط على ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+
+        // إغلاق المودال بالنقر خارجها
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        // بدء تحميل الصور
+        preloadImages();
     </script>
 </body>
 </html>
